@@ -14,12 +14,14 @@
 
 <br>
 
-## 📆 **개발 일정** 
+## 📆 **개발 일정**
+
 > 12월 2일 - 4일 : 기획 <br>
-> 12월 5일 : 기획 발표 <br> <span style="background-color:yellow">**12월 6일 - 13일 : 담당 페이지 개발 🛠️**</span><br>
-> 12월 16 - 20일 : 메인페이지 / 백엔드 공통 개발 🛠️ <br>
-> 12월 23일 : 테스트 및 오류 수정 <br>
-> 12월 24일 : 발표 준비 <br> **12월 27일 : 프로젝트 발표**
+> 12월 5일 : 기획 발표 <br> > **12월 6일 - 13일 : 담당 페이지 개발 🛠️**<br>
+>
+> > **12월 16 - 20일 : 메인페이지 / 백엔드 공통 개발 🛠️** <br>
+> > 12월 23일 : 테스트 및 오류 수정 <br>
+> > 12월 24일 : 발표 준비 <br> **12월 27일 : 프로젝트 발표**
 
 <br>
 
@@ -52,7 +54,7 @@
 
 <br>
 
-## 🔗 **팀 규칙** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%ED%8C%80%EA%B7%9C%EC%B9%99)
+## 🔗 **팀 규칙** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%F0%9F%94%97-%ED%8C%80-%EA%B7%9C%EC%B9%99)
 
 <br>
 
@@ -60,10 +62,8 @@
 
 <br>
 
-## 🗂️ **폴더 구조** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0)
+## 🗂️ **폴더 구조** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%F0%9F%97%82%EF%B8%8F-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0)
 
 <br>
 
 ## 📑 **회의록** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%F0%9F%93%91-%ED%9A%8C%EC%9D%98%EB%A1%9D)
-
-<br>
