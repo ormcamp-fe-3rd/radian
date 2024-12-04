@@ -53,7 +53,7 @@
 
 <br>
 
-## 🔗 **팀 규칙** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%ED%8C%80%EA%B7%9C%EC%B9%99)
+## 🔗 **팀 규칙** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%F0%9F%94%97-%ED%8C%80-%EA%B7%9C%EC%B9%99)
 
 <br>
 
@@ -61,7 +61,7 @@
 
 <br>
 
-## 🗂️ **폴더 구조** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0)
+## 🗂️ **폴더 구조** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%F0%9F%97%82%EF%B8%8F-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0)
 
 <br>
 
