@@ -37,8 +37,6 @@
 
 <br>
 
-## ▶️ **시작 가이드**
-
 <br>
 
 ## 💻 **Tech Stack**
@@ -54,10 +52,18 @@
 
 <br>
 
-## ⚓️ **팀 규칙** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%ED%8C%80%EA%B7%9C%EC%B9%99)
+## 🔗 **팀 규칙** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%ED%8C%80%EA%B7%9C%EC%B9%99)
 
 <br>
 
-## 📌 **주요 기능** - [상세보기🔍]()
+## ⚙️ **주요 기능** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%E2%9A%99%EF%B8%8F-%EC%A3%BC%EC%9A%94%EA%B8%B0%EB%8A%A5)
+
+<br>
+
+## 🗂️ **폴더 구조** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0)
+
+<br>
+
+## 📑 **회의록** - [상세보기🔍](https://github.com/ormcamp-fe-3rd/radian/wiki/%F0%9F%93%91-%ED%9A%8C%EC%9D%98%EB%A1%9D)
 
 <br>
