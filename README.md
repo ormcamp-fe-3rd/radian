@@ -46,15 +46,17 @@
 npm install
 ```
 ### 설치 이후 
+> vite 실행
 ```
-npm run dev (vite 실행)
+npm run dev 
 ```
-### eslint 사용 시
+
+> eslint 사용 시
 ```
-npm run lint (확인)
-npm run lint:fix (자동 수정)
+npm run lint (확인하는 방법)
+npm run lint:fix (오류 사항 자동 수정하는 방법)
 ```
-### prettier 사용 시
+> prettier 사용 시
 ```
 npm run format
 ```
