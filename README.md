@@ -40,14 +40,35 @@
 
 <br>
 
+## ✅ **실행 방법**
+### 프로젝트 clone 이후 패키지 설치
+```
+npm install
+```
+### 설치 이후 
+```
+npm run dev (vite 실행)
+```
+### eslint 사용 시
+```
+npm run lint (확인)
+npm run lint:fix (자동 수정)
+```
+### prettier 사용 시
+```
+npm run format
+```
+
+<br>
+
 ## 💻 **Tech Stack**
 
-<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"> <img src="https://img.shields.io/badge/Css-1572B6?style=for-the-badge&logo=Css&logoColor=white">
-<img src="https://img.shields.io/badge/three.js-000000?style=for-the-badge&logo=Css&logoColor=white">
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"> <img src="https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white">
+<img src="https://img.shields.io/badge/three.js-000000?style=for-the-badge&logo=three.js&logoColor=white">
 <img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=Typescript&logoColor=white"/>
-<img src="https://img.shields.io/badge/reactquery-FF4154?style=for-the-badge&logo=Typescript&logoColor=white"/>
+<img src="https://img.shields.io/badge/reactquery-FF4154?style=for-the-badge&logo=reactquery&logoColor=white"/>
 
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/> <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=white"/> <img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=Typescript&logoColor=white"/> <img src="https://img.shields.io/badge/googledocs-4285F4?style=for-the-badge&logo=Typescript&logoColor=white"/>
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/> <img src="https://img.shields.io/badge/Visual Studio Code-00A2FF?style=for-the-badge&logo=Visual Studio Code&logoColor=white"/> <img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/> <img src="https://img.shields.io/badge/googledocs-4285F4?style=for-the-badge&logo=googledocs&logoColor=white"/>
 
 <br>
 
