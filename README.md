@@ -1,6 +1,6 @@
 # 🚗 클래식카를 전기차로 " radian "
 
-<p align="center"><img width="900" alt="image" src="https://github.com/user-attachments/assets/7efd8922-2694-4953-b4eb-778ef5be9862"></p>
+<p align="center"><img width="900" alt="image" src="https://github.com/user-attachments/assets/d045cc46-de04-4558-bf2e-11201384b7cf"></p>
 
 <br>
 <br>
@@ -14,10 +14,9 @@
 
 <br>
 
-## 📆 **개발 일정** - [세부일정🔎]()
-
+## 📆 **개발 일정** 
 > 12월 2일 - 4일 : 기획 <br>
-> 12월 5일 : 기획 발표 <br> <span style="background-color:yellow">12월 6일 - 23일 : 개발 <br></span>
+> 12월 5일 : 기획 발표 <br> <span style="background-color:yellow">**12월 6일 - 23일 : 개발 🛠️**</span><br>
 > 12월 24일 : 내용 정리 및 테스트 완료 후 발표 준비 <br> **12월 27일 : 프로젝트 발표**
 
 <br>
@@ -45,8 +44,11 @@
 <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"> <img src="https://img.shields.io/badge/Css-1572B6?style=for-the-badge&logo=Css&logoColor=white">
 <img src="https://img.shields.io/badge/three.js-000000?style=for-the-badge&logo=Css&logoColor=white">
 <img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=Typescript&logoColor=white"/>
+<img src="https://img.shields.io/badge/reactquery-FF4154?style=for-the-badge&logo=Typescript&logoColor=white"/>
 
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/> <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=white"/> <img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=Typescript&logoColor=white"/> <img src="https://img.shields.io/badge/googledocs-4285F4?style=for-the-badge&logo=Typescript&logoColor=white"/>
+
+<br>
 
 <br>
 
