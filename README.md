@@ -2,6 +2,8 @@
 
 <p align="center"><img width="900" alt="image" src="https://github.com/user-attachments/assets/d045cc46-de04-4558-bf2e-11201384b7cf"></p>
 
+<a href= "https://www.figma.com/design/tk3h0utOTodFirQLPuez9C/Figma-basics?node-id=612-2&t=I6zmSxuFTkDX9SjG-1"> 🎨 굴렁쇠 Figma </a>
+
 <br>
 <br>
 
