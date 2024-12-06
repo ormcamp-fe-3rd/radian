@@ -41,9 +41,10 @@ const Agreement = (): JSX.Element => {
             checked={isChecked[0] && isChecked[1] && isChecked[2]}
             onClick={() => {
               const copy = [...isChecked];
-              copy[0] = !copy[0];
-              copy[1] = !copy[1];
-              copy[2] = !copy[2];
+              const allChecked = isChecked[0] && isChecked[1] && isChecked[2];
+              copy[0] = !allChecked;
+              copy[1] = !allChecked;
+              copy[2] = !allChecked;
               setIsChecked(copy);
             }}
           ></input>
