@@ -3,6 +3,16 @@ import '../styles/reset.css';
 import '../styles/Register.css';
 
 const Register = (): JSX.Element => {
+  return (
+    <>
+      <h2 className="register-title">회원 가입</h2>
+      <Agreement></Agreement>
+    </>
+  );
+};
+export default Register;
+
+const Agreement = (): JSX.Element => {
   const [isChecked, setIsChecked] = useState([false, false, false]);
   const [signUp, setSignUp] = useState([
     {
@@ -76,5 +86,3 @@ const Register = (): JSX.Element => {
     </>
   );
 };
-
-export default Register;
