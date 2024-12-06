@@ -40,7 +40,8 @@
 
 .read-more {
   margin: 0 0 0 auto;
-  font-weight: bold;
+  font-family: line-seed;
+  font-weight: 700;
   color: var(--main-color);
   border: none;
   background: transparent;
