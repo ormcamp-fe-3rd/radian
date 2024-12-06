@@ -29,7 +29,9 @@ const Register = (): JSX.Element => {
         </li>
         {signUp.map((e, i) => (
           <li>
-            <div className="list-item">
+            <div
+              className={`list-item ${e.status === true ? 'no-border' : ''}`}
+            >
               <input type="checkbox" className="circle-check" />
               {e.title}
               <button

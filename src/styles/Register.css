@@ -96,3 +96,7 @@
   width: 50%;
   transform: translateX(50%);
 }
+
+.no-border {
+  border-bottom: 0px;
+}
