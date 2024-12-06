@@ -81,8 +81,16 @@ const Agreement = (): JSX.Element => {
             ) : null}
           </li>
         ))}
+        <li>
+          <button
+            className="next-step-button"
+            disabled={!(isChecked[0] && isChecked[1] === true)}
+          >
+            회원 정보 입력하기
+          </button>
+        </li>
       </ul>
-      {isChecked[0] && isChecked[1] === true ? alert('체크 완료') : null}
+      {/* {isChecked[0] && isChecked[1] === true ? alert('체크 완료') : null} */}
     </>
   );
 };
