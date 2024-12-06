@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'line-seed';
+  src: url('/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'line-seed';
+  src: url('/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'line-seed';
+  src: url('/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+}
+
+:root {
+  --main-color: #423522;
+  --sub-color: #fffbf1;
+}
+
+[type='checkbox'] {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  border: 2px solid var(--main-color);
+
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  background-color: white;
+}
+
+[type='checkbox']:checked {
+  border-color: var(--main-color);
+  background-color: var(--main-color);
+  position: relative;
+}
+
+.read-more {
+  margin: 0 0 0 auto;
+  font-weight: bold;
+  color: var(--main-color);
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.container {
+  font-family: line-seed;
+  font-weight: 400;
+  max-width: 800px;
+  width: 100%;
+  height: 300px;
+  margin: auto;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.list-item {
+  font-family: line-seed;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  border-bottom: 2px solid #4a5568;
+  gap: 0.75rem;
+}
+
+.content-box {
+  display: flex;
+  flex-direction: column;
+  height: 18rem;
+  border: 2px solid #4a5568;
+  border-radius: 10px;
+  padding: 1.5rem;
+  overflow-y: scroll;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.input-field {
+  width: 75%;
+}
+
+.submit-button {
+  margin-top: 1rem;
+  background-color: #4299e1;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  width: 50%;
+  transform: translateX(50%);
+}
