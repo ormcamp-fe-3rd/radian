@@ -1,0 +1,48 @@
+.login-form {
+    width: 100%;
+    height: 953.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.int-area {
+    width: 371px;
+    height: 72.97px;
+    position: relative;
+    margin: 3px;
+}
+
+#name-input, #password-input {
+    width: 100%;
+    height: 72.97px;
+    border: none;
+    border-bottom: 1px solid;
+}
+
+#id, #pw {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+#btn-login {
+    width: 375px;
+    height: 55.69px;
+    margin-top: 47px;
+    border: none;
+    background-color: #423522;
+    font-size: 20px;
+    color: #757575;
+}
+
+#register {
+    width: 375px;
+    margin-top: 5px;
+}
+
+
+
