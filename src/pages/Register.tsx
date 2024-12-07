@@ -1,18 +1,24 @@
 import { useState } from 'react';
 import '../styles/reset.css';
 import '../styles/Register.css';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+// import { useForm } from 'react-hook-form';
 
 const Register = (): JSX.Element => {
   return (
     <>
       <h2 className="register-title">회원 가입</h2>
-      <Agreement></Agreement>
+      <Routes>
+        <Route path="/" element={<Agreement />} />
+        <Route path="/form" element={<SignInForm />} />
+      </Routes>
     </>
   );
 };
 export default Register;
 
 const Agreement = (): JSX.Element => {
+  const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState([false, false, false]);
   const [signUp, setSignUp] = useState([
     {
@@ -86,12 +92,46 @@ const Agreement = (): JSX.Element => {
           <button
             className="next-step-button"
             disabled={!(isChecked[0] && isChecked[1] === true)}
+            onClick={() => {
+              navigate('/register/form');
+            }}
           >
             회원 정보 입력하기
           </button>
         </li>
       </ul>
-      {/* {isChecked[0] && isChecked[1] === true ? alert('체크 완료') : null} */}
+    </>
+  );
+};
+
+const SignInForm = (): JSX.Element => {
+  return (
+    <>
+      <div className="container">
+        <form action="">
+          <input
+            placeholder="성함을 입력해주세요."
+            className="input-form"
+            type="text"
+          />
+          <input
+            placeholder="이메일 형식으로 아이디를 입력해주세요"
+            className="input-form"
+            type="email"
+          />
+          <input
+            placeholder="비밀번호는 숫자, 특수문자, 대소문자를 포함하여 8자 이상 입력해주세요"
+            className="input-form"
+            type="password"
+          />
+          <input
+            placeholder="상단의 비밀번호를 한번 더 입력해주세요"
+            className="input-form"
+            type="password"
+          />
+          <button className="next-step-button">가입하기</button>
+        </form>
+      </div>
     </>
   );
 };

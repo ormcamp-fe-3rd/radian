@@ -11,7 +11,7 @@ const App = (): JSX.Element => {
   return (
     <QueryClientProvider client={queryClient}>
       <Routes>
-        <Route path="/register" element={<Register />} />
+        <Route path="/register/*" element={<Register />} />
       </Routes>
       {/* react-query 개발 툴 사용 시 가장 하위에 위치하게 작성 */}
       <ReactQueryDevtools initialIsOpen={true} />
