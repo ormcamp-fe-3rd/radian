@@ -68,6 +68,10 @@ const Home = (): JSX.Element => {
             />
           </div>
         </div>
+        <h1 className="company-message">
+          We breathe new life into the timeless beauty of classic car design
+          with modern electric vehicle technology.{' '}
+        </h1>
         <div className="content-section"></div>
       </div>
     </>

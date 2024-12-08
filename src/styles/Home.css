@@ -55,6 +55,15 @@
   transition: all 0.5s ease;
 }
 
+.company-message {
+  font-family: line-seed;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 4rem;
+  text-align: center;
+  padding: 2rem 6rem 3rem;
+}
+
 .visible {
   opacity: 1;
   transform: translateY(0);
