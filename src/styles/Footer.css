@@ -1,0 +1,41 @@
+.footer-container {
+    min-width: 1440px;
+    height: 74px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    margin: 0 0 70px 40px;
+}
+
+.footer-info {
+    display: flex;
+    margin-top: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    margin-right: 50px;
+}
+
+.footer-icon-logo {
+    width: 34px;
+    height: 34px;
+    margin-top: 10px;
+}
+
+.footer-logo-title {
+    font-family: 'Danfo';
+    font-size: 35px;
+    margin: 0 0 15px 5px;
+}
+
+.icon-sns {
+    display: flex;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+.icon-sns img {
+    width: 20px;
+    height: 20px;
+}
