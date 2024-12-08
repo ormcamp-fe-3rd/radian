@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'; // react-query 개발 툴 사용 시
 
-/**page */
-import Login from '/src/pages/Login';
+/**페이지 컴포넌트 */
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Register from './pages/Register';
 
 const queryClient = new QueryClient(); //추가
 
@@ -13,9 +15,11 @@ const App = (): JSX.Element => {
     <Router>
       <QueryClientProvider client={queryClient}>
         <div>
-          <h1>Hello, Radian!</h1>
+          
           <Routes>
-            <Route path="/login" element={Login} />
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/register" element={<Register />}></Route>
           </Routes>
         </div>
 

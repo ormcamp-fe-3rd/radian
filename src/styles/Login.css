@@ -1,5 +1,12 @@
+body {
+    margin: 0 auto;
+    font-family: 'LINE Seed Sans KR', sans-serif;
+    color: #423522;
+    background-color: #FFFBF1;
+}
+
 .login-form {
-    width: 100%;
+    min-width: 1440px;
     height: 953.5px;
     display: flex;
     flex-direction: column;
@@ -12,13 +19,29 @@
     height: 72.97px;
     position: relative;
     margin: 3px;
+    cursor: text;
+}
+
+.int-area input:focus + label,
+.int-area input:valid + label {
+    opacity: 0;
+    transform: translateY(-150%);
+}
+
+.int-area input:hover + label {
+    opacity: 0;
+    transform: translateY(-150%);
 }
 
 #name-input, #password-input {
     width: 100%;
     height: 72.97px;
     border: none;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid black;
+    color: #423522;
+    font-size: 20px;
+    background: none;
+    outline: none;
 }
 
 #id, #pw {
@@ -34,10 +57,17 @@
     height: 55.69px;
     margin-top: 47px;
     border: none;
-    background-color: #423522;
     font-size: 20px;
-    color: #757575;
 }
+
+.login-active {
+    background-color: #423522;
+  }
+  
+  .login-inactive {
+    background-color: #757575;
+    color: white;
+  }
 
 #register {
     width: 375px;
