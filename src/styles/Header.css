@@ -1,0 +1,36 @@
+.header-container {
+    min-width: 1440px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 20px 0 0 40px;
+    border-bottom: 1px solid black;
+}
+
+.go-list {
+    width: 28px;
+    height: 28px;
+    margin-top: 45px;
+}
+
+.logo-title {
+    text-align: center;
+}
+
+.logo-link {
+    font-family: 'Danfo';
+    font-size: 60px;
+    color: #423522;
+    text-decoration: none;
+}
+
+.logo-link:hover {
+  color: #423522
+}
+
+.go-profile {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    margin-left: auto;
+    margin-top: 45px;
+}

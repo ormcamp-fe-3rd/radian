@@ -1,7 +1,7 @@
-import '../styles/Header.css';
+import '../styles/Login.css';
 import { Link } from 'react-router-dom';
 
-const Header = (): JSX.Element => {
+const HeaderLogin = (): JSX.Element => {
     return (
         <>
             <header>
@@ -15,16 +15,10 @@ const Header = (): JSX.Element => {
                     <div className="logo-title">
                         <Link className="logo-link" to="/">RADIAN</Link>
                     </div>
-
-                    <div className="go-profile">
-                        <Link to="/">
-                            <img src="/public/images/go-profile.png" alt="icon-go-profile" />
-                        </Link>
-                    </div>
                 </div>
             </header>
         </>
     )
   };
   
-  export default Header;
+  export default HeaderLogin;
