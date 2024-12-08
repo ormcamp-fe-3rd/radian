@@ -5,10 +5,10 @@ import styles from '../styles/Home.module.css';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
 const Home = (): JSX.Element => {
-  const aboutCompanyTitle = useRef();
+  const companyVisionRef = useRef();
   const [isTextVisible, setIsTextVisible] = useState(false);
-  const greenBoxRef = useRef();
-  const blackSectionRef = useRef();
+  const imageContainerRef = useRef();
+  const scrollingSectionRef = useRef();
   const [divWidth, setDivWidth] = useState(0);
 
   useEffect(() => {
@@ -18,20 +18,21 @@ const Home = (): JSX.Element => {
       },
       { threshold: 0.8 },
     );
-    observer.observe(aboutCompanyTitle.current);
+    observer.observe(companyVisionRef.current);
   });
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      const greenBox = greenBoxRef.current.getBoundingClientRect();
-      const blackBox = blackSectionRef.current.getBoundingClientRect();
-      if (greenBox.top == 0) {
+      const imageContainer = imageContainerRef.current.getBoundingClientRect();
+      const scrollingSection =
+        scrollingSectionRef.current.getBoundingClientRect();
+      if (imageContainer.top == 0) {
         let scrolledDistance = Math.abs(
-          blackBox.top / window.innerHeight,
+          scrollingSection.top / window.innerHeight,
         ).toFixed(1);
         setDivWidth(scrolledDistance);
         console.log(divWidth);
-      } else if (greenBox.top >= 0) {
+      } else if (imageContainer.top >= 0) {
         setDivWidth(0);
       }
     });
@@ -48,16 +49,16 @@ const Home = (): JSX.Element => {
         </div>
         <h1
           className={`company-vision ${isTextVisible ? 'visible' : ''}`}
-          ref={aboutCompanyTitle}
+          ref={companyVisionRef}
         >
           We have a bold vision for the future of travel, presenting ways for
           you to better connect with nature and each other. Radian’s electric
           classic cars allow you to explore new corners of the world while
           providing the joy of preserving the environment along the way.
         </h1>
-        <div className="scrolling-section" ref={blackSectionRef}>
+        <div className="scrolling-section" ref={scrollingSectionRef}>
           <div
-            ref={greenBoxRef}
+            ref={imageContainerRef}
             className="image-container"
             style={{ width: `${divWidth * 95}vw` }}
           >
