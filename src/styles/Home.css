@@ -49,6 +49,14 @@
   line-height: 4rem;
   text-align: center;
   padding: 2rem 6rem 3rem;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: all 0.5s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .black-section {

@@ -6,16 +6,17 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 
 const Home = (): JSX.Element => {
   const aboutCompanyTitle = useRef();
+  const [isTextVisible, setIsTextVisible] = useState(false);
   const greenBoxRef = useRef();
   const blackSectionRef = useRef();
   const [divWidth, setDivWidth] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (e) => {
-        let scrollRatio = e[0].intersectionRatio;
+      (entries) => {
+        setIsTextVisible(entries[0].isIntersecting);
       },
-      { threshold: 0.4 },
+      { threshold: 1 },
     );
     observer.observe(aboutCompanyTitle.current);
   });
@@ -45,17 +46,20 @@ const Home = (): JSX.Element => {
             <source src="/videos/sample-cars-loop-clip.mp4" type="video/mp4" />
           </video>
         </div>
-        <h1 className="home-title">
-          We have a bold vision for the future of travel where you can better
-          connect with the outdoors and each other. Lightship’s electric travel
-          trailers allow you to visit new corners of the world while doing your
-          part to preserve it.
+        <h1
+          className={`home-title ${isTextVisible ? 'visible' : ''}`}
+          ref={aboutCompanyTitle}
+        >
+          We have a bold vision for the future of travel, presenting ways for
+          you to better connect with nature and each other. Radian’s electric
+          classic cars allow you to explore new corners of the world while
+          providing the joy of preserving the environment along the way.
         </h1>
         <div className="black-section" ref={blackSectionRef}>
           <div
             ref={greenBoxRef}
             className="green-box"
-            style={{ width: `${divWidth * 100}vw` }}
+            style={{ width: `${divWidth * 95}vw` }}
           >
             <img
               className="image-fit"
@@ -64,7 +68,7 @@ const Home = (): JSX.Element => {
             />
           </div>
         </div>
-        <div className="red-box" ref={aboutCompanyTitle}></div>
+        <div className="red-box"></div>
       </div>
     </>
   );
