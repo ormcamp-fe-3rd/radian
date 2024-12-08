@@ -16,7 +16,7 @@ const Home = (): JSX.Element => {
       (entries) => {
         setIsTextVisible(entries[0].isIntersecting);
       },
-      { threshold: 1 },
+      { threshold: 0.8 },
     );
     observer.observe(aboutCompanyTitle.current);
   });
@@ -47,7 +47,7 @@ const Home = (): JSX.Element => {
           </video>
         </div>
         <h1
-          className={`home-title ${isTextVisible ? 'visible' : ''}`}
+          className={`company-vision ${isTextVisible ? 'visible' : ''}`}
           ref={aboutCompanyTitle}
         >
           We have a bold vision for the future of travel, presenting ways for
@@ -55,20 +55,20 @@ const Home = (): JSX.Element => {
           classic cars allow you to explore new corners of the world while
           providing the joy of preserving the environment along the way.
         </h1>
-        <div className="black-section" ref={blackSectionRef}>
+        <div className="scrolling-section" ref={blackSectionRef}>
           <div
             ref={greenBoxRef}
-            className="green-box"
+            className="image-container"
             style={{ width: `${divWidth * 95}vw` }}
           >
             <img
-              className="image-fit"
+              className="image-sizing"
               src="https://monochrome-watches.com/wp-content/uploads/2020/10/Mini-Cooper-Classic-Electric-conversion-1.jpg"
               alt="Mini Cooper Classic Electric"
             />
           </div>
         </div>
-        <div className="red-box"></div>
+        <div className="content-section"></div>
       </div>
     </>
   );
