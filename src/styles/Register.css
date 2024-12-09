@@ -22,6 +22,7 @@
 body {
   background-color: var(--sub-color);
   color: var(--main-color);
+  overflow: hidden;
 }
 
 .register-title {
@@ -120,7 +121,7 @@ body {
   font-weight: 400;
   display: flex;
   align-items: center;
-  height: 3.5rem;
+  height: 3.4rem;
   outline: none;
   border: none;
   border-bottom: 2px solid var(--main-color);
@@ -136,10 +137,39 @@ body {
   outline-color: #ff0000;
 }
 
-/* 에러 메시지 스타일 */
 small {
   color: #ff0000;
   font-size: 12px;
   margin-top: 4px;
   display: block;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+}
+
+.fade-animation {
+  animation: fade-out 0.3s ease-out forwards;
+}
+
+@keyframes fade-in-from-right {
+  from {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-from-right {
+  animation: fade-in-from-right 0.3s ease-out forwards;
 }

@@ -20,6 +20,7 @@ export default Register;
 const Agreement = (): JSX.Element => {
   const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState([false, false, false]);
+  const [nextStepAnimation, setNextStepAnimation] = useState('');
   const [signUp, setSignUp] = useState([
     {
       title: '라디안 서비스 이용 약관 동의 (필수)',
@@ -32,14 +33,14 @@ const Agreement = (): JSX.Element => {
       buttonStatus: false,
     },
     {
-      title: '마케팅 정보 수신에 동의합니다. (선택)',
+      title: '마케팅 정보 수신에 동의 (선택)',
       content: '마케팅 동의 (추후 추가)',
       buttonStatus: false,
     },
   ]);
   return (
     <>
-      <ul className="container">
+      <ul className={`container ${nextStepAnimation}`}>
         <li className="list-item">
           <input
             type="checkbox"
@@ -93,7 +94,14 @@ const Agreement = (): JSX.Element => {
             className="next-step-button"
             disabled={!(isChecked[0] && isChecked[1] === true)}
             onClick={() => {
-              navigate('/register/form');
+              if (isChecked[0] && isChecked[1]) {
+                setNextStepAnimation('fade-animation');
+                setTimeout(() => {
+                  navigate('/register/form');
+                }, 300);
+              } else {
+                alert('필수 약관에 동의해주세요.');
+              }
             }}
           >
             회원 정보 입력하기
@@ -116,7 +124,7 @@ const SignInForm = (): JSX.Element => {
 
   return (
     <>
-      <div className="container">
+      <div className="container slide-from-right">
         <form
           noValidate
           onSubmit={handleSubmit((data) => alert('가입이 완료되었습니다.'))}
