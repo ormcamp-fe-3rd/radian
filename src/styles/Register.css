@@ -22,7 +22,6 @@
 body {
   background-color: var(--sub-color);
   color: var(--main-color);
-  overflow: hidden;
 }
 
 .register-title {
@@ -36,6 +35,7 @@ body {
 .container {
   font-family: line-seed;
   font-weight: 400;
+  font-size: 1rem;
   max-width: 800px;
   width: 100%;
   height: 300px;
@@ -65,10 +65,10 @@ body {
   margin: 0 0 0 auto;
   font-family: line-seed;
   font-weight: 700;
+  font-size: 1em;
   color: var(--main-color);
   border: none;
   background: transparent;
-  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -94,12 +94,12 @@ body {
   border-radius: 10px;
   padding: 1.5rem;
   overflow-y: scroll;
-  font-size: 1rem;
   line-height: 1.5;
 }
 
 .next-step-button {
   width: 100%;
+  font-size: 1.1em;
   margin: 3rem auto;
   display: block;
   height: 3rem;
@@ -139,8 +139,8 @@ body {
 
 small {
   color: #ff0000;
-  font-size: 12px;
-  margin-top: 4px;
+  font-size: 0.75em;
+  margin-top: 0.2em;
   display: block;
 }
 
@@ -151,17 +151,17 @@ small {
   }
   to {
     opacity: 0;
-    transform: translateX(-100vw);
+    transform: translateX(-5vw);
   }
 }
 
 .fade-animation {
-  animation: fade-out 0.3s ease-out forwards;
+  animation: fade-out 0.2s ease-out forwards;
 }
 
 @keyframes fade-in-from-right {
   from {
-    transform: translateX(100vw);
+    transform: translateX(5vw);
     opacity: 0;
   }
   to {
@@ -171,5 +171,24 @@ small {
 }
 
 .slide-from-right {
-  animation: fade-in-from-right 0.3s ease-out forwards;
+  animation: fade-in-from-right 0.2s ease-out forwards;
+}
+
+@media (max-width: 744px) {
+  .container {
+    width: 85%;
+    margin: auto;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 402px) {
+  .container {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .register-title {
+    font-size: 1.3rem;
+  }
 }

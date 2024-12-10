@@ -98,7 +98,7 @@ const Agreement = (): JSX.Element => {
                 setNextStepAnimation('fade-animation');
                 setTimeout(() => {
                   navigate('/register/form');
-                }, 300);
+                }, 200);
               } else {
                 alert('필수 약관에 동의해주세요.');
               }
