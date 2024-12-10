@@ -71,7 +71,14 @@ const Agreement = (): JSX.Element => {
               </button>
             </div>
             {e.buttonStatus === true ? (
-              <div className="content-box">{e.content}</div>
+              <div className="content-box">
+                {e.content.split('\n').map((line) => (
+                  <span>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+              </div>
             ) : null}
           </li>
         ))}
