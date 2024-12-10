@@ -3,7 +3,7 @@ import '../styles/reset.css';
 import '../styles/Register.css';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import terms from '/data/terms.json';
+import term from '../data/terms.json';
 
 const Register = (): JSX.Element => {
   return (
@@ -22,7 +22,8 @@ const Agreement = (): JSX.Element => {
   const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState([false, false, false]);
   const [nextStepAnimation, setNextStepAnimation] = useState('');
-  const [signUp, setSignUp] = useState(terms);
+  const [signUp, setSignUp] = useState(term);
+
   return (
     <>
       <ul className={`container ${nextStepAnimation}`}>
