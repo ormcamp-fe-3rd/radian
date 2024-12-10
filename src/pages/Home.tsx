@@ -2,8 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 import '../styles/reset.css';
 import '../styles/Home.css';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 const Home = (): JSX.Element => {
   const companyVisionRef = useRef();
@@ -41,7 +39,6 @@ const Home = (): JSX.Element => {
 
   return (
     <>
-      <Header />
       <div className="home-container">
         <div className="video-container">
           <a tabIndex={0}>Classic but Electronic</a>
@@ -79,7 +76,6 @@ const Home = (): JSX.Element => {
           </h1>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
