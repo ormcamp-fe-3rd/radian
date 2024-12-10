@@ -1,0 +1,69 @@
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'JosefinSlab';
+  src: url('../../public/fonts/JosefinSlab/JosefinSlab-VariableFont_wght.ttf')
+    format('woff2');
+  font-weight: 700;
+}
+
+.car-product-container {
+  width: 400px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-product-title {
+  text-align: center;
+}
+
+.car-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.car-product-button {
+  width: 100%;
+  text-align: right;
+  margin: 0 20px 0 0;
+}
+
+.car-product-textcontent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 100px;
+  border-bottom: black solid 1px;
+}
+
+.car-product-name {
+  font-family: 'JosefinSlab';
+  color: black;
+  font-size: 24px;
+  margin: 0 0 0 5px;
+}
+
+.car-product-price {
+  font-family: 'LINESeedKR-Rg';
+  color: black;
+  font-size: 20px;
+  text-align: right;
+  margin: 0;
+}
