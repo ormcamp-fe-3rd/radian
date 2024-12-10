@@ -20,7 +20,7 @@
   object-fit: contain;
 }
 
-img {
+.car-img {
   height: 100%;
   border-radius: 10px;
 }

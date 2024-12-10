@@ -28,6 +28,7 @@ const CarCarousel: React.FC = () => {
       <Slider {...settings}>
         <div className="slider-img">
           <img
+            className="car-img"
             src={rd6Image}
             alt="Car 1"
             style={{ width: '100%', height: '100%' }}
@@ -35,6 +36,7 @@ const CarCarousel: React.FC = () => {
         </div>
         <div className="slider-img">
           <img
+            className="car-img"
             src={austinMiniImage}
             alt="Car 2"
             style={{ width: '100%', height: '100%' }}
@@ -42,6 +44,7 @@ const CarCarousel: React.FC = () => {
         </div>
         <div className="slider-img">
           <img
+            className="car-img"
             src={rangeRoverImage}
             alt="Car 3"
             style={{ width: '100%', height: '100%' }}
