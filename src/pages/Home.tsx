@@ -62,7 +62,7 @@ const Home = (): JSX.Element => {
             style={{ width: `${divWidth * 100}vw` }}
           >
             <img
-              className="image-sizing"
+              className="home-main-image"
               src="https://monochrome-watches.com/wp-content/uploads/2020/10/Mini-Cooper-Classic-Electric-conversion-1.jpg"
               alt="Mini Cooper Classic Electric"
             />
@@ -74,6 +74,22 @@ const Home = (): JSX.Element => {
             We breathe new life into the timeless beauty of classic car design
             with modern electric vehicle technology.
           </h1>
+        </div>
+        <div className="home-content-container">
+          <div className="image-container-half">
+            <img
+              className="home-sub-image"
+              src="https://monochrome-watches.com/wp-content/uploads/2020/10/Mini-Cooper-Classic-Electric-conversion-1.jpg"
+              alt="Mini Cooper Classic Electric"
+            />
+          </div>
+          <div className="image-container-half">
+            <img
+              className="home-sub-image"
+              src="https://monochrome-watches.com/wp-content/uploads/2020/10/Mini-Cooper-Classic-Electric-conversion-1.jpg"
+              alt="Mini Cooper Classic Electric"
+            />
+          </div>
         </div>
       </div>
     </>
