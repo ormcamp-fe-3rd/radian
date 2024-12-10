@@ -4,15 +4,19 @@ import '../styles/Register.css';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import term from '../data/terms.json';
+import HeaderLogin from '../components/HeaderLogin';
+import Footer from '../components/Footer';
 
 const Register = (): JSX.Element => {
   return (
     <>
+      <HeaderLogin />
       <h2 className="register-title">회원 가입</h2>
       <Routes>
         <Route path="/" element={<Agreement />} />
         <Route path="/form" element={<SignInForm />} />
       </Routes>
+      <Footer />
     </>
   );
 };
