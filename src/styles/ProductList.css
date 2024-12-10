@@ -1,14 +1,61 @@
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'JosefinSlab';
+  src: url('../../public/fonts/JosefinSlab/JosefinSlab-VariableFont_wght.ttf')
+    format('woff2');
+  font-weight: 700;
+}
+
+body {
+  background-color: #fffbf1;
+}
+
 div {
-  width: 100%;
+  margin: 0 auto;
+}
+
+.product-img-container {
+  width: auto;
+  background-color: #fffbf1;
+  margin-top: 48px;
+  display: flex;
 }
 
 .product-list-container {
   width: auto;
-  background-color: #fffbf1;
-  height: 100vh; /* 화면 가득 차도록 설정 */
+  height: 400px;
+  margin: 68px 60px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-items: center;
+  gap: 90px;
+  justify-content: center;
+}
+
+.product-list-title {
+  margin: 70px auto 0; /* 위 여백, 좌우 자동 중앙 정렬 */
+  height: 60px;
+  text-align: center;
+  font-family: 'JosefinSlab';
+  font-size: 24px;
+  color: black;
+  border-bottom: black solid 1px;
+  max-width: 1368px;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
