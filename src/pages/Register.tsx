@@ -110,8 +110,10 @@ const SignInForm = (): JSX.Element => {
     register,
     handleSubmit,
     watch,
-    formState: { isSubmitting, errors },
-  } = useForm();
+    formState: { isSubmitting, errors, isValid },
+  } = useForm({
+    mode: 'onChange',
+  });
 
   const password = watch('password');
 
@@ -129,7 +131,6 @@ const SignInForm = (): JSX.Element => {
             className="input-form"
             type="text"
             {...register('name', {
-              value: 5,
               required: '이름은 필수 입력값입니다.',
             })}
             aria-invalid={errors.name ? 'true' : 'false'}
@@ -187,7 +188,7 @@ const SignInForm = (): JSX.Element => {
           <button
             className="next-step-button"
             type="submit"
-            disabled={isSubmitting}
+            disabled={!isValid || isSubmitting}
           >
             가입하기
           </button>
