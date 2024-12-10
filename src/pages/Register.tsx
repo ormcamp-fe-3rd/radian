@@ -3,6 +3,7 @@ import '../styles/reset.css';
 import '../styles/Register.css';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import terms from '/data/terms.json';
 
 const Register = (): JSX.Element => {
   return (
@@ -21,23 +22,7 @@ const Agreement = (): JSX.Element => {
   const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState([false, false, false]);
   const [nextStepAnimation, setNextStepAnimation] = useState('');
-  const [signUp, setSignUp] = useState([
-    {
-      title: '라디안 서비스 이용 약관 동의 (필수)',
-      content: '서비스 본문 (추후 추가)',
-      buttonStatus: false,
-    },
-    {
-      title: '라디안 개인정보 수집 이용 동의 (필수)',
-      content: '개인정보 본분 (추후 추가)',
-      buttonStatus: false,
-    },
-    {
-      title: '마케팅 정보 수신에 동의 (선택)',
-      content: '마케팅 동의 (추후 추가)',
-      buttonStatus: false,
-    },
-  ]);
+  const [signUp, setSignUp] = useState(terms);
   return (
     <>
       <ul className={`container ${nextStepAnimation}`}>
