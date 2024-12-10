@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import '../styles/reset.css';
 import '../styles/Home.css';
-import styles from '../styles/Home.module.css';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
 const Home = (): JSX.Element => {
@@ -16,7 +15,7 @@ const Home = (): JSX.Element => {
       (entries) => {
         setIsTextVisible(entries[0].isIntersecting);
       },
-      { threshold: 0.8 },
+      { threshold: 0.5 },
     );
     observer.observe(companyVisionRef.current);
   });
@@ -40,7 +39,7 @@ const Home = (): JSX.Element => {
 
   return (
     <>
-      <div className="styles.container">
+      <div className="home-container">
         <div className="video-container">
           <a tabIndex={0}>Classic but Electronic</a>
           <video className="index-video" autoPlay muted loop>
@@ -60,7 +59,7 @@ const Home = (): JSX.Element => {
           <div
             ref={imageContainerRef}
             className="image-container"
-            style={{ width: `${divWidth * 95}vw` }}
+            style={{ width: `${divWidth * 100}vw` }}
           >
             <img
               className="image-sizing"
@@ -69,11 +68,13 @@ const Home = (): JSX.Element => {
             />
           </div>
         </div>
-        <h1 className="company-message">
-          We breathe new life into the timeless beauty of classic car design
-          with modern electric vehicle technology.{' '}
-        </h1>
-        <div className="content-section"></div>
+
+        <div>
+          <h1 className="company-message">
+            We breathe new life into the timeless beauty of classic car design
+            with modern electric vehicle technology.
+          </h1>
+        </div>
       </div>
     </>
   );
