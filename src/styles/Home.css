@@ -137,6 +137,10 @@
 }
 
 @media (max-width: 744px) {
+  .home-container {
+    width: 85%;
+  }
+
   .video-container a {
     font-size: 5rem;
   }
@@ -158,7 +162,6 @@
     font-size: 2rem;
     line-height: 2.8rem;
     text-align: left;
-    width: 90%;
   }
 
   .company-vision {
