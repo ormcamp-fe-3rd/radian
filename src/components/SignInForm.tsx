@@ -27,6 +27,10 @@ const SignInForm = (): JSX.Element => {
             type="text"
             {...register('name', {
               required: '이름은 필수 입력값입니다.',
+              pattern: {
+                value: /^[가-힣a-zA-Z]+$/,
+                message: '이름은 한글과 영문만 입력 가능합니다.',
+              },
             })}
             aria-invalid={errors.name ? 'true' : 'false'}
           />
@@ -41,8 +45,8 @@ const SignInForm = (): JSX.Element => {
             {...register('email', {
               required: '이메일은 필수 입력값입니다.',
               pattern: {
-                value: /\S+@\S+\.\S+/,
-                message: '이메일 형식에 맞지 않습니다.',
+                value: /^[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]+$/,
+                message: '이메일은 영문과 숫자만 입력 가능합니다.',
               },
             })}
             aria-invalid={errors.email ? 'true' : 'false'}
@@ -57,8 +61,9 @@ const SignInForm = (): JSX.Element => {
             {...register('password', {
               required: '비밀번호는 필수 입력값입니다.',
               pattern: {
-                value: /^.{8,}$/,
-                message: '비밀번호는 8자리 이상 입력해주세요.',
+                value: /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/,
+                message:
+                  '비밀번호는 8자리 이상이며 숫자와 특수문자를 포함해야 합니다.',
               },
             })}
             aria-invalid={errors.password ? 'true' : 'false'}
