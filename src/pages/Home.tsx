@@ -37,6 +37,9 @@ const Home = (): JSX.Element => {
     });
   });
 
+  const [isHoveringLeft, setIsHoveringLeft] = useState(false);
+  const [isHoveringRight, setIsHoveringRight] = useState(false);
+
   return (
     <>
       <div className="home-container">
@@ -78,16 +81,20 @@ const Home = (): JSX.Element => {
         <div className="home-content-container">
           <div className="image-container-half">
             <img
-              className="home-sub-image"
-              src="https://monochrome-watches.com/wp-content/uploads/2020/10/Mini-Cooper-Classic-Electric-conversion-1.jpg"
+              className={`home-sub-image ${isHoveringLeft ? 'content-zoom-in' : ''}`}
+              src="https://mediapool.bmwgroup.com/download/edown/pressclub/publicq?square=0&dokNo=P90045990&attachment=0&actEvent=scaleZoom&quality=80"
               alt="Mini Cooper Classic Electric"
+              onMouseOver={() => setIsHoveringLeft(true)}
+              onMouseOut={() => setIsHoveringLeft(false)}
             />
           </div>
           <div className="image-container-half">
             <img
-              className="home-sub-image"
-              src="https://monochrome-watches.com/wp-content/uploads/2020/10/Mini-Cooper-Classic-Electric-conversion-1.jpg"
+              className={`home-sub-image ${isHoveringRight ? 'content-zoom-in' : ''}`}
+              src="https://86bd04aee645f41c2005-510904abdc95bfe9a6b152d3edc0036b.ssl.cf5.rackcdn.com/Public/img/2016-739165/content/heritage/thumbs/1961-1.jpg?v=b-QKs7MyMQp8ktAtXDPgcPhT44yTzr7DeTSoAPDD6JY1"
               alt="Mini Cooper Classic Electric"
+              onMouseOver={() => setIsHoveringRight(true)}
+              onMouseOut={() => setIsHoveringRight(false)}
             />
           </div>
         </div>
