@@ -30,6 +30,7 @@
 }
 
 .car-product-title {
+  height: 50px;
   text-align: center;
 }
 
@@ -38,10 +39,27 @@
   object-fit: cover;
 }
 
+.car-product-img {
+  height: 200px;
+}
+
+.car-product-img :hover {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.2);
+}
+
 .car-product-button {
   width: 100%;
   text-align: right;
   margin: 0 20px 0 0;
+}
+
+.plus-icon {
+  z-index: 10;
+  transition: transform 0.3s ease-in-out; /* 부드러운 애니메이션 */
+}
+.plus-icon:hover {
+  transform: scale(1.1) rotate(90deg);
 }
 
 .car-product-textcontent {
