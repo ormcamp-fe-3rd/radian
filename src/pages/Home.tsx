@@ -62,7 +62,7 @@ const Home = (): JSX.Element => {
           <div
             ref={imageContainerRef}
             className="image-container"
-            style={{ width: `${divWidth * 100}vw` }}
+            style={{ width: `${divWidth * 100}%` }}
           >
             <img
               className="home-main-image"
