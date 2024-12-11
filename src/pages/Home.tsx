@@ -131,11 +131,11 @@ const Home = (): JSX.Element => {
                 <div
                   key={i}
                   className={`card-frame ${
-                    i == 0 && getFlipScroll > 10
+                    i == 0 && getFlipScroll > 5
                       ? 'card-flip'
-                      : i == 1 && getFlipScroll > 20
+                      : i == 1 && getFlipScroll > 15
                         ? 'card-flip'
-                        : i == 2 && getFlipScroll > 30
+                        : i == 2 && getFlipScroll > 25
                           ? 'card-flip'
                           : ''
                   }`}
