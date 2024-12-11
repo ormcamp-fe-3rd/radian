@@ -57,17 +57,6 @@
   transition: all 0.5s ease;
 }
 
-.company-message {
-  width: 90%;
-  margin: 0 auto;
-  padding: 2rem 0;
-  font-family: line-seed;
-  font-weight: 300;
-  font-size: 3rem;
-  line-height: 4rem;
-  text-align: left;
-}
-
 .visible {
   opacity: 1;
   transform: translateY(0);
@@ -78,24 +67,6 @@
   height: 200vh;
   object-fit: cover;
   background-color: var(--sub-color);
-}
-
-.home-content-container {
-  display: flex;
-  gap: 1.25em;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
-.image-container-half {
-  flex: 1;
-  background-color: var(--main-color);
-  border: 1px solid var(--main-color);
-  border-radius: 1rem;
-  overflow: hidden;
-  display: flex;
 }
 
 .image-container {
@@ -119,6 +90,35 @@
   position: absolute;
 }
 
+.company-message {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  font-family: line-seed;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 4rem;
+  text-align: left;
+}
+
+.home-content-container {
+  display: flex;
+  gap: 1.25em;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.image-container-half {
+  flex: 1;
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+}
+
 .home-sub-image {
   height: 100%;
   width: 100%;
@@ -129,6 +129,15 @@
 @media (max-width: 744px) {
   .video-container a {
     font-size: 5rem;
+  }
+
+  .company-message {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    padding: 1rem 0 1rem;
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .company-vision {
@@ -142,21 +151,6 @@
     transform: translateY(1rem);
     transition: all 0.5s ease;
   }
-
-  .company-message {
-    font-size: 2rem;
-    line-height: 2.8rem;
-    padding: 1rem 0 1rem;
-    text-align: left;
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  /* .index-video {
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, -30%);
-  } */
 }
 
 @media (max-width: 402px) {
@@ -175,10 +169,4 @@
     transform: translateY(1rem);
     transition: all 0.5s ease;
   }
-
-  /* .index-video {
-    top: 0%;
-    left: 50%;
-    transform: translate(-40%, -30%);
-  } */
 }
