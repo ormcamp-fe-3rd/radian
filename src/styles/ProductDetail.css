@@ -1,0 +1,228 @@
+@font-face {
+    font-family: 'line-seed';
+    src: url('/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
+    font-weight: 100;
+  }  
+@font-face {
+    font-family: 'line-seed';
+    src: url('/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
+    font-weight: 400;
+  }  
+@font-face {
+    font-family: 'line-seed';
+    font-weight: 700;
+    src: url('/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
+  } 
+
+
+body {
+    margin: 0 auto;
+    font-family: line-seed;
+    font-weight: 400;
+    color: #423522;
+    background-color: #FFFBF1;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+}
+
+.detail-main-img {
+    width: 100%;
+    max-width: 1350px;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    margin-top: 40px;
+}
+
+.detail-navbar {
+    width: 100%;
+    background-color: #C0A68A;
+}
+
+.detail-navbar-menu {
+    width: 100%;
+    height: 58px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    list-style: none;
+}
+
+.timeline {
+    width: 100%;
+    max-width: 1440px;
+    position: relative;
+    padding: 50px 0;
+}
+
+.timeline::before {
+    content: '';
+    width: 1px;
+    height: 95%;
+    position: absolute;
+    left: 50%;
+    margin-top: 25px;
+    background: #423522;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.timeline-menu {
+    position: relative;
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 30px;
+    font-weight: 700;
+    background-color: #FFFBF1;
+    z-index: 2;
+}
+
+/* 타임라인 내용 */
+.timeline-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+/* 이미지 */
+.timeline-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.timeline-img img {
+    margin-bottom: 10px;
+}
+
+.timeline-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.text-hilight {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.text-design1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.text-design2 {
+    margin-top: 100px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.text-design3 {
+    margin-top: 150px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.text-title {
+    text-align: left;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.text-description {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.car1 {
+    width: 700px;
+    height: 300px;
+  }
+
+  .car2 {
+    width: 500px;
+    margin-top: 10px;
+    margin-left: 50px;
+  }
+
+  .car-head {
+    width: 500px;
+    margin-top: 30px;
+  }
+
+  .car-side {
+    width: 500px;
+    margin-top: 30px;
+  }
+
+  .car-rear {
+    width: 500px;
+    margin-top: 30px;
+  }
+
+  .car-performance {
+    width: 700px;
+  }
+
+  .car-performance2 {
+    width: 500px;
+    margin-top: 30px;
+  }
+
+  .car-interior {
+    width: 700px;
+  }
+
+  .car-safety {
+    width: 700px;
+  }
+
+  @media (max-width: 768px) {
+    .timeline-item {
+        grid-template-columns: 1fr; /* 화면 크기 작아지면 1열로 배치 */
+    }
+
+    .timeline-content {
+        grid-template-columns: 1fr; /* 세로로 배치 */
+        text-align: center; /* 텍스트 가운데 정렬 */
+    }
+
+    .timeline-img {
+        width: 100%; /* 이미지 100%로 배치 */
+    }
+
+    .timeline-content p {
+        width: 100%; /* 텍스트도 100%로 */
+    }
+
+    .car1, .car2, .car-head, .car-side, .car-rear, .car-performance, .car-performance2, .car-interior, .car-safety {
+      width: 100%;
+      max-width: 500px; /* 모바일에서 이미지 크기 제한 */
+  }
+}

@@ -1,4 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Danfo&display=swap');
+@font-face {
+    font-family: 'line-seed';
+    src: url('/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
+    font-weight: 100;
+  }  
+@font-face {
+    font-family: 'line-seed';
+    src: url('/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
+    font-weight: 400;
+  }  
+@font-face {
+    font-family: 'line-seed';
+    font-weight: 700;
+    src: url('/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
+  } 
+
+@font-face {
+    font-family: 'Danfo';
+    src: url('../../public/fonts/Danfo/Danfo-Regular-VariableFont_ELSH.ttf')
+      format('woff2');
+    font-weight: 100;
+  }
 
 body {
     margin: 0 auto;

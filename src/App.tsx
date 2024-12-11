@@ -7,6 +7,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'; // react-qu
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Register from './pages/Register';
+import ProductDetail from './pages/ProductDetail';
 
 const queryClient = new QueryClient(); //추가
 
@@ -20,6 +21,7 @@ const App = (): JSX.Element => {
             <Route path="/" element={<Home />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register />}></Route>
+            <Route path="/Productdetail" element={<ProductDetail />}></Route>
           </Routes>
         </div>
 
