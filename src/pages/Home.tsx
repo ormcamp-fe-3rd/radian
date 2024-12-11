@@ -25,13 +25,14 @@ const Home = (): JSX.Element => {
       const imageContainer = imageContainerRef.current.getBoundingClientRect();
       const scrollingSection =
         scrollingSectionRef.current.getBoundingClientRect();
-      if (imageContainer.top == 0) {
-        let scrolledDistance = Math.abs(
-          scrollingSection.top / window.innerHeight,
-        ).toFixed(1);
-        setDivWidth(scrolledDistance);
+      if (imageContainer.top == 30) {
+        let scrolledDistance = Math.min(
+          1,
+          Math.abs(scrollingSection.top / window.innerHeight),
+        );
         console.log(divWidth);
-      } else if (imageContainer.top >= 0) {
+        setDivWidth(scrolledDistance);
+      } else if (imageContainer.top > 30) {
         setDivWidth(0);
       }
     });
@@ -91,7 +92,7 @@ const Home = (): JSX.Element => {
           <div className="image-container-half">
             <img
               className={`home-sub-image ${isHoveringRight ? 'content-zoom-in' : ''}`}
-              src="https://86bd04aee645f41c2005-510904abdc95bfe9a6b152d3edc0036b.ssl.cf5.rackcdn.com/Public/img/2016-739165/content/heritage/thumbs/1961-1.jpg?v=b-QKs7MyMQp8ktAtXDPgcPhT44yTzr7DeTSoAPDD6JY1"
+              src="https://monochrome-watches.com/wp-content/uploads/2020/10/Mini-Cooper-Classic-Electric-conversion-1.jpg"
               alt="Mini Cooper Classic Electric"
               onMouseOver={() => setIsHoveringRight(true)}
               onMouseOut={() => setIsHoveringRight(false)}
