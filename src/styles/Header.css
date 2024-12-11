@@ -1,19 +1,31 @@
+@font-face {
+  font-family: 'Danfo';
+  src: url('../../public/fonts/Danfo/Danfo-Regular-VariableFont_ELSH.ttf')
+    format('woff2');
+  font-weight: 100;
+}
+
 .header-container {
-  min-width: 1440px;
+  max-width: 1440px;
+  width: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 20px 0 0 40px;
+  margin: 30px 30px 20px 30px;
   border-bottom: 1px solid black;
+  background-color: #fffbf1;
+  align-items: center;
 }
 
 .go-list {
   width: 28px;
   height: 28px;
-  margin-top: 45px;
+  justify-self: start;
+  margin-left: 20px;
 }
 
 .logo-title {
   text-align: center;
+  justify-self: center;
 }
 
 .logo-link {
@@ -30,7 +42,6 @@
 .go-profile {
   width: 28px;
   height: 28px;
-  display: flex;
-  margin-left: auto;
-  margin-top: 45px;
+  justify-self: end;
+  margin-right: 20px;
 }
