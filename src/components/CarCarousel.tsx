@@ -21,6 +21,8 @@ const CarCarousel: React.FC = () => {
     slidesToScroll: 1,
     waitForAnimate: false,
     arrows: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
   };
 
   return (
