@@ -129,13 +129,22 @@ const Home = (): JSX.Element => {
             {cardData.map((e, i) => {
               return (
                 <div
-                  className={`card-frame ${getFlipScroll > 1 ? 'card-flip' : null}`}
+                  key={i}
+                  className={`card-frame ${
+                    i == 0 && getFlipScroll > 10
+                      ? 'card-flip'
+                      : i == 1 && getFlipScroll > 20
+                        ? 'card-flip'
+                        : i == 2 && getFlipScroll > 30
+                          ? 'card-flip'
+                          : ''
+                  }`}
                 >
                   <div className="card-front">{e.frontImage}</div>
                   <div className="card-back">{e.backImage}</div>
                 </div>
               );
-              // getFlipScroll
+              // getFlipScroll card-flip
             })}
           </div>
         </div>
