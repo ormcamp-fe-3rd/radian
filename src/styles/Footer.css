@@ -1,15 +1,32 @@
+@font-face {
+  font-family: 'Danfo';
+  src: url('../../public/fonts/Danfo/Danfo-Regular-VariableFont_ELSH.ttf')
+    format('woff2');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'JosefinSlab';
+  src: url('../../public/fonts/JosefinSlab/JosefinSlab-VariableFont_wght.ttf')
+    format('woff2');
+  font-weight: 700;
+}
+
 .footer-container {
-  min-width: 1440px;
+  width: auto;
   height: 74px;
   display: flex;
   justify-content: space-between;
   border-top: 1px solid black;
-  margin: 0 0 70px 40px;
+  margin: 64px 30px 70px 30px;
+  background-color: #fffbf1;
 }
 
 .footer-info {
+  font-family: 'JosefinSlab';
   display: flex;
-  margin-top: 20px;
+  margin: 20px 0px 0px 10px;
+  color: #423522;
 }
 
 .footer-logo {
@@ -27,11 +44,12 @@
   font-family: 'Danfo';
   font-size: 35px;
   margin: 0 0 15px 5px;
+  color: #423522;
 }
 
 .icon-sns {
   display: flex;
-  margin-top: 20px;
+  margin: 20px 10px 0 0;
   gap: 5px;
 }
 

@@ -8,22 +8,34 @@ body {
 }
 
 /* 헤더 컴포넌트 */
+@font-face {
+  font-family: 'Danfo';
+  src: url('../../public/fonts/Danfo/Danfo-Regular-VariableFont_ELSH.ttf')
+    format('woff2');
+  font-weight: 100;
+}
+
 .header-container {
-  min-width: 1440px;
+  max-width: 1440px;
+  width: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 20px 0 0 40px;
+  margin: 30px 30px 20px 30px;
   border-bottom: 1px solid black;
+  background-color: #fffbf1;
+  align-items: center;
 }
 
 .go-list {
   width: 28px;
   height: 28px;
-  margin-top: 45px;
+  justify-self: start;
+  margin-left: 20px;
 }
 
 .logo-title {
   text-align: center;
+  justify-self: center;
 }
 
 .logo-link {
@@ -40,79 +52,6 @@ body {
 .go-profile {
   width: 28px;
   height: 28px;
-  display: flex;
-  margin-left: auto;
-  margin-top: 45px;
-}
-
-/* 로그인폼 컴포넌트 */
-.login-form {
-  min-width: 1440px;
-  height: 953.5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.int-area {
-  width: 371px;
-  height: 72.97px;
-  position: relative;
-  margin: 3px;
-  cursor: text;
-}
-
-.int-area input:focus + label,
-.int-area input:valid + label {
-  opacity: 0;
-  transform: translateY(-150%);
-}
-
-.int-area input:hover + label {
-  opacity: 0;
-  transform: translateY(-150%);
-}
-
-#name-input,
-#password-input {
-  width: 100%;
-  height: 72.97px;
-  border: none;
-  border-bottom: 1px solid black;
-  color: #423522;
-  font-size: 20px;
-  background: none;
-  outline: none;
-}
-
-#id,
-#pw {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  font-size: 20px;
-  font-weight: 200;
-}
-
-#btn-login {
-  width: 375px;
-  height: 55.69px;
-  margin-top: 47px;
-  border: none;
-  font-size: 20px;
-}
-
-.login-active {
-  background-color: #423522;
-}
-
-.login-inactive {
-  background-color: #757575;
-  color: white;
-}
-
-#register {
-  width: 375px;
-  margin-top: 5px;
+  justify-self: end;
+  margin-right: 20px;
 }
