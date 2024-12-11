@@ -30,16 +30,41 @@ const Home = (): JSX.Element => {
           1,
           Math.abs(scrollingSection.top / window.innerHeight),
         );
-        console.log(divWidth);
         setDivWidth(scrolledDistance);
       } else if (imageContainer.top > 30) {
         setDivWidth(0);
       }
     });
   });
-
   const [isHoveringLeft, setIsHoveringLeft] = useState(false);
   const [isHoveringRight, setIsHoveringRight] = useState(false);
+
+  const flipContainer = useRef();
+  const flipScollContainer = useRef();
+  const [getFlipScroll, setGetFlipScroll] = useState(0);
+  const cardData = [
+    { frontImage: '앞1', backImage: '뒤1' },
+    { frontImage: '앞2', backImage: '뒤2' },
+    { frontImage: '앞3', backImage: '뒤3' },
+  ];
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      const getFlipContainerSize =
+        flipContainer.current.getBoundingClientRect();
+
+      const getFlipScollContainer =
+        flipScollContainer.current.getBoundingClientRect();
+
+      if (getFlipContainerSize.top === 0) {
+        let scrolledDistance = Math.abs(
+          getFlipScollContainer.top / window.innerHeight,
+        ).toFixed(1);
+        setGetFlipScroll(scrolledDistance * 10);
+        console.log(getFlipScroll);
+      }
+    });
+  });
 
   return (
     <>
@@ -97,6 +122,21 @@ const Home = (): JSX.Element => {
               onMouseOver={() => setIsHoveringRight(true)}
               onMouseOut={() => setIsHoveringRight(false)}
             />
+          </div>
+        </div>
+        <div className="flip-card-scroll" ref={flipScollContainer}>
+          <div className="flip-card-section" ref={flipContainer}>
+            {cardData.map((e, i) => {
+              return (
+                <div
+                  className={`card-frame ${getFlipScroll > 1 ? 'card-flip' : null}`}
+                >
+                  <div className="card-front">{e.frontImage}</div>
+                  <div className="card-back">{e.backImage}</div>
+                </div>
+              );
+              // getFlipScroll
+            })}
           </div>
         </div>
       </div>
