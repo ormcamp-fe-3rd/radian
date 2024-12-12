@@ -1,6 +1,7 @@
-import { useState } from 'react';
 import '../styles/reset.css';
 import '../styles/Register.css';
+
+import { useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 // import { useForm } from 'react-hook-form';
 
@@ -66,7 +67,7 @@ const Agreement = (): JSX.Element => {
                 className="circle-check"
                 checked={isChecked[i]}
                 onClick={() => {
-                  let copy = [...isChecked];
+                  const copy = [...isChecked];
                   copy[i] = !copy[i];
                   setIsChecked(copy);
                 }}
@@ -75,7 +76,7 @@ const Agreement = (): JSX.Element => {
               <button
                 className="read-more"
                 onClick={() => {
-                  let copy = [...signUp];
+                  const copy = [...signUp];
                   copy[i].buttonStatus = !copy[i].buttonStatus;
                   setSignUp(copy);
                 }}

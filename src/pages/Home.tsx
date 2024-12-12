@@ -1,48 +1,22 @@
-import { useState, useRef, useEffect } from 'react';
 import '../styles/reset.css';
 import '../styles/Home.css';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+
+import { useEffect, useRef, useState } from 'react';
 
 const Home = (): JSX.Element => {
-  const companyVisionRef = useRef();
+  const companyVisionRef = useRef<HTMLHeadingElement>(null);
   const [isTextVisible, setIsTextVisible] = useState(false);
-  const imageContainerRef = useRef();
-  const scrollingSectionRef = useRef();
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+  const scrollingSectionRef = useRef<HTMLDivElement>(null);
   const [divWidth, setDivWidth] = useState(0);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        setIsTextVisible(entries[0].isIntersecting);
-      },
-      { threshold: 0.5 },
-    );
-    observer.observe(companyVisionRef.current);
-  });
+  interface CardData {
+    frontImage: string;
+    backImage: string;
+    categoryLogo: string;
+  }
 
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      const imageContainer = imageContainerRef.current.getBoundingClientRect();
-      const scrollingSection =
-        scrollingSectionRef.current.getBoundingClientRect();
-      if (imageContainer.top == 30) {
-        let scrolledDistance = Math.min(
-          1,
-          Math.abs(scrollingSection.top / window.innerHeight),
-        );
-        setDivWidth(scrolledDistance);
-      } else if (imageContainer.top > 30) {
-        setDivWidth(0);
-      }
-    });
-  });
-  const [isHoveringLeft, setIsHoveringLeft] = useState(false);
-  const [isHoveringRight, setIsHoveringRight] = useState(false);
-
-  const flipContainer = useRef();
-  const flipScollContainer = useRef();
-  const [getFlipScroll, setGetFlipScroll] = useState(0);
-  const cardData = [
+  const cardData: CardData[] = [
     {
       frontImage: 'public/main-images/old-rover.jpg',
       backImage: 'public/main-images/range-rover-new.jpg',
@@ -61,7 +35,51 @@ const Home = (): JSX.Element => {
   ];
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        setIsTextVisible(entries[0].isIntersecting);
+      },
+      { threshold: 0.5 },
+    );
+
+    if (companyVisionRef.current) {
+      observer.observe(companyVisionRef.current);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!imageContainerRef.current || !scrollingSectionRef.current) return;
+
+      const imageContainer = imageContainerRef.current.getBoundingClientRect();
+      const scrollingSection =
+        scrollingSectionRef.current.getBoundingClientRect();
+
+      if (imageContainer.top === 30) {
+        const scrolledDistance = Math.min(
+          1,
+          Math.abs(scrollingSection.top / window.innerHeight),
+        );
+        setDivWidth(scrolledDistance);
+      } else if (imageContainer.top > 30) {
+        setDivWidth(0);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const [isHoveringLeft, setIsHoveringLeft] = useState(false);
+  const [isHoveringRight, setIsHoveringRight] = useState(false);
+
+  const flipContainer = useRef<HTMLDivElement>(null);
+  const flipScollContainer = useRef<HTMLDivElement>(null);
+  const [getFlipScroll, setGetFlipScroll] = useState(0);
+
+  useEffect(() => {
     window.addEventListener('scroll', () => {
+      if (!flipContainer.current || !flipScollContainer.current) return;
       const getFlipContainerSize =
         flipContainer.current.getBoundingClientRect();
 
@@ -69,11 +87,10 @@ const Home = (): JSX.Element => {
         flipScollContainer.current.getBoundingClientRect();
 
       if (getFlipContainerSize.top === 0) {
-        let scrolledDistance = Math.abs(
-          getFlipScollContainer.top / window.innerHeight,
-        ).toFixed(1);
+        const scrolledDistance = Number(
+          Math.abs(getFlipScollContainer.top / window.innerHeight).toFixed(1),
+        );
         setGetFlipScroll(scrolledDistance * 10);
-        console.log(getFlipScroll);
       }
     });
   });
