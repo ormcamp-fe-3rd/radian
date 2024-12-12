@@ -47,7 +47,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
     // 모델 로드
     const loader = new GLTFLoader();
     loader.load(
-      '/src/assets/ProductReservationImages/testbox1.gltf', // GLTF 파일 경로
+      '/src/assets/ProductReservationImages/testbox3.gltf', // GLTF 파일 경로
       (gltf) => {
         const model = gltf.scene;
 
