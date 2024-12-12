@@ -43,9 +43,21 @@ const Home = (): JSX.Element => {
   const flipScollContainer = useRef();
   const [getFlipScroll, setGetFlipScroll] = useState(0);
   const cardData = [
-    { frontImage: '앞1', backImage: '뒤1' },
-    { frontImage: '앞2', backImage: '뒤2' },
-    { frontImage: '앞3', backImage: '뒤3' },
+    {
+      frontImage: 'public/main-images/old-rover.jpg',
+      backImage: 'public/main-images/range-rover-new.jpg',
+      categoryLogo: 'src/assets/CarLIstImages/Utilty.png',
+    },
+    {
+      frontImage: 'public/main-images/cooper-old.png',
+      backImage: 'public/main-images/mini-new.jpg',
+      categoryLogo: 'src/assets/CarLIstImages/Compact.png',
+    },
+    {
+      frontImage: 'public/main-images/old-TR6.png',
+      backImage: 'public/main-images/new-TR6.jpeg',
+      categoryLogo: 'src/assets/CarLIstImages/SPORT.png',
+    },
   ];
 
   useEffect(() => {
@@ -140,11 +152,20 @@ const Home = (): JSX.Element => {
                           : ''
                   }`}
                 >
-                  <div className="card-front">{e.frontImage}</div>
-                  <div className="card-back">{e.backImage}</div>
+                  <div
+                    className="card-front"
+                    style={{
+                      backgroundImage: `url(${e.frontImage})`,
+                    }}
+                  ></div>
+                  <div
+                    className="card-back"
+                    style={{ backgroundImage: `url(${e.backImage})` }}
+                  >
+                    <img src={e.categoryLogo} />
+                  </div>
                 </div>
               );
-              // getFlipScroll card-flip
             })}
           </div>
         </div>
