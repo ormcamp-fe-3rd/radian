@@ -25,7 +25,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
       75,
       canvas.clientWidth / canvas.clientHeight,
       0.1,
-      1000
+      1000,
     );
     camera.position.z = 3;
 
@@ -71,30 +71,30 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
       undefined,
       (error) => {
         console.error('Error loading GLTF model:', error);
-      }
+      },
     );
 
     // 애니메이션 루프
     const animate = () => {
-        requestAnimationFrame(animate);
-      
-        // 모델 회전을 삭제하여 자동 회전 비활성화
-        // if (modelRef.current) {
-        //   modelRef.current.rotation.y += 0.01;
-        // }
-      
-        controls.update();
-        renderer.render(scene, camera);
-      };
+      requestAnimationFrame(animate);
+
+      // 모델 회전을 삭제하여 자동 회전 비활성화
+      // if (modelRef.current) {
+      //   modelRef.current.rotation.y += 0.01;
+      // }
+
+      controls.update();
+      renderer.render(scene, camera);
+    };
     animate();
 
-     // 반응형 처리
-     const handleResize = () => {
-        if (!container) return;
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-      };
+    // 반응형 처리
+    const handleResize = () => {
+      if (!canvas) return;
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    };
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -116,16 +116,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
     }
   }, [color]); // 색상이 변경될 때만 실행
 
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        width: '100%', // 캔버스 크기
-        height: '100%',
-        display: 'block',
-      }}
-    />
-  );
+  return <canvas ref={canvasRef} />;
 };
 
 export default CarObicontrol;

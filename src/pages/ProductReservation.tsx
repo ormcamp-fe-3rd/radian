@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/ProductReservation.css';
+import '../styles/reset.css';
 import CarObicontrol from '../components/CarObicontrol';
 
 const ProductReservation = (): JSX.Element => {
@@ -8,7 +9,6 @@ const ProductReservation = (): JSX.Element => {
   return (
     <div className="carobicontrol-container">
       <CarObicontrol color={color} />
-      
 
       {/* Right Panel */}
       <div className="productreservation-right-panel">

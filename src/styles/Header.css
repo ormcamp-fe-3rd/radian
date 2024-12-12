@@ -6,7 +6,7 @@
 }
 
 .header-container {
-  max-width: 1440px;
+  width: 100%;
   width: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
