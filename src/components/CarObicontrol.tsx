@@ -9,8 +9,10 @@ interface CarObicontrolProps {
 
 const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const modelRef = useRef<THREE.Object3D | null>(null); // 모델 참조
-  const sceneRef = useRef<THREE.Scene | null>(null); // 씬 참조
+  const modelRef = useRef<THREE.Object3D | null>(null);
+  const sceneRef = useRef<THREE.Scene | null>(null);
+  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
+  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -28,10 +30,12 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
       1000,
     );
     camera.position.z = 3;
+    cameraRef.current = camera; // camera 저장
 
     const renderer = new THREE.WebGLRenderer({ canvas });
     renderer.setSize(canvas.clientWidth, canvas.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    rendererRef.current = renderer; // renderer 저장
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
@@ -90,12 +94,23 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
 
     // 반응형 처리
     const handleResize = () => {
-      if (!canvas) return;
-      camera.aspect = canvas.clientWidth / canvas.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+      if (!canvas || !rendererRef.current || !cameraRef.current) return;
+
+      const parent = canvas.parentElement;
+      if (!parent) return;
+
+      const width = parent.clientWidth;
+      const height = parent.clientHeight;
+
+      cameraRef.current.aspect = width / height;
+      cameraRef.current.updateProjectionMatrix();
+
+      rendererRef.current.setSize(width, height);
+      rendererRef.current.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     };
+
     window.addEventListener('resize', handleResize);
+    handleResize();
 
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -116,7 +131,11 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
     }
   }, [color]); // 색상이 변경될 때만 실행
 
-  return <canvas ref={canvasRef} />;
+  return (
+    <div style={{ width: '100%', height: '100%' }}>
+      <canvas ref={canvasRef} style={{ width: '100%', height: '100%' }} />
+    </div>
+  );
 };
 
 export default CarObicontrol;
