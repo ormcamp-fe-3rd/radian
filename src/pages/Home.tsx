@@ -138,6 +138,9 @@ const Home = (): JSX.Element => {
         </div>
         <div className="flip-card-scroll" ref={flipScollContainer}>
           <div className="flip-card-section" ref={flipContainer}>
+            <h1 className="company-message">
+              Discover Our Timeless Collection
+            </h1>
             {cardData.map((e, i) => {
               return (
                 <div
