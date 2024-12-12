@@ -30,6 +30,7 @@
     border-bottom: 1px solid black;
     background-color: #fffbf1;
     align-items: center;
+    z-index: 1000;
   }
   
   .go-list {

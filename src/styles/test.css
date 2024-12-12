@@ -1,0 +1,335 @@
+@font-face {
+  font-family: 'line-seed';
+  src: url('/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
+  font-weight: 100;
+}  
+@font-face {
+  font-family: 'line-seed';
+  src: url('/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
+  font-weight: 400;
+}  
+@font-face {
+  font-family: 'line-seed';
+  font-weight: 700;
+  src: url('/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
+} 
+
+@font-face {
+  font-family: 'Danfo';
+  src: url('../../public/fonts/Danfo/Danfo-Regular-VariableFont_ELSH.ttf')
+    format('woff2');
+  font-weight: 100;
+}
+
+html, body {
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: 'line-seed';
+  font-weight: 400;
+  color: #423522;
+  background-color: #FFFBF1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.common-header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.detail-intro {
+  position: relative;
+  width: calc(100% - 80px);
+  margin: 50px;
+  gap: 80px;
+}
+
+.detail-intro h1 {
+  width: 50%;
+  margin-left: 40%;
+  font-weight: 700;
+  font-size: 4.8vw;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.detail-intro img {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 50%;
+  height: auto;
+  aspect-ratio: 14/9;
+  object-fit: cover;
+  opacity: 0.2;
+  transform: translateY(-50%);
+}
+
+/* 추가 */
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  color: #423522;
+  letter-spacing: 2px;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  margin: 50px;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1300px;
+  min-height: 100vh;  /* 높이를 100vh로 설정하여 화면에 맞게 조정 */
+  max-height: 1100px;  /* max-height는 필요에 따라 조정 */
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+  margin-top: 3em;
+  background: rgba(192, 166, 138, 0.25);
+}
+
+.bkg {
+  width: 100%;
+  height: 100%;
+  background: rgba(192, 166, 138, 0.75);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  clip-path: url("#wrapMask");
+}
+
+.detail-header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  width: 100%;
+  padding: 1.5em;
+  display: grid;
+  grid-template-columns: 1fr 16%;
+}
+
+.detail-header svg {
+  width: 18px;
+  stroke: #f0f0f0;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.detail-header svg:nth-child(1) {
+  transform: rotateZ(90deg);
+}
+
+.detail-header div {
+  text-align: right;
+}
+
+.detail-header div svg {
+  margin-left: 20px;
+}
+
+.panel {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.panel img#liberty {
+  width: 70%;
+  height: auto;
+  position: absolute;
+  z-index: 10;
+  left: 40%;
+  bottom: -900px;
+  transform: translateX(-50%);
+}
+
+.panel h1#panel-h1 {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  font-size: 8rem;
+  left: 50%;
+  margin-top: 2em;
+  transform: translateX(-50%);
+  opacity: 1;
+}
+
+.intro {
+  position: absolute;
+  top: 20%; /* 화면의 상단 근처에 위치 */
+  left: 50%;
+  z-index: 6;
+  text-align: center;
+  transform: translateX(-50%);
+  
+  opacity: 1;
+}
+
+.intro h1 {
+  font-size: 4rem;
+}
+
+.intro h3 {
+  font-size: 2.4rem;
+  margin-top: -16px;
+}
+
+.intro img {
+  width: 50px;
+  margin-top: 25px;
+  opacity: 0.6;
+}
+
+.models {
+  position: absolute;
+  top: 50%;
+  z-index: 11;
+}
+
+.models li {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #d0d0d0;
+  opacity: 1;
+}
+
+.models li:nth-child(2) {
+  color: #423522;
+  font-size: 1.5rem;
+  font-weight: 400;
+  list-style-type: square;
+}
+
+.rotator {
+  position: absolute;
+  margin-top: 15em;
+  top: 50%;
+  right: 2em;
+  z-index: 12;
+}
+
+.rotator p {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #423522;
+  text-transform: uppercase;
+  padding: 5px 0;
+}
+
+.specs,
+.chars {
+  position: absolute;
+  top: 15%;
+  width: 50%;
+  z-index: 20;
+  padding: 0.5em;
+  margin-right: 10em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 10% 1fr;
+}
+
+.specs h2,
+.chars h2 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  color: #4b4b4b;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+.specs dl,
+.chars dl {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  margin-top: 2em;
+  font-weight: 700;
+}
+
+.specs dl:nth-child(2),
+.chars dl:nth-child(2) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.specs dl dt,
+.chars dl dt {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.specs dl dd,
+.chars dl dd {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.outro {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-top: 30%;
+  transform: translateX(-50%);
+  z-index: 30;
+  text-align: center;
+  gap: 0;
+}
+
+.outro h2 {
+  font-size: 3rem;
+}
+
+.outro p {
+  font-size: 1.7rem;
+  color: gray;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.outro button {
+  margin: 10px 0;
+  border: 1px solid rgb(155, 155, 155);
+  background: #423522;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+  color: #e0e0e0;
+  font-size: 1.5rem;
+}
+
+#mask {
+  display: block;
+  position: absolute;
+  z-index: 40;
+}
+
+@-moz-document url-prefix() {
+  .rotator svg {
+    width: 100%;
+    height: 60px;
+  }
+}
