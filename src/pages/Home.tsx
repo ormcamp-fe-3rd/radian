@@ -120,7 +120,7 @@ const Home = (): JSX.Element => {
           <div className="image-container-half">
             <img
               className={`home-sub-image ${isHoveringLeft ? 'content-zoom-in' : ''}`}
-              src="https://mediapool.bmwgroup.com/download/edown/pressclub/publicq?square=0&dokNo=P90045990&attachment=0&actEvent=scaleZoom&quality=80"
+              src="public/main-images/Mini-EV-Conversion.jpg"
               alt="Mini Cooper Classic Electric"
               onMouseOver={() => setIsHoveringLeft(true)}
               onMouseOut={() => setIsHoveringLeft(false)}
@@ -129,7 +129,7 @@ const Home = (): JSX.Element => {
           <div className="image-container-half">
             <img
               className={`home-sub-image ${isHoveringRight ? 'content-zoom-in' : ''}`}
-              src="https://monochrome-watches.com/wp-content/uploads/2020/10/Mini-Cooper-Classic-Electric-conversion-1.jpg"
+              src="public/main-images/Classic-Mini-Appeal.jpg"
               alt="Mini Cooper Classic Electric"
               onMouseOver={() => setIsHoveringRight(true)}
               onMouseOut={() => setIsHoveringRight(false)}
