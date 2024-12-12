@@ -39,7 +39,7 @@ const CarProduct: React.FC<CarProductProps> = ({
       <Link to={`/Detail/${id}`} className="car-product-link">
         {/*to={`/Detail/${id}`} 해당 부분 수진님 상품상세페이지로 변경예정*/}
         <div className="car-product-img">
-          <img src={productimg} alt="car-product" className="car-img" />
+          <img src={productimg} alt="car-product" className="carlist-img" />
         </div>
       </Link>
       <div className="car-product-button" onClick={detailed}>

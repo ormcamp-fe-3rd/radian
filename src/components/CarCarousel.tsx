@@ -1,28 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import '../styles/CarCarousel.css';
 
-// 이미지 파일 import//-
-import rd6Image from '../assets/CarCarouselImages/radianRd6.png';
-import austinMiniImage from '../assets/CarCarouselImages/mini.png';
-import rangeRoverImage from '../assets/CarCarouselImages/range_rover.png';
-
 const CarCarousel: React.FC = () => {
-  //+
+  const [slickIndex, setSlickIndex] = useState(0);
+
   const settings = {
     dots: true,
-    fade: true,
+    fade: false,
     infinite: true,
-    speed: 500,
+    speed: 4000,
     slidesToShow: 1,
     slidesToScroll: 1,
     waitForAnimate: false,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
+    beforeChange: (current: number, next: number) => {
+      // 슬라이드 전환 시 index 값 업데이트
+      setSlickIndex(next);
+    },
+    // 슬라이드 전환 방향 고정
+    swipeToSlide: true,
+    rtl: false,
   };
 
   return (
@@ -31,7 +34,7 @@ const CarCarousel: React.FC = () => {
         <div className="slider-img">
           <img
             className="car-img"
-            src={rd6Image}
+            src={'public/images/sport_3210x1780o.png'}
             alt="Car 1"
             style={{ width: '100%', height: '100%' }}
           />
@@ -39,7 +42,7 @@ const CarCarousel: React.FC = () => {
         <div className="slider-img">
           <img
             className="car-img"
-            src={austinMiniImage}
+            src={'public/images/compact_4020x1740o.png'}
             alt="Car 2"
             style={{ width: '100%', height: '100%' }}
           />
@@ -47,7 +50,7 @@ const CarCarousel: React.FC = () => {
         <div className="slider-img">
           <img
             className="car-img"
-            src={rangeRoverImage}
+            src={'public/images/utility_4020x1930o.png'}
             alt="Car 3"
             style={{ width: '100%', height: '100%' }}
           />

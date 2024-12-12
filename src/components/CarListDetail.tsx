@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import Slider from 'react-slick';
 import '../styles/CarListDetail.css'; // 스타일
 import 'slick-carousel/slick/slick.css';
@@ -17,16 +17,37 @@ interface ProductDetailProps {
 
 const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
   const settings = {
-    dots: true,
+    fade: true,
+    dots: false,
     infinite: true,
-    speed: 500,
+    speed: 200,
     slidesToShow: 1,
     slidesToScroll: 1,
+    adaptiveHeight: false,
   };
+  const [loaded, setLoaded] = useState(false);
+  useLayoutEffect(() => {
+    const modalContent =
+      document.querySelector<HTMLDivElement>('.modal-content');
+    const productImgs = document.querySelectorAll<HTMLDivElement>(
+      '.product-carousel-img',
+    );
+
+    if (modalContent && productImgs.length > 0) {
+      const modalHeight = modalContent.clientHeight;
+
+      for (let i = 0; i < productImgs.length; i++) {
+        const img = productImgs[i];
+        img.style.height = `${modalHeight}px`; // 각 이미지의 높이 설정
+        img.style.objectFit = 'cover'; // 이미지 크기 맞추기
+      }
+      setLoaded(true);
+    }
+  }, [product.detailimgs]);
 
   return (
     <div className="product-detail-container">
-      <div className="product-detail-overlay">
+      <div className="product-detail-text">
         <h3 className="product-car-name">{product.name}</h3>
         <p className="product-car-description">{product.dataildescription}</p>
       </div>
@@ -37,6 +58,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
               className="product-carousel-img"
               src={img}
               alt={`detail ${index}`}
+              onLoad={() => setLoaded(true)}
             />
           </div>
         ))}

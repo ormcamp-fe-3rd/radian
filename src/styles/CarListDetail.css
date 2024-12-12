@@ -20,15 +20,37 @@
   font-weight: 700;
 }
 
-.product-carousel-slide {
+.product-detail-container {
   width: 100%;
   height: 100%;
 }
 
+.product-carousel-slide {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center;
+  text-align: center;
+  padding-left: 40px;
+}
+
+.product-detail-text {
+  height: auto;
+  margin: 0 auto;
+}
 .product-car-name {
   font-family: 'JosefinSlab';
   color: black;
   font-size: 40px;
+  padding-left: 50px;
+}
+
+.product-car-description {
+  font-family: 'LINESeedKR-Rg';
+  color: black;
+  font-size: 20px;
   padding-left: 50px;
 }
 
@@ -39,21 +61,38 @@
 
 .product-carousel-img {
   width: 100%;
-  height: 590px;
-  padding-top: 90px;
-}
-
-.product-car-description {
-  font-family: 'LINESeedKR-Rg';
-  color: black;
-  font-size: 20px;
-  padding-left: 50px;
+  height: 100%; /* 비율 유지 */
+  /* max-height: 100%; */
+  object-fit: cover;
+  object-position: bottom;
 }
 
 .product-car-price {
   font-family: 'LINESeedKR-Bd';
   color: black;
   font-size: 18px;
-  text-align: right;
+  right: 30px;
+  bottom: 30px;
+  position: absolute;
   padding-right: 50px;
+}
+
+@media (min-width: 403px) and (max-width: 744px) {
+  .product-car-description {
+    width: 564px;
+  }
+  .product-carousel-img {
+    width: 100%;
+    height: 100%; /* 비율 유지 */
+  }
+}
+
+@media (max-width: 403px) {
+  .product-car-description {
+    width: 281px;
+  }
+  .product-carousel-img {
+    width: 100%;
+    height: 100%; /* 비율 유지 */
+  }
 }
