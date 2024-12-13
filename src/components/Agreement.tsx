@@ -58,12 +58,21 @@ const Agreement = (): JSX.Element => {
             </div>
             {e.buttonStatus === true ? (
               <div className="content-box">
-                {e.content.split('\n').map((line) => (
-                  <span>
-                    {line}
-                    <br />
-                  </span>
-                ))}
+                {e.terms.split('\n').map((setBr) => {
+                  const titleBold = setBr.split(/(\*\*.*?\*\*)/g);
+                  return (
+                    <span>
+                      {titleBold.map((title) =>
+                        title.startsWith('**') && title.endsWith('**') ? (
+                          <strong>{title.slice(2, -2)}</strong>
+                        ) : (
+                          title
+                        ),
+                      )}
+                      <br />
+                    </span>
+                  );
+                })}
               </div>
             ) : null}
           </li>

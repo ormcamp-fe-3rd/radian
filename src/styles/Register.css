@@ -24,6 +24,11 @@ body {
   color: var(--main-color);
 }
 
+strong {
+  font-family: line-seed;
+  font-weight: 700;
+}
+
 .register-title {
   font-family: line-seed;
   font-weight: 700;
@@ -94,7 +99,7 @@ body {
   border-radius: 10px;
   padding: 1.5rem;
   overflow-y: scroll;
-  line-height: 1.5;
+  line-height: 1.75rem;
 }
 
 .next-step-button {
