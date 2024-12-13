@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Danfo&display=swap');
+
+body {
+  margin: 0 auto;
+  font-family: 'LINE Seed Sans KR', sans-serif;
+  color: #423522;
+  background-color: #fffbf1;
+}
+
+/* 헤더 컴포넌트 */
+@font-face {
+  font-family: 'Danfo';
+  src: url('../../public/fonts/Danfo/Danfo-Regular-VariableFont_ELSH.ttf')
+    format('woff2');
+  font-weight: 100;
+}
+
+.header-container {
+  max-width: 1440px;
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 30px 30px 20px 30px;
+  border-bottom: 1px solid black;
+  background-color: #fffbf1;
+  align-items: center;
+}
+
+.go-list {
+  width: 28px;
+  height: 28px;
+  justify-self: start;
+  margin-left: 20px;
+}
+
+.logo-title {
+  text-align: center;
+  justify-self: center;
+}
+
+.logo-link {
+  font-family: 'Danfo';
+  font-size: 60px;
+  color: #423522;
+  text-decoration: none;
+}
+
+.logo-link:hover {
+  color: #423522;
+}
+
+.go-profile {
+  width: 28px;
+  height: 28px;
+  justify-self: end;
+  margin-right: 20px;
+}
