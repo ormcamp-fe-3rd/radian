@@ -1,4 +1,4 @@
-import '../styles/test.css';
+import '../styles/ProductDetail.css';
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -25,7 +25,7 @@ const ProductDetail: React.FC = () => {
     ScrollTrigger.create({
       trigger: '#container',
       pin: true,
-      start: 'top 5%',
+      start: 'top -5%',
       end: '+=5700',
     });
 
@@ -58,8 +58,8 @@ const ProductDetail: React.FC = () => {
       )
       .to('#logo', {
         scrollTrigger: {
-          start: 700,
-          end: 500,
+          start: 770,
+          end: 970,
           scrub: 2.5,
         },
         y: -190,
@@ -70,7 +70,7 @@ const ProductDetail: React.FC = () => {
       .to('#intro-h1', {
         scrollTrigger: {
           start: 800,
-          end: 700,
+          end: 1000,
           scrub: 2.5,
         },
         scale: 0,
@@ -80,7 +80,7 @@ const ProductDetail: React.FC = () => {
       .to('#intro-h3', {
         scrollTrigger: {
           start: 850,
-          end: 750,
+          end: 1050,
           scrub: 2.5,
         },
         scale: 0,
@@ -393,9 +393,9 @@ const ProductDetail: React.FC = () => {
             end: 5400,
             scrub: 2.5
           },
-          duration: 2,
+          duration: 1,
           y: 50,
-          opacity: 0,  // 처음에는 완전히 투명
+          opacity: 1,  // 처음에는 완전히 투명
           ease: "none"  // 부드럽게 이동
         })
         .from(".outro p", {
@@ -404,20 +404,20 @@ const ProductDetail: React.FC = () => {
             end: 5500,
             scrub: 2.5
           },
-          duration: 2,
+          duration: 1,
           y: 50,
-          opacity: 0,  // 처음에는 완전히 투명
+          opacity: 1,  // 처음에는 완전히 투명
           ease: "none"  // 부드럽게 이동
         })
         .from(".outro button", {
           scrollTrigger: {
             start: 5500,
             end: 5600,
-            scrub: 2.5
+            scrub: 0.5
           },
-          duration: 2,
+          duration: 1,
           y: 50,
-          opacity: 0,  // 처음에는 완전히 투명
+          opacity: 1,  // 처음에는 완전히 투명
           ease: "none"  // 부드럽게 이동
         });
 
@@ -435,9 +435,11 @@ const ProductDetail: React.FC = () => {
             <Header />
         </div>
 
-        <section className="detail-intro flex">
-            <h1>Radian-Rover,<br />"The Utility" :Smart, Spacious, and Ready for Anything</h1>
+        <section className="detail-intro">
+          <div>
             <img src="/src/assets/Detail/range-rover-header.jfif" />
+          </div>
+          <h1>Radian-Rover,<br />"The Utility" :Smart, Spacious,<br />and Ready for Anything</h1>
         </section>
 
         <div className="container" id="container">
@@ -446,20 +448,16 @@ const ProductDetail: React.FC = () => {
 
                 <div className="detail-header">
                   <svg version="1.1" viewBox="0 0 24 24">
-                    <line x1="12" y1="20" x2="12" y2="10"></line>
-                    <line x1="18" y1="20" x2="18" y2="4"></line>
-                    <line x1="6" y1="20" x2="6" y2="16"></line>
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
                   </svg>
                   <div>
+                    <p>More Options</p>
                     <svg version="1.1" viewBox="0 0 24 24">
                       <circle cx="11" cy="11" r="8"></circle>
                       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                    <svg version="1.1" viewBox="0 0 24 24">
-                      <rect x="3" y="3" width="7" height="7"></rect>
-                      <rect x="14" y="3" width="7" height="7"></rect>
-                      <rect x="14" y="14" width="7" height="7"></rect>
-                      <rect x="3" y="14" width="7" height="7"></rect>
                     </svg>
                   </div>
                 </div>
