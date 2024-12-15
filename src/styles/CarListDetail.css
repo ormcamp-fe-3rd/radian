@@ -79,20 +79,42 @@
 
 @media (min-width: 403px) and (max-width: 744px) {
   .product-car-description {
-    width: 564px;
+    width: 690px;
   }
   .product-carousel-img {
     width: 100%;
-    height: 100%; /* 비율 유지 */
+  }
+  .product-carousel-slide {
+    padding: 0px;
+  }
+  .product-car-name {
+    font-size: 50px;
+    padding-left: 50px;
+  }
+
+  .product-car-description {
+    font-size: 28px;
+    padding-left: 50px;
   }
 }
 
 @media (max-width: 403px) {
   .product-car-description {
-    width: 281px;
+    width: 380px;
   }
   .product-carousel-img {
     width: 100%;
-    height: 100%; /* 비율 유지 */
+  }
+  .product-carousel-slide {
+    padding: 0px;
+  }
+  .product-car-name {
+    font-size: 60px;
+    padding-left: 50px;
+  }
+
+  .product-car-description {
+    font-size: 24px;
+    padding-left: 50px;
   }
 }

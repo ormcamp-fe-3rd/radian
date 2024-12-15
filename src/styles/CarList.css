@@ -94,11 +94,49 @@
 @media (min-width: 403px) and (max-width: 744px) {
   .car-product-container {
     width: 100%;
+    flex: 1 1 100%;
+  }
+  .car-product-img {
+    height: 350px;
+  }
+  .car-product-title {
+    padding: 10px;
+    height: 100px;
+  }
+  .car-product-title-img {
+    padding: 10px;
+    height: 70px;
+  }
+  .car-product-name {
+    font-size: 30px;
+  }
+
+  .car-product-price {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 403px) {
   .car-product-container {
     width: 100%;
+    flex: 1 1 100%;
+  }
+  .car-product-img {
+    height: 380px;
+  }
+  .car-product-title {
+    padding: 10px;
+    height: 100px;
+  }
+  .car-product-title-img {
+    padding: 10px;
+    height: 70px;
+  }
+  .car-product-name {
+    font-size: 36px;
+  }
+
+  .car-product-price {
+    font-size: 28px;
   }
 }

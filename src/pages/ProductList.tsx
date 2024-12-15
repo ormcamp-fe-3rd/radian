@@ -96,7 +96,7 @@ const ProductList: React.FC = () => {
   };
 
   return (
-    <div className="aaa">
+    <>
       <div className="header">
         <Header />
       </div>
@@ -139,7 +139,7 @@ const ProductList: React.FC = () => {
       <div className="footer">
         <Footer />
       </div>
-    </div>
+    </>
   );
 };
 

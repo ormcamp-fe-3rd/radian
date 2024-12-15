@@ -34,13 +34,6 @@ div {
   margin: 0 auto;
 }
 
-.aaa {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .header {
   position: relative; /* 또는 fixed */
   top: 0; /* 필요에 따라 조정 */
@@ -55,10 +48,11 @@ div {
   flex: 1; /* 남은 공간을 모두 차지하도록 설정 */
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 60px - 100px);
-  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 100%;
   justify-content: flex-start; /* 위에서부터 콘텐츠 배치 */
-  padding: 60px 0px 100px 0px; /* 헤더와 푸터의 간격을 고려 */
+  padding: 60px 0px 0px 0px;
 }
 
 .product-img-container {
@@ -81,10 +75,11 @@ div {
   height: 400px;
   margin: 68px 60px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-items: center;
-  gap: 90px;
+  gap: 30px;
   justify-content: center;
 }
 
@@ -160,6 +155,7 @@ div {
   }
   .product-list-container {
     width: 100%;
+    height: 100%;
     flex-wrap: wrap;
   }
 }
@@ -168,6 +164,8 @@ div {
   .product-img-container {
     margin-left: 0px !important;
     margin-right: 0px !important;
+
+    width: auto;
   }
   .modal-content {
     width: 100%;
@@ -175,6 +173,7 @@ div {
   }
   .product-list-container {
     width: 100%;
+    height: 100%;
     flex-wrap: wrap;
   }
 }
