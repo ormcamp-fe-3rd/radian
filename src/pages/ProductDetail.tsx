@@ -26,7 +26,7 @@ const ProductDetail: React.FC = () => {
       trigger: '#container',
       pin: true,
       start: 'top -5%',
-      end: '+=5700',
+      end: '+=8150',
     });
 
     // Initial set-up for elements
@@ -42,7 +42,6 @@ const ProductDetail: React.FC = () => {
     outro_tl.set('.outro h2', { opacity: 0 });
     outro_tl.set('.outro p', { opacity: 0 });
     outro_tl.set('.outro button', { opacity: 0 });
-    
 
     // TIMELINE: Intro
     intro_tl
@@ -58,33 +57,33 @@ const ProductDetail: React.FC = () => {
       )
       .to('#logo', {
         scrollTrigger: {
-          start: 770,
-          end: 970,
-          scrub: 2.5,
+          start: 800,
+          end: 1100,
+          scrub: 0.75,
         },
         y: -190,
         scale: 0.6,
-        duration: 0.6,
+        duration: 0.9,
         ease: 'expo.out',
       })
       .to('#intro-h1', {
         scrollTrigger: {
-          start: 800,
-          end: 1000,
-          scrub: 2.5,
+          start: 1000,
+          end: 1300,
+          scrub: 0.75,
         },
         scale: 0,
-        duration: 0.6,
+        duration: 0.9,
         ease: 'expo.out',
       })
       .to('#intro-h3', {
         scrollTrigger: {
-          start: 850,
-          end: 1050,
-          scrub: 2.5,
+          start: 1050,
+          end: 1350,
+          scrub: 0.75,
         },
         scale: 0,
-        duration: 1,
+        duration: 0.9,
         ease: 'expo.out',
       });
 
@@ -96,35 +95,35 @@ const ProductDetail: React.FC = () => {
         {
           scale: 0.8,
           y: -200,
-          duration: 1,
+          duration: 1.5,
           ease: 'sine.out',
           scrollTrigger: {
-            start: 1000,
-            end: 1200,
-            scrub: 2.5,
+            start: 1250,
+            end: 1550,
+            scrub: 0.75,
           },
         }
       )
       .from('#panel-h1', {
         scrollTrigger: {
-          start: 1300,
-          end: 1500,
-          scrub: 2.5,
+          start: 1550,
+          end: 1850,
+          scrub: 0.75,
         },
         scale: 0,
         opacity: 0,
-        duration: 1,
+        duration: 1.5,
         ease: 'sine.out',
       })
       .from('.models li', {
         scrollTrigger: {
-          start: 1250,
-          end: 1450,
-          scrub: 3,
+          start: 1500,
+          end: 1800,
+          scrub: 1.5,
         },
         opacity: 0,
         x: -20,
-        duration: 1,
+        duration: 1.5,
         stagger: 0.3,
         ease: 'sine.out',
       });
@@ -133,13 +132,13 @@ const ProductDetail: React.FC = () => {
     part2_tl
       .from('#panel-h1', {
         scrollTrigger: {
-          start: 2000,
-          end: 2200,
-          scrub: 2.5,
+          start: 2650,
+          end: 2950,
+          scrub: 1.5,
         },
         opacity: 1,
         scale: 1,
-        duration: 1,
+        duration: 1.5,
         ease: 'sine.out',
       })
       .fromTo(
@@ -148,13 +147,13 @@ const ProductDetail: React.FC = () => {
         {
           x: -20,
           opacity: 0,
-          duration: 1,
+          duration: 1.5,
           stagger: 0.3,
           ease: 'sine.out',
           scrollTrigger: {
-            start: 2000,
-            end: 2200,
-            scrub: 2.5,
+            start: 2650,
+            end: 2950,
+            scrub: 1.5,
           },
         }
       );
@@ -166,101 +165,101 @@ const ProductDetail: React.FC = () => {
         { height: 800 },
         {
           scrollTrigger: {
-            start: 2500,
-            end: 2700,
-            scrub: 2.5,
+            start: 3400,
+            end: 3700,
+            scrub: 1.5,
           },
           height: 80,
-          duration: 2,
+          duration: 3,
           ease: 'sine.out',
         }
       )
       .to('#liberty', {
         scrollTrigger: {
-          start: 2600,
-          end: 2800,
-          scrub: 2.5,
+          start: 3550,
+          end: 3850,
+          scrub: 1.5,
         },
         x: 600,
-        duration: 2,
+        duration: 3,
         ease: 'sine.out',
       })
       .to('.specs', {
         scrollTrigger: {
-          start: 2600,
-          end: 2800,
-          scrub: 2.5,
+          start: 3550,
+          end: 3850,
+          scrub: 1.5,
         },
         opacity: 1,
-        duration: 2,
+        duration: 3,
         ease: 'sine.out',
       })
       .from('.specs h2', {
-        duration: 1,
+        duration: 1.5,
         opacity: 0,
         x: -30,
         scrollTrigger: {
-          start: 2600,
-          end: 2800,
-          scrub: 2.5,
+          start: 3550,
+          end: 3850,
+          scrub: 1.5,
         },
       })
       .from('.specs dt', {
-        duration: 1,
+        duration: 1.5,
         opacity: 0,
         stagger: 0.3,
         x: -30,
         scrollTrigger: {
-          start: 2600,
-          end: 2800,
+          start: 3550,
+          end: 3850,
           scrub: 3,
         },
       })
       .from('.specs dd', {
-        duration: 1,
+        duration: 1.5,
         opacity: 0,
         stagger: 0.3,
         x: -30,
         scrollTrigger: {
-          start: 2600,
-          end: 2800,
-          scrub: 3.5,
+          start: 3550,
+          end: 3850,
+          scrub: 3,
         },
       }, '-=.5')
       .from(
         '.specs dd',
         {
-          duration: 1,
+          duration: 1.5,
           opacity: 1,
           stagger: 0.3,
           x: 0,
           scrollTrigger: {
-            start: 3200,
-            end: 3400,
-            scrub: 2.5,
+            start: 4450,
+            end: 4750,
+            scrub: 1.5,
           },
         },
         '-=.5'
       )
       .from('.specs dt', {
-        duration: 1,
+        duration: 1.5,
         opacity: 1,
         stagger: 0.3,
         x: 0,
         scrollTrigger: {
-          start: 3200,
-          end: 3400,
-          scrub: 2.5,
+          start: 4450,
+          end: 4750,
+          scrub: 1.5,
         },
       })
       .from('.specs h2', {
-        duration: 1,
+        duration: 1.5,
         opacity: 1,
         x: 0,
         scrollTrigger: {
-          start: 3200,
-          end: 3400,
-          scrub: 2.5,
+          start: 4450,
+          end: 4750,
+          scrub: 1.5,
         },
       })
       .fromTo(
@@ -268,12 +267,12 @@ const ProductDetail: React.FC = () => {
         { x: 400 },
         {
           scrollTrigger: {
-            start: 3500,
-            end: 3800,
-            scrub: 2.5,
+            start: 4900,
+            end: 5200,
+            scrub: 1.5,
           },
           x: -360,
-          duration: 3,
+          duration: 4.5,
           ease: 'sine.out',
         }
       );
@@ -281,37 +280,37 @@ const ProductDetail: React.FC = () => {
     // TIMELINE: Part 4
     part4_tl
       .from('.chars h2', {
-        duration: 1,
+        duration: 1.5,
         opacity: 0,
         x: 30,
         scrollTrigger: {
-          start: 3800,
-          end: 4000,
-          scrub: 2.5,
+          start: 5200,
+          end: 5500,
+          scrub: 1.5,
         },
       })
       .from('.chars dt', {
-        duration: 1,
+        duration: 1.5,
         opacity: 0,
         stagger: 0.3,
         x: 30,
         scrollTrigger: {
-          start: 3800,
-          end: 4000,
-          scrub: 3.5,
+          start: 5200,
+          end: 5500,
+          scrub: 3,
         },
       })
       .from(
         '.chars dd',
         {
-          duration: 1,
+          duration: 1.5,
           opacity: 0,
           stagger: 0.3,
           x: 30,
           scrollTrigger: {
-            start: 3800,
-            end: 4000,
-            scrub: 3.5,
+            start: 5200,
+            end: 5500,
+            scrub: 3,
           },
         },
         '-=.5'
@@ -323,13 +322,13 @@ const ProductDetail: React.FC = () => {
         '.chars h2',
         { opacity: 1, x: 0 },
         {
-          duration: 1,
+          duration: 1.5,
           opacity: 0,
           x: 30,
           scrollTrigger: {
-            start: 4200,
-            end: 4400,
-            scrub: 2.5,
+            start: 5800,
+            end: 6100,
+            scrub: 1.5,
           },
         }
       )
@@ -337,14 +336,14 @@ const ProductDetail: React.FC = () => {
         '.chars dt',
         { opacity: 1, x: 0 },
         {
-          duration: 1,
+          duration: 1.5,
           opacity: 0,
           stagger: 0.3,
           x: 30,
           scrollTrigger: {
-            start: 4200,
-            end: 4400,
-            scrub: 3.5,
+            start: 5800,
+            end: 6100,
+            scrub: 3,
           },
         }
       )
@@ -352,73 +351,103 @@ const ProductDetail: React.FC = () => {
         '.chars dd',
         { opacity: 1, x: 0 },
         {
-          duration: 1,
+          duration: 1.5,
           opacity: 0,
           stagger: 0.3,
           x: 30,
           scrollTrigger: {
-            start: 4200,
-            end: 4400,
-            scrub: 3.5,
+            start: 5800,
+            end: 6100,
+            scrub: 3,
           },
+        }
+      )
+      .fromTo(
+        "#liberty",
+        {
+          x: -360,
+        },
+        {
+          scrollTrigger: {
+            start: 6100,
+            end: 6400,
+            scrub: 1.5,
+          },
+          x: 0,
+          duration: 4.5,
+          ease: "sine.out",
         }
       );
       
     // TIMELINE: Outro
     outro_tl
-        .to('#wrapWin', {
-          scrollTrigger: {
-            start: 4700,
-            end: 4900,
-            scrub: 2.5,
+        .fromTo(
+          "#wrapWin",
+          {
+            height: 80,
           },
-          height: 80,
-          duration: 2,
-          ease: 'sine.out',
-        })
-        .to('#liberty', {
-          scrollTrigger: {
-            start: 4800,
-            end: 5000,
-            scrub: 2.5,
+          {
+            scrollTrigger: {
+              start: 7000,
+              end: 7300,
+              scrub: 1.5,
+            },
+            height: 800,
+            duration: 3,
+            ease: "sine.out",
+          }
+        )
+        .fromTo(
+          "#liberty",
+          {
+            scale: 0.8,
+            y: -300,
           },
-          x: 0,
-          scale: 0.8,
-          duration: 2,
-          ease: 'sine.out',
-        })
+          {
+            scrollTrigger: {
+              start: 7300,
+              end: 7600,
+              scrub: 1.5,
+            },
+            x: 30,
+            scale: 0.7,
+            y: -340,
+            duration: 4.5,
+            ease: "sine.out",
+          }
+        )
         .from(".outro h2", {
           scrollTrigger: {
-            start: 5300,
-            end: 5400,
-            scrub: 2.5
+            start: 7450,
+            end: 7750,
+            scrub: 1.5,
           },
-          duration: 1,
-          y: 50,
-          opacity: 1,  // 처음에는 완전히 투명
-          ease: "none"  // 부드럽게 이동
+          duration: 1.5,
+          y: -50,
+          opacity: 1,
+          ease: "none",
         })
         .from(".outro p", {
           scrollTrigger: {
-            start: 5400,
-            end: 5500,
-            scrub: 2.5
+            start: 7600,
+            end: 7900,
+            scrub: 1.5,
           },
-          duration: 1,
-          y: 50,
-          opacity: 1,  // 처음에는 완전히 투명
-          ease: "none"  // 부드럽게 이동
+          duration: 1.5,
+          y: -50,
+          opacity: 1,
+          ease: "none",
         })
         .from(".outro button", {
           scrollTrigger: {
-            start: 5500,
-            end: 5600,
-            scrub: 0.5
+            start: 7750,
+            end: 8050,
+            scrub: 1.5,
           },
-          duration: 1,
-          y: 50,
-          opacity: 1,  // 처음에는 완전히 투명
-          ease: "none"  // 부드럽게 이동
+          duration: 1.5,
+          y: -50,
+          opacity: 1,
+          ease: "none",
         });
 
     return () => {
