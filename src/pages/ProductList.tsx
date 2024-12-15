@@ -14,8 +14,8 @@ import UtiltyTitleImg from '../assets/CarLIstImages/Utilty.png';
 
 interface Product {
   id: string;
-  titleimg: string;
-  productimg: string;
+  titleImg: string;
+  productImg: string;
   name: string;
   price: number;
   detailimgs: string[];
@@ -28,8 +28,8 @@ const ProductList: React.FC = () => {
   const products: Product[] = [
     {
       id: 'RadianRD6',
-      titleimg: SportTitleImg,
-      productimg: `public/images/sport_3210x1780o.png`,
+      titleImg: SportTitleImg,
+      productImg: `public/images/sport_3210x1780o.png`,
       name: 'Radian RD6',
       price: 42080000,
       detailimgs: [
@@ -47,8 +47,8 @@ const ProductList: React.FC = () => {
     },
     {
       id: 'RadianCooper',
-      titleimg: CompactTitleImg,
-      productimg: `public/images/compact_4020x1740o.png`,
+      titleImg: CompactTitleImg,
+      productImg: `public/images/compact_4020x1740o.png`,
       name: 'Radian Cooper',
       price: 27750000,
       detailimgs: [
@@ -66,8 +66,8 @@ const ProductList: React.FC = () => {
     },
     {
       id: 'RadianRover',
-      titleimg: UtiltyTitleImg,
-      productimg: `public/images/utility_4020x1930o.png`,
+      titleImg: UtiltyTitleImg,
+      productImg: `public/images/utility_4020x1930o.png`,
       name: 'Radian Rover',
       price: 51140000,
       detailimgs: [
@@ -112,11 +112,11 @@ const ProductList: React.FC = () => {
             <CarProduct
               key={product.id}
               id={product.id} // 상품 ID 전달
-              titleimg={product.titleimg}
-              productimg={product.productimg}
+              titleImg={product.titleImg}
+              productImg={product.productImg}
               name={product.name}
               price={product.price}
-              detailed={(event) => {
+              onClickCarDetail={(event) => {
                 event.stopPropagation(); // 부모의 클릭 이벤트를 막기 위해 사용
                 handleDetailedClick(product);
               }}
