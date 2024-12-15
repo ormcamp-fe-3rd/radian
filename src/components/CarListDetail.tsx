@@ -4,6 +4,11 @@ import '../styles/CarListDetail.css'; // 스타일
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+//금액 숫자 형식
+const formatCurrency = (value: number): string => {
+  return new Intl.NumberFormat('en-US', { style: 'decimal' }).format(value);
+};
+
 // 자동차 데이터 타입 정의
 interface ProductDetailProps {
   product: {
@@ -36,11 +41,10 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
     if (modalContent && productImgs.length > 0) {
       const modalHeight = modalContent.clientHeight;
 
-      for (let i = 0; i < productImgs.length; i++) {
-        const img = productImgs[i];
+      productImgs.forEach((img) => {
         img.style.height = `${modalHeight}px`; // 각 이미지의 높이 설정
         img.style.objectFit = 'cover'; // 이미지 크기 맞추기
-      }
+      });
       setLoaded(true);
     }
   }, [product.detailimgs]);
@@ -64,7 +68,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
         ))}
       </Slider>
       <p className="product-car-price">
-        Price: {product.price.toLocaleString()} 원
+        Price: {formatCurrency(product.price)} 원
       </p>
     </div>
   );
