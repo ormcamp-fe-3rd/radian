@@ -63,9 +63,9 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
           </div>
         ))}
       </Slider>
-      <p className="product-car-price">
+      <div className="product-car-price">
         Price: {formatCurrency(product.price)} 원
-      </p>
+      </div>
     </div>
   );
 };
