@@ -6,6 +6,7 @@
 .home-container {
   margin: auto;
   width: 96%;
+  max-width: 1440px;
   min-height: 100vh;
   margin-top: 2rem;
 }
