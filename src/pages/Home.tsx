@@ -36,7 +36,7 @@ const Home = (): JSX.Element => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries: IntersectionObserverEntry[]) => {
+      (entries) => {
         setIsTextVisible(entries[0].isIntersecting);
       },
       { threshold: 0.5 },
