@@ -86,11 +86,12 @@ const Home = (): JSX.Element => {
       const getFlipScollContainer =
         flipScollContainer.current.getBoundingClientRect();
 
-      if (getFlipContainerSize.top === 0) {
+      if (getFlipContainerSize.top <= 0) {
         const scrolledDistance = Number(
-          Math.abs(getFlipScollContainer.top / window.innerHeight).toFixed(1),
+          Math.abs(getFlipScollContainer.top / window.innerHeight).toFixed(2),
         );
-        setGetFlipScroll(scrolledDistance * 10);
+        setGetFlipScroll(scrolledDistance * 100);
+        console.log(scrolledDistance * 100);
       }
     });
   });
@@ -163,11 +164,11 @@ const Home = (): JSX.Element => {
                 <div
                   key={i}
                   className={`card-frame ${
-                    i == 0 && getFlipScroll > 5
+                    i === 0 && getFlipScroll > 10
                       ? 'card-flip'
-                      : i == 1 && getFlipScroll > 15
+                      : i === 1 && getFlipScroll > 100
                         ? 'card-flip'
-                        : i == 2 && getFlipScroll > 25
+                        : i === 2 && getFlipScroll > 200
                           ? 'card-flip'
                           : ''
                   }`}
