@@ -466,7 +466,7 @@ const ProductDetail: React.FC = () => {
 
         <section className="detail-intro">
           <div>
-            <img src="/src/assets/Detail/range-rover-header.jfif" />
+            <img src="/images/ProductDetail/range-rover-header.jfif" />
           </div>
           <h1>Radian-Rover,<br />"The Utility" :Smart, Spacious,<br />and Ready for Anything</h1>
         </section>
@@ -493,11 +493,11 @@ const ProductDetail: React.FC = () => {
 
                 <div className="panel">
                     <div className="intro" id="intro">
-                      <img id="logo" src="/images/logo.png" alt="logo-icon" />
+                      <img id="logo" src="/images/common/logo.png" alt="logo-icon" />
                       <h1 id="intro-h1">Ready to Cruise</h1>
                       <h3 id="intro-h3">Relax and enjoy the drive</h3>
                     </div>
-                    <img id="liberty" src="/src/assets/Detail/radian-rover-side.webp" alt="liberty 150 png" />
+                    <img id="liberty" src="/images/ProductDetail/radian-rover-side.webp" alt="liberty 150 png" />
                     <h1 id="panel-h1">Radian Rover</h1>
                     <ul className="models">
                       <li>Radian RD6</li>

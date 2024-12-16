@@ -8,7 +8,7 @@ const Header = (): JSX.Element => {
                 <div className="header-container">
                     <div className="go-list">
                         <Link to="/">
-                            <img src="/public/images/go-list.png" alt="icon-go-list" />
+                            <img src="/images/common/go-list.png" alt="icon-go-list" />
                         </Link>
                     </div>
 
@@ -18,7 +18,7 @@ const Header = (): JSX.Element => {
 
                     <div className="go-profile">
                         <Link to="/">
-                            <img src="/public/images/go-profile.png" alt="icon-go-profile" />
+                            <img src="/images/common/go-profile.png" alt="icon-go-profile" />
                         </Link>
                     </div>
                 </div>
