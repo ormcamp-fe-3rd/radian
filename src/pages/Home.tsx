@@ -45,6 +45,10 @@ const Home = (): JSX.Element => {
     if (companyVisionRef.current) {
       observer.observe(companyVisionRef.current);
     }
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   useEffect(() => {
