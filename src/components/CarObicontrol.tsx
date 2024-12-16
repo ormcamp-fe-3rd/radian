@@ -9,13 +9,13 @@ interface CarObicontrolProps {
 }
 
 const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const modelRef = useRef<THREE.Object3D | null>(null);
-  const sceneRef = useRef<THREE.Scene | null>(null);
-  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
-  const radianModelRef = useRef<THREE.Object3D | null>(null);
-  const backgroundModelRef = useRef<THREE.Object3D | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement>();
+  const modelRef = useRef<THREE.Object3D>();
+  const sceneRef = useRef<THREE.Scene>();
+  const rendererRef = useRef<THREE.WebGLRenderer>();
+  const cameraRef = useRef<THREE.PerspectiveCamera>();
+  const radianModelRef = useRef<THREE.Object3D>();
+  const backgroundModelRef = useRef<THREE.Object3D>();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -54,7 +54,7 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 부드러운 그림자
     // Load HDR environment map
     const rgbeLoader = new RGBELoader();
     rgbeLoader.load(
-      '/src/assets/ProductReservationImages/mountain1.hdr',
+      '/images/ProductReservation/mountain1.hdr',
       (texture) => {
         texture.mapping = THREE.EquirectangularReflectionMapping;
         scene.background = texture; // Set as the scene background
@@ -74,7 +74,7 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 부드러운 그림자
 
     // Load radian_utility1.gltf (color changeable)
     loader.load(
-      '/src/assets/ProductReservationImages/radian_utility1.gltf',
+      '/images/ProductReservation/radian_utility1.gltf',
       (gltf) => {
         const model = gltf.scene;
 
@@ -110,7 +110,7 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 부드러운 그림자
 
     // Load background.gltf (with texture)
     loader.load(
-      '/src/assets/ProductReservationImages/body.gltf',
+      '/images/ProductReservation/body.gltf',
       (gltf) => {
         const model = gltf.scene;
 
@@ -137,7 +137,7 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 부드러운 그림자
 
     // Load extraModel1.gltf
     loader.load(
-      '/src/assets/ProductReservationImages/glass.gltf',
+      '/images/ProductReservation/glass.gltf',
       (gltf) => {
         const material = new THREE.MeshStandardMaterial({
           color: new THREE.Color(0x222222), // 어두운 회색 (썬팅 효과)
@@ -173,7 +173,7 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 부드러운 그림자
 
 // Load Glass Cover (유리 덮개)
 loader.load(
-  '/src/assets/ProductReservationImages/glass2.gltf',
+  '/images/ProductReservation/glass2.gltf',
   (gltf) => {
     const material = new THREE.MeshStandardMaterial({
       color: new THREE.Color(0xe9e3c8), // 밝은 회색 (투명 유리)
@@ -208,7 +208,7 @@ loader.load(
 
 // Load Lamp Bulb (전구)
 loader.load(
-  '/src/assets/ProductReservationImages/lamp.gltf',
+  '/images/ProductReservation/lamp.gltf',
   (gltf) => {
     const bulbMaterial = new THREE.MeshStandardMaterial({
       emissive: new THREE.Color(0xffffaa), // 발광 색상

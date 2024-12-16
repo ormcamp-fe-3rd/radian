@@ -5,7 +5,7 @@ import CarObicontrol from '../components/CarObicontrol';
 import CarOption from '../components/CarOption';
 
 const ProductReservation = (): JSX.Element => {
-  const [color, setColor] = useState<string>('#0000ff'); // 기본 색상
+  const [color, setColor] = useState('#0000ff'); // 기본 색상
 
   return (
     <div className="carobicontrol-container">
