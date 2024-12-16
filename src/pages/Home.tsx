@@ -48,7 +48,7 @@ const Home = (): JSX.Element => {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handler = () => {
       if (!imageContainerRef.current || !scrollingSectionRef.current) return;
 
       const imageContainer = imageContainerRef.current.getBoundingClientRect();
@@ -66,8 +66,8 @@ const Home = (): JSX.Element => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
   }, []);
 
   const [isHoveringLeft, setIsHoveringLeft] = useState(false);
@@ -78,7 +78,7 @@ const Home = (): JSX.Element => {
   const [getFlipScroll, setGetFlipScroll] = useState(0);
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    const handler = () => {
       if (!flipContainer.current || !flipScollContainer.current) return;
       const getFlipContainerSize =
         flipContainer.current.getBoundingClientRect();
@@ -93,8 +93,10 @@ const Home = (): JSX.Element => {
         setGetFlipScroll(scrolledDistance * 100);
         console.log(scrolledDistance * 100);
       }
-    });
-  });
+    };
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
 
   return (
     <>
@@ -159,12 +161,12 @@ const Home = (): JSX.Element => {
             <h1 className="company-message">
               Discover Our Timeless Collection
             </h1>
-            {CARD_DATA.map((e, cardId) => {
+            {CARD_DATA.map((contentLink, cardId) => {
               return (
                 <div
                   key={cardId}
                   className={`card-frame ${
-                    (cardId === 0 && getFlipScroll > 10) ||
+                    (cardId === 0 && getFlipScroll > 20) ||
                     (cardId === 1 && getFlipScroll > 100) ||
                     (cardId === 2 && getFlipScroll > 200)
                       ? 'card-flip'
@@ -174,14 +176,14 @@ const Home = (): JSX.Element => {
                   <div
                     className="card-front"
                     style={{
-                      backgroundImage: `url(${e.frontImage})`,
+                      backgroundImage: `url(${contentLink.frontImage})`,
                     }}
                   ></div>
                   <div
                     className="card-back"
-                    style={{ backgroundImage: `url(${e.backImage})` }}
+                    style={{ backgroundImage: `url(${contentLink.backImage})` }}
                   >
-                    <img src={e.categoryLogo} />
+                    <img src={contentLink.categoryLogo} />
                   </div>
                 </div>
               );
