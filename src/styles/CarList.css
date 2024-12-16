@@ -1,0 +1,142 @@
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'JosefinSlab';
+  src: url('../../public/fonts/JosefinSlab/JosefinSlab-VariableFont_wght.ttf')
+    format('woff2');
+  font-weight: 700;
+}
+
+.car-product-container {
+  width: 400px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-product-title {
+  height: 50px;
+  text-align: center;
+}
+
+.carlist-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.car-product-img {
+  height: 200px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.car-product-img :hover {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.2);
+}
+
+.car-product-button {
+  width: 100%;
+  text-align: right;
+  margin: 0 20px 0 0;
+}
+
+.plus-icon {
+  z-index: 10;
+  transition: transform 0.3s ease-in-out; /* 부드러운 애니메이션 */
+}
+.plus-icon:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+
+.car-product-textcontent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 100px;
+  border-bottom: black solid 1px;
+}
+
+.car-product-name {
+  font-family: 'JosefinSlab';
+  color: black;
+  font-size: 24px;
+  margin: 0 0 0 5px;
+}
+
+.car-product-price {
+  font-family: 'LINESeedKR-Rg';
+  color: black;
+  font-size: 20px;
+  text-align: right;
+  margin: 0;
+}
+
+@media (min-width: 403px) and (max-width: 744px) {
+  .car-product-container {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+  .car-product-img {
+    height: 350px;
+  }
+  .car-product-title {
+    padding: 10px;
+    height: 100px;
+  }
+  .car-product-title-img {
+    padding: 10px;
+    height: 70px;
+  }
+  .car-product-name {
+    font-size: 30px;
+  }
+
+  .car-product-price {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 403px) {
+  .car-product-container {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+  .car-product-img {
+    height: 380px;
+  }
+  .car-product-title {
+    padding: 10px;
+    height: 100px;
+  }
+  .car-product-title-img {
+    padding: 10px;
+    height: 70px;
+  }
+  .car-product-name {
+    font-size: 36px;
+  }
+
+  .car-product-price {
+    font-size: 28px;
+  }
+}
