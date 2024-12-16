@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import CarCarousel from '../components/CarCarousel';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-
 import '../styles/ProductList.css';
 
 import CarProduct from '../components/CarList';
@@ -40,9 +37,6 @@ const ProductList: React.FC = () => {
 
   return (
     <>
-      <div className="header">
-        <Header />
-      </div>
       <div className="main-content">
         <div className="product-img-container">
           <CarCarousel />
@@ -78,10 +72,6 @@ const ProductList: React.FC = () => {
           </div>
         </div>
       )}
-
-      <div className="footer">
-        <Footer />
-      </div>
     </>
   );
 };

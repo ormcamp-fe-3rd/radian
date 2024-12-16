@@ -48,7 +48,6 @@ div {
   flex: 1; /* 남은 공간을 모두 차지하도록 설정 */
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-content: center;
   height: 100%;
   justify-content: flex-start; /* 위에서부터 콘텐츠 배치 */
