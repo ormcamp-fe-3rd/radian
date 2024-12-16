@@ -8,7 +8,7 @@ const HeaderLogin = (): JSX.Element => {
                 <div className="header-container">
                     <div className="go-list">
                         <Link to="/">
-                            <img src="/public/images/go-list.png" alt="icon-go-list" />
+                            <img src="/images/common/go-list.png" alt="icon-go-list" />
                         </Link>
                     </div>
 

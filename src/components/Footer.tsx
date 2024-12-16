@@ -8,7 +8,7 @@ const Footer = (): JSX.Element => {
                     <div className="footer-info">
                         <div className="footer-logo">
                             <div className="footer-icon-logo">
-                                <img src="/public/images/logo.png" alt="icon-logo" />
+                                <img src="/images/common/logo.png" alt="icon-logo" />
                             </div>
                             <div className="footer-logo-title">RADIAN</div>
                         </div>
@@ -19,10 +19,10 @@ const Footer = (): JSX.Element => {
                     </div>
 
                     <div className="icon-sns">
-                        <img src="/public/images/Instagram-icon.png" />
-                        <img src="/public/images/Facebook-icon.png" />
-                        <img src="/public/images/Twitter-icon.png" />
-                        <img src="/public/images/Github-icon.png" />
+                        <img src="/images/common/Instagram-icon.png" />
+                        <img src="/images/common/Facebook-icon.png" />
+                        <img src="/images/common/Twitter-icon.png" />
+                        <img src="/images/common/Github-icon.png" />
                     </div>
                 </div>
             </footer>

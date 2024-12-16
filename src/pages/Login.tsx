@@ -5,7 +5,7 @@ import HeaderLogin from '../components/HeaderLogin';
 import Footer from '../components/Footer';
 import LoginForm from '../components/LoginForm';
 
-const Login: React.FC = () => {
+const Login = () => {
     return (
         <>
             <HeaderLogin />

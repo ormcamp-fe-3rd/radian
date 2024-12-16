@@ -21,7 +21,7 @@ const App = (): JSX.Element => {
             <Route path="/" element={<Home />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register />}></Route>
-            <Route path="/Productdetail" element={<ProductDetail />}></Route>
+            <Route path="/product-detail" element={<ProductDetail />}></Route>
           </Routes>
         </div>
 

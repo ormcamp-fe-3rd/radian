@@ -1,228 +1,471 @@
 @font-face {
-    font-family: 'line-seed';
-    src: url('/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
-    font-weight: 100;
-  }  
+  font-family: 'line-seed';
+  src: url('/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
+  font-weight: 100;
+}  
 @font-face {
-    font-family: 'line-seed';
-    src: url('/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
-    font-weight: 400;
-  }  
+  font-family: 'line-seed';
+  src: url('/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
+  font-weight: 400;
+}  
 @font-face {
-    font-family: 'line-seed';
-    font-weight: 700;
-    src: url('/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
-  } 
+  font-family: 'line-seed';
+  font-weight: 700;
+  src: url('/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
+} 
 
-
-body {
-    margin: 0 auto;
-    font-family: line-seed;
-    font-weight: 400;
-    color: #423522;
-    background-color: #FFFBF1;
-    overflow-x: hidden;
-    box-sizing: border-box;
+@font-face {
+  font-family: 'Danfo';
+  src: url('../../public/fonts/Danfo/Danfo-Regular-VariableFont_ELSH.ttf')
+    format('woff2');
+  font-weight: 100;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: 700;
+html, body {
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: 'line-seed';
+  font-weight: 400;
+  color: #423522;
+  background-color: #FFFBF1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
-.detail-main-img {
-    width: 100%;
-    max-width: 1350px;
-    display: flex;
-    justify-content: center;
-    justify-self: center;
-    margin-top: 40px;
+.common-header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-.detail-navbar {
-    width: 100%;
-    background-color: #C0A68A;
+.detail-intro {
+  width: calc(100% - 4em);
+  display: flex;
+  position: relative;
+  margin: 2em;
 }
 
-.detail-navbar-menu {
-    width: 100%;
-    height: 58px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 40px;
-    list-style: none;
+.detail-intro h1 {
+  width: 50%;
+  position: absolute;
+  margin-left: 40%;
+  font-weight: 700;
+  font-size: 4.8vw;
+  line-height: 100%;
+  text-transform: uppercase;
+  overflow-wrap: break-word; /* 텍스트가 부모 영역을 넘지 않도록 강제로 줄바꿈 */
 }
 
-.timeline {
-    width: 100%;
-    max-width: 1440px;
-    position: relative;
-    padding: 50px 0;
+.detail-intro div {
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
 }
 
-.timeline::before {
-    content: '';
-    width: 1px;
-    height: 95%;
-    position: absolute;
-    left: 50%;
-    margin-top: 25px;
-    background: #423522;
-    transform: translateX(-50%);
-    z-index: 1;
+.detail-intro div img {
+  width: 100%;
+  opacity: 0.2;
+}
+
+/* 태블릿 화면 크기에서 적용할 스타일 */
+@media (max-width: 1024px) {
+  .detail-intro {
+    width: calc(100% - 3em); /* 마진을 조금 줄여줌 */
   }
+
+  .detail-intro h1 {
+    width: 60%; /* h1 너비를 좀 더 크게 설정 */
+    margin-left: 30%;
+    font-size: 3vw; /* 반응형 글자 크기 조정 */
+  }
+
+}
+
+/* 모바일 화면 크기에서 적용할 스타일 */
+@media (max-width: 768px) {
+  .detail-intro {
+    width: 100%; /* 부모 요소의 너비를 100%로 설정 */
+    margin: 0; /* 모바일에서는 마진을 없앰 */
+    min-height: 100vh; /* 화면을 꽉 채우도록 설정 */
+  }
+
+  .detail-intro h1 {
+    width: 100%; /* h1 너비를 100%로 설정하여 텍스트가 화면에 맞게 조정 */
+    margin-left: 0;
+    font-size: 6.5vw; /* 글자 크기 더 키움 */
+  }
+
+  .detail-intro div {
+    width: 100%;
+    height: 0;
+    padding-top: 56%;
+    background-image: url('../assets/Detail/range-rover-header.jfif');
+    background-repeat: no-repeat;
+    opacity: 0.2;
+  }
+  .detail-intro img {
+    opacity: 0;
+  }
+}
+
+/* 상품 스펙 */
+
+.container h1,
+.container h2,
+.container h3 {
+  text-transform: uppercase;
+  color: #423522;
+  letter-spacing: 2px;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.container ul {
+  list-style: none;
+}
 
 .container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  place-items: center;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1300px;
+  min-height: 100vh;  /* 높이를 100vh로 설정하여 화면에 맞게 조정 */
+  max-height: 750px;  /* max-height는 필요에 따라 조정 */
+  position: relative;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(192, 166, 138, 0.25);
+}
+
+.bkg {
+  width: 100%;
+  height: 100%;
+  background: rgba(192, 166, 138, 0.75);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  clip-path: url("#wrapMask");
+}
+
+.detail-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 1em;
+  z-index: 4;
+}
+
+.detail-header svg {
+  width: 18px;
+  stroke: #f0f0f0;
+  stroke-width: 2;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.detail-header div {
+  display: grid;
+  grid-template-columns: 1fr 7%;
+  justify-content: right;
+  text-align: right;
+  margin: 0;
+}
+
+.detail-header div p {
+  color: #423522;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 0%;
+  margin-right: 0.5em;
+}
+
+.detail-header div svg {
+  text-align: right;
+}
+
+.panel {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.panel img#liberty {
+  width: 70%;
+  height: auto;
+  position: absolute;
+  left: 40%;
+  bottom: -55em;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.panel h1#panel-h1 {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  margin-top: 2em;
+  transform: translateX(-50%);
+  font-size: 8rem;
+  opacity: 1;
+  z-index: 9;
+}
+
+.intro {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%);
+  opacity: 1;
+  z-index: 6;
+}
+
+.intro h1 {
+  font-size: 4rem;
+}
+
+.intro h3 {
+  margin-top: -16px;
+  font-size: 2.4rem;
+}
+
+.intro img {
+  width: 50px;
+  margin-top: 25px;
+  opacity: 0.6;
+}
+
+.models {
+  position: absolute;
+  top: 50%;
+  z-index: 11;
+}
+
+.models li {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #d0d0d0;
+  opacity: 1;
+}
+
+.models li:nth-child(2) {
+  color: #423522;
+  font-size: 1.5rem;
+  font-weight: 400;
+  list-style-type: square;
+}
+
+.rotator {
+  position: absolute;
+  top: 50%;
+  right: 2em;
+  margin-top: 15em;
+  z-index: 12;
+}
+
+.rotator p {
+  text-align: center;
+  padding: 5px 0;
+  font-size: 0.8rem;
+  color: #423522;
+  text-transform: uppercase;
+}
+
+.specs,
+.chars {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  position: absolute;
+  top: 15%;
+  padding: 0.5em;
+  margin-right: 10em;
+  z-index: 20;
+}
+
+.specs h2,
+.chars h2 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  color: #4b4b4b;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+.specs dl,
+.chars dl {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  margin-top: 2em;
+  font-weight: 700;
+}
+
+.specs dl:nth-child(2),
+.chars dl:nth-child(2) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.specs dl dt,
+.chars dl dt {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.specs dl dd,
+.chars dl dd {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.outro {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-top: 27%;
+  text-align: center;
+  gap: 0;
+  transform: translateX(-50%);
+  z-index: 30;
+}
+
+.outro h2 {
+  font-size: 3rem;
+}
+
+.outro p {
+  font-size: 1.7rem;
+  color: gray;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.outro button {
+  margin: 10px 0;
+  padding: 5px 10px;
+  border: 1px solid rgb(155, 155, 155);
+  background: #423522;
+  outline: none;
+  cursor: pointer;
+  color: #e0e0e0;
+  font-size: 1.5rem;
+}
+
+#mask {
+  display: block;
+  position: absolute;
+  z-index: 40;
+}
+
+/* @-moz-document url-prefix() {
+  .rotator svg {
     width: 100%;
-    margin: 0 auto;
-}
+    height: 60px;
+  }
+} */
 
-.timeline-item {
-    position: relative;
-    margin-bottom: 100px;
-}
-
-.timeline-menu {
-    position: relative;
-    text-align: center;
-    margin-bottom: 100px;
-    font-size: 30px;
-    font-weight: 700;
-    background-color: #FFFBF1;
-    z-index: 2;
-}
-
-/* 타임라인 내용 */
-.timeline-content {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-}
-
-/* 이미지 */
-.timeline-img {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-
-.timeline-img img {
-    margin-bottom: 10px;
-}
-
-.timeline-text {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.text-hilight {
-    font-size: 25px;
-    font-weight: 700;
-}
-
-.text-design1 {
-    font-size: 40px;
-    font-weight: 700;
-}
-
-.text-design2 {
-    margin-top: 100px;
-    font-size: 40px;
-    font-weight: 700;
-}
-
-.text-design3 {
-    margin-top: 150px;
-    font-size: 40px;
-    font-weight: 700;
-}
-
-.text-title {
-    text-align: left;
-    font-size: 25px;
-    font-weight: 700;
-}
-
-.text-description {
-    text-align: left;
-    font-size: 20px;
-    font-weight: 100;
-}
-
-.car1 {
-    width: 700px;
-    height: 300px;
+@media (max-width: 1440px) {
+  .container {
+    margin-bottom: 90px;
+  }
+  .wrapper {
+    width: 100vw;  /* 화면 너비가 1440px 이하일 경우 70% */
+    margin-top: 4em;
   }
 
-  .car2 {
-    width: 500px;
-    margin-top: 10px;
-    margin-left: 50px;
+  .panel img#liberty {
+    left: 15%;
   }
 
-  .car-head {
-    width: 500px;
-    margin-top: 30px;
+  .outro {
+    margin-top: 80%;
+  }
+}
+
+@media (max-width: 1020px) {
+  .wrapper {
+    width: 100vw;  /* 화면 너비가 1020px 이하일 경우 80% */
   }
 
-  .car-side {
-    width: 500px;
-    margin-top: 30px;
+  .detail-header div {
+    margin-right: 2em;
   }
 
-  .car-rear {
-    width: 500px;
-    margin-top: 30px;
+  .panel {
+    margin-top: 2em;
   }
 
-  .car-performance {
-    width: 700px;
+  .panel h1#panel-h1 {
+    font-size: 4rem;
   }
 
-  .car-performance2 {
-    width: 500px;
-    margin-top: 30px;
+  .panel img#liberty {
+    bottom: -40em;
+    left: -10%;
   }
 
-  .car-interior {
-    width: 700px;
+  .specs,
+  .chars  {
+    width: 40%;
   }
 
-  .car-safety {
-    width: 700px;
+  .specs {
+    margin-left: 450px;
   }
 
-  @media (max-width: 768px) {
-    .timeline-item {
-        grid-template-columns: 1fr; /* 화면 크기 작아지면 1열로 배치 */
-    }
+  .chars {
+    margin-right: 600px;
+  }
 
-    .timeline-content {
-        grid-template-columns: 1fr; /* 세로로 배치 */
-        text-align: center; /* 텍스트 가운데 정렬 */
-    }
+  .specs h2,
+  .chars h2 {
+    font-size: 12px;
+  }
 
-    .timeline-img {
-        width: 100%; /* 이미지 100%로 배치 */
-    }
+  .specs dl dt,
+  .chars dl dt {
+    font-size: 10px;
+  }
 
-    .timeline-content p {
-        width: 100%; /* 텍스트도 100%로 */
-    }
+  .specs dl dd,
+  .chars dl dd {
+    font-size: 0.5rem;
+  }
 
-    .car1, .car2, .car-head, .car-side, .car-rear, .car-performance, .car-performance2, .car-interior, .car-safety {
-      width: 100%;
-      max-width: 500px; /* 모바일에서 이미지 크기 제한 */
+  .outro {
+    margin-top: 95%;
+  }
+
+  .outro h2 {
+    font-size: 2rem;
+  }
+
+  .outro button {
+    font-size: 1rem;
   }
 }
