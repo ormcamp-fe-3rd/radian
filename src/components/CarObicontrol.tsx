@@ -54,7 +54,7 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 부드러운 그림자
     // Load HDR environment map
     const rgbeLoader = new RGBELoader();
     rgbeLoader.load(
-      '/src/assets/ProductReservationImages/1215.hdr',
+      '/src/assets/ProductReservationImages/mountain1.hdr',
       (texture) => {
         texture.mapping = THREE.EquirectangularReflectionMapping;
         scene.background = texture; // Set as the scene background
