@@ -6,24 +6,28 @@ import { useEffect, useRef, useState } from 'react';
 interface CARD_DATA {
   frontImage: string;
   backImage: string;
-  categoryLogo: string;
+  logoTitle: string;
+  titleFont: string;
 }
 
 const CARD_DATA: CARD_DATA[] = [
   {
-    frontImage: 'public/main-images/old-rover.jpg',
-    backImage: 'public/main-images/range-rover-new.jpg',
-    categoryLogo: 'src/assets/CarListImages/Utilty.png',
+    frontImage: '/images/main-images/old-rover.jpg',
+    backImage: '/images/main-images/range-rover-new.jpg',
+    logoTitle: 'Utilty',
+    titleFont: 'Diplomata',
   },
   {
-    frontImage: 'public/main-images/cooper-old.png',
-    backImage: 'public/main-images/mini-new.jpg',
-    categoryLogo: 'src/assets/CarListImages/Compact.png',
+    frontImage: '/images/main-images/cooper-old.png',
+    backImage: '/images/main-images/mini-new.jpg',
+    logoTitle: 'Compact',
+    titleFont: 'Alkalami',
   },
   {
-    frontImage: 'public/main-images/old-TR6.png',
-    backImage: 'public/main-images/new-TR6.jpeg',
-    categoryLogo: 'src/assets/CarListImages/SPORT.png',
+    frontImage: '/images/main-images/old-TR6.png',
+    backImage: '/images/main-images/new-TR6.jpeg',
+    logoTitle: 'SPORT',
+    titleFont: 'Fatserone',
   },
 ];
 
@@ -106,7 +110,7 @@ const Home = (): JSX.Element => {
     <>
       <div className="home-container">
         <div className="video-container">
-          <a tabIndex={0}>Classic but Electronic</a>
+          <h1>Classic but Electronic</h1>
           <video className="index-video" autoPlay muted loop>
             <source src="/videos/sample-cars-loop-clip.mp4" type="video/mp4" />
           </video>
@@ -128,8 +132,8 @@ const Home = (): JSX.Element => {
           >
             <img
               className="home-main-image"
-              src="https://monochrome-watches.com/wp-content/uploads/2020/10/Mini-Cooper-Classic-Electric-conversion-1.jpg"
-              alt="Mini Cooper Classic Electric"
+              src="/images/main-images/Mini-Cooper-Classic-Electric-conversion-1.webp"
+              alt="Mini Cooper Classic Electric Conversion"
             />
           </div>
         </div>
@@ -144,8 +148,8 @@ const Home = (): JSX.Element => {
           <div className="image-container-half">
             <img
               className={`home-sub-image ${isHoveringLeft ? 'content-zoom-in' : ''}`}
-              src="public/main-images/Mini-EV-Conversion.jpg"
-              alt="Mini Cooper Classic Electric"
+              src="/images/main-images/Mini-EV-Conversion.jpg"
+              alt="Mini Cooper Classic Electric Vehicle Conversion"
               onMouseOver={() => setIsHoveringLeft(true)}
               onMouseOut={() => setIsHoveringLeft(false)}
             />
@@ -153,8 +157,8 @@ const Home = (): JSX.Element => {
           <div className="image-container-half">
             <img
               className={`home-sub-image ${isHoveringRight ? 'content-zoom-in' : ''}`}
-              src="public/main-images/Classic-Mini-Appeal.jpg"
-              alt="Mini Cooper Classic Electric"
+              src="/images/main-images/Classic-Mini-Appeal.jpg"
+              alt="Classic Mini Cooper Appeal"
               onMouseOver={() => setIsHoveringRight(true)}
               onMouseOut={() => setIsHoveringRight(false)}
             />
@@ -187,7 +191,12 @@ const Home = (): JSX.Element => {
                     className="card-back"
                     style={{ backgroundImage: `url(${contentLink.backImage})` }}
                   >
-                    <img src={contentLink.categoryLogo} />
+                    <h2
+                      className="categoryTitle"
+                      style={{ fontFamily: contentLink.titleFont }}
+                    >
+                      {contentLink.logoTitle}
+                    </h2>
                   </div>
                 </div>
               );
