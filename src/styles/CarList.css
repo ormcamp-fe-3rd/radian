@@ -79,16 +79,18 @@
 .car-product-name {
   font-family: 'JosefinSlab';
   color: black;
-  font-size: 24px;
+  font-size: 1.5rem;
   margin: 0 0 0 5px;
+  width: 12.5rem;
 }
 
 .car-product-price {
   font-family: 'LINESeedKR-Rg';
   color: black;
-  font-size: 20px;
+  font-size: 1.25rem;
   text-align: right;
   margin: 0;
+  width: 12.5rem;
 }
 
 @media (min-width: 403px) and (max-width: 744px) {
@@ -107,12 +109,19 @@
     padding: 10px;
     height: 70px;
   }
-  .car-product-name {
+  /* .car-product-name {
     font-size: 30px;
   }
 
   .car-product-price {
     font-size: 24px;
+  } */
+
+  .carlist-img {
+    width: auto;
+  }
+  .car-product-textcontent {
+    gap: 10px;
   }
 }
 
@@ -122,7 +131,7 @@
     flex: 1 1 100%;
   }
   .car-product-img {
-    height: 380px;
+    height: 230px;
   }
   .car-product-title {
     padding: 10px;
@@ -130,13 +139,16 @@
   }
   .car-product-title-img {
     padding: 10px;
-    height: 70px;
+    height: 40px;
   }
-  .car-product-name {
+  /* .car-product-name {
     font-size: 36px;
   }
 
   .car-product-price {
     font-size: 28px;
+  } */
+  .carlist-img {
+    width: auto;
   }
 }

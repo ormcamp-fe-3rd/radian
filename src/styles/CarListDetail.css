@@ -39,6 +39,7 @@
 .product-detail-text {
   height: auto;
   margin: 0 auto;
+  padding: 50px 30px 30px 20px;
 }
 .product-car-name {
   font-family: 'JosefinSlab';
@@ -52,6 +53,7 @@
   color: black;
   font-size: 20px;
   padding-left: 50px;
+  padding-top: 30px;
 }
 
 .product-car-imgcontainer {
@@ -95,6 +97,8 @@
   .product-car-description {
     font-size: 28px;
     padding-left: 50px;
+    padding-top: 30px;
+    width: 500px;
   }
 }
 
