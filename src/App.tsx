@@ -1,6 +1,6 @@
 import './styles/reset.css';
 import './styles/App.css';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'; // react-query 개발 툴 사용 시
 
@@ -20,6 +20,7 @@ const queryClient = new QueryClient(); //추가
 
 const App = (): JSX.Element => {
   return (
+    <Router>
       <QueryClientProvider client={queryClient}>
         
         <Header />
@@ -38,6 +39,7 @@ const App = (): JSX.Element => {
         {/* react-query 개발 툴 사용 시 가장 하위에 위치하게 작성 */}
         <ReactQueryDevtools initialIsOpen={true} />
       </QueryClientProvider>
+    </Router>
   );
 };
 
