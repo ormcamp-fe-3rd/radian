@@ -10,6 +10,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import ProductList from './pages/ProductList';
 import ProductDetail from './pages/ProductDetail';
+import ProductReservation from './pages/ProductReservation';
 
 /**공용 컴포넌트 */
 import Header from './components/Header';
@@ -30,6 +31,7 @@ const App = (): JSX.Element => {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/product-list" element={<ProductList />}></Route>
           <Route path="/product-detail" element={<ProductDetail />}></Route>
+          <Route path="/product-reservation/*" element={<ProductReservation />}></Route>
         </Routes>
         
         <Footer />
