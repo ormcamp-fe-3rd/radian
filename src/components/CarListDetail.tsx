@@ -3,11 +3,7 @@ import Slider from 'react-slick';
 import '../styles/CarListDetail.css'; // 스타일
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-//금액 숫자 형식
-const formatCurrency = (value: number): string => {
-  return new Intl.NumberFormat('en-US', { style: 'decimal' }).format(value);
-};
+import { formatCurrency } from '../utils/formatCurrency';
 
 // 자동차 데이터 타입 정의
 interface ProductDetailProps {

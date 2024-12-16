@@ -1,12 +1,7 @@
 import React from 'react';
 import '../styles/CarList.css';
 import { Link } from 'react-router-dom';
-import plusIcon from '../assets/CarLIstImages/pluse.png';
-
-//금액 숫자 형식
-const formatCurrency = (value: number): string => {
-  return new Intl.NumberFormat('en-US', { style: 'decimal' }).format(value);
-};
+import { formatCurrency } from '../utils/formatCurrency';
 
 interface CarProductProps {
   id: string;
@@ -43,7 +38,11 @@ const CarProduct: React.FC<CarProductProps> = ({
         </div>
       </Link>
       <div className="car-product-button" onClick={onClickCarDetail}>
-        <img src={plusIcon} alt="onClickCarDetail" className="plus-icon" />
+        <img
+          src="/public/images/CarLIstImages/pluse.png"
+          alt="onClickCarDetail"
+          className="plus-icon"
+        />
       </div>
       <div className="car-product-textcontent">
         <div className="car-product-name">{name}</div>
