@@ -1,8 +1,8 @@
 import '../styles/Footer.css';
 
-const Footer = (): JSX.Element => {
+{/* 첫째주 피드백 (5/8) */}
   return (
-    <>
+        {/* 첫째주 피드백 (4/8) */}
       <footer>
         <div className="footer-container">
           <div className="footer-info">
@@ -29,6 +29,5 @@ const Footer = (): JSX.Element => {
       </footer>
     </>
   );
-};
 
 export default Footer;

@@ -4,13 +4,13 @@ import '../styles/reset.css';
 import CarObicontrol from '../components/CarObicontrol';
 
 const ProductReservation = (): JSX.Element => {
-  const [color, setColor] = useState<string>('#0000ff'); // 기본 색상: 파란색
+  const [color, setColor] = useState('#0000ff'); // 첫째주 피드백 (8/8)
 
   return (
     <div className="carobicontrol-container">
       <CarObicontrol color={color} />
 
-      {/* Right Panel */}
+      {/* Right Panel */}{/* 첫째주 피드백 (7/8) 다음 작업에서 분리하겠습니다 */}
       <div className="productreservation-right-panel">
         <h2 className="productreservation-midtitle">Color</h2>
         <div className="color-buttons">

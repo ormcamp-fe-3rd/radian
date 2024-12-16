@@ -14,9 +14,10 @@ const App = (): JSX.Element => {
     <QueryClientProvider client={queryClient}>
       <Header />
       <Routes>
-        <Route path="/productreservation/*" element={<ProductReservation />} />
+        <Route path="/product-reservation/*" element={<ProductReservation />} />{' '}
+        {/* 첫째주 피드백 (1/8) */}
       </Routes>
-      <Footer />      
+      <Footer />
       {/* react-query 개발 툴 사용 시 가장 하위에 위치하게 작성 */}
       <ReactQueryDevtools initialIsOpen={true} />
     </QueryClientProvider>

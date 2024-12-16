@@ -1,9 +1,9 @@
 import '../styles/Header.css';
 import { Link } from 'react-router-dom';
 
-const Header = (): JSX.Element => {
+{/* 첫째주 피드백 (6/8) */}
   return (
-    <>
+    
       <header>
         <div className="header-container">
           <div className="go-list">
@@ -27,6 +27,6 @@ const Header = (): JSX.Element => {
       </header>
     </>
   );
-};
+
 
 export default Header;

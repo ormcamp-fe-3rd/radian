@@ -8,11 +8,14 @@ interface CarObicontrolProps {
 }
 
 const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const modelRef = useRef<THREE.Object3D | null>(null);
-  const sceneRef = useRef<THREE.Scene | null>(null);
-  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement>();
+  const modelRef = useRef<THREE.Object3D>();
+  const sceneRef = useRef<THREE.Scene>();
+  const rendererRef = useRef<THREE.WebGLRenderer>();
+  const cameraRef = useRef<THREE.PerspectiveCamera>();
+  {
+    /* 첫째주 피드백 (2/8) */
+  }
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -78,9 +81,10 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
       },
     );
 
+    let timerId = 0;
     // 애니메이션 루프
     const animate = () => {
-      requestAnimationFrame(animate);
+      timerId = requestAnimationFrame(animate);
 
       // 모델 회전을 삭제하여 자동 회전 비활성화
       // if (modelRef.current) {
@@ -91,6 +95,11 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
       renderer.render(scene, camera);
     };
     animate();
+
+    return () => cancelAnimationFrame(timerId);
+    {
+      /* 첫째주 피드백 (3/8) */
+    }
 
     // 반응형 처리
     const handleResize = () => {
