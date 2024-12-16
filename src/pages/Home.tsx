@@ -73,7 +73,6 @@ const Home = (): JSX.Element => {
         setDivWidth(0);
       }
     };
-
     window.addEventListener('scroll', handler);
     return () => window.removeEventListener('scroll', handler);
   }, []);
