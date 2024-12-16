@@ -3,36 +3,36 @@ import '../styles/Home.css';
 
 import { useEffect, useRef, useState } from 'react';
 
+interface CARD_DATA {
+  frontImage: string;
+  backImage: string;
+  categoryLogo: string;
+}
+
+const CARD_DATA: CARD_DATA[] = [
+  {
+    frontImage: 'public/main-images/old-rover.jpg',
+    backImage: 'public/main-images/range-rover-new.jpg',
+    categoryLogo: 'src/assets/CarListImages/Utilty.png',
+  },
+  {
+    frontImage: 'public/main-images/cooper-old.png',
+    backImage: 'public/main-images/mini-new.jpg',
+    categoryLogo: 'src/assets/CarListImages/Compact.png',
+  },
+  {
+    frontImage: 'public/main-images/old-TR6.png',
+    backImage: 'public/main-images/new-TR6.jpeg',
+    categoryLogo: 'src/assets/CarListImages/SPORT.png',
+  },
+];
+
 const Home = (): JSX.Element => {
   const companyVisionRef = useRef<HTMLHeadingElement>(null);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const scrollingSectionRef = useRef<HTMLDivElement>(null);
   const [divWidth, setDivWidth] = useState(0);
-
-  interface CardData {
-    frontImage: string;
-    backImage: string;
-    categoryLogo: string;
-  }
-
-  const cardData: CardData[] = [
-    {
-      frontImage: 'public/main-images/old-rover.jpg',
-      backImage: 'public/main-images/range-rover-new.jpg',
-      categoryLogo: 'src/assets/CarLIstImages/Utilty.png',
-    },
-    {
-      frontImage: 'public/main-images/cooper-old.png',
-      backImage: 'public/main-images/mini-new.jpg',
-      categoryLogo: 'src/assets/CarLIstImages/Compact.png',
-    },
-    {
-      frontImage: 'public/main-images/old-TR6.png',
-      backImage: 'public/main-images/new-TR6.jpeg',
-      categoryLogo: 'src/assets/CarLIstImages/SPORT.png',
-    },
-  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -159,14 +159,14 @@ const Home = (): JSX.Element => {
             <h1 className="company-message">
               Discover Our Timeless Collection
             </h1>
-            {cardData.map((e, i) => {
+            {CARD_DATA.map((e, cardId) => {
               return (
                 <div
-                  key={i}
+                  key={cardId}
                   className={`card-frame ${
-                    (i === 0 && getFlipScroll > 10) ||
-                    (i === 1 && getFlipScroll > 100) ||
-                    (i === 2 && getFlipScroll > 200)
+                    (cardId === 0 && getFlipScroll > 10) ||
+                    (cardId === 1 && getFlipScroll > 100) ||
+                    (cardId === 2 && getFlipScroll > 200)
                       ? 'card-flip'
                       : ''
                   }`}
