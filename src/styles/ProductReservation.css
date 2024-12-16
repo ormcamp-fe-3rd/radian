@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'line-seed';
+    src: url('/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: 'line-seed';
+    src: url('/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'line-seed';
+    src: url('/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+  }
+  
+  @font-face {
+    font-family: 'PaytoneOne';
+    src: url('/fonts/PaytoneOneRegular/PaytoneOneRegular.woff2') format('woff2');
+    font-weight: normal;
+  }
+  
+  :root {
+    --main-color: #423522;
+    --sub-color: #fffbf1;
+  }
+  
+  #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  body {
+    background-color: var(--sub-color);
+    color: var(--main-color);
+  }
+  
+  .productreservation-midtitle {
+    font-family: 'PaytoneOne', sans-serif !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+  }
+  
+  
+  .productreservation-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    width: 100%;
+    height: 80vh;
+    padding: 50px;
+    background-color: var(--sub-color);
+  }
+  
+  .carobicontrol-container {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+  }
+  
+  .canvas-container {
+    flex: 1;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  canvas {
+    width: 70%;
+    height: 100%;
+  }
+  
+  /* 색상 버튼 스타일 */
+  .color-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .color-buttons button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .productreservation-right-panel {
+    width: 30%;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+  }
+  
+  .option-grid {
+    width: 100%; /* 부모 요소의 폭을 상속 */
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
+    display: flex;
+    flex-direction: column; /* 항목을 수직으로 배치 */
+    gap: 10px; /* 항목 간 간격 */
+  }
+  
+  .option-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* 좌우로 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+  }
+  
+  .option-item2 {
+    margin-left: auto; /* 버튼을 오른쪽 끝으로 밀기 */
+  }
+  
+  .submit-button {
+    background-color: #ff0000; /* 빨간색 배경 */
+    color: #000; /* 검은색 텍스트 */
+    font-family: 'PaytoneOne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 20px auto 0; /* 위쪽 여백 추가, 가운데 정렬 */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase; /* 대문자로 변환 */
+    display: block; /* 전체 너비 정렬 */
+    text-align: center;
+  }
+  
+  .submit-button:hover {
+    background-color: #d40000; /* 호버 시 더 어두운 빨간색 */
+  }
