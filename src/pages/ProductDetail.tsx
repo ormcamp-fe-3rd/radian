@@ -1,5 +1,5 @@
 import '../styles/ProductDetail.css';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ProductDetail: React.FC = () => {
+const ProductDetail = () => {
 
     useEffect(() => {
     // Set up the timelines

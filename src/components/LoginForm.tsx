@@ -2,7 +2,12 @@ import '../styles/Login.css';
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const LoginForm: React.FC = () => {
+type LoginForm = {
+    id: string;
+    password: string;
+};
+
+const LoginForm = () => {
     const [isActive, setIsActive] = useState(false);
     const [form, setForm] = useState({
         id: '',
