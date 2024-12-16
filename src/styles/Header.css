@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'Danfo';
+  src: url('../../public/fonts/Danfo/Danfo-Regular-VariableFont_ELSH.ttf')
+    format('woff2');
+  font-weight: 100;
+}
+
+.header-container {
+  /* max-width: 1440px; */
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 30px 30px 20px 30px;
+  border-bottom: 1px solid black;
+  background-color: #fffbf1;
+  align-items: center;
+}
+
+.go-list {
+  width: 28px;
+  height: 28px;
+  justify-self: start;
+  margin-left: 20px;
+  overflow: hidden;
+}
+
+.logo-title {
+  text-align: center;
+  justify-self: center;
+}
+
+.logo-link {
+  font-family: 'Danfo';
+  font-size: 60px;
+  color: #423522;
+  text-decoration: none;
+}
+
+.logo-link:hover {
+  color: #423522;
+}
+
+.go-profile {
+  width: 28px;
+  height: 28px;
+  justify-self: end;
+  margin-right: 20px;
+}
+
+.go-list img,
+.go-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 반응형 스타일 추가 */
+@media (max-width: 744px) {
+  .header-container {
+    grid-template-columns: 1fr 2fr 1fr;
+    /* margin: 20px 20px 10px 20px; */
+  }
+
+  .logo-link {
+    font-size: 70px;
+  }
+
+  .go-list,
+  .go-profile {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 403px) {
+  .header-container {
+    grid-template-columns: 1fr 2fr 1fr;
+    /* margin: 20px 20px 10px 20px; */
+  }
+
+  .logo-link {
+    font-size: 90px;
+  }
+
+  .go-list,
+  .go-profile {
+    width: 60px; /* 아이콘 크기 축소 */
+    height: 60px;
+    object-fit: cover;
+  }
+}
