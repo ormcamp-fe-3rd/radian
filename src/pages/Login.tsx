@@ -6,15 +6,11 @@ import Footer from '../components/Footer';
 import LoginForm from '../components/LoginForm';
 
 const Login = () => {
-    return (
-        <>
-            <Header />
-
-            <LoginForm />
-        
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <LoginForm />
+    </>
+  );
 };
 
 export default Login;
