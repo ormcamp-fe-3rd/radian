@@ -1,0 +1,178 @@
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'JosefinSlab';
+  src: url('../../public/fonts/JosefinSlab/JosefinSlab-VariableFont_wght.ttf')
+    format('woff2');
+  font-weight: 700;
+}
+
+html,
+body {
+  background-color: #fffbf1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+}
+div {
+  margin: 0 auto;
+}
+
+.header {
+  position: relative; /* 또는 fixed */
+  top: 0; /* 필요에 따라 조정 */
+  left: 0;
+  width: 100%; /* 또는 필요한 너비 */
+  background-color: #fffbf1; /* 배경색 설정 */
+  z-index: 10; /* 다른 요소 위에 표시될 수 있도록 설정 */
+}
+
+.main-content {
+  width: 100%;
+  flex: 1; /* 남은 공간을 모두 차지하도록 설정 */
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: 100%;
+  justify-content: flex-start; /* 위에서부터 콘텐츠 배치 */
+  padding: 60px 0px 0px 0px;
+}
+
+.product-img-container {
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 100%;
+  background-color: #fffbf1;
+  margin-top: 48px;
+  display: flex;
+  /* border: #aa9f84 solid 2px; */
+  justify-content: center;
+}
+
+.car-product {
+  flex: 1 1 calc(33.33% - 16px);
+}
+
+.product-list-container {
+  width: auto;
+  height: 400px;
+  margin: 68px 60px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  gap: 30px;
+  justify-content: center;
+}
+
+.product-list-title {
+  margin: 70px auto 0; /* 위 여백, 좌우 자동 중앙 정렬 */
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  font-family: 'JosefinSlab';
+  font-size: 24px;
+  color: black;
+  border-bottom: black solid 1px;
+  max-width: 1368px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*디테일 이미지 캐러셀 모달*/
+.product-detail-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: linear-gradient(to top, #6f6754 5%, #fffbf1 40%);
+  width: 90%;
+  height: 100%;
+  max-width: 1400px;
+  position: absolute;
+  right: 0;
+}
+
+.close-modal-btn {
+  position: absolute;
+  right: 0px;
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+  padding: 32px;
+}
+
+.footer {
+  width: 100%;
+  height: 80px;
+  position: relative;
+  /* transform: translateY(-100%); */
+  bottom: 0;
+  left: 0;
+  background-color: #fffbf1;
+  z-index: 10;
+}
+
+@media (min-width: 403px) and (max-width: 744px) {
+  .product-img-container {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: auto;
+  }
+  .modal-content {
+    width: 100%;
+    max-width: none;
+  }
+  .product-list-container {
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 403px) {
+  .product-img-container {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+
+    width: auto;
+  }
+  .modal-content {
+    width: 100%;
+    max-width: none;
+  }
+  .product-list-container {
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+  }
+}

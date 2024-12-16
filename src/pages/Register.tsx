@@ -1,5 +1,18 @@
-const Home = (): JSX.Element => {
-  return <div>Welcome to the Home Page!</div>;
-};
+import { Route, Routes } from 'react-router-dom';
+import HeaderLogin from '../components/HeaderLogin';
+import Footer from '../components/Footer';
+import Agreement from '../components/Agreement';
+import SignInForm from '../components/SignInForm';
 
-export default Home;
+const Register = (): JSX.Element => {
+  return (
+    <>
+      <h2 className="register-title">회원 가입</h2>
+      <Routes>
+        <Route path="/" element={<Agreement />} />
+        <Route path="/form" element={<SignInForm />} />
+      </Routes>
+    </>
+  );
+};
+export default Register;
