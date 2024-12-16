@@ -12,7 +12,7 @@ const Agreement = (): JSX.Element => {
 
   return (
     <>
-      <ul className={`container ${nextStepAnimation}`}>
+      <ul className={`register-container ${nextStepAnimation}`}>
         <li className="list-item">
           <input
             type="checkbox"

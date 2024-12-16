@@ -14,7 +14,7 @@ const SignInForm = (): JSX.Element => {
 
   return (
     <>
-      <div className="container slide-from-right">
+      <div className="register-container slide-from-right">
         <form
           noValidate
           onSubmit={handleSubmit((data) => alert('가입이 완료되었습니다.'))}
