@@ -1,0 +1,10 @@
+README.md
+node_modules/
+.DS_Store
+
+## html
+html.html
+detail.html
+productdetail.html
+
+## js
