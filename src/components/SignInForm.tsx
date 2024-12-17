@@ -60,7 +60,9 @@ const SignInForm = (): JSX.Element => {
             })}
             aria-invalid={errors.name ? 'true' : 'false'}
           />
-          {errors.name && <small>{errors.name.message}</small>}
+          {errors.name?.message && typeof errors.name.message === 'string' && (
+            <small>{errors.name.message}</small>
+          )}
 
           <label htmlFor="email"></label>
           <input
@@ -77,7 +79,10 @@ const SignInForm = (): JSX.Element => {
             })}
             aria-invalid={errors.email ? 'true' : 'false'}
           />
-          {errors.email && <small>{errors.email.message}</small>}
+          {errors.email?.message &&
+            typeof errors.email.message === 'string' && (
+              <small>{errors.email.message}</small>
+            )}
           <label htmlFor="password"></label>
           <input
             id="password"
@@ -94,7 +99,10 @@ const SignInForm = (): JSX.Element => {
             })}
             aria-invalid={errors.password ? 'true' : 'false'}
           />
-          {errors.password && <small>{errors.password.message}</small>}
+          {errors.password?.message &&
+            typeof errors.password.message === 'string' && (
+              <small>{errors.password.message}</small>
+            )}
           <label htmlFor="passwordConfirm"></label>
           <input
             id="passwordConfirm"
@@ -108,9 +116,10 @@ const SignInForm = (): JSX.Element => {
             })}
             aria-invalid={errors.passwordConfirm ? 'true' : 'false'}
           />
-          {errors.passwordConfirm && (
-            <small>{errors.passwordConfirm.message}</small>
-          )}
+          {errors.passwordConfirm?.message &&
+            typeof errors.passwordConfirm.message === 'string' && (
+              <small>{errors.passwordConfirm.message}</small>
+            )}
           <button
             className="next-step-button"
             type="submit"

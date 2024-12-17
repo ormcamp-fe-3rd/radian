@@ -1,14 +1,12 @@
-
 import { useState, useRef, useEffect } from 'react';
 import '../styles/reset.css';
 import '../styles/Home.css';
-import { Route, Routes, useNavigate } from 'react-router-dom';
 
 const Home = (): JSX.Element => {
-  const companyVisionRef = useRef();
+  const companyVisionRef = useRef<HTMLHeadingElement | null>(null);
   const [isTextVisible, setIsTextVisible] = useState(false);
-  const imageContainerRef = useRef();
-  const scrollingSectionRef = useRef();
+  const imageContainerRef = useRef<HTMLDivElement | null>(null);
+  const scrollingSectionRef = useRef<HTMLDivElement | null>(null);
   const [divWidth, setDivWidth] = useState(0);
 
   useEffect(() => {
@@ -18,23 +16,28 @@ const Home = (): JSX.Element => {
       },
       { threshold: 0.5 },
     );
-    observer.observe(companyVisionRef.current);
+    if (companyVisionRef.current) {
+      observer.observe(companyVisionRef.current);
+    }
   });
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      const imageContainer = imageContainerRef.current.getBoundingClientRect();
-      const scrollingSection =
-        scrollingSectionRef.current.getBoundingClientRect();
-      if (imageContainer.top == 30) {
-        let scrolledDistance = Math.min(
-          1,
-          Math.abs(scrollingSection.top / window.innerHeight),
-        );
-        console.log(divWidth);
-        setDivWidth(scrolledDistance);
-      } else if (imageContainer.top > 30) {
-        setDivWidth(0);
+      if (imageContainerRef.current && scrollingSectionRef.current) {
+        const imageContainer =
+          imageContainerRef.current.getBoundingClientRect();
+        const scrollingSection =
+          scrollingSectionRef.current.getBoundingClientRect();
+        if (imageContainer.top == 30) {
+          let scrolledDistance = Math.min(
+            1,
+            Math.abs(scrollingSection.top / window.innerHeight),
+          );
+          console.log(divWidth);
+          setDivWidth(scrolledDistance);
+        } else if (imageContainer.top > 30) {
+          setDivWidth(0);
+        }
       }
     });
   });
