@@ -26,7 +26,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
     slidesToScroll: 1,
     adaptiveHeight: false,
   };
-  const [loaded, setLoaded] = useState(false);
+  const [_loaded, setLoaded] = useState(false);
   useLayoutEffect(() => {
     const modalContent =
       document.querySelector<HTMLDivElement>('.modal-content');

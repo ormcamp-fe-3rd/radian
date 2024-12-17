@@ -10,12 +10,14 @@ interface CarObicontrolProps {
 
 const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
   const canvasRef = useRef<HTMLCanvasElement>();
-  const modelRef = useRef<THREE.Object3D>();
+  // const modelRef = useRef<THREE.Object3D>();
   const sceneRef = useRef<THREE.Scene>();
   const rendererRef = useRef<THREE.WebGLRenderer>();
   const cameraRef = useRef<THREE.PerspectiveCamera>();
   const radianModelRef = useRef<THREE.Object3D>();
   const backgroundModelRef = useRef<THREE.Object3D>();
+
+  // console.log(modelRef); //test
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -38,7 +40,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
     renderer.setSize(canvas.clientWidth, canvas.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.shadowMap.enabled = true; // 그림자 활성화
-renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 부드러운 그림자
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 부드러운 그림자
     rendererRef.current = renderer;
 
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -55,7 +57,7 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 부드러운 그림자
     const rgbeLoader = new RGBELoader();
     rgbeLoader.load(
       '/images/ProductReservation/mountain1.hdr',
-      (texture) => {
+      (texture: THREE.Texture) => {
         texture.mapping = THREE.EquirectangularReflectionMapping;
         scene.background = texture; // Set as the scene background
         scene.environment = texture; // Use HDR for environment lighting
@@ -171,78 +173,84 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 부드러운 그림자
       },
     );
 
-// Load Glass Cover (유리 덮개)
-loader.load(
-  '/images/ProductReservation/glass2.gltf',
-  (gltf) => {
-    const material = new THREE.MeshStandardMaterial({
-      color: new THREE.Color(0xe9e3c8), // 밝은 회색 (투명 유리)
-      metalness: 0.1, // 약간의 반사
-      roughness: 0.9, // 매끄러운 표면
-      envMapIntensity: 0.8, // 환경 맵 반사 강도
-      transparent: true, // 투명도 활성화
-      opacity: 0.5, // 투명도 조절
-      refractionRatio: 0.98, // 굴절 효과
-    });
+    // Load Glass Cover (유리 덮개)
+    loader.load(
+      '/images/ProductReservation/glass2.gltf',
+      (gltf) => {
+        const material = new THREE.MeshStandardMaterial({
+          color: new THREE.Color(0xe9e3c8), // 밝은 회색 (투명 유리)
+          metalness: 0.1, // 약간의 반사
+          roughness: 0.9, // 매끄러운 표면
+          envMapIntensity: 0.8, // 환경 맵 반사 강도
+          transparent: true, // 투명도 활성화
+          opacity: 0.5, // 투명도 조절
+          refractionRatio: 0.98, // 굴절 효과
+        });
 
-    const model = gltf.scene;
+        const model = gltf.scene;
 
-    model.traverse((child) => {
-      if ((child as THREE.Mesh).isMesh) {
-        const mesh = child as THREE.Mesh;
-        mesh.material = material;
-        mesh.renderOrder = 1; // 유리 덮개를 나중에 렌더링
-      }
-    });
+        model.traverse((child) => {
+          if ((child as THREE.Mesh).isMesh) {
+            const mesh = child as THREE.Mesh;
+            mesh.material = material;
+            mesh.renderOrder = 1; // 유리 덮개를 나중에 렌더링
+          }
+        });
 
-    model.scale.set(1, 1, 1);
-    model.position.set(0, 0, 0); // 위치 조정
-    scene.add(model);
-    console.log('Glass cover loaded');
-  },
-  undefined,
-  (error) => {
-    console.error('Error loading glass cover:', error);
-  },
-);
+        model.scale.set(1, 1, 1);
+        model.position.set(0, 0, 0); // 위치 조정
+        scene.add(model);
+        console.log('Glass cover loaded');
+      },
+      undefined,
+      (error) => {
+        console.error('Error loading glass cover:', error);
+      },
+    );
 
-// Load Lamp Bulb (전구)
-loader.load(
-  '/images/ProductReservation/lamp.gltf',
-  (gltf) => {
-    const bulbMaterial = new THREE.MeshStandardMaterial({
-      emissive: new THREE.Color(0xffffaa), // 발광 색상
-      emissiveIntensity: 10.0, // 발광 강도
-    });
+    // Load Lamp Bulb (전구)
+    loader.load(
+      '/images/ProductReservation/lamp.gltf',
+      (gltf) => {
+        const bulbMaterial = new THREE.MeshStandardMaterial({
+          emissive: new THREE.Color(0xffffaa), // 발광 색상
+          emissiveIntensity: 10.0, // 발광 강도
+        });
 
-    const model = gltf.scene;
+        const model = gltf.scene;
 
-    model.traverse((child) => {
-      if ((child as THREE.Mesh).isMesh) {
-        const mesh = child as THREE.Mesh;
-        mesh.material = bulbMaterial;
-        mesh.castShadow = true; // 그림자 생성
-      }
-    });
+        model.traverse((child) => {
+          if ((child as THREE.Mesh).isMesh) {
+            const mesh = child as THREE.Mesh;
+            mesh.material = bulbMaterial;
+            mesh.castShadow = true; // 그림자 생성
+          }
+        });
 
-    // 램프 빛 효과를 위한 SpotLight 추가
-    const lampLight = new THREE.SpotLight(0xffffaa, 5, 50, Math.PI / 6, 0.3); // (색상, 강도, 거리, 각도, 페널티)
-    lampLight.position.set(0, 0, 0); // 램프 위치에 조명 설정
-    lampLight.target.position.set(0, 0, 0); // 램프 빛이 앞 방향으로 집중되도록 설정
-    lampLight.castShadow = true; // 그림자 활성화
-    scene.add(lampLight);
-    scene.add(lampLight.target); // 타겟 추가
+        // 램프 빛 효과를 위한 SpotLight 추가
+        const lampLight = new THREE.SpotLight(
+          0xffffaa,
+          5,
+          50,
+          Math.PI / 6,
+          0.3,
+        ); // (색상, 강도, 거리, 각도, 페널티)
+        lampLight.position.set(0, 0, 0); // 램프 위치에 조명 설정
+        lampLight.target.position.set(0, 0, 0); // 램프 빛이 앞 방향으로 집중되도록 설정
+        lampLight.castShadow = true; // 그림자 활성화
+        scene.add(lampLight);
+        scene.add(lampLight.target); // 타겟 추가
 
-    model.scale.set(1, 1, 1);
-    model.position.set(0, 0, 0); // 위치 조정
-    scene.add(model);
-    console.log('Lamp bulb loaded');
-  },
-  undefined,
-  (error) => {
-    console.error('Error loading lamp bulb:', error);
-  },
-);
+        model.scale.set(1, 1, 1);
+        model.position.set(0, 0, 0); // 위치 조정
+        scene.add(model);
+        console.log('Lamp bulb loaded');
+      },
+      undefined,
+      (error) => {
+        console.error('Error loading lamp bulb:', error);
+      },
+    );
 
     const animate = () => {
       requestAnimationFrame(animate);

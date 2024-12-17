@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../styles/ProductReservation.css';
 import '../styles/reset.css';
 import CarObicontrol from '../components/CarObicontrol';
