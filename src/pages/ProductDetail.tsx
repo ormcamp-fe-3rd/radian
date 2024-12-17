@@ -3,15 +3,17 @@ import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-/** 컴포넌트 */
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-
 gsap.registerPlugin(ScrollTrigger);
 
 const ProductDetail = () => {
 
     useEffect(() => {
+
+      const tsqdElement = document.querySelector('.tsqd-parent-container');
+       if (tsqdElement) {
+         tsqdElement.remove(); // 요소 제거
+       }
+      
     // Set up the timelines
     const intro_tl = gsap.timeline();
     const part1_tl = gsap.timeline();
@@ -23,14 +25,15 @@ const ProductDetail = () => {
 
     // ScrollTrigger for the container
     ScrollTrigger.create({
-      trigger: '#container',
+      trigger: '#detail-container',
       pin: true,
+      once: true,
       start: 'top -5%',
       end: '+=8150',
     });
 
     // Initial set-up for elements
-    gsap.set('#liberty', { x: '50%', y: '50%', transformOrigin: 'center center' }); // 화면 중앙에 차 고정
+    gsap.set('#radian-model', { x: '50%', y: '50%', transformOrigin: 'center center' }); // 화면 중앙에 차 고정
     gsap.set('.specs', { x: -160, opacity: 0 });
     gsap.set('.chars', { x: 260 });
     part2_tl.set('.models li', { opacity: 0 });
@@ -51,12 +54,13 @@ const ProductDetail = () => {
         { height: 800, duration: 0.1 }
       )
       .fromTo(
-        '#liberty',
+        '#radian-model',
         { scale: 0.7, x: 100, y: 100 },
         { scale: 1, x: 100, y: 100, duration: 0.1 }
       )
       .to('#logo', {
         scrollTrigger: {
+          trigger: '#logo',
           start: 800,
           end: 1100,
           scrub: 0.75,
@@ -68,6 +72,7 @@ const ProductDetail = () => {
       })
       .to('#intro-h1', {
         scrollTrigger: {
+          trigger: '#intro-h1',
           start: 1000,
           end: 1300,
           scrub: 0.75,
@@ -78,6 +83,7 @@ const ProductDetail = () => {
       })
       .to('#intro-h3', {
         scrollTrigger: {
+          trigger: '#intro-h3',
           start: 1050,
           end: 1350,
           scrub: 0.75,
@@ -90,7 +96,7 @@ const ProductDetail = () => {
     // TIMELINE: Part 1
     part1_tl
       .fromTo(
-        '#liberty',
+        '#radian-model',
         { scale: 1, y: 0 },
         {
           scale: 0.8,
@@ -98,6 +104,7 @@ const ProductDetail = () => {
           duration: 1.5,
           ease: 'sine.out',
           scrollTrigger: {
+            trigger: '#radian-model',
             start: 1250,
             end: 1550,
             scrub: 0.75,
@@ -106,6 +113,7 @@ const ProductDetail = () => {
       )
       .from('#panel-h1', {
         scrollTrigger: {
+          trigger: '#panel-h1',
           start: 1550,
           end: 1850,
           scrub: 0.75,
@@ -117,6 +125,7 @@ const ProductDetail = () => {
       })
       .from('.models li', {
         scrollTrigger: {
+          trigger: '.models li',
           start: 1500,
           end: 1800,
           scrub: 1.5,
@@ -132,6 +141,7 @@ const ProductDetail = () => {
     part2_tl
       .from('#panel-h1', {
         scrollTrigger: {
+          trigger: '#panel-h1',
           start: 2650,
           end: 2950,
           scrub: 1.5,
@@ -151,6 +161,7 @@ const ProductDetail = () => {
           stagger: 0.3,
           ease: 'sine.out',
           scrollTrigger: {
+            trigger: '.models li',
             start: 2650,
             end: 2950,
             scrub: 1.5,
@@ -165,6 +176,7 @@ const ProductDetail = () => {
         { height: 800 },
         {
           scrollTrigger: {
+            trigger: '#wrapWin',
             start: 3400,
             end: 3700,
             scrub: 1.5,
@@ -174,8 +186,9 @@ const ProductDetail = () => {
           ease: 'sine.out',
         }
       )
-      .to('#liberty', {
+      .to('#radian-model', {
         scrollTrigger: {
+          trigger: '#radian-model',
           start: 3550,
           end: 3850,
           scrub: 1.5,
@@ -186,6 +199,7 @@ const ProductDetail = () => {
       })
       .to('.specs', {
         scrollTrigger: {
+          trigger: '.specs',
           start: 3550,
           end: 3850,
           scrub: 1.5,
@@ -199,6 +213,7 @@ const ProductDetail = () => {
         opacity: 0,
         x: -30,
         scrollTrigger: {
+          trigger: '.specs h2',
           start: 3550,
           end: 3850,
           scrub: 1.5,
@@ -210,6 +225,7 @@ const ProductDetail = () => {
         stagger: 0.3,
         x: -30,
         scrollTrigger: {
+          trigger: '.specs dt',
           start: 3550,
           end: 3850,
           scrub: 3,
@@ -221,6 +237,7 @@ const ProductDetail = () => {
         stagger: 0.3,
         x: -30,
         scrollTrigger: {
+          trigger: '.specs dd',
           start: 3550,
           end: 3850,
           scrub: 3,
@@ -234,6 +251,7 @@ const ProductDetail = () => {
           stagger: 0.3,
           x: 0,
           scrollTrigger: {
+            trigger: '.specs dd',
             start: 4450,
             end: 4750,
             scrub: 1.5,
@@ -247,6 +265,7 @@ const ProductDetail = () => {
         stagger: 0.3,
         x: 0,
         scrollTrigger: {
+          trigger: '.specs dt',
           start: 4450,
           end: 4750,
           scrub: 1.5,
@@ -257,16 +276,18 @@ const ProductDetail = () => {
         opacity: 1,
         x: 0,
         scrollTrigger: {
+          trigger: '.specs h2',
           start: 4450,
           end: 4750,
           scrub: 1.5,
         },
       })
       .fromTo(
-        '#liberty',
+        '#radian-model',
         { x: 400 },
         {
           scrollTrigger: {
+            trigger: '#radian-model',
             start: 4900,
             end: 5200,
             scrub: 1.5,
@@ -284,6 +305,7 @@ const ProductDetail = () => {
         opacity: 0,
         x: 30,
         scrollTrigger: {
+          trigger: '.chars h2',
           start: 5200,
           end: 5500,
           scrub: 1.5,
@@ -295,6 +317,7 @@ const ProductDetail = () => {
         stagger: 0.3,
         x: 30,
         scrollTrigger: {
+          trigger: '.chars dt',
           start: 5200,
           end: 5500,
           scrub: 3,
@@ -308,6 +331,7 @@ const ProductDetail = () => {
           stagger: 0.3,
           x: 30,
           scrollTrigger: {
+            trigger: '.chars dd',
             start: 5200,
             end: 5500,
             scrub: 3,
@@ -326,6 +350,7 @@ const ProductDetail = () => {
           opacity: 0,
           x: 30,
           scrollTrigger: {
+            trigger: '.chars h2',
             start: 5800,
             end: 6100,
             scrub: 1.5,
@@ -341,6 +366,7 @@ const ProductDetail = () => {
           stagger: 0.3,
           x: 30,
           scrollTrigger: {
+            trigger: '.chars dt',
             start: 5800,
             end: 6100,
             scrub: 3,
@@ -356,6 +382,7 @@ const ProductDetail = () => {
           stagger: 0.3,
           x: 30,
           scrollTrigger: {
+            trigger: '.chars dd',
             start: 5800,
             end: 6100,
             scrub: 3,
@@ -363,12 +390,13 @@ const ProductDetail = () => {
         }
       )
       .fromTo(
-        "#liberty",
+        "#radian-model",
         {
           x: -360,
         },
         {
           scrollTrigger: {
+            trigger: '#radian-model',
             start: 6100,
             end: 6400,
             scrub: 1.5,
@@ -388,6 +416,7 @@ const ProductDetail = () => {
           },
           {
             scrollTrigger: {
+              trigger: '#wrapWin',
               start: 7000,
               end: 7300,
               scrub: 1.5,
@@ -398,13 +427,14 @@ const ProductDetail = () => {
           }
         )
         .fromTo(
-          "#liberty",
+          "#radian-model",
           {
             scale: 0.8,
             y: -300,
           },
           {
             scrollTrigger: {
+              trigger: '#radian-model',
               start: 7300,
               end: 7600,
               scrub: 1.5,
@@ -418,6 +448,7 @@ const ProductDetail = () => {
         )
         .from(".outro h2", {
           scrollTrigger: {
+            trigger: '.outro h2',
             start: 7450,
             end: 7750,
             scrub: 1.5,
@@ -429,6 +460,7 @@ const ProductDetail = () => {
         })
         .from(".outro p", {
           scrollTrigger: {
+            trigger: '.outro p',
             start: 7600,
             end: 7900,
             scrub: 1.5,
@@ -440,6 +472,7 @@ const ProductDetail = () => {
         })
         .from(".outro button", {
           scrollTrigger: {
+            trigger: '.outro button',
             start: 7750,
             end: 8050,
             scrub: 1.5,
@@ -456,25 +489,19 @@ const ProductDetail = () => {
       gsap.killTweensOf("*");
     };
   }, []);
-  
-  return (
     
-    <>
-        <div className='common-header'>
-            <Header />
-        </div>
+    return (
+      
+      <>
 
         <section className="detail-intro">
-          <div>
+          <div className='detail-intro-img'>
             <img src="/images/ProductDetail/range-rover-header.jfif" />
           </div>
-          <h1>Radian-Rover,<br />"The Utility" :Smart, Spacious,<br />and Ready for Anything</h1>
+          <h1 className='detail-intro-title'>Radian-Rover,<br />"The Utility" :Smart, Spacious,<br />and Ready for Anything</h1>
         </section>
-
-        <div className="container" id="container">
-
-            <div className="wrapper" id="wrapper">
-
+        <div className="detail-container" id="detail-container">
+            <div className="detail-wrapper" id="detail-wrapper">
                 <div className="detail-header">
                   <svg version="1.1" viewBox="0 0 24 24">
                     <rect x="3" y="3" width="7" height="7"></rect>
@@ -482,7 +509,7 @@ const ProductDetail = () => {
                     <rect x="14" y="14" width="7" height="7"></rect>
                     <rect x="3" y="14" width="7" height="7"></rect>
                   </svg>
-                  <div>
+                  <div className='detail-header-options'>
                     <p>More Options</p>
                     <svg version="1.1" viewBox="0 0 24 24">
                       <circle cx="11" cy="11" r="8"></circle>
@@ -490,14 +517,13 @@ const ProductDetail = () => {
                     </svg>
                   </div>
                 </div>
-
                 <div className="panel">
-                    <div className="intro" id="intro">
-                      <img id="logo" src="/images/common/logo.png" alt="logo-icon" />
+                    <div className="panel-intro" id="intro">
+                      <img id="logo" src="/images/common/logo.svg" alt="logo-icon" />
                       <h1 id="intro-h1">Ready to Cruise</h1>
                       <h3 id="intro-h3">Relax and enjoy the drive</h3>
                     </div>
-                    <img id="liberty" src="/images/ProductDetail/radian-rover-side.webp" alt="liberty 150 png" />
+                    <img id="radian-model" src="/images/ProductDetail/radian-rover-side.webp" alt="liberty 150 png" />
                     <h1 id="panel-h1">Radian Rover</h1>
                     <ul className="models">
                       <li>Radian RD6</li>
@@ -517,44 +543,32 @@ const ProductDetail = () => {
                       <dl>
                         <dt>Bore x Stroke</dt>
                         <dd>58mm x 58.6mm</dd>
-
                         <dt>Clutch</dt>
                         <dd>Automatic centrifugal dry clutch</dd>
-
                         <dt>Consumption</dt>
                         <dd>36.8 Km/I (WMTC cycle)</dd>
-
                         <dt>Cooling</dt>
                         <dd>Air</dd>
-
                         <dt>CO2 Emissions</dt>
                         <dd>65 g/Km</dd>
-
                         <dt>Distribution</dt>
                         <dd>Single overhead camshaft, 3 valves (2 input, 1 output)</dd>
-
                         <dt>Engine</dt>
                         <dd>Single cylinder 4-stroke -i-get</dd>
                       </dl>
                       <dl>
                         <dt>Engine Capacity</dt>
                         <dd>155c</dd>
-
                         <dt>Fuel system</dt>
                         <dd>Electronic injection</dd>
-
                         <dt>Lubrication</dt>
                         <dd>Oil with wet sump</dd>
-
                         <dt>Max Power</dt>
                         <dd>12.9hp (9.6kW) @ 7,750 rpm</dd>
-
                         <dt>Max Torque</dt>
                         <dd>9.58 ft-lbs (13 Nm) @ 5250 rpm</dd>
-
                         <dt>Transmission</dt>
                         <dd>Automatic CVT</dd>
-
                         <dt>Starter</dt>
                         <dd>Electric</dd>
                       </dl>
@@ -564,38 +578,28 @@ const ProductDetail = () => {
                       <dl>
                         <dt>Frame</dt>
                         <dd>High resistance tubular steel</dd>
-
                         <dt>Front tyre</dt>
                         <dd>Tubeless 90/80 - 16", 51J</dd>
-
                         <dt>Rear brake</dt>
                         <dd>Tamburo 140mm</dd>
-
                         <dt>Seat height</dt>
                         <dd>31.1" (790mm)</dd>
-
                         <dt>Front suspension</dt>
                         <dd>Telescopic hydraulic fork, 76mm stroke</dd>
-
                         <dt>Rear tyre</dt>
                         <dd>Tubeless 100/80 - 14", 54J</dd>
-
                         <dt>ABS</dt>
                         <dd>Front wheel standard ABS</dd>
                       </dl>
                       <dl>
                         <dt>Fuel Tank Capacity</dt>
                         <dd>1.58 gal (6 liters)</dd>
-
                         <dt>Rear suspension</dt>
                         <dd>Single hydraulic shock absorber with 5-position preload adjustment</dd>
-
                         <dt>Front brake</dt>
                         <dd>Single disk 240mm</dd>
-
                         <dt>Length/Width/Wheelbase</dt>
                         <dd>76.5" / 27.1" / 52.7"</dd>
-
                         <dt>Emission compliance</dt>
                         <dd>EPA, CARB, Transport Canada</dd>
                       </dl>
@@ -617,10 +621,8 @@ const ProductDetail = () => {
               </defs>
             </svg>
         </div>
-
-        <Footer />
-    </>
-  );
+      </>
+    );
 };
 
 export default ProductDetail;

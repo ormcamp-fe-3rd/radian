@@ -33,13 +33,6 @@ html, body {
   box-sizing: border-box;
 }
 
-.common-header {
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
 .detail-intro {
   width: calc(100% - 4em);
   display: flex;
@@ -47,7 +40,7 @@ html, body {
   margin: 2em;
 }
 
-.detail-intro h1 {
+.detail-intro-title {
   width: 50%;
   position: absolute;
   margin-left: 40%;
@@ -58,7 +51,7 @@ html, body {
   overflow-wrap: break-word; /* 텍스트가 부모 영역을 넘지 않도록 강제로 줄바꿈 */
 }
 
-.detail-intro div {
+.detail-intro-img {
   width: 50%;
   height: 100%;
   top: 0;
@@ -66,7 +59,7 @@ html, body {
   margin: 0;
 }
 
-.detail-intro div img {
+.detail-intro-img img {
   width: 100%;
   opacity: 0.2;
 }
@@ -114,20 +107,20 @@ html, body {
 
 /* 상품 스펙 */
 
-.container h1,
-.container h2,
-.container h3 {
+.detail-container h1,
+.detail-container h2,
+.detail-container h3 {
   text-transform: uppercase;
   color: #423522;
   letter-spacing: 2px;
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.container ul {
+.detail-container ul {
   list-style: none;
 }
 
-.container {
+.detail-container {
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -138,7 +131,7 @@ html, body {
   margin-bottom: 60px;
 }
 
-.wrapper {
+.detail-wrapper {
   width: 90%;
   max-width: 1300px;
   min-height: 100vh;  /* 높이를 100vh로 설정하여 화면에 맞게 조정 */
@@ -181,7 +174,7 @@ html, body {
   fill: none;
 }
 
-.detail-header div {
+.detail-header-options {
   display: grid;
   grid-template-columns: 1fr 7%;
   justify-content: right;
@@ -189,15 +182,15 @@ html, body {
   margin: 0;
 }
 
-.detail-header div p {
+.detail-header-options p {
   color: #423522;
   font-size: 13px;
   font-weight: 700;
-  line-height: 0%;
+  
   margin-right: 0.5em;
 }
 
-.detail-header div svg {
+.detail-header-options svg {
   text-align: right;
 }
 
@@ -209,30 +202,30 @@ html, body {
   position: relative;
 }
 
-.panel img#liberty {
+#raidan-model {
   width: 70%;
   height: auto;
   position: absolute;
   left: 40%;
   bottom: -55em;
   transform: translateX(-50%);
-  z-index: 10;
+  opacity: 1;
+  z-index: 11 !important;
 }
 
-.panel h1#panel-h1 {
+#panel-h1 {
   width: 100%;
   position: absolute;
   text-align: center;
   top: 50%;
   left: 50%;
-  margin-top: 2em;
   transform: translateX(-50%);
   font-size: 8rem;
   opacity: 1;
   z-index: 9;
 }
 
-.intro {
+.panel-intro {
   position: absolute;
   top: 20%;
   left: 50%;
@@ -242,16 +235,16 @@ html, body {
   z-index: 6;
 }
 
-.intro h1 {
+.panel-intro h1 {
   font-size: 4rem;
 }
 
-.intro h3 {
+.panel-intro h3 {
   margin-top: -16px;
   font-size: 2.4rem;
 }
 
-.intro img {
+.panel-intro img {
   width: 50px;
   margin-top: 25px;
   opacity: 0.6;
@@ -390,15 +383,15 @@ html, body {
 } */
 
 @media (max-width: 1440px) {
-  .container {
+  .detail-container {
     margin-bottom: 90px;
   }
-  .wrapper {
+  .detail-wrapper {
     width: 100vw;  /* 화면 너비가 1440px 이하일 경우 70% */
     margin-top: 4em;
   }
 
-  .panel img#liberty {
+  #radian-model {
     left: 15%;
   }
 
@@ -408,7 +401,7 @@ html, body {
 }
 
 @media (max-width: 1020px) {
-  .wrapper {
+  .detail-wrapper {
     width: 100vw;  /* 화면 너비가 1020px 이하일 경우 80% */
   }
 
@@ -420,11 +413,11 @@ html, body {
     margin-top: 2em;
   }
 
-  .panel h1#panel-h1 {
+  #panel-h1 {
     font-size: 4rem;
   }
 
-  .panel img#liberty {
+  #radian-model {
     bottom: -40em;
     left: -10%;
   }
