@@ -64,18 +64,44 @@ const LoginForm = () => {
     }
 
     // Firebase Authentication을 이용하여 로그인
+    //     signInWithEmailAndPassword(auth, id, password)
+    //       .then(() => {
+    //         navigate('/home'); // 로그인 성공 시 홈으로 이동
+    //       })
+    //       .catch((error) => {
+    //         const errorCode = error.code;
+    //         const errorMessage = error.message;
+
+    //         if (errorCode === 'auth/invalid-email') {
+    //           alert('유효하지 않은 이메일 주소입니다.');
+    //         } else if (errorCode === 'auth/wrong-password') {
+    //           alert('비밀번호가 틀렸습니다.');
+    //         } else {
+    //           alert('로그인 실패: ' + errorMessage);
+    //         }
+    //       });
+    //   }, [id, password, navigate]);
+
+    // Firebase Authentication을 이용하여 로그인
     signInWithEmailAndPassword(auth, id, password)
-      .then(() => {
-        navigate('/home'); // 로그인 성공 시 홈으로 이동
+      .then((userCredential) => {
+        // 로그인 성공 시
+        const user = userCredential.user;
+        console.log('로그인 성공', user);
+        navigate('/home'); // 로그인 성공 후 홈으로 이동
       })
       .catch((error) => {
+        // 로그인 실패 시
         const errorCode = error.code;
         const errorMessage = error.message;
+        console.log(errorCode, errorMessage); // 에러 코드와 메시지를 로그로 출력
 
         if (errorCode === 'auth/invalid-email') {
           alert('유효하지 않은 이메일 주소입니다.');
         } else if (errorCode === 'auth/wrong-password') {
           alert('비밀번호가 틀렸습니다.');
+        } else if (errorCode === 'auth/user-not-found') {
+          alert('해당 이메일로 등록된 사용자가 없습니다.');
         } else {
           alert('로그인 실패: ' + errorMessage);
         }
