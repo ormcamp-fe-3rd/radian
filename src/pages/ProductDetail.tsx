@@ -26,7 +26,7 @@ const ProductDetail = () => {
       trigger: '#container',
       pin: true,
       start: 'top -5%',
-      end: '+=8150',
+      end: '+=1500',
     });
 
     // Initial set-up for elements
@@ -45,410 +45,116 @@ const ProductDetail = () => {
 
     // TIMELINE: Intro
     intro_tl
-      .fromTo(
-        '#wrapWin',
-        { height: 80 },
-        { height: 800, duration: 0.1 }
-      )
-      .fromTo(
-        '#liberty',
-        { scale: 0.7, x: 100, y: 100 },
-        { scale: 1, x: 100, y: 100, duration: 0.1 }
-      )
-      .to('#logo', {
-        scrollTrigger: {
-          start: 800,
-          end: 1100,
-          scrub: 0.75,
-        },
-        y: -190,
-        scale: 0.6,
-        duration: 0.9,
-        ease: 'expo.out',
-      })
-      .to('#intro-h1', {
-        scrollTrigger: {
-          start: 1000,
-          end: 1300,
-          scrub: 0.75,
-        },
-        scale: 0,
-        duration: 0.9,
-        ease: 'expo.out',
-      })
-      .to('#intro-h3', {
-        scrollTrigger: {
-          start: 1050,
-          end: 1350,
-          scrub: 0.75,
-        },
-        scale: 0,
-        duration: 0.9,
-        ease: 'expo.out',
-      });
+    .fromTo(
+      "#wrapWin",
+      {
+        height: 80
+      },
+      {
+        height: 800,
+        duration: 0.1
+      }
+    )
+    .fromTo(
+      "#liberty",
+      {
+        scale: 0.8,
+        y: -300
+      },
+      {
+        scale: 1,
+        y: 0,
+        duration: 0.1
+      }
+    )
+    .to("#logo", {
+      scrollTrigger: {
+        start: 300,
+        end: 500,
+        scrub: 0.5
+      },
+      y: -190,
+      scale: 0.6,
+      duration: 0.6,
+      ease: "expo.out"
+    })
+    .to("#intro-h1", {
+      scrollTrigger: {
+        start: 500,
+        end: 700,
+        scrub: 0.5
+      },
+      scale: 0,
+      duration: 0.6,
+      ease: "expo.out"
+    })
+    .to("#intro-h3", {
+      scrollTrigger: {
+        start: 550,
+        end: 750,
+        scrub: 0.5
+      },
+      scale: 0,
+      duration: 0.6,
+      ease: "expo.out"
+    });
 
     // TIMELINE: Part 1
     part1_tl
-      .fromTo(
-        '#liberty',
-        { scale: 1, y: 0 },
-        {
-          scale: 0.8,
-          y: -200,
-          duration: 1.5,
-          ease: 'sine.out',
-          scrollTrigger: {
-            start: 1250,
-            end: 1550,
-            scrub: 0.75,
-          },
-        }
-      )
-      .from('#panel-h1', {
-        scrollTrigger: {
-          start: 1550,
-          end: 1850,
-          scrub: 0.75,
-        },
-        scale: 0,
-        opacity: 0,
-        duration: 1.5,
-        ease: 'sine.out',
-      })
-      .from('.models li', {
-        scrollTrigger: {
-          start: 1500,
-          end: 1800,
-          scrub: 1.5,
-        },
-        opacity: 0,
-        x: -20,
-        duration: 1.5,
-        stagger: 0.3,
-        ease: 'sine.out',
-      });
-
-    // TIMELINE: Part 2
-    part2_tl
-      .from('#panel-h1', {
-        scrollTrigger: {
-          start: 2650,
-          end: 2950,
-          scrub: 1.5,
-        },
-        opacity: 1,
+    .fromTo(
+      "#liberty",
+      {
         scale: 1,
-        duration: 1.5,
-        ease: 'sine.out',
-      })
-      .fromTo(
-        '.models li',
-        { x: 0, opacity: 1 },
-        {
-          x: -20,
-          opacity: 0,
-          duration: 1.5,
-          stagger: 0.3,
-          ease: 'sine.out',
-          scrollTrigger: {
-            start: 2650,
-            end: 2950,
-            scrub: 1.5,
-          },
+        y: 0
+      },
+      {
+        scale: 0.8,
+        y: -300,
+        duration: 1,
+        ease: "sine.out",
+        scrollTrigger: {
+          start: 1000,
+          end: 1200,
+          scrub: 0.5
         }
-      );
+      }
+    )
+    .from("#panel-h1", {
+      scrollTrigger: {
+        start: 1300,
+        end: 1500,
+        scrub: 0.5
+      },
+      scale: 0,
+      opacity: 0,
+      duration: 1,
+      ease: "sine.out"
+    })
+    .from(".models li", {
+      scrollTrigger: {
+        start: 1250,
+        end: 1450,
+        scrub: 1
+      },
+      opacity: 0,
+      x: -20,
+      duration: 1,
+      stagger: 0.3,
+      ease: "sine.out"
+    })
+    .from(".rotator", {
+      scrollTrigger: {
+        start: 1250,
+        end: 1450,
+        scrub: 1
+      },
+      opacity: 0,
+      scale: 0,
+      duration: 1,
+      ease: "sine.out"
+    });
 
-    // TIMELINE: Part 3
-    part3_tl
-      .fromTo(
-        '#wrapWin',
-        { height: 800 },
-        {
-          scrollTrigger: {
-            start: 3400,
-            end: 3700,
-            scrub: 1.5,
-          },
-          height: 80,
-          duration: 3,
-          ease: 'sine.out',
-        }
-      )
-      .to('#liberty', {
-        scrollTrigger: {
-          start: 3550,
-          end: 3850,
-          scrub: 1.5,
-        },
-        x: 600,
-        duration: 3,
-        ease: 'sine.out',
-      })
-      .to('.specs', {
-        scrollTrigger: {
-          start: 3550,
-          end: 3850,
-          scrub: 1.5,
-        },
-        opacity: 1,
-        duration: 3,
-        ease: 'sine.out',
-      })
-      .from('.specs h2', {
-        duration: 1.5,
-        opacity: 0,
-        x: -30,
-        scrollTrigger: {
-          start: 3550,
-          end: 3850,
-          scrub: 1.5,
-        },
-      })
-      .from('.specs dt', {
-        duration: 1.5,
-        opacity: 0,
-        stagger: 0.3,
-        x: -30,
-        scrollTrigger: {
-          start: 3550,
-          end: 3850,
-          scrub: 3,
-        },
-      })
-      .from('.specs dd', {
-        duration: 1.5,
-        opacity: 0,
-        stagger: 0.3,
-        x: -30,
-        scrollTrigger: {
-          start: 3550,
-          end: 3850,
-          scrub: 3,
-        },
-      }, '-=.5')
-      .from(
-        '.specs dd',
-        {
-          duration: 1.5,
-          opacity: 1,
-          stagger: 0.3,
-          x: 0,
-          scrollTrigger: {
-            start: 4450,
-            end: 4750,
-            scrub: 1.5,
-          },
-        },
-        '-=.5'
-      )
-      .from('.specs dt', {
-        duration: 1.5,
-        opacity: 1,
-        stagger: 0.3,
-        x: 0,
-        scrollTrigger: {
-          start: 4450,
-          end: 4750,
-          scrub: 1.5,
-        },
-      })
-      .from('.specs h2', {
-        duration: 1.5,
-        opacity: 1,
-        x: 0,
-        scrollTrigger: {
-          start: 4450,
-          end: 4750,
-          scrub: 1.5,
-        },
-      })
-      .fromTo(
-        '#liberty',
-        { x: 400 },
-        {
-          scrollTrigger: {
-            start: 4900,
-            end: 5200,
-            scrub: 1.5,
-          },
-          x: -360,
-          duration: 4.5,
-          ease: 'sine.out',
-        }
-      );
-
-    // TIMELINE: Part 4
-    part4_tl
-      .from('.chars h2', {
-        duration: 1.5,
-        opacity: 0,
-        x: 30,
-        scrollTrigger: {
-          start: 5200,
-          end: 5500,
-          scrub: 1.5,
-        },
-      })
-      .from('.chars dt', {
-        duration: 1.5,
-        opacity: 0,
-        stagger: 0.3,
-        x: 30,
-        scrollTrigger: {
-          start: 5200,
-          end: 5500,
-          scrub: 3,
-        },
-      })
-      .from(
-        '.chars dd',
-        {
-          duration: 1.5,
-          opacity: 0,
-          stagger: 0.3,
-          x: 30,
-          scrollTrigger: {
-            start: 5200,
-            end: 5500,
-            scrub: 3,
-          },
-        },
-        '-=.5'
-      );
-
-    // TIMELINE: Part 5
-    part5_tl
-      .fromTo(
-        '.chars h2',
-        { opacity: 1, x: 0 },
-        {
-          duration: 1.5,
-          opacity: 0,
-          x: 30,
-          scrollTrigger: {
-            start: 5800,
-            end: 6100,
-            scrub: 1.5,
-          },
-        }
-      )
-      .fromTo(
-        '.chars dt',
-        { opacity: 1, x: 0 },
-        {
-          duration: 1.5,
-          opacity: 0,
-          stagger: 0.3,
-          x: 30,
-          scrollTrigger: {
-            start: 5800,
-            end: 6100,
-            scrub: 3,
-          },
-        }
-      )
-      .fromTo(
-        '.chars dd',
-        { opacity: 1, x: 0 },
-        {
-          duration: 1.5,
-          opacity: 0,
-          stagger: 0.3,
-          x: 30,
-          scrollTrigger: {
-            start: 5800,
-            end: 6100,
-            scrub: 3,
-          },
-        }
-      )
-      .fromTo(
-        "#liberty",
-        {
-          x: -360,
-        },
-        {
-          scrollTrigger: {
-            start: 6100,
-            end: 6400,
-            scrub: 1.5,
-          },
-          x: 0,
-          duration: 4.5,
-          ease: "sine.out",
-        }
-      );
-      
-    // TIMELINE: Outro
-    outro_tl
-        .fromTo(
-          "#wrapWin",
-          {
-            height: 80,
-          },
-          {
-            scrollTrigger: {
-              start: 7000,
-              end: 7300,
-              scrub: 1.5,
-            },
-            height: 800,
-            duration: 3,
-            ease: "sine.out",
-          }
-        )
-        .fromTo(
-          "#liberty",
-          {
-            scale: 0.8,
-            y: -300,
-          },
-          {
-            scrollTrigger: {
-              start: 7300,
-              end: 7600,
-              scrub: 1.5,
-            },
-            x: 30,
-            scale: 0.7,
-            y: -340,
-            duration: 4.5,
-            ease: "sine.out",
-          }
-        )
-        .from(".outro h2", {
-          scrollTrigger: {
-            start: 7450,
-            end: 7750,
-            scrub: 1.5,
-          },
-          duration: 1.5,
-          y: -50,
-          opacity: 1,
-          ease: "none",
-        })
-        .from(".outro p", {
-          scrollTrigger: {
-            start: 7600,
-            end: 7900,
-            scrub: 1.5,
-          },
-          duration: 1.5,
-          y: -50,
-          opacity: 1,
-          ease: "none",
-        })
-        .from(".outro button", {
-          scrollTrigger: {
-            start: 7750,
-            end: 8050,
-            scrub: 1.5,
-          },
-          duration: 1.5,
-          y: -50,
-          opacity: 1,
-          ease: "none",
-        });
+    
 
     return () => {
       // Clean up GSAP animations

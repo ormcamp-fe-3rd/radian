@@ -141,7 +141,7 @@ html, body {
 .wrapper {
   width: 90%;
   max-width: 1300px;
-  min-height: 100vh;  /* 높이를 100vh로 설정하여 화면에 맞게 조정 */
+  min-height: 80vh;  /* 높이를 100vh로 설정하여 화면에 맞게 조정 */
   max-height: 750px;  /* max-height는 필요에 따라 조정 */
   position: relative;
   margin-top: 3em;
@@ -210,7 +210,7 @@ html, body {
 }
 
 .panel img#liberty {
-  width: 70%;
+  width: 50%;
   height: auto;
   position: absolute;
   left: 40%;
