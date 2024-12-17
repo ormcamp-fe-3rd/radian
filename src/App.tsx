@@ -20,26 +20,26 @@ const queryClient = new QueryClient(); //추가
 
 const App = (): JSX.Element => {
   return (
-    <Router>
-      <QueryClientProvider client={queryClient}>
-        
-        <Header />
-        
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/register/*" element={<Register />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/product-list" element={<ProductList />}></Route>
-          <Route path="/product-detail" element={<ProductDetail />}></Route>
-          <Route path="/product-reservation/*" element={<ProductReservation />}></Route>
-        </Routes>
-        
-        <Footer />
+    <QueryClientProvider client={queryClient}>
+      <Header />
 
-        {/* react-query 개발 툴 사용 시 가장 하위에 위치하게 작성 */}
-        <ReactQueryDevtools initialIsOpen={true} />
-      </QueryClientProvider>
-    </Router>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/register/*" element={<Register />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/product-list" element={<ProductList />}></Route>
+        <Route path="/product-detail" element={<ProductDetail />}></Route>
+        <Route
+          path="/product-reservation/*"
+          element={<ProductReservation />}
+        ></Route>
+      </Routes>
+
+      <Footer />
+
+      {/* react-query 개발 툴 사용 시 가장 하위에 위치하게 작성 */}
+      <ReactQueryDevtools initialIsOpen={true} />
+    </QueryClientProvider>
   );
 };
 
