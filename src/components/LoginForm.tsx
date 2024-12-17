@@ -1,7 +1,4 @@
 import { auth } from '../firebase';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import '../styles/Login.css';
 import React, { useState, useEffect, useCallback } from 'react';
@@ -86,6 +83,7 @@ const LoginForm = () => {
     signInWithEmailAndPassword(auth, id, password)
       .then((userCredential) => {
         // 로그인 성공 시
+
         const user = userCredential.user;
         console.log('로그인 성공', user);
         navigate('/home'); // 로그인 성공 후 홈으로 이동
