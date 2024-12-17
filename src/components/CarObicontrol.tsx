@@ -4,6 +4,20 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader';
 
+declare module 'three' {
+  interface MeshStandardMaterialParameters {
+    clearcoat?: number;
+    clearcoatRoughness?: number;
+    refractionRatio?: number;
+  }
+
+  interface MeshStandardMaterial {
+    clearcoat?: number;
+    clearcoatRoughness?: number;
+    refractionRatio?: number;
+  }
+}
+
 interface CarObicontrolProps {
   color: string;
 }
