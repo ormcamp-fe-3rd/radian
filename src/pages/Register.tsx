@@ -1,6 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import HeaderLogin from '../components/HeaderLogin';
-import Footer from '../components/Footer';
 import Agreement from '../components/Agreement';
 import SignInForm from '../components/SignInForm';
 
