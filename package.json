@@ -29,7 +29,8 @@
     "react-slick": "^0.30.2",
     "scrollreveal": "^4.0.9",
     "slick-carousel": "^1.8.1",
-    "three": "^0.171.0"
+    "three": "^0.171.0",
+    "three-stdlib": "^2.35.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",

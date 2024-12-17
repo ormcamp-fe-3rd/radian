@@ -1,8 +1,22 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader';
+import { OrbitControls } from 'three-stdlib';
+import { GLTFLoader } from 'three-stdlib';
+import { RGBELoader } from 'three-stdlib';
+
+declare module 'three' {
+  interface MeshStandardMaterialParameters {
+    clearcoat?: number;
+    clearcoatRoughness?: number;
+    refractionRatio?: number;
+  }
+
+  interface MeshStandardMaterial {
+    clearcoat?: number;
+    clearcoatRoughness?: number;
+    refractionRatio?: number;
+  }
+}
 
 declare module 'three' {
   interface MeshStandardMaterialParameters {
@@ -23,7 +37,7 @@ interface CarObicontrolProps {
 }
 
 const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
-  const canvasRef = useRef<HTMLCanvasElement>();
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   // const modelRef = useRef<THREE.Object3D>();
   const sceneRef = useRef<THREE.Scene>();
   const rendererRef = useRef<THREE.WebGLRenderer>();
