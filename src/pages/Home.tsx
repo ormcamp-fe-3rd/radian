@@ -22,7 +22,7 @@ const Home = (): JSX.Element => {
   });
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    const handler = () => {
       if (imageContainerRef.current && scrollingSectionRef.current) {
         const imageContainer =
           imageContainerRef.current.getBoundingClientRect();
