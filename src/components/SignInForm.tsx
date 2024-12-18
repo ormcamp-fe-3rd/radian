@@ -1,4 +1,7 @@
 import { useForm } from 'react-hook-form';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';
 
 const SignInForm = (): JSX.Element => {
   const {
@@ -11,14 +14,37 @@ const SignInForm = (): JSX.Element => {
   });
 
   const password = watch('password');
+  const navigate = useNavigate(); // 가입 후 이동할 페이지 설정
+
+  // 회원가입 처리 함수
+  const onSubmit = async (data: any) => {
+    const { email, password } = data;
+
+    try {
+      // Firebase의 createUserWithEmailAndPassword를 호출하여 회원가입
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password,
+      );
+      console.log('회원가입 성공', userCredential);
+
+      // 회원가입 성공 후 홈 페이지로 이동
+      navigate('/login'); // 성공 시 홈 페이지로 이동
+    } catch (error: any) {
+      console.error('회원가입 실패', error);
+      alert(error.message); // 오류 메시지 출력
+    }
+  };
 
   return (
     <>
       <div className="register-container slide-from-right">
-        <form
+        {/* <form
           noValidate
           onSubmit={handleSubmit((data) => alert('가입이 완료되었습니다.'))}
-        >
+        > */}
+        <form noValidate onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="name"></label>
           <input
             id="name"
@@ -34,7 +60,9 @@ const SignInForm = (): JSX.Element => {
             })}
             aria-invalid={errors.name ? 'true' : 'false'}
           />
-          {errors.name && <small>{errors.name.message}</small>}
+          {errors.name?.message && typeof errors.name.message === 'string' && (
+            <small>{errors.name.message}</small>
+          )}
 
           <label htmlFor="email"></label>
           <input
@@ -51,7 +79,10 @@ const SignInForm = (): JSX.Element => {
             })}
             aria-invalid={errors.email ? 'true' : 'false'}
           />
-          {errors.email && <small>{errors.email.message}</small>}
+          {errors.email?.message &&
+            typeof errors.email.message === 'string' && (
+              <small>{errors.email.message}</small>
+            )}
           <label htmlFor="password"></label>
           <input
             id="password"
@@ -68,7 +99,10 @@ const SignInForm = (): JSX.Element => {
             })}
             aria-invalid={errors.password ? 'true' : 'false'}
           />
-          {errors.password && <small>{errors.password.message}</small>}
+          {errors.password?.message &&
+            typeof errors.password.message === 'string' && (
+              <small>{errors.password.message}</small>
+            )}
           <label htmlFor="passwordConfirm"></label>
           <input
             id="passwordConfirm"
@@ -82,9 +116,10 @@ const SignInForm = (): JSX.Element => {
             })}
             aria-invalid={errors.passwordConfirm ? 'true' : 'false'}
           />
-          {errors.passwordConfirm && (
-            <small>{errors.passwordConfirm.message}</small>
-          )}
+          {errors.passwordConfirm?.message &&
+            typeof errors.passwordConfirm.message === 'string' && (
+              <small>{errors.passwordConfirm.message}</small>
+            )}
           <button
             className="next-step-button"
             type="submit"
