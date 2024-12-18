@@ -1,7 +1,34 @@
 import { useState, useRef, useEffect } from 'react';
 import '../styles/reset.css';
 import '../styles/Home.css';
-import CARD_DATA from '../data/ProductList.json';
+
+interface CARD_DATA {
+  frontImage: string;
+  backImage: string;
+  logoTitle: string;
+  titleFont: string;
+}
+
+const CARD_DATA: CARD_DATA[] = [
+  {
+    frontImage: '/images/main-images/old-rover.jpg',
+    backImage: '/images/main-images/range-rover-new.jpg',
+    logoTitle: 'Utilty',
+    titleFont: 'Diplomata',
+  },
+  {
+    frontImage: '/images/main-images/cooper-old.png',
+    backImage: '/images/main-images/mini-new.jpg',
+    logoTitle: 'Compact',
+    titleFont: 'Alkalami',
+  },
+  {
+    frontImage: '/images/main-images/old-TR6.png',
+    backImage: '/images/main-images/new-TR6.jpeg',
+    logoTitle: 'SPORT',
+    titleFont: 'Fatserone',
+  },
+];
 
 const Home = (): JSX.Element => {
   const companyVisionRef = useRef<HTMLHeadingElement | null>(null);
@@ -9,34 +36,6 @@ const Home = (): JSX.Element => {
   const imageContainerRef = useRef<HTMLDivElement | null>(null);
   const scrollingSectionRef = useRef<HTMLDivElement | null>(null);
   const [divWidth, setDivWidth] = useState(0);
-
-  interface CARD_DATA {
-    frontImage: string;
-    backImage: string;
-    logoTitle: string;
-    titleFont: string;
-  }
-
-  const CARD_DATA: CARD_DATA[] = [
-    {
-      frontImage: '/images/main-images/old-rover.jpg',
-      backImage: '/images/main-images/range-rover-new.jpg',
-      logoTitle: 'Utilty',
-      titleFont: 'Diplomata',
-    },
-    {
-      frontImage: '/images/main-images/cooper-old.png',
-      backImage: '/images/main-images/mini-new.jpg',
-      logoTitle: 'Compact',
-      titleFont: 'Alkalami',
-    },
-    {
-      frontImage: '/images/main-images/old-TR6.png',
-      backImage: '/images/main-images/new-TR6.jpeg',
-      logoTitle: 'SPORT',
-      titleFont: 'Fatserone',
-    },
-  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -48,7 +47,9 @@ const Home = (): JSX.Element => {
     if (companyVisionRef.current) {
       observer.observe(companyVisionRef.current);
     }
-  });
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const handler = () => {
@@ -57,7 +58,7 @@ const Home = (): JSX.Element => {
           imageContainerRef.current.getBoundingClientRect();
         const scrollingSection =
           scrollingSectionRef.current.getBoundingClientRect();
-        if (imageContainer.top == 30) {
+        if (imageContainer.top === 30) {
           let scrolledDistance = Math.min(
             1,
             Math.abs(scrollingSection.top / window.innerHeight),

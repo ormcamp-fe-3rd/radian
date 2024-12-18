@@ -240,8 +240,8 @@
     width: 85%;
   }
 
-  .video-container a {
-    font-size: 5rem;
+  .video-container h1 {
+    font-size: 4.25rem;
   }
 
   .image-container-half {
@@ -302,8 +302,8 @@
 }
 
 @media (max-width: 402px) {
-  .video-container a {
-    font-size: 4rem;
+  .video-container h1 {
+    font-size: 3rem;
   }
 
   .company-vision {
