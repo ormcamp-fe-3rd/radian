@@ -28,8 +28,8 @@ html, body {
   font-weight: 400;
   color: #423522;
   background-color: #FFFBF1;
-  overflow-x: hidden;
-  overflow-y: auto;
+  /* overflow-x: hidden;
+  overflow-y: auto; */
   box-sizing: border-box;
 }
 
