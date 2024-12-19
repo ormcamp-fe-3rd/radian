@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 
-const SignInForm = (): JSX.Element => {
+const SignUpForm = (): JSX.Element => {
   const {
     register,
     handleSubmit,
@@ -14,14 +14,13 @@ const SignInForm = (): JSX.Element => {
   });
 
   const password = watch('password');
-  const navigate = useNavigate(); // 가입 후 이동할 페이지 설정
+  const navigate = useNavigate();
 
   // 회원가입 처리 함수
-  const onSubmit = async (data: any) => {
-    const { email, password } = data;
+  const onSubmit = async (userEmailAndPassword: string) => {
+    const { email, password } = userEmailAndPassword;
 
     try {
-      // Firebase의 createUserWithEmailAndPassword를 호출하여 회원가입
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -40,10 +39,6 @@ const SignInForm = (): JSX.Element => {
   return (
     <>
       <div className="register-container slide-from-right">
-        {/* <form
-          noValidate
-          onSubmit={handleSubmit((data) => alert('가입이 완료되었습니다.'))}
-        > */}
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="name"></label>
           <input
@@ -66,10 +61,10 @@ const SignInForm = (): JSX.Element => {
 
           <label htmlFor="email"></label>
           <input
-            id="email"
-            placeholder="이메일 형식으로 아이디를 입력해주세요"
             className="input-form"
+            id="email"
             type="email"
+            placeholder="이메일 형식으로 아이디를 입력해주세요"
             {...register('email', {
               required: '이메일은 필수 입력값입니다.',
               pattern: {
@@ -85,10 +80,10 @@ const SignInForm = (): JSX.Element => {
             )}
           <label htmlFor="password"></label>
           <input
-            id="password"
-            placeholder="비밀번호는 8자 이상 입력해주세요"
             className="input-form"
+            id="password"
             type="password"
+            placeholder="비밀번호는 8자 이상 입력해주세요"
             {...register('password', {
               required: '비밀번호는 필수 입력값입니다.',
               pattern: {
@@ -133,4 +128,4 @@ const SignInForm = (): JSX.Element => {
   );
 };
 
-export default SignInForm;
+export default SignUpForm;
