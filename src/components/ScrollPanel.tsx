@@ -1,45 +1,39 @@
 import '../styles/ProductDetail.css';
 import { useState, useEffect } from 'react';
-import modelsData from '../data/modelsData.json';
-
-
-
-interface CarModel {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-  price: string;
-  specs: string[];
-  chars: string[];
-}
-
-// `modelsData`의 각 모델에 대한 타입을 명시
-interface modelsData {
-  RD6: CarModel;
-  Rover: CarModel;
-  Cooper: CarModel;
-}
+import { useParams } from 'react-router-dom';
+import modelsData from '../data/modelsData.json'; // 데이터
+import { CarModel } from '../types/modelsData';  // 타입
+import ScrollPanelSpecs from './ScrollPanelSpecs';// 컴포넌트
+import ScrollPanelChars from './ScrollPanelChars';
 
 interface ScrollPanelProps {
-  match: {
-    params: {
-      model: string;
-    };
-  };
+  selectedModel: CarModel;  // selectedModel prop에 CarModel 타입을 지정합니다.
 }
 
-const ScrollPanel = ({ match }: ScrollPanelProps) => {
-  const [selectedModel, setSelectedModel] = useState<CarModel | null>(null);
+const ScrollPanel: React.FC<ScrollPanelProps> = ({ selectedModel }) => {
+  const [currentModel, setCurrentModel] = useState<CarModel | null>(selectedModel);  // 상태 변수로서의 selectedModel
+  const { model } = useParams<{ model: string }>();  // URL 파라미터에서 모델 이름 가져오기
 
+  // `modelsData[0]`을 사용해서 모델을 순회
+  const modelKeys = Object.keys(modelsData[0]);
+
+  // 원하는 모델을 두 번째로 이동 (예: "Rover"가 두 번째로 오게)
+  const targetModel = "rover"; // 두 번째로 올 모델 이름
+  const reorderedModels = [
+    modelsData[0][targetModel],  // 원하는 모델을 배열 첫 번째에 넣기
+    ...modelKeys.filter(key => key !== targetModel).map(key => modelsData[0][key as keyof typeof modelsData[0]])  // 나머지 모델들
+  ];
+
+  // URL 파라미터로 모델을 변경할 때마다 상태를 업데이트
   useEffect(() => {
-    const modelName = match.params.model;  // URL에서 모델 이름을 가져옴
-    const data = modelsData[0];  // 첫 번째 객체를 사용
-    const model = data[modelName as keyof typeof data];  // 모델 이름을 기반으로 데이터 접근
-    setSelectedModel(model);
-  }, [match.params.model]);
+    if (model) {
+      const selectedModelFromData = modelsData[0][model as keyof typeof modelsData[0]];  // URL 파라미터로 모델 데이터를 찾음
+      setCurrentModel(selectedModelFromData);  // 해당 모델 데이터를 상태에 저장
+    }
+  }, [model]);
 
-  if (!selectedModel) return <div>Loading...</div>;
+  // selectedModel이 null일 경우 로딩 화면 표시
+  if (!currentModel) return <div>Loading...</div>;
 
     return (
         <div className="panel">
@@ -52,17 +46,16 @@ const ScrollPanel = ({ match }: ScrollPanelProps) => {
 
             <img id="radian-model" src={selectedModel.image} alt={`${selectedModel.name} side view`} />
             
-            <h1 id="panel-h1">Radian Rover</h1>
+            <h1 id="panel-h1">{selectedModel.name}</h1>
             
             <ul className="models">
               {/* <li>Radian RD6</li>
                   <li>Radian Rover</li>
                   <li>Radian Cooper</li> */}
               {/* 배열을 직접 순회하면서 모델 이름 출력 */}
-        {Object.keys(modelsData[0]).map((modelKey) => (
-          <li key={modelKey}>{modelsData[0][modelKey as keyof typeof modelsData[0]].name}</li>
-        ))}
-
+              {reorderedModels.map((model, index) => (
+                <li key={index}>{model.name}</li>
+              ))}
             </ul>
 
             <div className="rotator">
@@ -74,11 +67,13 @@ const ScrollPanel = ({ match }: ScrollPanelProps) => {
               <p>360&deg;</p>
             </div>
 
-            
+            <ScrollPanelSpecs />
+
+            <ScrollPanelChars />
 
             <div className="panel-outro">
-                <h2>Radian Rover</h2>
-                <p>$2999.00</p>
+            <h2>{currentModel.name}</h2> {/* 선택된 모델 이름 */}
+        <p>${currentModel.price}</p>
                 <button>Build Now</button>
             </div>
         </div>

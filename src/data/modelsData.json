@@ -1,6 +1,6 @@
 [
     {
-      "RD6": {
+      "rd6": {
         "id": 1,
         "name": "Radian RD6",
         "description": "The perfect combination of power and efficiency.",
@@ -17,7 +17,7 @@
           "Seats: 4"
         ]
       },
-      "Rover": {
+      "rover": {
         "id": 2,
         "name": "Radian Rover",
         "description": "The ultimate SUV for your adventures.",
@@ -34,7 +34,7 @@
           "Seats: 7"
         ]
       },
-      "Cooper": {
+      "cooper": {
         "id": 3,
         "name": "Radian Cooper",
         "description": "Compact, efficient, and stylish.",
