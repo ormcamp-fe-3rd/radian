@@ -26,7 +26,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
     slidesToScroll: 1,
     adaptiveHeight: false,
   };
-  const [loaded, setLoaded] = useState(false);
+  const [_loaded, setLoaded] = useState(false);
   useLayoutEffect(() => {
     const modalContent =
       document.querySelector<HTMLDivElement>('.modal-content');
@@ -63,9 +63,9 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
           </div>
         ))}
       </Slider>
-      <p className="product-car-price">
+      <div className="product-car-price">
         Price: {formatCurrency(product.price)} 원
-      </p>
+      </div>
     </div>
   );
 };

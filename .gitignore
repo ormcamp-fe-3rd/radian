@@ -1,3 +1,12 @@
 README.md
 node_modules/
 .DS_Store
+
+## html
+html.html
+detail.html
+productdetail.html
+
+## API KEY
+/src/.env
+/src/firebase.tsx

@@ -1,4 +1,5 @@
 import '../styles/Header.css';
+
 import { Link } from 'react-router-dom';
 
 const Header = (): JSX.Element => {
@@ -7,8 +8,12 @@ const Header = (): JSX.Element => {
       <header>
         <div className="header-container">
           <div className="go-list">
-            <Link to="/">
-              <img src="/public/images/go-list.png" alt="icon-go-list" />
+            <Link to="/product-list">
+              <img
+                src="/images/common/go-list.svg"
+                alt="icon-go-list"
+                className="carIcon"
+              />
             </Link>
           </div>
 
@@ -19,8 +24,12 @@ const Header = (): JSX.Element => {
           </div>
 
           <div className="go-profile">
-            <Link to="/">
-              <img src="/public/images/go-profile.png" alt="icon-go-profile" />
+            <Link to="/login">
+              <img
+                src="/images/common/go-profile.svg"
+                alt="icon-go-profile"
+                className="profileIcon"
+              />
             </Link>
           </div>
         </div>
