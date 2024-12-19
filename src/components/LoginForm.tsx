@@ -124,11 +124,10 @@ const LoginForm = () => {
               onKeyDown={handleKeyDown}
               id="name-input"
               autoComplete="email"
+              placeholder="e-mail"
               required
             />
-            <label id="id" htmlFor="name-input">
-              ID/E-MAIL
-            </label>
+            <label id="id" htmlFor="name-input" />
           </div>
 
           <div className="int-area">
@@ -140,11 +139,10 @@ const LoginForm = () => {
               onKeyDown={handleKeyDown}
               id="password-input"
               autoComplete="current-password"
+              placeholder="password"
               required
             />
-            <label id="pw" htmlFor="password-input">
-              PASSWORD
-            </label>
+            <label id="pw" htmlFor="password-input" />
           </div>
 
           <button
@@ -152,12 +150,12 @@ const LoginForm = () => {
             className={isActive ? 'login-active' : 'login-inactive'}
             type="submit"
           >
-            LOGIN
+            Login
           </button>
         </form>
 
-        <div id="register">
-          <Link to="/register">REGISTER</Link>
+        <div className="register">
+          <Link to="/register">Register</Link>
         </div>
       </section>
     </>

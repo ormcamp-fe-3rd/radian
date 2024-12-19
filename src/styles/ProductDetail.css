@@ -28,13 +28,8 @@ body {
   font-family: 'line-seed';
   font-weight: 400;
   color: #423522;
-<<<<<<< HEAD
-  background-color: #FFFBF1;
-  /* overflow-x: hidden;
-  overflow-y: auto; */
-=======
   background-color: #fffbf1;
->>>>>>> main
+  /* overflow-x: hidden; */
   box-sizing: border-box;
 }
 
@@ -190,7 +185,7 @@ body {
   color: #423522;
   font-size: 13px;
   font-weight: 700;
-  
+
   margin-right: 0.5em;
 }
 
@@ -390,13 +385,8 @@ body {
   .detail-container {
     margin-bottom: 90px;
   }
-<<<<<<< HEAD
   .detail-wrapper {
-    width: 100vw;  /* 화면 너비가 1440px 이하일 경우 70% */
-=======
-  .wrapper {
     width: 100vw; /* 화면 너비가 1440px 이하일 경우 70% */
->>>>>>> main
     margin-top: 4em;
   }
 
@@ -410,13 +400,8 @@ body {
 }
 
 @media (max-width: 1020px) {
-<<<<<<< HEAD
   .detail-wrapper {
-    width: 100vw;  /* 화면 너비가 1020px 이하일 경우 80% */
-=======
-  .wrapper {
     width: 100vw; /* 화면 너비가 1020px 이하일 경우 80% */
->>>>>>> main
   }
 
   .detail-header div {
