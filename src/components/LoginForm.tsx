@@ -120,7 +120,7 @@ const LoginForm = () => {
         <form className="input-container" onSubmit={handleSubmit}>
           <div className="int-area">
             <input
-              type="text"
+              type="email"
               name="id"
               value={id}
               onChange={handleInputChange}
