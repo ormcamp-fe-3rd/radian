@@ -2,17 +2,17 @@
   font-family: 'line-seed';
   src: url('/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
   font-weight: 100;
-}  
+}
 @font-face {
   font-family: 'line-seed';
   src: url('/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
   font-weight: 400;
-}  
+}
 @font-face {
   font-family: 'line-seed';
   font-weight: 700;
   src: url('/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
-} 
+}
 
 @font-face {
   font-family: 'Danfo';
@@ -21,15 +21,14 @@
   font-weight: 100;
 }
 
-html, body {
+html,
+body {
   min-height: 100vh;
   margin: 0 auto;
   font-family: 'line-seed';
   font-weight: 400;
   color: #423522;
-  background-color: #FFFBF1;
-  overflow-x: hidden;
-  overflow-y: auto;
+  background-color: #fffbf1;
   box-sizing: border-box;
 }
 
@@ -82,7 +81,6 @@ html, body {
     margin-left: 30%;
     font-size: 3vw; /* 반응형 글자 크기 조정 */
   }
-
 }
 
 /* 모바일 화면 크기에서 적용할 스타일 */
@@ -141,8 +139,8 @@ html, body {
 .wrapper {
   width: 90%;
   max-width: 1300px;
-  min-height: 100vh;  /* 높이를 100vh로 설정하여 화면에 맞게 조정 */
-  max-height: 750px;  /* max-height는 필요에 따라 조정 */
+  min-height: 100vh; /* 높이를 100vh로 설정하여 화면에 맞게 조정 */
+  max-height: 750px; /* max-height는 필요에 따라 조정 */
   position: relative;
   margin-top: 3em;
   margin-bottom: 3em;
@@ -159,7 +157,7 @@ html, body {
   top: 0;
   left: 0;
   z-index: 1;
-  clip-path: url("#wrapMask");
+  clip-path: url('#wrapMask');
 }
 
 .detail-header {
@@ -394,7 +392,7 @@ html, body {
     margin-bottom: 90px;
   }
   .wrapper {
-    width: 100vw;  /* 화면 너비가 1440px 이하일 경우 70% */
+    width: 100vw; /* 화면 너비가 1440px 이하일 경우 70% */
     margin-top: 4em;
   }
 
@@ -409,7 +407,7 @@ html, body {
 
 @media (max-width: 1020px) {
   .wrapper {
-    width: 100vw;  /* 화면 너비가 1020px 이하일 경우 80% */
+    width: 100vw; /* 화면 너비가 1020px 이하일 경우 80% */
   }
 
   .detail-header div {
@@ -430,7 +428,7 @@ html, body {
   }
 
   .specs,
-  .chars  {
+  .chars {
     width: 40%;
   }
 
