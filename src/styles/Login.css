@@ -31,7 +31,6 @@ body {
 
 /* 로그인폼 컴포넌트 */
 .login-form {
-  min-width: 800px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -68,7 +67,7 @@ body {
   font-size: 1.1em;
   font-family: 'line-seed', sans-serif;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   color: white;
 }
 
@@ -87,8 +86,8 @@ body {
 
 .register {
   font-size: 0.75;
-  width: 600px;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 .register a {
@@ -100,4 +99,18 @@ body {
 
 .register a:hover {
   text-decoration: underline;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
