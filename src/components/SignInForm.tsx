@@ -27,12 +27,14 @@ const SignUpForm = (): JSX.Element => {
         password,
       );
       console.log('회원가입 성공', userCredential);
-
-      // 회원가입 성공 후 홈 페이지로 이동
-      navigate('/login'); // 성공 시 홈 페이지로 이동
+      navigate('/login');
     } catch (error: any) {
       console.error('회원가입 실패', error);
-      alert(error.message); // 오류 메시지 출력
+      alert(
+        error.message === 'Firebase: Error (auth/email-already-in-use).'
+          ? '이미 가입한 회원입니다.'
+          : error.message,
+      );
     }
   };
 
