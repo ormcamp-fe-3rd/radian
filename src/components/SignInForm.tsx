@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
+import signUpFormat from '../data/signUpFormat';
 
 const SignUpForm = (): JSX.Element => {
   const {
@@ -42,81 +43,24 @@ const SignUpForm = (): JSX.Element => {
     <>
       <div className="register-container slide-from-right">
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="name"></label>
-          <input
-            id="name"
-            placeholder="이름을 입력해주세요."
-            className="input-form"
-            type="text"
-            {...register('name', {
-              required: '이름은 필수 입력값입니다.',
-              pattern: {
-                value: /^[가-힣a-zA-Z]+$/,
-                message: '이름은 한글과 영문만 입력 가능합니다.',
-              },
-            })}
-            aria-invalid={errors.name ? 'true' : 'false'}
-          />
-          {errors.name?.message && typeof errors.name.message === 'string' && (
-            <small>{errors.name.message}</small>
-          )}
-
-          <label htmlFor="email"></label>
-          <input
-            className="input-form"
-            id="email"
-            type="email"
-            placeholder="이메일 형식으로 아이디를 입력해주세요"
-            {...register('email', {
-              required: '이메일은 필수 입력값입니다.',
-              pattern: {
-                value: /^[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]+$/,
-                message: '이메일은 영문과 숫자만 입력 가능합니다.',
-              },
-            })}
-            aria-invalid={errors.email ? 'true' : 'false'}
-          />
-          {errors.email?.message &&
-            typeof errors.email.message === 'string' && (
-              <small>{errors.email.message}</small>
-            )}
-          <label htmlFor="password"></label>
-          <input
-            className="input-form"
-            id="password"
-            type="password"
-            placeholder="비밀번호는 8자 이상 입력해주세요"
-            {...register('password', {
-              required: '비밀번호는 필수 입력값입니다.',
-              pattern: {
-                value: /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/,
-                message:
-                  '비밀번호는 8자리 이상이며 숫자와 특수문자를 포함해야 합니다.',
-              },
-            })}
-            aria-invalid={errors.password ? 'true' : 'false'}
-          />
-          {errors.password?.message &&
-            typeof errors.password.message === 'string' && (
-              <small>{errors.password.message}</small>
-            )}
-          <label htmlFor="passwordConfirm"></label>
-          <input
-            id="passwordConfirm"
-            placeholder="상단의 비밀번호를 한번 더 입력해주세요"
-            className="input-form"
-            type="password"
-            {...register('passwordConfirm', {
-              required: '비밀번호 확인은 필수입니다.',
-              validate: (value) =>
-                value === password || '비밀번호가 일치하지 않습니다.',
-            })}
-            aria-invalid={errors.passwordConfirm ? 'true' : 'false'}
-          />
-          {errors.passwordConfirm?.message &&
-            typeof errors.passwordConfirm.message === 'string' && (
-              <small>{errors.passwordConfirm.message}</small>
-            )}
+          {signUpFormat.map((userInformation) => {
+            return (
+              <>
+                <input
+                  className="input-form"
+                  placeholder={userInformation.placeHolder}
+                  id={userInformation.id}
+                  type={userInformation.category}
+                  {...register(userInformation.id, userInformation.validation)}
+                  aria-invalid={errors[userInformation.id] ? 'true' : 'false'}
+                />
+                {errors[userInformation.id]?.message &&
+                  typeof errors[userInformation.id]?.message === 'string' && (
+                    <small>{errors[userInformation.id]?.message}</small>
+                  )}
+              </>
+            );
+          })}
           <button
             className="next-step-button"
             type="submit"
