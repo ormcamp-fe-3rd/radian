@@ -21,7 +21,8 @@
 }
 
 .car-product-container {
-  width: 400px;
+  max-width: 400px;
+  width: auto;
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -36,21 +37,31 @@
 }
 
 .carlist-img {
-  width: auto;
+  /* width: auto;
   height: 100%;
   object-fit: cover;
-  object-position: bottom;
+  object-position: bottom; */
+  width: 100%; /* 부모 요소 너비에 맞춤 */
+  height: 100%; /* 부모 요소 높이에 맞춤 */
+  object-fit: cover; /* 비율 유지하며 채우기 */
+  object-position: center; /* 중앙 기준으로 이미지 배치 */
+  transition: transform 0.3s ease-in-out;
 }
 
 .car-product-img {
-  height: 200px;
+  /* height: 200px;
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; */
+  width: 100%;
+  /* aspect-ratio: 16 / 10; 모든 이미지가 동일한 16:9 비율을 유지 */
+  aspect-ratio: 16 / 9;
+  height: 200px;
+  overflow: hidden; /* 비율을 넘는 이미지는 잘라내기 */
+  position: relative;
 }
 
 .car-product-img :hover {
-  transition: transform 0.3s ease-in-out;
   transform: scale(1.2);
 }
 
@@ -95,11 +106,13 @@
 
 @media (min-width: 403px) and (max-width: 744px) {
   .car-product-container {
+    max-width: none;
     width: 100%;
     flex: 1 1 100%;
   }
   .car-product-img {
-    height: 350px;
+    height: auto;
+    aspect-ratio: 4 / 2;
   }
   .car-product-title {
     padding: 10px;
@@ -122,11 +135,13 @@
 
 @media (max-width: 403px) {
   .car-product-container {
+    max-width: none;
     width: 100%;
     flex: 1 1 100%;
   }
   .car-product-img {
-    height: 230px;
+    height: auto;
+    aspect-ratio: 3 / 2;
   }
   .car-product-title {
     padding: 10px;
