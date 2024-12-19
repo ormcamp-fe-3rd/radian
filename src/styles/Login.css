@@ -34,7 +34,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-top: 8rem;
+  margin-top: 1rem;
   align-items: center;
 }
 
@@ -112,5 +112,17 @@ body {
   }
   to {
     opacity: 0;
+  }
+}
+
+@media (max-width: 744px) {
+  .int-area {
+    width: 350px;
+  }
+}
+
+@media (max-width: 402px) {
+  .int-area {
+    width: 280px;
   }
 }
