@@ -7,4 +7,6 @@ html.html
 detail.html
 productdetail.html
 
-## js
+## API KEY
+/src/.env
+/src/firebase.tsx
