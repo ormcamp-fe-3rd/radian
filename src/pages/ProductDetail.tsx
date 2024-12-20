@@ -33,7 +33,7 @@ const ProductDetail = () => {
 
   }, [carId]);
     
-    // 스크롤 트리거 애니메이션션
+    // 스크롤 트리거 애니메이션
     useGSAP(() => {
 
       if (!carData) return; // carData가 로드되지 않으면 애니메이션 실행 안함
