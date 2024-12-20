@@ -88,6 +88,7 @@
     aspect-ratio: auto;
     transform: scale(1.8);
     padding-bottom: 40px;
+    margin-left: 1.25rem;
   }
   .product-carousel-slide {
     padding: 0px;
@@ -114,6 +115,7 @@
     transform: scale(2);
     object-position: bottom;
     padding-bottom: 30px;
+    margin-left: 1rem;
   }
   .product-carousel-slide {
     padding: 0px;
