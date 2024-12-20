@@ -1,14 +1,45 @@
 import '../styles/ProductDetail.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import modelsData from '../data/modelsData.json'; // 데이터
+import { Car, ModelsData } from '../types/modelsTypes'; // 타입
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+/** 컴포넌트 */
+import ProductDetailIntro from '../components/ProductDetailIntro';
+import ScrollHeader from '../components/ScrollHeader';
+import ScrollPanel from '../components/ScrollPanel';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ProductDetail = () => {
+  const { carId } = useParams<{ carId: string }>(); // URL에서 carId를 받아옴
+  const [carData, setCarData] = useState<Car | null>(null);
 
-    useEffect(() => {
-    // Set up the timelines
+  useEffect(() => {
+    console.log("carId from useParams:", carId);
+
+    // 모델 데이터를 찾아서 상태에 설정
+    const selectedCar = (modelsData as ModelsData).find((car) => car.id === carId);
+
+    if (selectedCar) {
+      console.log("Found selectedCar:", selectedCar);
+      setCarData(selectedCar); // 데이터 업데이트
+    } else {
+      console.log("No product found for the given carId:", carId);
+    }
+
+  }, [carId]);
+    
+    // 스크롤 트리거 애니메이션션
+    useGSAP(() => {
+
+      if (!carData) return; // carData가 로드되지 않으면 애니메이션 실행 안함
+
+    console.log("Animating for:", carData.name);
+    
     const intro_tl = gsap.timeline();
     const part1_tl = gsap.timeline();
     const part2_tl = gsap.timeline();
@@ -17,16 +48,15 @@ const ProductDetail = () => {
     const part5_tl = gsap.timeline();
     const outro_tl = gsap.timeline();
 
-    // ScrollTrigger for the container
     ScrollTrigger.create({
-      trigger: '#container',
+      trigger: '#detail-container',
       pin: true,
       start: 'top -5%',
       end: '+=8150',
     });
 
-    // Initial set-up for elements
-    gsap.set('#liberty', { x: '50%', y: '50%', transformOrigin: 'center center' }); // 화면 중앙에 차 고정
+    // 초반 세팅
+    gsap.set('#radian-model', { x: '50%', y: '50%', transformOrigin: 'center center' });
     gsap.set('.specs', { x: -160, opacity: 0 });
     gsap.set('.chars', { x: 260 });
     part2_tl.set('.models li', { opacity: 0 });
@@ -38,7 +68,8 @@ const ProductDetail = () => {
     outro_tl.set('.outro h2', { opacity: 0 });
     outro_tl.set('.outro p', { opacity: 0 });
     outro_tl.set('.outro button', { opacity: 0 });
-
+  
+    
     // TIMELINE: Intro
     intro_tl
       .fromTo(
@@ -47,7 +78,7 @@ const ProductDetail = () => {
         { height: 800, duration: 0.1 }
       )
       .fromTo(
-        '#liberty',
+        '#radian-model',
         { scale: 0.7, x: 100, y: 100 },
         { scale: 1, x: 100, y: 100, duration: 0.1 }
       )
@@ -82,11 +113,10 @@ const ProductDetail = () => {
         duration: 0.9,
         ease: 'expo.out',
       });
-
     // TIMELINE: Part 1
     part1_tl
       .fromTo(
-        '#liberty',
+        '#radian-model',
         { scale: 1, y: 0 },
         {
           scale: 0.8,
@@ -123,7 +153,6 @@ const ProductDetail = () => {
         stagger: 0.3,
         ease: 'sine.out',
       });
-
     // TIMELINE: Part 2
     part2_tl
       .from('#panel-h1', {
@@ -153,7 +182,6 @@ const ProductDetail = () => {
           },
         }
       );
-
     // TIMELINE: Part 3
     part3_tl
       .fromTo(
@@ -170,7 +198,7 @@ const ProductDetail = () => {
           ease: 'sine.out',
         }
       )
-      .to('#liberty', {
+      .to('#radian-model', {
         scrollTrigger: {
           start: 3550,
           end: 3850,
@@ -259,7 +287,7 @@ const ProductDetail = () => {
         },
       })
       .fromTo(
-        '#liberty',
+        '#radian-model',
         { x: 400 },
         {
           scrollTrigger: {
@@ -272,7 +300,6 @@ const ProductDetail = () => {
           ease: 'sine.out',
         }
       );
-
     // TIMELINE: Part 4
     part4_tl
       .from('.chars h2', {
@@ -311,7 +338,6 @@ const ProductDetail = () => {
         },
         '-=.5'
       );
-
     // TIMELINE: Part 5
     part5_tl
       .fromTo(
@@ -359,7 +385,7 @@ const ProductDetail = () => {
         }
       )
       .fromTo(
-        "#liberty",
+        "#radian-model",
         {
           x: -360,
         },
@@ -377,246 +403,106 @@ const ProductDetail = () => {
       
     // TIMELINE: Outro
     outro_tl
-        .fromTo(
-          "#wrapWin",
-          {
-            height: 80,
-          },
-          {
-            scrollTrigger: {
-              start: 7000,
-              end: 7300,
-              scrub: 1.5,
-            },
-            height: 800,
-            duration: 3,
-            ease: "sine.out",
-          }
-        )
-        .fromTo(
-          "#liberty",
-          {
-            scale: 0.8,
-            y: -300,
-          },
-          {
-            scrollTrigger: {
-              start: 7300,
-              end: 7600,
-              scrub: 1.5,
-            },
-            x: 30,
-            scale: 0.7,
-            y: -340,
-            duration: 4.5,
-            ease: "sine.out",
-          }
-        )
-        .from(".outro h2", {
+      .fromTo(
+        "#wrapWin",
+        {
+          height: 80,
+        },
+        {
           scrollTrigger: {
-            start: 7450,
-            end: 7750,
+            start: 7000,
+            end: 7300,
             scrub: 1.5,
           },
-          duration: 1.5,
-          y: -50,
-          opacity: 1,
-          ease: "none",
-        })
-        .from(".outro p", {
+          height: 800,
+          duration: 3,
+          ease: "sine.out",
+        }
+      )
+      .fromTo(
+        "#radian-model",
+        {
+          scale: 0.8,
+          y: -300,
+        },
+        {
           scrollTrigger: {
-            start: 7600,
-            end: 7900,
+            start: 7300,
+            end: 7600,
             scrub: 1.5,
           },
-          duration: 1.5,
-          y: -50,
-          opacity: 1,
-          ease: "none",
-        })
-        .from(".outro button", {
-          scrollTrigger: {
-            start: 7750,
-            end: 8050,
-            scrub: 1.5,
-          },
-          duration: 1.5,
-          y: -50,
-          opacity: 1,
-          ease: "none",
-        });
+          x: 30,
+          scale: 0.7,
+          y: -340,
+          duration: 4.5,
+          ease: "sine.out",
+        }
+      )
+      .from(".outro h2", {
+        scrollTrigger: {
+          start: 7450,
+          end: 7750,
+          scrub: 1.5,
+        },
+        duration: 1.5,
+        y: -50,
+        opacity: 0,
+        ease: "none",
+      })
+      .from(".outro p", {
+        scrollTrigger: {
+          start: 7600,
+          end: 7900,
+          scrub: 1.5,
+        },
+        duration: 1.5,
+        y: -50,
+        opacity: 0,
+        ease: "none",
+      })
+      .from(".outro button", {
+        scrollTrigger: {
+          start: 7750,
+          end: 8050,
+          scrub: 1.5,
+        },
+        duration: 1.5,
+        y: -50,
+        opacity: 0,
+        ease: "none",
+      });
+  }, [carData]);
 
-    return () => {
-      // Clean up GSAP animations
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      gsap.killTweensOf("*");
-    };
-  }, []);
+  if (!carData) {
+    return <div>Loading...</div>; // carData가 null인 경우 처리 (로딩 중 표시)
+  }
   
   return (
     
     <>
       
-        <section className="detail-intro">
-          <div>
-            <img src="/images/ProductDetail/range-rover-header.jfif" />
-          </div>
-          <h1>Radian-Rover,<br />"The Utility" :Smart, Spacious,<br />and Ready for Anything</h1>
-        </section>
+      <ProductDetailIntro />
 
-        <div className="container" id="container">
+      <div className="detail-container" id="detail-container">
+        <div className="wrapper" id="wrapper">
+          
+          <ScrollHeader />
+          
+          <ScrollPanel carData={carData} />
 
-            <div className="wrapper" id="wrapper">
-
-                <div className="detail-header">
-                  <svg version="1.1" viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="7" height="7"></rect>
-                    <rect x="14" y="3" width="7" height="7"></rect>
-                    <rect x="14" y="14" width="7" height="7"></rect>
-                    <rect x="3" y="14" width="7" height="7"></rect>
-                  </svg>
-                  <div>
-                    <p>More Options</p>
-                    <svg version="1.1" viewBox="0 0 24 24">
-                      <circle cx="11" cy="11" r="8"></circle>
-                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                  </div>
-                </div>
-
-                <div className="panel">
-                    <div className="intro" id="intro">
-                      <img id="logo" src="/images/common/logo.svg" alt="logo-icon" />
-                      <h1 id="intro-h1">Ready to Cruise</h1>
-                      <h3 id="intro-h3">Relax and enjoy the drive</h3>
-                    </div>
-                    <img id="liberty" src="/images/ProductDetail/radian-rover-side.webp" alt="liberty 150 png" />
-                    <h1 id="panel-h1">Radian Rover</h1>
-                    <ul className="models">
-                      <li>Radian RD6</li>
-                      <li>Radian Rover</li>
-                      <li>Radian Cooper</li>
-                    </ul>
-                    <div className="rotator">
-                      <p>0&deg;</p>
-                      <svg version="1.1" viewBox="0 0 10 30">
-                        <path d="M5 5.663V40" fill="none" stroke="#999" strokeWidth="0.92" transform="matrix(1 0 0 1.16492 0 -6.597)" />
-                        <circle cx="7.423" cy="7.159" r="2.577" fill="#fff" transform="translate(-2.423 -4.582)" />
-                      </svg>
-                      <p>360&deg;</p>
-                    </div>
-                    <div className="specs">
-                      <h2>Engine</h2>
-                      <dl>
-                        <dt>Bore x Stroke</dt>
-                        <dd>58mm x 58.6mm</dd>
-
-                        <dt>Clutch</dt>
-                        <dd>Automatic centrifugal dry clutch</dd>
-
-                        <dt>Consumption</dt>
-                        <dd>36.8 Km/I (WMTC cycle)</dd>
-
-                        <dt>Cooling</dt>
-                        <dd>Air</dd>
-
-                        <dt>CO2 Emissions</dt>
-                        <dd>65 g/Km</dd>
-
-                        <dt>Distribution</dt>
-                        <dd>Single overhead camshaft, 3 valves (2 input, 1 output)</dd>
-
-                        <dt>Engine</dt>
-                        <dd>Single cylinder 4-stroke -i-get</dd>
-                      </dl>
-                      <dl>
-                        <dt>Engine Capacity</dt>
-                        <dd>155c</dd>
-
-                        <dt>Fuel system</dt>
-                        <dd>Electronic injection</dd>
-
-                        <dt>Lubrication</dt>
-                        <dd>Oil with wet sump</dd>
-
-                        <dt>Max Power</dt>
-                        <dd>12.9hp (9.6kW) @ 7,750 rpm</dd>
-
-                        <dt>Max Torque</dt>
-                        <dd>9.58 ft-lbs (13 Nm) @ 5250 rpm</dd>
-
-                        <dt>Transmission</dt>
-                        <dd>Automatic CVT</dd>
-
-                        <dt>Starter</dt>
-                        <dd>Electric</dd>
-                      </dl>
-                    </div>
-                    <div className="chars">
-                      <h2>Characteristics</h2>
-                      <dl>
-                        <dt>Frame</dt>
-                        <dd>High resistance tubular steel</dd>
-
-                        <dt>Front tyre</dt>
-                        <dd>Tubeless 90/80 - 16", 51J</dd>
-
-                        <dt>Rear brake</dt>
-                        <dd>Tamburo 140mm</dd>
-
-                        <dt>Seat height</dt>
-                        <dd>31.1" (790mm)</dd>
-
-                        <dt>Front suspension</dt>
-                        <dd>Telescopic hydraulic fork, 76mm stroke</dd>
-
-                        <dt>Rear tyre</dt>
-                        <dd>Tubeless 100/80 - 14", 54J</dd>
-
-                        <dt>ABS</dt>
-                        <dd>Front wheel standard ABS</dd>
-                      </dl>
-                      <dl>
-                        <dt>Fuel Tank Capacity</dt>
-                        <dd>1.58 gal (6 liters)</dd>
-
-                        <dt>Rear suspension</dt>
-                        <dd>Single hydraulic shock absorber with 5-position preload adjustment</dd>
-
-                        <dt>Front brake</dt>
-                        <dd>Single disk 240mm</dd>
-
-                        <dt>Length/Width/Wheelbase</dt>
-                        <dd>76.5" / 27.1" / 52.7"</dd>
-
-                        <dt>Emission compliance</dt>
-                        <dd>EPA, CARB, Transport Canada</dd>
-                      </dl>
-                    </div>
-                    <div className="outro">
-                      <h2>Radian Rover</h2>
-                      <p>$2999.00</p>
-                      <button>Build Now</button>
-                    </div>
-                </div>
-                <div className="bkg"></div>
-            </div>
-            
-            <svg version="1.1" id="mask">
-              <defs>
-                <clipPath id="wrapMask">
-                  <rect id="wrapWin" width="1300" height="1100" fill="black" />
-                </clipPath>
-              </defs>
-            </svg>
+          <div className="bkg"></div>
         </div>
-
+        
+        <svg version="1.1" id="mask">
+          <defs>
+            <clipPath id="wrapMask">
+              <rect id="wrapWin" width="1300" height="1100" fill="black" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
     </>
   );
 };
 
 export default ProductDetail;
-
-
-
-
