@@ -72,12 +72,9 @@ div {
   height: 100%;
   margin: 68px 0px;
   display: flex;
-  flex-wrap: wrap;
-  flex: 1 0 100%;
   flex-direction: row;
   align-items: center;
-  justify-items: center;
-  gap: 50px;
+  gap: 2rem;
   justify-content: center;
 }
 
