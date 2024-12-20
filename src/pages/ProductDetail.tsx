@@ -43,6 +43,7 @@ const ProductDetail = () => {
     const intro_tl = gsap.timeline();
     const part1_tl = gsap.timeline();
     const part2_tl = gsap.timeline();
+    const rotator_tl = gsap.timeline();
     const part3_tl = gsap.timeline();
     const part4_tl = gsap.timeline();
     const part5_tl = gsap.timeline();
@@ -113,6 +114,7 @@ const ProductDetail = () => {
         duration: 0.9,
         ease: 'expo.out',
       });
+
     // TIMELINE: Part 1
     part1_tl
       .fromTo(
@@ -152,7 +154,20 @@ const ProductDetail = () => {
         duration: 1.5,
         stagger: 0.3,
         ease: 'sine.out',
-      });
+      })
+      .to('.rotator circle', {
+        scrollTrigger: {
+          start: 1500,
+          end: 1800,
+          scrub: 1.5,
+        },
+        y:20,
+        duration: 1.5,
+        stagger: 0.3,
+        ease: 'sine.out',
+      })
+      part2_tl.add(rotator_tl);
+
     // TIMELINE: Part 2
     part2_tl
       .from('#panel-h1', {
@@ -182,6 +197,7 @@ const ProductDetail = () => {
           },
         }
       );
+
     // TIMELINE: Part 3
     part3_tl
       .fromTo(
@@ -300,6 +316,7 @@ const ProductDetail = () => {
           ease: 'sine.out',
         }
       );
+
     // TIMELINE: Part 4
     part4_tl
       .from('.chars h2', {
@@ -338,6 +355,7 @@ const ProductDetail = () => {
         },
         '-=.5'
       );
+
     // TIMELINE: Part 5
     part5_tl
       .fromTo(
