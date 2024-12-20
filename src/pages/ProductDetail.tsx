@@ -3,10 +3,6 @@ import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-/** 컴포넌트 */
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-
 gsap.registerPlugin(ScrollTrigger);
 
 const ProductDetail = () => {
@@ -460,10 +456,7 @@ const ProductDetail = () => {
   return (
     
     <>
-        <div className='common-header'>
-            <Header />
-        </div>
-
+      
         <section className="detail-intro">
           <div>
             <img src="/images/ProductDetail/range-rover-header.jfif" />
@@ -493,7 +486,7 @@ const ProductDetail = () => {
 
                 <div className="panel">
                     <div className="intro" id="intro">
-                      <img id="logo" src="/images/common/logo.png" alt="logo-icon" />
+                      <img id="logo" src="/images/common/logo.svg" alt="logo-icon" />
                       <h1 id="intro-h1">Ready to Cruise</h1>
                       <h3 id="intro-h3">Relax and enjoy the drive</h3>
                     </div>
@@ -618,11 +611,12 @@ const ProductDetail = () => {
             </svg>
         </div>
 
-        <Footer />
     </>
   );
 };
 
 export default ProductDetail;
+
+
 
 
