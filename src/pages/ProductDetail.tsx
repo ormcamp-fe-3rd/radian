@@ -1,9 +1,11 @@
 import '../styles/ProductDetail.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import modelsData from '../data/modelsData.json'; // 데이터
+import { Car, ModelsData } from '../types/modelsTypes'; // 타입
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 /** 컴포넌트 */
 import ProductDetailIntro from '../components/ProductDetailIntro';
@@ -13,16 +15,31 @@ import ScrollPanel from '../components/ScrollPanel';
 gsap.registerPlugin(ScrollTrigger);
 
 const ProductDetail = () => {
-  const { model } = useParams<{ model: string }>();
+  const { carId } = useParams<{ carId: string }>(); // URL에서 carId를 받아옴
+  const [carData, setCarData] = useState<Car | null>(null);
 
-  // modelsData는 배열이므로 첫 번째 객체를 선택하고, 그 객체에서 모델 이름을 키로 사용하여 찾습니다.
-  const selectedModel = modelsData[0][model as keyof typeof modelsData[0]];
+  useEffect(() => {
+    console.log("carId from useParams:", carId);
 
-  if (!selectedModel) return <div>모델을 찾을 수 없습니다.</div>;
+    // 모델 데이터를 찾아서 상태에 설정
+    const selectedCar = (modelsData as ModelsData).find((car) => car.id === carId);
 
-    useEffect(() => {
+    if (selectedCar) {
+      console.log("Found selectedCar:", selectedCar);
+      setCarData(selectedCar); // 데이터 업데이트
+    } else {
+      console.log("No product found for the given carId:", carId);
+    }
 
-    // Set up the timelines
+  }, [carId]);
+    
+    // 스크롤 트리거 애니메이션션
+    useGSAP(() => {
+
+      if (!carData) return; // carData가 로드되지 않으면 애니메이션 실행 안함
+
+    console.log("Animating for:", carData.name);
+    
     const intro_tl = gsap.timeline();
     const part1_tl = gsap.timeline();
     const part2_tl = gsap.timeline();
@@ -31,16 +48,15 @@ const ProductDetail = () => {
     const part5_tl = gsap.timeline();
     const outro_tl = gsap.timeline();
 
-    // ScrollTrigger for the container
     ScrollTrigger.create({
-      trigger: '#container',
+      trigger: '#detail-container',
       pin: true,
       start: 'top -5%',
       end: '+=8150',
     });
 
-    // Initial set-up for elements
-    gsap.set('#liberty', { x: '50%', y: '50%', transformOrigin: 'center center' }); // 화면 중앙에 차 고정
+    // 초반 세팅
+    gsap.set('#radian-model', { x: '50%', y: '50%', transformOrigin: 'center center' });
     gsap.set('.specs', { x: -160, opacity: 0 });
     gsap.set('.chars', { x: 260 });
     part2_tl.set('.models li', { opacity: 0 });
@@ -52,7 +68,8 @@ const ProductDetail = () => {
     outro_tl.set('.outro h2', { opacity: 0 });
     outro_tl.set('.outro p', { opacity: 0 });
     outro_tl.set('.outro button', { opacity: 0 });
-
+  
+    
     // TIMELINE: Intro
     intro_tl
       .fromTo(
@@ -61,7 +78,7 @@ const ProductDetail = () => {
         { height: 800, duration: 0.1 }
       )
       .fromTo(
-        '#liberty',
+        '#radian-model',
         { scale: 0.7, x: 100, y: 100 },
         { scale: 1, x: 100, y: 100, duration: 0.1 }
       )
@@ -96,11 +113,10 @@ const ProductDetail = () => {
         duration: 0.9,
         ease: 'expo.out',
       });
-
     // TIMELINE: Part 1
     part1_tl
       .fromTo(
-        '#liberty',
+        '#radian-model',
         { scale: 1, y: 0 },
         {
           scale: 0.8,
@@ -137,7 +153,6 @@ const ProductDetail = () => {
         stagger: 0.3,
         ease: 'sine.out',
       });
-
     // TIMELINE: Part 2
     part2_tl
       .from('#panel-h1', {
@@ -167,7 +182,6 @@ const ProductDetail = () => {
           },
         }
       );
-
     // TIMELINE: Part 3
     part3_tl
       .fromTo(
@@ -184,7 +198,7 @@ const ProductDetail = () => {
           ease: 'sine.out',
         }
       )
-      .to('#liberty', {
+      .to('#radian-model', {
         scrollTrigger: {
           start: 3550,
           end: 3850,
@@ -273,7 +287,7 @@ const ProductDetail = () => {
         },
       })
       .fromTo(
-        '#liberty',
+        '#radian-model',
         { x: 400 },
         {
           scrollTrigger: {
@@ -286,7 +300,6 @@ const ProductDetail = () => {
           ease: 'sine.out',
         }
       );
-
     // TIMELINE: Part 4
     part4_tl
       .from('.chars h2', {
@@ -325,7 +338,6 @@ const ProductDetail = () => {
         },
         '-=.5'
       );
-
     // TIMELINE: Part 5
     part5_tl
       .fromTo(
@@ -373,7 +385,7 @@ const ProductDetail = () => {
         }
       )
       .fromTo(
-        "#liberty",
+        "#radian-model",
         {
           x: -360,
         },
@@ -391,99 +403,96 @@ const ProductDetail = () => {
       
     // TIMELINE: Outro
     outro_tl
-        .fromTo(
-          "#wrapWin",
-          {
-            height: 80,
-          },
-          {
-            scrollTrigger: {
-              start: 7000,
-              end: 7300,
-              scrub: 1.5,
-            },
-            height: 800,
-            duration: 3,
-            ease: "sine.out",
-          }
-        )
-        .fromTo(
-          "#liberty",
-          {
-            scale: 0.8,
-            y: -300,
-          },
-          {
-            scrollTrigger: {
-              start: 7300,
-              end: 7600,
-              scrub: 1.5,
-            },
-            x: 30,
-            scale: 0.7,
-            y: -340,
-            duration: 4.5,
-            ease: "sine.out",
-          }
-        )
-        .from(".outro h2", {
+      .fromTo(
+        "#wrapWin",
+        {
+          height: 80,
+        },
+        {
           scrollTrigger: {
-            start: 7450,
-            end: 7750,
+            start: 7000,
+            end: 7300,
             scrub: 1.5,
           },
-          duration: 1.5,
-          y: -50,
-          opacity: 1,
-          ease: "none",
-        })
-        .from(".outro p", {
+          height: 800,
+          duration: 3,
+          ease: "sine.out",
+        }
+      )
+      .fromTo(
+        "#radian-model",
+        {
+          scale: 0.8,
+          y: -300,
+        },
+        {
           scrollTrigger: {
-            start: 7600,
-            end: 7900,
+            start: 7300,
+            end: 7600,
             scrub: 1.5,
           },
-          duration: 1.5,
-          y: -50,
-          opacity: 1,
-          ease: "none",
-        })
-        .from(".outro button", {
-          scrollTrigger: {
-            start: 7750,
-            end: 8050,
-            scrub: 1.5,
-          },
-          duration: 1.5,
-          y: -50,
-          opacity: 1,
-          ease: "none",
-        });
+          x: 30,
+          scale: 0.7,
+          y: -340,
+          duration: 4.5,
+          ease: "sine.out",
+        }
+      )
+      .from(".outro h2", {
+        scrollTrigger: {
+          start: 7450,
+          end: 7750,
+          scrub: 1.5,
+        },
+        duration: 1.5,
+        y: -50,
+        opacity: 0,
+        ease: "none",
+      })
+      .from(".outro p", {
+        scrollTrigger: {
+          start: 7600,
+          end: 7900,
+          scrub: 1.5,
+        },
+        duration: 1.5,
+        y: -50,
+        opacity: 0,
+        ease: "none",
+      })
+      .from(".outro button", {
+        scrollTrigger: {
+          start: 7750,
+          end: 8050,
+          scrub: 1.5,
+        },
+        duration: 1.5,
+        y: -50,
+        opacity: 0,
+        ease: "none",
+      });
+  }, [carData]);
 
-    return () => {
-      // Clean up GSAP animations
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      gsap.killTweensOf("*");
-    };
-  }, []);
-
-  if (!selectedModel) return <div>Loading...</div>;
+  if (!carData) {
+    return <div>Loading...</div>; // carData가 null인 경우 처리 (로딩 중 표시)
+  }
   
   return (
     
     <>
+      
       <ProductDetailIntro />
 
-      <div className="container" id="container">
+      <div className="detail-container" id="detail-container">
         <div className="wrapper" id="wrapper">
           
           <ScrollHeader />
-
-          <ScrollPanel selectedModel={selectedModel} /> {/* 데이터 전달 */}
+          
+          <ScrollPanel carData={carData} />
 
           <div className="bkg"></div>
         </div>
-            
+        
         <svg version="1.1" id="mask">
           <defs>
             <clipPath id="wrapMask">
@@ -492,13 +501,8 @@ const ProductDetail = () => {
           </defs>
         </svg>
       </div>
-
     </>
   );
 };
 
 export default ProductDetail;
-
-
-
-

@@ -29,7 +29,6 @@ body {
   font-weight: 400;
   color: #423522;
   background-color: #fffbf1;
-  /* overflow-x: hidden; */
   box-sizing: border-box;
 }
 
@@ -40,7 +39,7 @@ body {
   margin: 2em;
 }
 
-.detail-intro-title {
+.detail-intro h1 {
   width: 50%;
   position: absolute;
   margin-left: 40%;
@@ -51,7 +50,7 @@ body {
   overflow-wrap: break-word; /* 텍스트가 부모 영역을 넘지 않도록 강제로 줄바꿈 */
 }
 
-.detail-intro-img {
+.detail-intro div {
   width: 50%;
   height: 100%;
   top: 0;
@@ -59,7 +58,7 @@ body {
   margin: 0;
 }
 
-.detail-intro-img img {
+.detail-intro div img {
   width: 100%;
   opacity: 0.2;
 }
@@ -130,8 +129,8 @@ body {
   margin-bottom: 60px;
 }
 
-.detail-wrapper {
-  width: 90%;
+.wrapper {
+  width: 80%;
   max-width: 1300px;
   min-height: 100vh; /* 높이를 100vh로 설정하여 화면에 맞게 조정 */
   max-height: 750px; /* max-height는 필요에 따라 조정 */
@@ -173,7 +172,7 @@ body {
   fill: none;
 }
 
-.detail-header-options {
+.detail-header div {
   display: grid;
   grid-template-columns: 1fr 7%;
   justify-content: right;
@@ -181,15 +180,15 @@ body {
   margin: 0;
 }
 
-.detail-header-options p {
+.detail-header div p {
   color: #423522;
   font-size: 13px;
   font-weight: 700;
-
+  line-height: 0%;
   margin-right: 0.5em;
 }
 
-.detail-header-options svg {
+.detail-header div svg {
   text-align: right;
 }
 
@@ -201,30 +200,30 @@ body {
   position: relative;
 }
 
-#raidan-model {
+.panel img#radian-model {
   width: 70%;
   height: auto;
   position: absolute;
   left: 40%;
   bottom: -55em;
   transform: translateX(-50%);
-  opacity: 1;
-  z-index: 11 !important;
+  z-index: 10;
 }
 
-#panel-h1 {
+.panel h1#panel-h1 {
   width: 100%;
   position: absolute;
   text-align: center;
   top: 50%;
   left: 50%;
+  margin-top: 2em;
   transform: translateX(-50%);
   font-size: 8rem;
   opacity: 1;
   z-index: 9;
 }
 
-.panel-intro {
+.intro {
   position: absolute;
   top: 20%;
   left: 50%;
@@ -234,16 +233,16 @@ body {
   z-index: 6;
 }
 
-.panel-intro h1 {
-  font-size: 4rem;
+.intro h1 {
+  font-size: 3rem;
 }
 
-.panel-intro h3 {
+.intro h3 {
   margin-top: -16px;
-  font-size: 2.4rem;
+  font-size: 2rem;
 }
 
-.panel-intro img {
+.intro img {
   width: 50px;
   margin-top: 25px;
   opacity: 0.6;
@@ -385,12 +384,12 @@ body {
   .detail-container {
     margin-bottom: 90px;
   }
-  .detail-wrapper {
+  .wrapper {
     width: 100vw; /* 화면 너비가 1440px 이하일 경우 70% */
     margin-top: 4em;
   }
 
-  #radian-model {
+  .panel img#radian-model {
     left: 15%;
   }
 
@@ -400,7 +399,7 @@ body {
 }
 
 @media (max-width: 1020px) {
-  .detail-wrapper {
+  .wrapper {
     width: 100vw; /* 화면 너비가 1020px 이하일 경우 80% */
   }
 
@@ -412,11 +411,11 @@ body {
     margin-top: 2em;
   }
 
-  #panel-h1 {
+  .panel h1#panel-h1 {
     font-size: 4rem;
   }
 
-  #radian-model {
+  .panel img#radian-model {
     bottom: -40em;
     left: -10%;
   }
