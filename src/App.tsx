@@ -28,11 +28,8 @@ const App = (): JSX.Element => {
         <Route path="/register/*" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/product-list" element={<ProductList />}></Route>
-        <Route path="/product-detail" element={<ProductDetail />}></Route>
-        <Route
-          path="/product-reservation/*"
-          element={<ProductReservation />}
-        ></Route>
+        <Route path="/product-detail/:carId" element={<ProductDetail />}></Route>
+        <Route path="/product-reservation/*" element={<ProductReservation />}></Route>
       </Routes>
 
       <Footer />
