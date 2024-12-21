@@ -4,6 +4,7 @@ import '../styles/Home.css';
 
 import useHomeTitleVisible from '../hooks/useHomeTitleVisible';
 import useZoomOnScroll from '../hooks/useZoomOnScroll';
+import useFlipOnScroll from '../hooks/useFlipOnScroll';
 import IndexCardFlipSection from '../components/IndexCardFlipSection';
 import IndexCardHoverSection from '../components/IndexCardHoverSection';
 import IndexCardZoomSection from '../components/IndexCardZoomSection';
@@ -22,27 +23,7 @@ const Home = (): JSX.Element => {
   });
   const [isHoveringLeft, setIsHoveringLeft] = useState(false);
   const [isHoveringRight, setIsHoveringRight] = useState(false);
-  const [getFlipScroll, setGetFlipScroll] = useState(0);
-
-  useEffect(() => {
-    const handler = () => {
-      if (!flipContainer.current || !flipScollContainer.current) return;
-      const getFlipContainerSize =
-        flipContainer.current.getBoundingClientRect();
-
-      const getFlipScollContainer =
-        flipScollContainer.current.getBoundingClientRect();
-
-      if (getFlipContainerSize.top <= 0) {
-        const scrolledDistance = Number(
-          Math.abs(getFlipScollContainer.top / window.innerHeight).toFixed(2),
-        );
-        setGetFlipScroll(scrolledDistance * 100);
-      }
-    };
-    window.addEventListener('scroll', handler);
-    return () => window.removeEventListener('scroll', handler);
-  }, []);
+  const getFlipScroll = useFlipOnScroll({ flipContainer, flipScollContainer });
 
   return (
     <>
