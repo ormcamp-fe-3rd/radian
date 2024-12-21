@@ -3,6 +3,7 @@ import '../styles/reset.css';
 import '../styles/Home.css';
 
 import IndexCardFlipSection from '../components/IndexCardFlipSection';
+import IndexCardHoverSection from '../components/IndexCardHoverSection';
 
 const Home = (): JSX.Element => {
   const companyVisionRef = useRef<HTMLHeadingElement | null>(null);
@@ -115,26 +116,13 @@ const Home = (): JSX.Element => {
             with modern electric vehicle technology.
           </h1>
         </div>
-        <div className="home-content-container">
-          <div className="image-container-half">
-            <img
-              className={`home-sub-image ${isHoveringLeft ? 'content-zoom-in' : ''}`}
-              src="/images/main-images/Mini-EV-Conversion.jpg"
-              alt="Mini Cooper Classic Electric Vehicle Conversion"
-              onMouseOver={() => setIsHoveringLeft(true)}
-              onMouseOut={() => setIsHoveringLeft(false)}
-            />
-          </div>
-          <div className="image-container-half">
-            <img
-              className={`home-sub-image ${isHoveringRight ? 'content-zoom-in' : ''}`}
-              src="/images/main-images/Classic-Mini-Appeal.jpg"
-              alt="Classic Mini Cooper Appeal"
-              onMouseOver={() => setIsHoveringRight(true)}
-              onMouseOut={() => setIsHoveringRight(false)}
-            />
-          </div>
-        </div>
+        <IndexCardHoverSection
+          isHoveringLeft={isHoveringLeft}
+          isHoveringRight={isHoveringRight}
+          setIsHoveringLeft={setIsHoveringLeft}
+          setIsHoveringRight={setIsHoveringRight}
+        />
+
         <IndexCardFlipSection
           getFlipScroll={getFlipScroll}
           flipContainer={flipContainer}
