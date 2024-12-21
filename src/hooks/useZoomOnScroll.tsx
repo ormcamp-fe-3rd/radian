@@ -1,6 +1,12 @@
-import { useState, useRef, useEffect } from 'react';
+import { useEffect, useState, RefObject } from 'react';
 
-function useZoomOnScroll({ scrollingSectionRef, imageContainerRef }) {
+function useZoomOnScroll({
+  scrollingSectionRef,
+  imageContainerRef,
+}: {
+  scrollingSectionRef: RefObject<HTMLElement>;
+  imageContainerRef: RefObject<HTMLElement>;
+}) {
   const [divWidth, setDivWidth] = useState(0);
   useEffect(() => {
     const handler = () => {

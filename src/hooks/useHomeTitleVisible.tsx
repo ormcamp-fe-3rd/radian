@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, RefObject } from 'react';
 
-function useHomeTitleVisible(indexTitleRef) {
+function useHomeTitleVisible(indexTitleRef: RefObject<HTMLElement>) {
   const [isTextVisible, setIsTextVisible] = useState(false);
 
   useEffect(() => {

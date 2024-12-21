@@ -1,6 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, RefObject } from 'react';
 
-function useFlipOnScroll({ flipContainer, flipScollContainer }) {
+function useFlipOnScroll({
+  flipContainer,
+  flipScollContainer,
+}: {
+  flipContainer: RefObject<HTMLElement>;
+  flipScollContainer: RefObject<HTMLElement>;
+}) {
   const [getFlipScroll, setGetFlipScroll] = useState(0);
 
   useEffect(() => {
