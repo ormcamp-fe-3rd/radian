@@ -220,6 +220,7 @@
   overflow: hidden;
   transform: rotateY(180deg);
   border-radius: 1rem;
+  text-decoration: none;
 }
 
 .categoryTitle {

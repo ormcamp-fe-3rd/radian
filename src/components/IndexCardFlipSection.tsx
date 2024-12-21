@@ -1,4 +1,6 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
+
 import CARD_DATA from '../data/indexCarImagePath.json';
 import useFlipOnScroll from '../hooks/useFlipOnScroll';
 
@@ -29,7 +31,8 @@ const IndexCardFlipSection = () => {
                   backgroundImage: `url(${contentLink.frontImage})`,
                 }}
               ></div>
-              <div
+              <Link
+                to={`/product-list/${contentLink.productUrl}`}
                 className="card-back"
                 style={{ backgroundImage: `url(${contentLink.backImage})` }}
               >
@@ -39,7 +42,7 @@ const IndexCardFlipSection = () => {
                 >
                   {contentLink.logoTitle}
                 </h2>
-              </div>
+              </Link>
             </div>
           );
         })}
