@@ -4,6 +4,7 @@ import '../styles/Home.css';
 
 import IndexCardFlipSection from '../components/IndexCardFlipSection';
 import IndexCardHoverSection from '../components/IndexCardHoverSection';
+import IndexCardZoomSection from '../components/IndexCardZoomSection';
 
 const Home = (): JSX.Element => {
   const companyVisionRef = useRef<HTMLHeadingElement | null>(null);
@@ -87,6 +88,7 @@ const Home = (): JSX.Element => {
             <source src="/videos/sample-cars-loop-clip.mp4" type="video/mp4" />
           </video>
         </div>
+
         <h1
           className={`company-vision ${isTextVisible ? 'visible' : ''}`}
           ref={companyVisionRef}
@@ -96,26 +98,18 @@ const Home = (): JSX.Element => {
           classic cars allow you to explore new corners of the world while
           providing the joy of preserving the environment along the way.
         </h1>
-        <div className="scrolling-section" ref={scrollingSectionRef}>
-          <div
-            ref={imageContainerRef}
-            className="image-container"
-            style={{ width: `${divWidth * 100}%` }}
-          >
-            <img
-              className="home-main-image"
-              src="/images/main-images/Mini-Cooper-Classic-Electric-conversion-1.webp"
-              alt="Mini Cooper Classic Electric Conversion"
-            />
-          </div>
-        </div>
 
-        <div>
-          <h1 className="company-message">
-            We breathe new life into the timeless beauty of classic car design
-            with modern electric vehicle technology.
-          </h1>
-        </div>
+        <IndexCardZoomSection
+          scrollingSectionRef={scrollingSectionRef}
+          imageContainerRef={imageContainerRef}
+          divWidth={divWidth}
+        />
+
+        <h1 className="company-message">
+          We breathe new life into the timeless beauty of classic car design
+          with modern electric vehicle technology.
+        </h1>
+
         <IndexCardHoverSection
           isHoveringLeft={isHoveringLeft}
           isHoveringRight={isHoveringRight}
