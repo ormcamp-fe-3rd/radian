@@ -1,0 +1,57 @@
+[
+    {
+      "RD6": {
+        "id": 1,
+        "name": "Radian RD6",
+        "description": "The perfect combination of power and efficiency.",
+        "image": "/images/ProductDetail/radian-rd6-side.webp",
+        "price": "$2499.00",
+        "specs": [
+          "Powerful engine",
+          "Sporty design",
+          "Great fuel efficiency"
+        ],
+        "chars": [
+          "Speed: 180 km/h",
+          "Weight: 1500 kg",
+          "Seats: 4"
+        ]
+      },
+      "Rover": {
+        "id": 2,
+        "name": "Radian Rover",
+        "description": "The ultimate SUV for your adventures.",
+        "image": "/images/ProductDetail/radian-rover-side.webp",
+        "price": "$2999.00",
+        "specs": [
+          "All-terrain tires",
+          "Spacious interior",
+          "Advanced navigation system"
+        ],
+        "chars": [
+          "Speed: 160 km/h",
+          "Weight: 1800 kg",
+          "Seats: 7"
+        ]
+      },
+      "Cooper": {
+        "id": 3,
+        "name": "Radian Cooper",
+        "description": "Compact, efficient, and stylish.",
+        "image": "/images/ProductDetail/radian-cooper-side.webp",
+        "price": "$1999.00",
+        "specs": [
+          "Fuel-efficient",
+          "Compact design",
+          "Affordable price"
+        ],
+        "chars": [
+          "Speed: 140 km/h",
+          "Weight: 1200 kg",
+          "Seats: 5"
+        ]
+      }
+    }
+  ]
+  
+  
