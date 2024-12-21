@@ -1,11 +1,12 @@
-import '../styles/Home.css';
+import { useRef } from 'react';
 import CARD_DATA from '../data/indexCarImagePath.json';
+import useFlipOnScroll from '../hooks/useFlipOnScroll';
 
-const IndexCardFlipSection = ({
-  getFlipScroll,
-  flipContainer,
-  flipScollContainer,
-}) => {
+const IndexCardFlipSection = () => {
+  const flipContainer = useRef<HTMLDivElement>(null);
+  const flipScollContainer = useRef<HTMLDivElement>(null);
+
+  const getFlipScroll = useFlipOnScroll({ flipContainer, flipScollContainer });
   return (
     <div className="flip-card-scroll" ref={flipScollContainer}>
       <div className="flip-card-section" ref={flipContainer}>

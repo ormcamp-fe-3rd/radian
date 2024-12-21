@@ -1,10 +1,13 @@
-import '../styles/Home.css';
+import { useRef } from 'react';
+import useZoomOnScroll from '../hooks/useZoomOnScroll';
 
-const IndexCardZoomSection = ({
-  scrollingSectionRef,
-  imageContainerRef,
-  divWidth,
-}) => {
+const IndexCardZoomSection = () => {
+  const imageContainerRef = useRef<HTMLDivElement | null>(null);
+  const scrollingSectionRef = useRef<HTMLDivElement | null>(null);
+  const divWidth = useZoomOnScroll({
+    scrollingSectionRef,
+    imageContainerRef,
+  });
   return (
     <div className="scrolling-section" ref={scrollingSectionRef}>
       <div

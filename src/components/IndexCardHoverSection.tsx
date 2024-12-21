@@ -1,11 +1,8 @@
-import '../styles/Home.css';
+import { useState } from 'react';
 
-const IndexCardHoverSection = ({
-  isHoveringLeft,
-  isHoveringRight,
-  setIsHoveringLeft,
-  setIsHoveringRight,
-}) => {
+const IndexCardHoverSection = () => {
+  const [isHoveringLeft, setIsHoveringLeft] = useState(false);
+  const [isHoveringRight, setIsHoveringRight] = useState(false);
   return (
     <div className="home-content-container">
       <div className="image-container-half">
