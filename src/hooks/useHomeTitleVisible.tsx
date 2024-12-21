@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-function useHomeTitleVisible(companyVisionRef) {
+function useHomeTitleVisible(indexTitleRef) {
   const [isTextVisible, setIsTextVisible] = useState(false);
 
   useEffect(() => {
@@ -11,12 +11,12 @@ function useHomeTitleVisible(companyVisionRef) {
       { threshold: 0.5 },
     );
 
-    if (companyVisionRef.current) {
-      observer.observe(companyVisionRef.current);
+    if (indexTitleRef.current) {
+      observer.observe(indexTitleRef.current);
     }
 
     return () => observer.disconnect();
-  }, [companyVisionRef]);
+  }, [indexTitleRef]);
 
   return isTextVisible;
 }

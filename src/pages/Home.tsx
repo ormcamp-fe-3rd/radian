@@ -9,8 +9,10 @@ import IndexCardHoverSection from '../components/IndexCardHoverSection';
 import IndexCardZoomSection from '../components/IndexCardZoomSection';
 
 const Home = (): JSX.Element => {
-  const companyVisionRef = useRef<HTMLHeadingElement | null>(null);
-  const isTextVisible = useHomeTitleVisible(companyVisionRef);
+  const companyMainTitleRef = useRef<HTMLHeadingElement | null>(null);
+  const companySubTitleRef = useRef<HTMLHeadingElement | null>(null);
+  const isMainTitleVisible = useHomeTitleVisible(companyMainTitleRef);
+  const isSubTitleVisible = useHomeTitleVisible(companySubTitleRef);
 
   return (
     <>
@@ -22,8 +24,8 @@ const Home = (): JSX.Element => {
           </video>
         </div>
         <h1
-          className={`company-vision ${isTextVisible ? 'visible' : ''}`}
-          ref={companyVisionRef}
+          className={`company-vision ${isMainTitleVisible ? 'visible' : ''}`}
+          ref={companyMainTitleRef}
         >
           We have a bold vision for the future of travel, presenting ways for
           you to better connect with nature and each other. Radian’s electric
@@ -31,7 +33,10 @@ const Home = (): JSX.Element => {
           providing the joy of preserving the environment along the way.
         </h1>
         <IndexCardZoomSection />
-        <h1 className="company-message">
+        <h1
+          className={`company-vision ${isSubTitleVisible ? 'visible' : ''}`}
+          ref={companySubTitleRef}
+        >
           We breathe new life into the timeless beauty of classic car design
           with modern electric vehicle technology.
         </h1>
