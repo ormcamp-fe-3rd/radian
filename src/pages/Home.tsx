@@ -3,46 +3,25 @@ import '../styles/reset.css';
 import '../styles/Home.css';
 
 import useHomeTitleVisible from '../hooks/useHomeTitleVisible';
+import useZoomOnScroll from '../hooks/useZoomOnScroll';
 import IndexCardFlipSection from '../components/IndexCardFlipSection';
 import IndexCardHoverSection from '../components/IndexCardHoverSection';
 import IndexCardZoomSection from '../components/IndexCardZoomSection';
 
 const Home = (): JSX.Element => {
   const companyVisionRef = useRef<HTMLHeadingElement | null>(null);
-  const isTextVisible = useHomeTitleVisible(companyVisionRef);
-
   const imageContainerRef = useRef<HTMLDivElement | null>(null);
   const scrollingSectionRef = useRef<HTMLDivElement | null>(null);
-  const [divWidth, setDivWidth] = useState(0);
-
-  useEffect(() => {
-    const handler = () => {
-      if (imageContainerRef.current && scrollingSectionRef.current) {
-        const imageContainer =
-          imageContainerRef.current.getBoundingClientRect();
-        const scrollingSection =
-          scrollingSectionRef.current.getBoundingClientRect();
-        if (imageContainer.top === 30) {
-          let scrolledDistance = Math.min(
-            1,
-            Math.abs(scrollingSection.top / window.innerHeight),
-          );
-
-          setDivWidth(scrolledDistance);
-        } else if (imageContainer.top > 30) {
-          setDivWidth(0);
-        }
-      }
-    };
-    window.addEventListener('scroll', handler);
-    return () => window.removeEventListener('scroll', handler);
-  }, []);
-
-  const [isHoveringLeft, setIsHoveringLeft] = useState(false);
-  const [isHoveringRight, setIsHoveringRight] = useState(false);
-
   const flipContainer = useRef<HTMLDivElement>(null);
   const flipScollContainer = useRef<HTMLDivElement>(null);
+
+  const isTextVisible = useHomeTitleVisible(companyVisionRef);
+  const divWidth = useZoomOnScroll({
+    scrollingSectionRef,
+    imageContainerRef,
+  });
+  const [isHoveringLeft, setIsHoveringLeft] = useState(false);
+  const [isHoveringRight, setIsHoveringRight] = useState(false);
   const [getFlipScroll, setGetFlipScroll] = useState(0);
 
   useEffect(() => {
