@@ -2,30 +2,18 @@ import { useState, useRef, useEffect } from 'react';
 import '../styles/reset.css';
 import '../styles/Home.css';
 
+import useHomeTitleVisible from '../hooks/useHomeTitleVisible';
 import IndexCardFlipSection from '../components/IndexCardFlipSection';
 import IndexCardHoverSection from '../components/IndexCardHoverSection';
 import IndexCardZoomSection from '../components/IndexCardZoomSection';
 
 const Home = (): JSX.Element => {
   const companyVisionRef = useRef<HTMLHeadingElement | null>(null);
-  const [isTextVisible, setIsTextVisible] = useState(false);
+  const isTextVisible = useHomeTitleVisible(companyVisionRef);
+
   const imageContainerRef = useRef<HTMLDivElement | null>(null);
   const scrollingSectionRef = useRef<HTMLDivElement | null>(null);
   const [divWidth, setDivWidth] = useState(0);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        setIsTextVisible(entries[0].isIntersecting);
-      },
-      { threshold: 0.5 },
-    );
-    if (companyVisionRef.current) {
-      observer.observe(companyVisionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const handler = () => {
@@ -71,9 +59,7 @@ const Home = (): JSX.Element => {
           Math.abs(getFlipScollContainer.top / window.innerHeight).toFixed(2),
         );
         setGetFlipScroll(scrolledDistance * 100);
-        console.log(scrolledDistance * 100);
       }
-      console.log(scrolledDistance);
     };
     window.addEventListener('scroll', handler);
     return () => window.removeEventListener('scroll', handler);
