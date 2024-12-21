@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import '../styles/reset.css';
 import '../styles/Home.css';
 
-import CARD_DATA from '../data/indexCarImagePath.json';
+import IndexCardFlipSection from '../components/IndexCardFlipSection';
 
 const Home = (): JSX.Element => {
   const companyVisionRef = useRef<HTMLHeadingElement | null>(null);
@@ -37,7 +37,7 @@ const Home = (): JSX.Element => {
             1,
             Math.abs(scrollingSection.top / window.innerHeight),
           );
-          console.log(divWidth);
+
           setDivWidth(scrolledDistance);
         } else if (imageContainer.top > 30) {
           setDivWidth(0);
@@ -71,6 +71,7 @@ const Home = (): JSX.Element => {
         setGetFlipScroll(scrolledDistance * 100);
         console.log(scrolledDistance * 100);
       }
+      console.log(scrolledDistance);
     };
     window.addEventListener('scroll', handler);
     return () => window.removeEventListener('scroll', handler);
@@ -134,45 +135,11 @@ const Home = (): JSX.Element => {
             />
           </div>
         </div>
-        <div className="flip-card-scroll" ref={flipScollContainer}>
-          <div className="flip-card-section" ref={flipContainer}>
-            <h1 className="company-message">
-              Discover Our Timeless Collection
-            </h1>
-            {CARD_DATA.map((contentLink, cardId) => {
-              return (
-                <div
-                  key={cardId}
-                  className={`card-frame ${
-                    (cardId === 0 && getFlipScroll > 20) ||
-                    (cardId === 1 && getFlipScroll > 100) ||
-                    (cardId === 2 && getFlipScroll > 200)
-                      ? 'card-flip'
-                      : ''
-                  }`}
-                >
-                  <div
-                    className="card-front"
-                    style={{
-                      backgroundImage: `url(${contentLink.frontImage})`,
-                    }}
-                  ></div>
-                  <div
-                    className="card-back"
-                    style={{ backgroundImage: `url(${contentLink.backImage})` }}
-                  >
-                    <h2
-                      className="categoryTitle"
-                      style={{ fontFamily: contentLink.titleFont }}
-                    >
-                      {contentLink.logoTitle}
-                    </h2>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <IndexCardFlipSection
+          getFlipScroll={getFlipScroll}
+          flipContainer={flipContainer}
+          flipScollContainer={flipScollContainer}
+        />
       </div>
     </>
   );
