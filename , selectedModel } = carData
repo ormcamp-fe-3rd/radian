@@ -1,0 +1,1159 @@
+[33mcommit d2d867d4b0a43609ae7b2e1bc897969433554729[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mproductdetail[m[33m, [m[1;31morigin/productdetail[m[33m)[m
+Merge: c60fde5 ce43509
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Fri Dec 20 16:52:56 2024 +0900
+
+    Merge branch 'productdetail' of https://github.com/ormcamp-fe-3rd/radian into productdetail
+
+[33mcommit c60fde59c7ae11be8ae46f9674fd92ba69b36dc2[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Fri Dec 20 16:42:14 2024 +0900
+
+    [추가]상세페이지(데이터 분리, 모듈화)
+
+[33mcommit c8f3c489e1479cb0271586bbc0bce4f55d51cf1b[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Fri Dec 20 00:16:37 2024 +0900
+
+    [추가]상세페이지(데이터, 컴포넌트 분리)
+
+[33mcommit d12d6454d6077661ef62fdc6654f378cd107d9ae[m
+Merge: 1c0f2e7 991bda1
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Thu Dec 19 19:00:33 2024 +0900
+
+    Merge branch 'main' of https://github.com/ormcamp-fe-3rd/radian into productdetail
+
+[33mcommit 991bda1225edcd24203c6bc3f245ba48151b860d[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Thu Dec 19 18:09:49 2024 +0900
+
+    [수정]메인페이지(reset.css 수정)
+
+[33mcommit 1c0f2e76e8980b852eda1987f3c178a0fe5220b2[m[33m ([m[1;31morigin/login[m[33m)[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Thu Dec 19 15:40:38 2024 +0900
+
+    [추가] 반응형 css 적용
+
+[33mcommit 5aa7447abc95c08a8701b62791a0809821b7b0fa[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Thu Dec 19 15:22:54 2024 +0900
+
+    [수정] 아이디 input 타입 email로 변경
+
+[33mcommit ebb15de5eaf46a9b1939e9023b48ebef4babd133[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Thu Dec 19 15:19:54 2024 +0900
+
+    [추가] 회원가입 페이지 이동시 페이드아웃 애니메이션 추가
+
+[33mcommit a856ca05533bd882c8732dc470dbd3c5a40e8e65[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Thu Dec 19 14:48:31 2024 +0900
+
+    [수정] 회원가입, 약관 페이지와 디자인 통일, css 수정
+
+[33mcommit 859a2d9f208eb3fcfd01cd022dc50fb433180f54[m
+Merge: d78d73e c8a69e7
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Thu Dec 19 14:24:25 2024 +0900
+
+    [수정] ignore 추가
+
+[33mcommit c8a69e72a2fcad41240b76e063372d8440d90f48[m
+Merge: 0bb24f4 e2d33af
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Thu Dec 19 13:53:17 2024 +0900
+
+    Merge pull request #38 from ormcamp-fe-3rd/productorlist
+    
+    [김도연] 환경변수 파일 .gitignore 파일에 추가
+
+[33mcommit d78d73e9d1fb744f17e543fc1fbe32c26449ef7b[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Thu Dec 19 12:59:36 2024 +0900
+
+    [수정]상세페이지(스펙섹션 오류 수정 useGSAP,useref 사용)
+
+[33mcommit e2d33af829ff0010ac8c168c0a8dcc548523d4ef[m
+Merge: 47e9c80 fde0ccb
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Thu Dec 19 12:33:39 2024 +0900
+
+    Merge pull request #37 from ormcamp-fe-3rd/productorlist-kdy
+    
+    [김도연] 환경변수 파일 .gitignore 파일에 추가
+
+[33mcommit fde0ccb921901cb077f1fbe91dabb38e91af1d35[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Thu Dec 19 12:07:31 2024 +0900
+
+    Apply .gitignore
+
+[33mcommit 0bb24f4378b672f6341cf91723f6978dc9339cbf[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Thu Dec 19 12:18:38 2024 +0900
+
+    [수정] Delete src/firebase.tsx
+    
+    환경변수 숨기는 작업 , 이전 작업으로 노출된 내용 삭제
+
+[33mcommit eecc4c85cdb755583f976bd91506dbc20592d4db[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Thu Dec 19 12:17:46 2024 +0900
+
+    [수정] Delete src/.env
+    
+    환경변수 숨기는 작업, 이전 추가 되었던 src/.env 파일 삭제
+
+[33mcommit 1f0977fe0919760b691929ed71866bbf34e13c90[m
+Merge: 48df5d2 d4f7a95
+Author: parkHansol <hansol.woff@gmail.com>
+Date:   Thu Dec 19 12:11:46 2024 +0900
+
+    Merge pull request #36 from ormcamp-fe-3rd/home
+    
+    [박한솔] 스크롤 애니메이션 동작 오류 수정
+
+[33mcommit 48df5d26cb4f15f5980efffb1275c42abe7b236b[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Thu Dec 19 10:36:58 2024 +0900
+
+    [수정]Create README.md
+    
+    README.md 파일 삭제되서 추가 및 내용 수정
+
+[33mcommit d4f7a9589ed663eabda3dee3f301fbdbea8b59f7[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Wed Dec 18 17:17:36 2024 +0900
+
+    [수정] 스크롤 애니메이션 작동 오류 해결(전역 css 수정)
+
+[33mcommit 2363332bf23a17323cf8a9b5eb8c4fc878be5bbe[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Wed Dec 18 14:12:38 2024 +0900
+
+    [추가] CARD_DATA 누락됐던 것 추가
+
+[33mcommit a40a98f294eea80c392d057567fbe851c9f3338c[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Wed Dec 18 13:55:17 2024 +0900
+
+    [수정] 스크롤 이벤트 핸들러로 분리
+
+[33mcommit a8a3a082e08794b72c9f580371e758c8fd4c1f36[m
+Merge: a930f79 91f7d72
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Wed Dec 18 13:54:34 2024 +0900
+
+    Merge branch 'main' into home
+
+[33mcommit a930f7997d3fb6d5c549a461b8da7b36334ff950[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 17 01:20:16 2024 +0900
+
+    [수정] merge 수정
+
+[33mcommit b53a1125b2e943de049f96d649dcd22fb1b715d3[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Wed Dec 18 03:42:34 2024 +0900
+
+    [수정]상세 페이지(스펙섹션 스크롤 트리거 미작동 문제 해결 중)
+
+[33mcommit c43cc0b15ebf03541513d1b156cf1485cf398b07[m
+Merge: 1cf771d 91f7d72
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Tue Dec 17 20:48:03 2024 +0900
+
+    [수정]머지 커밋
+
+[33mcommit 1cf771dac8b56ae9609564f2295a1f4f46a238b9[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Tue Dec 17 20:27:13 2024 +0900
+
+    [수정]빌드 에러 수정
+
+[33mcommit 91f7d72c25e7e42a50e9a169fb157b92f81386f1[m
+Merge: 53f654e a15f642
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Tue Dec 17 19:41:19 2024 +0900
+
+    Merge pull request #33 from ormcamp-fe-3rd/productorlist-kdy
+    
+    [김도연]npm run build 오류 사항 수정
+
+[33mcommit a15f642c13300db7c9d090cdeb736be01d97d4e9[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Tue Dec 17 19:33:22 2024 +0900
+
+    [수정]npm run build 오류 사항 수정
+
+[33mcommit 088a7351b4224fc5907c093816b65ad9281882e3[m
+Merge: 1970f07 53f654e
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Tue Dec 17 17:34:26 2024 +0900
+
+    [수정]메인 머지 컨플릭 해결
+
+[33mcommit 53f654e7d602f0ac791908cadec4ff201ea8a91c[m
+Merge: bdcf389 dec6601
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Tue Dec 17 17:32:15 2024 +0900
+
+    Merge pull request #32 from ormcamp-fe-3rd/productorlist-kdy
+    
+    [수정]npm run build 오류 사항 수정
+
+[33mcommit dec6601efd7eb1d6b2a927f9ce231577877ebce0[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Tue Dec 17 17:31:15 2024 +0900
+
+    [수정]npm run build 오류 사항 수정
+
+[33mcommit 1970f078ec23bc6574ef433a7a5b93c59981e18a[m
+Merge: 95e7569 bdcf389
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Tue Dec 17 17:06:55 2024 +0900
+
+    [수정]메인 머지 컨플릭 해결
+
+[33mcommit bdcf38999e95a317c5c39015dfd86f4d100de9de[m
+Merge: 310ef97 4a65261
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Tue Dec 17 17:03:20 2024 +0900
+
+    Merge pull request #31 from ormcamp-fe-3rd/productorlist-kdy
+    
+    [김도연]npm run build 오류 수정 (CarObicontrol 파일 제외)
+
+[33mcommit 95e7569201aba0f800f2506bc16c856ebec5c069[m
+Merge: 43c9fb9 310ef97
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Tue Dec 17 16:59:45 2024 +0900
+
+    [수정]메인 머지 컨플릭 해결
+
+[33mcommit 4a65261469f73b87461ce0bc67952420b0e41dcd[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Tue Dec 17 16:47:35 2024 +0900
+
+    [수정]npm run build 시 오류 사항 수정
+
+[33mcommit a93c1982e55b961c5538cd8987ef7ff55100cfdb[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Tue Dec 17 15:31:41 2024 +0900
+
+    [추가]firebase 연결 완료 - 로그인/회원가입 수정
+
+[33mcommit c692144555b7a97dcc578ca210f8748e784f01e2[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Tue Dec 17 14:45:13 2024 +0900
+
+    [추가]firebase 작업(진행중)
+
+[33mcommit 5a7d059856b4eaa89f000909fa69f36bb2e7f4be[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Tue Dec 17 14:23:09 2024 +0900
+
+    [추가]firebse 연결 및 로그인페이지 해당 내용 추가
+
+[33mcommit 4b329f132cc14777e43508eca695d4928b4cf006[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 23:02:30 2024 +0900
+
+    [수정] 회원가입 페이지 css 중복 수정
+
+[33mcommit 0531442cbfb661b23b2a1d48e66e3c54e975bbc1[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 22:47:57 2024 +0900
+
+    [수정] 헤더 푸터 css 반응형 대응, 링크 루트 수정
+
+[33mcommit 43c9fb911589fc72570ecc7c55f255d84cbf9213[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Tue Dec 17 16:57:04 2024 +0900
+
+    [수정]빌드 오류 수정
+
+[33mcommit 310ef9712b3f6049c4258d14da7dd4fb49440379[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Tue Dec 17 15:31:41 2024 +0900
+
+    [추가]firebase 연결 완료 - 로그인/회원가입 수정
+
+[33mcommit b4e63dde6107cc99f7674edc8285a4e29f7f418e[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Tue Dec 17 14:45:13 2024 +0900
+
+    [추가]firebase 작업(진행중)
+
+[33mcommit 114206b2fbe131b8fcd68270f5da8e8d850a2724[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Tue Dec 17 14:23:09 2024 +0900
+
+    [추가]firebse 연결 및 로그인페이지 해당 내용 추가
+
+[33mcommit 9bf93749b0fd6fc85da7bc26465c7bd01fa8f675[m
+Merge: 6ba5772 4d1d615
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 17 01:37:19 2024 +0900
+
+    Merge branch 'home-phs' into home
+
+[33mcommit 4d1d6157cf5d0cfe0f259743bdbad6b8de117018[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 17 01:00:00 2024 +0900
+
+    [수정] 이미지 위치 수정 및 경로, css 수정
+
+[33mcommit bfe330cfd2be8e0e5be47cc1579dc528cd4271b5[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 23:58:34 2024 +0900
+
+    [수정] 메인 컨테이너 너비 제한 추가
+
+[33mcommit 6ba5772a6aa85f5d7bd6b0ddb6b4f57e4233a16b[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 23:02:30 2024 +0900
+
+    [수정] 회원가입 페이지 css 중복 수정
+
+[33mcommit fd28bdd34b8743171792bab1db0e2cc158ee67b6[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 22:47:57 2024 +0900
+
+    [수정] 헤더 푸터 css 반응형 대응, 링크 루트 수정
+
+[33mcommit e4462d3f4f2ef1adb885f029283dbf75c7626209[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 16 23:09:55 2024 +0900
+
+    [수정]상품리스트페이지-반응형 오류사항 수정
+
+[33mcommit 5235fb84a89ab892c5d60df8ca89507d17e3ca53[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 23:02:30 2024 +0900
+
+    [수정] 회원가입 페이지 css 중복 수정
+
+[33mcommit 32895ff487b143ce9b18b829066e21eb0f4add9b[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 22:47:57 2024 +0900
+
+    [수정] 헤더 푸터 css 반응형 대응, 링크 루트 수정
+
+[33mcommit c8312b0d43389d5c4228179f9eb5db47cd136f21[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Mon Dec 16 18:52:20 2024 +0900
+
+    [수정]임시 브랜치 삭제
+
+[33mcommit 9fc98f3ad637913b2adbe7b7a0797046d77cd0c6[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 16 18:04:03 2024 +0900
+
+    [수정]반응형 오류 사항 수정(진행중)
+
+[33mcommit f39aa63a6bacaf8d3344698c30bd24ddb426fb24[m
+Author: parkHansol <hansol.woff@gmail.com>
+Date:   Mon Dec 16 18:24:40 2024 +0900
+
+    [수정] 라우터 중복 수정
+
+[33mcommit 6662a120206f2bff37291a5f8bc92551c036b452[m[33m ([m[1;31morigin/home[m[33m)[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 18:16:11 2024 +0900
+
+    [수정] 라우터 중복 오류 수정
+
+[33mcommit ddead54352a75ff6a6fc13e897436d253b45a4fd[m
+Merge: d168870 bdc8108
+Author: kimsujin <r06t21@gmail.com>
+Date:   Mon Dec 16 17:55:23 2024 +0900
+
+    Merge pull request #29 from ormcamp-fe-3rd/login
+    
+    [김수진]메인에 로그인, 상품 상세 페이지 머지
+
+[33mcommit bdc81085bd59823be7e53950a5807574239acf3f[m
+Merge: a450c7a d168870
+Author: kimsujin <r06t21@gmail.com>
+Date:   Mon Dec 16 17:55:10 2024 +0900
+
+    Merge branch 'main' into login
+
+[33mcommit d168870034d752cfe3a87598fb7a1d22b546b2a0[m
+Author: structified <kimwooju@gmail.com>
+Date:   Mon Dec 16 17:21:04 2024 +0900
+
+    예약페이지 추가
+
+[33mcommit a450c7a043db98515392bdb20436ed7296ce1f42[m
+Merge: 1899b3f 63a2fc7
+Author: kimsujin <r06t21@gmail.com>
+Date:   Mon Dec 16 17:11:51 2024 +0900
+
+    Merge pull request #28 from ormcamp-fe-3rd/login-ksj
+    
+    [김수진]메인 머지 밑작업
+
+[33mcommit 7da06b7676122b9ae24e1968d611260d62844094[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 16:50:29 2024 +0900
+
+    [수정] 옵저버 이벤트 종료시 언마운트 추가
+
+[33mcommit 46433e0abe5b74bf46ec668f61b753cff409c516[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 16:40:28 2024 +0900
+
+    [수정]피드백 반영: 이벤트 핸들러  언마운트 시점에 제거하도록 개선
+
+[33mcommit 63a2fc72e79fb9f4a8339081057b7b42c94a8150[m[33m ([m[1;31morigin/login-ksj[m[33m, [m[1;32mlogin-ksj-test[m[33m)[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Mon Dec 16 16:40:22 2024 +0900
+
+    [수정]app.tsx 수정(메인 파일 기반으로 수정)
+
+[33mcommit 1899b3fd8e4594253d5a881824a4e547b52a8801[m
+Merge: b626a06 79ad258
+Author: kimsujin <r06t21@gmail.com>
+Date:   Mon Dec 16 16:26:28 2024 +0900
+
+    Merge pull request #11 from ormcamp-fe-3rd/login-ksj
+    
+    [김수진]로그인 페이지 초안, 기본 기능 구현
+
+[33mcommit 79ad258166f990ed99a0ec26888b82452a3face3[m[33m ([m[1;32mlogin-ksj[m[33m)[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Mon Dec 16 16:23:20 2024 +0900
+
+    [수정]로그인페이지(로그인 헤더 삭제)
+
+[33mcommit 243581ec605a01c60a2d2ec0b55fd3ba2ed1fb6f[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 16 16:22:48 2024 +0900
+
+    [수정]header,footer 공통 사용, 페이지 내 존재한 부분 삭제
+
+[33mcommit 312baeea335bca95949829949049a730e8fd0086[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Mon Dec 16 16:18:16 2024 +0900
+
+    [수정]로그인 페이지(공용헤더로 교체 후 로그인 헤더 삭제)
+
+[33mcommit ce43509af8d3606f053ecdd5982b8700fc5dd992[m
+Merge: 555214b 0894e5d
+Author: kimsujin <r06t21@gmail.com>
+Date:   Mon Dec 16 16:05:52 2024 +0900
+
+    Merge pull request #18 from ormcamp-fe-3rd/productdetail-ksj
+    
+    [김수진]상품 상세 페이지 ui 구현과 스크롤 트리거 애니메이션 구현
+
+[33mcommit e1a8ad7eb97316f9f74a9c8ec90698c7c9bdeba1[m
+Merge: 9146d26 47e9c80
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Mon Dec 16 15:54:00 2024 +0900
+
+    Merge pull request #27 from ormcamp-fe-3rd/productorlist
+    
+    [김도연]상품 리스트 페이지 작업 내용 merge(피드백 수정 완료 본)
+
+[33mcommit 47e9c80c2ed997eefdec427b16d3393533ba6adb[m[33m ([m[1;31morigin/productorlist[m[33m)[m
+Merge: 5e3d841 9146d26
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Mon Dec 16 15:52:42 2024 +0900
+
+    Merge branch 'main' into productorlist
+
+[33mcommit e8d9f7d08d59e0b03e8d6896cd6cd00196d7ab43[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 15:49:15 2024 +0900
+
+    [수정]피드백 반영: 이미 선언된 타입 중복 선언 부분 제거
+
+[33mcommit 53188e712dca6e46b370c54301092f4cac5e71ad[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 15:45:26 2024 +0900
+
+    [수정]피드백 반영: 상수 및 타입 선언문 컴포넌트 외부로 위치 이동, 상수명 변경
+
+[33mcommit 5e3d84185eb882cc6dc9a8ec4393e6b07dbad2c5[m
+Merge: b626a06 77d2553
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Mon Dec 16 15:37:06 2024 +0900
+
+    Merge pull request #13 from ormcamp-fe-3rd/productorlist-kdy
+    
+    [김도연]상품리스트페이지 - 피드백 수정까지 완료된 내용 merge
+
+[33mcommit 26d9584f5e92d849ec01cbddd9d8d696f47be5b1[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 15:18:31 2024 +0900
+
+    [수정]피드백 반영: 카드 플립 애니메이션 삼항식 하나로 압축
+
+[33mcommit 0428ee0b0c997772bf3ffb67b93e8d2246dd18a7[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 16 15:08:36 2024 +0900
+
+    [수정]카드 플립 애니메이션 반응형 적용
+
+[33mcommit 0894e5d899edf2eee86c716e4e50a7ba4118064e[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Mon Dec 16 13:38:53 2024 +0900
+
+    [수정]상세페이지 피드백 적용(react.fc 타입 삭제)
+
+[33mcommit cd1461b07ac0e2a945e8cb945cea678c246b6c5b[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Mon Dec 16 12:58:17 2024 +0900
+
+    [수정]헤더, 푸터(css 일반화)
+
+[33mcommit 97696ce5a7984c69e0105e06d83cc02dc68baf47[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Mon Dec 16 12:42:49 2024 +0900
+
+    [수정]이미지 폴더 구조, 경로 변경(pubilc 폴더로 이동)
+
+[33mcommit 77d25538a94db13720e6007e4de19657ca974954[m[33m ([m[1;31morigin/productorlist-kdy[m[33m)[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 16 12:28:56 2024 +0900
+
+    [수정]공통이미지 public 내 common 폴더로 위치 변경
+
+[33mcommit d7a17cc6b227ff96a20f594ed5a7420859ae51af[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 16 12:27:55 2024 +0900
+
+    [수정]formatCurrency 함수를 공용 함수 파일로 선언하여 사용
+
+[33mcommit 9dfa0215f4230f3e58d211597bb7d115015903d0[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 16 12:27:15 2024 +0900
+
+    [수정]이미지 파일 위치 변경으로 이미지 경로 수정
+
+[33mcommit 28bccbe51871bebc72161f7352bd810e2520b01f[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 16 12:26:57 2024 +0900
+
+    [수정]피드백-상품리스트페이지 데이터와 렌더링로직 분리
+
+[33mcommit fb60190876ac6ceca6d183d0ceee832634f0745f[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 16 12:24:41 2024 +0900
+
+    [수정]이미지 폴더 위치 수정(public 폴더 내 각 폴더로 변경)
+
+[33mcommit 9c6a1905ffa15141ceb251bcb72cd1718e3cc69b[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Mon Dec 16 03:34:21 2024 +0900
+
+    [수정]상세 페이지(스크롤 타이밍 수정)
+
+[33mcommit 4b9f83aa46058fc4eb80e5b3fd68e56c3eadaf37[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Sun Dec 15 15:46:31 2024 +0900
+
+    [수정]상품리스트페이지-반응형 화면 작업
+
+[33mcommit 747a47921a03cf64232436ca37add7a64b696ac3[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Sun Dec 15 12:02:53 2024 +0900
+
+    [수정]멘토님 피드백 사항 수정
+
+[33mcommit e30e7a3edb4cb2a46c2a05f05b96b59fe6b7600b[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Sun Dec 15 12:00:00 2024 +0900
+
+    [수정]멘토님 피드백 사항 수정
+
+[33mcommit d7f59f0ec3e4e8c218734db2ca123ae3d103d2ff[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Sat Dec 14 01:30:56 2024 +0900
+
+    [추가]상품 상세 페이지(스펙 섹션 반응형 추가)
+
+[33mcommit 9146d26f7e9802ad454e04c9a8baa432c8d473b6[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Fri Dec 13 16:14:34 2024 +0900
+
+    [수정] 헤더, 푸터 두개씩 출력되는 것 수정
+
+[33mcommit d8cb20b44a7e8e72dcaeded11cfa63b6cc01be3c[m
+Merge: 3fe98fa 4fd2bab
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Fri Dec 13 16:05:23 2024 +0900
+
+    Merge remote-tracking branch 'origin/register'
+
+[33mcommit 4fd2babc0de3c81f84b1306aed4209db758187e0[m
+Merge: b626a06 83275bd
+Author: parkHansol <hansol.woff@gmail.com>
+Date:   Fri Dec 13 15:46:43 2024 +0900
+
+    Merge pull request #12 from ormcamp-fe-3rd/register-phs
+    
+    [박한솔] 회원가입 페이지 완료
+
+[33mcommit 83275bd064830c56be9e6e29379283bdd89c78d4[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Fri Dec 13 15:33:40 2024 +0900
+
+    [추가] 약관 제목 볼드 처리 변환 정규식 추가, json 제목 부분 **로 명시, 약관 내 행간 수정
+
+[33mcommit d4e9c7fda1576abac23182f869f57633e82f0550[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Fri Dec 13 12:15:37 2024 +0900
+
+    [테스트]상품 상세 페이지(ui와 스크롤 트리거 애니메이션 구현)
+
+[33mcommit 3fe98faf751eafe53a7a14ddc11e985ec1218715[m
+Merge: b626a06 fd1607b
+Author: parkHansol <hansol.woff@gmail.com>
+Date:   Fri Dec 13 11:44:08 2024 +0900
+
+    Merge pull request #17 from ormcamp-fe-3rd/home-test
+    
+    [박한솔] PR 요청 전 체리픽
+
+[33mcommit e4caa0d75a47771bda0faeb6a08013d3a92a13ee[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Fri Dec 13 00:03:14 2024 +0900
+
+    [수정] 타입 지정, eslint 에러들 수정
+
+[33mcommit 87e6a4ac829b4b2ff7724b61b568bf6ed9130420[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Thu Dec 12 22:01:38 2024 +0900
+
+    [수정]home.tsx 임시 작성
+
+[33mcommit 18c1bcccecbef8bc6c26af12eaba05570fd6a4e4[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Thu Dec 12 21:58:15 2024 +0900
+
+    [수정] 상품리스트페이지-전체적인 구현 완료(반응형 작업 진행 중)
+
+[33mcommit e9216546dc5fc7352e32f2c4b2ffd9c2df9172a2[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Thu Dec 12 16:44:53 2024 +0900
+
+    [수정]파일정리
+
+[33mcommit edb8967eff5e2e01016e49d1fbc4ddf6de8bef26[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Thu Dec 12 16:38:02 2024 +0900
+
+    [추가]상세 페이지(구조 잡고 애니메이션 구현)
+
+[33mcommit 518c6c177742cd77f0237454546db9bbe78b8bb9[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Thu Dec 12 16:01:58 2024 +0900
+
+    [수정] 절반짜리 서브 이미지 수정
+
+[33mcommit f470d8023640cdd6c904cd1c7594a9ca400d2474[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Thu Dec 12 15:39:19 2024 +0900
+
+    [수정] 플립카드 정렬 위치 수정 및 제목 추가
+
+[33mcommit 145083dc8e642ebb46357ea29a18329c254403b8[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Thu Dec 12 15:16:12 2024 +0900
+
+    [추가] 플립카드 내 이미지 추가, css 수정
+
+[33mcommit ecdd72a3403cf66c77a358b1b7145e10cf9b0147[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Thu Dec 12 03:18:12 2024 +0900
+
+    [수정] 뒤집히는 애니메이션 시작, 끝나는 시점 조정
+
+[33mcommit 74139f271e0c95dd886c9d7faf7a515f25265543[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Thu Dec 12 03:07:25 2024 +0900
+
+    [추가] 개별 카드가 순서대로 뒤집히는 효과 적용
+
+[33mcommit 532729e5e2c72a1a9e86cca09f1e2b7cedb9ed51[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Thu Dec 12 02:33:04 2024 +0900
+
+    [초안] 카드 뒤집는 애니메이션 초안
+
+[33mcommit fd1607b9f3bb70499ede6e7b7992e2c73aa2a88d[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Wed Dec 11 16:49:54 2024 +0900
+
+    [수정] 태블릿 반응형 css 너비 수정
+
+[33mcommit 844b8001e029e49cafa2806f22c10d14ba76e26d[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Wed Dec 11 16:42:27 2024 +0900
+
+    [추가] 가입 폼 정규식 조건 추가
+
+[33mcommit 65572d674fc189dc647b1bfb2a1297628788fb37[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Wed Dec 11 16:14:00 2024 +0900
+
+    [수정] 스크롤섹션 높이 증가, 스티키영역 여백 추가
+
+[33mcommit 1ee474b8ea8edfd2745f52c10c9c9144ce168300[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Wed Dec 11 15:57:22 2024 +0900
+
+    [추가]상품리스트페이지-상품상세이미지캐러셀 모달추가 및 수정
+
+[33mcommit af677f25705f446fe1a137e7b79afd705711032e[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Wed Dec 11 15:55:33 2024 +0900
+
+    [초안]상품리스트페이지-상품 플러스 버튼 클릭 시 해당 상품 상세 이미지 캐러셀 모달 구현
+
+[33mcommit f71f15754dfedda598fae295dcd702bf4418158d[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Wed Dec 11 15:54:42 2024 +0900
+
+    [수정] 스크롤 확대 사진이 바디 컨테이너 너비를 넘어가서 커지는 버그 수정
+
+[33mcommit 3418f5c2a5c3a1359f405c604a3b989678390964[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Wed Dec 11 15:54:26 2024 +0900
+
+    [수정]상품리스트페이지-상품컴포넌트 수정
+
+[33mcommit 8dbef2b51e54020ef0d896bf3b7679096fa11e19[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Wed Dec 11 15:51:59 2024 +0900
+
+    [수정]상품리스트페이지-상단 이미지 캐러셀 자동 플레이 추가
+
+[33mcommit 2abebcba324c214ae8ddcede92078fdc0beccf80[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Wed Dec 11 15:49:55 2024 +0900
+
+    [수정] css 및 마우스 호버 효과 추가
+
+[33mcommit 555214b19bfbd534c6d83b6716a00ee94fbf546d[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Wed Dec 11 14:33:09 2024 +0900
+
+    [수정]상세페이지(dtail페이지 삭제 후 productpage 대체
+
+[33mcommit 2438475637cfd057dae5ee701abc667b3aa088f3[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Wed Dec 11 12:00:57 2024 +0900
+
+    [수정] css 순서 수정
+
+[33mcommit 4bd8bb32da25fb04ddcd27d820839c202aa96931[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Wed Dec 11 11:44:48 2024 +0900
+
+    [수정] 헤더,푸터 도연님 css 적용 및 푸터 위치 안 맞는 것 수정
+
+[33mcommit ccc077d9865bae145669aa57be90a0fd79950aa4[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Wed Dec 11 11:36:38 2024 +0900
+
+    [수정] 푸터 위치 버그 수정
+
+[33mcommit 9c683a4954952668af94d1fa9c94150a3e10a8aa[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Wed Dec 11 11:26:43 2024 +0900
+
+    [수정] 헤더, 푸터 도연님 css 적용
+
+[33mcommit 67f9e9b0ca8b5881bc8a933e810819c72e85b6c4[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 10 23:38:31 2024 +0900
+
+    [추가] css, 하단 서브 이미지 추가
+
+[33mcommit 8900b789a7799ea3ff022591d611f23b66a34c57[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 10 21:01:21 2024 +0900
+
+    [수정] 홈 컴포넌트 내 헤더, 푸터 컴포넌트 app.tsx로 이동
+
+[33mcommit 29da1f913eb44f71083e789a371932d1bb584f5e[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 10 20:52:14 2024 +0900
+
+    [수정] 회원가입 페이지 컴포넌트 분리(약관동의, 가입폼)
+
+[33mcommit 085a8fec03c8ca459b17f43b3f88673b0f5fa716[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 10 19:51:00 2024 +0900
+
+    [추가] 수진님 헤더푸터 컴포넌트 적용
+
+[33mcommit c9b033019fbdc7bb6dbf3060cffedf8a0589c07d[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 10 19:23:31 2024 +0900
+
+    [추가] 수진님 헤더푸터 컴포넌트 적용
+
+[33mcommit b0c7dd5b736c68929fb0c81194b28f28d0d4c07f[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 10 17:02:57 2024 +0900
+
+    [수정] 반응형 추가
+
+[33mcommit cab528a4ff4de397ae121f61b6f14f74314659c3[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Tue Dec 10 15:36:16 2024 +0900
+
+    [수정]상품리스트페이지-캐러셀 및 상품 컴포넌트 추가,header,footer추가 구현
+
+[33mcommit b635174ad8a3d6692ff40bdabc3a0faa7c58f2e0[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Tue Dec 10 15:35:09 2024 +0900
+
+    [수정]상품리스트페이지-상단이미지캐러셀 구현 수정
+
+[33mcommit caf0f631bb8c8419f4322ee1ad5912493ca8bf2b[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Tue Dec 10 15:34:26 2024 +0900
+
+    [초안]상품리스트페이지- 자동차 상품 컴포넌트화 구현
+
+[33mcommit dece2ff8cb081a2db888f82a05f14062b6640255[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Tue Dec 10 15:32:28 2024 +0900
+
+    [수정]수진님이 구현해주신 내용 수정해서 추가(footer,header)
+
+[33mcommit 555dd5c7ace4a1599411dccb0e7c44a278ad03b5[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 10 15:13:28 2024 +0900
+
+    [추가] 입력폼 조건 불만족시 비활성화 기능 추가
+
+[33mcommit a801eed25438ac6dcad2d3f1bd3e1babf977a930[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 10 15:04:55 2024 +0900
+
+    [수정] 약관 내용, 줄넘김 처리 코드 추가
+
+[33mcommit 491e2e25d036824c1ea63be8d6d52af4544ffcb9[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 10 14:19:08 2024 +0900
+
+    [수정] json 파일 경로 문제 해결
+
+[33mcommit c528f4db1d7cf549edfbd9e911c8ffa1eafa78d3[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 10 13:34:29 2024 +0900
+
+    [추가] 약관 부분 데이터 파일로 분리
+
+[33mcommit 09bbb19103283516db5cdee365fb582211d3f3cc[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Tue Dec 10 12:43:25 2024 +0900
+
+    [초안] 기본 반응형 설정
+
+[33mcommit c08ab1a7011532809619f5771c8e2e8b3c1d720f[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 9 17:58:42 2024 +0900
+
+    [수정]상품리스트 페이지-캐러셀컴포넌트 추가 및 페이지 css
+
+[33mcommit 74f280318af7522cf2de2be2d1e9ac6ad63ddd5d[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 9 17:56:01 2024 +0900
+
+    [추가]캐러셀 라이브러리 slick 설치
+
+[33mcommit 8d493df1fdc5fb46473a89589dc8ca34f68be619[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 9 17:55:37 2024 +0900
+
+    [추가]상품리스트페이지- 상단 이미지 캐러셀 기능 구현
+
+[33mcommit e50a289fc47e2b752d272284dd7d13c753c4c43f[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 9 17:54:48 2024 +0900
+
+    [수정]상품리스트페이지-화면 미리보기 위해 해당 화면 루트 추가
+
+[33mcommit 2a5b19796b5d1bf604cf6884a1956beca19afe8f[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 9 17:53:57 2024 +0900
+
+    [추가] 상품리스트페이지-이미지 캐러셀 자동차 이미지 추가
+
+[33mcommit 47b1a272e7978e12173e9491bd7b82de0a42abd5[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 9 17:31:10 2024 +0900
+
+    [추가] 약관-정보기입 페이지 전환시 슬라이드 애니메이션 추가
+
+[33mcommit 6c00c6b716951f44cc13f66f86cf34a93a783f47[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 9 16:25:48 2024 +0900
+
+    [추가] 유효성검사 라이브러리 적용, 기본 정규식 및 에러메세지 추가
+
+[33mcommit ab2a36c39eb676dae6a732b3acccaabe9f5e55f2[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 9 12:14:58 2024 +0900
+
+    [수정] home 컴포넌트를 홈페이지 기본 라우터(/)로 지정
+
+[33mcommit 32a30c8d8f70c2684ee8d37305ac11885a3989ed[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Mon Dec 9 11:26:21 2024 +0900
+
+    [수정]index 파일 위치 이동
+
+[33mcommit 847f22027582c9c7bc081c3de2090eb7b42e1eb7[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 9 02:34:56 2024 +0900
+
+    [수정] Ref 이름을  기능에 맞게 수정
+
+[33mcommit d88dd942b009012848bc763b5641417bb62e70d0[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 9 02:31:45 2024 +0900
+
+    [추가] 이미지 밑 내용 추가
+
+[33mcommit 88fb3a316025a9151852f0c8ba7f1598c131aa83[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 9 01:59:08 2024 +0900
+
+    [수정] css 네이밍 수정
+
+[33mcommit 033f9f9c107e4fe11c1d303cf1b8c6c984961981[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 9 01:26:54 2024 +0900
+
+    [추가] css 애니메이션, 인터섹션옵저버 스크롤 애니메이션
+
+[33mcommit f8f92d8ae5c04354a6cb1dc1e5bac9c053e17c19[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Mon Dec 9 00:33:55 2024 +0900
+
+    [추가] css 적용
+
+[33mcommit df8cc2966611eae70480a83d752cc3c670b12204[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Sun Dec 8 21:01:29 2024 +0900
+
+    [추가]공용푸터 컴포넌트(공용푸터 컴포넌트 구현, Footer.css 별도)
+
+[33mcommit 92eb13256d6f76867f5ac02bdc09320fddcec70f[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Sun Dec 8 20:57:18 2024 +0900
+
+    fixed untracked files
+
+[33mcommit 33899990625cd325c5e821866f18ecb93620c347[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Sun Dec 8 20:22:43 2024 +0900
+
+    [초안] 섹션별 구분, 영상 추가, 스크롤 애니메이션 추가
+
+[33mcommit bc1641fb6233b86e2344fabc57f4ef8aed97ff95[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Sun Dec 8 19:51:00 2024 +0900
+
+    [추가]로그인헤더 및 공용헤더(HeaderLogin, Header 컴포넌트 구현)
+
+[33mcommit 3cb5ac79874bc90a7e1324218d78136b1ee92c53[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Sun Dec 8 12:19:17 2024 +0900
+
+    [추가]로그인페이지의 로그인폼 컴포넌트(스타일 입히고 기능 추가)
+
+[33mcommit b44fdc784b571dcd204e59f049f80b3ae83f253b[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Sun Dec 8 06:50:07 2024 +0900
+
+    [초안]로그인페이지(로그인페이지 컴포넌트 초안 작성)
+
+[33mcommit 962ee3b62ada194f6e2b6b1412a78c381e17a79c[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Sat Dec 7 15:55:20 2024 +0900
+
+    [추가] 버튼을 통한 페이지 이동  /register/form 등록
+
+[33mcommit 314c52c0a721842c81242b0911d2bcdc889a89f1[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Sat Dec 7 15:22:36 2024 +0900
+
+    [추가] 회원가입 페이지 라우터 등록 /register
+
+[33mcommit 0176212a3110d59fecf993998b3bf9f5de12c85f[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Sat Dec 7 04:58:27 2024 +0900
+
+    [수정] 전체선택 버그 수정
+
+[33mcommit 9a7948c5c3e2935a3ffbcc572b69ec8c8ed31321[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Sat Dec 7 04:49:32 2024 +0900
+
+    [추가] 필수 동의 여부에 따른 버튼 활성,비활성
+
+[33mcommit 460b1b553218da30a9eae528bfe973d11dce6fbb[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Sat Dec 7 04:28:48 2024 +0900
+
+    [수정] 약관 컴포넌트화, css 정리
+
+[33mcommit 4e5ff696952d6e2f2028d22c73397f02614f2358[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Sat Dec 7 03:55:06 2024 +0900
+
+    [추가] 체크박스 유효성 필수, 선택, 전체선택 기능
+
+[33mcommit 3b8a0ed938b304119113298ae16c2f9546c9c8b8[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Sat Dec 7 03:24:22 2024 +0900
+
+    [수정] 회원가입 css border 지우는 이벤트  추가
+
+[33mcommit 0cc4f4615bfe96d8188939f17371c3e408fb5a47[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Sat Dec 7 03:00:05 2024 +0900
+
+    [추가] 회원가입 약관 데이터화, 반복문 적용
+
+[33mcommit 76b7c091c7008aa0cd722a34101a185a9dcb6ca1[m
+Author: incolore9 <hansol.woff@gmail.com>
+Date:   Sat Dec 7 02:12:53 2024 +0900
+
+    [초안] 회원가입 폼 html, css 작성
+
+[33mcommit 3e5bc342271e0987d8a2c9299b5f6e6fc343e0a4[m
+Author: ksj0621 <r06t21@gmail.com>
+Date:   Fri Dec 6 13:59:10 2024 +0900
+
+    [추가]폴더,파일 추가(이미지 폴더 및 각 페이지 별 css 파일 추가
+
+[33mcommit cdcd9034e3243c1c841086825a548bec806d9d21[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Fri Dec 6 13:05:52 2024 +0900
+
+    [추가]reset.css파일 추가
+
+[33mcommit e500de8ab7b4b495516914524d6fa6c42f0e6f03[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Fri Dec 6 12:57:10 2024 +0900
+
+    [추가]fonts추가
+
+[33mcommit f34b2f2a8577a4188963fd42a1617f45b4cf4685[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Fri Dec 6 12:56:19 2024 +0900
+
+    [추가]router/hook 설치
+
+[33mcommit bf6d3d82ae68eb69ed40c20cbd17eee3aa323e3c[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Thu Dec 5 20:45:35 2024 +0900
+
+    [추가].gitignore 파일 추가
+
+[33mcommit 075888d0c9900f39ea5bf0214fa2b26e44330d82[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Thu Dec 5 17:55:41 2024 +0900
+
+    Update README.md
+
+[33mcommit 6a1c857fc18a8ef907d4f59b30dfe7747964a6f5[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Thu Dec 5 12:30:03 2024 +0900
+
+    Update README.md
+
+[33mcommit 9f0f062ce100b7f28bd70542f463ab690fb78cf4[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Thu Dec 5 12:27:29 2024 +0900
+
+    Update README.md
+
+[33mcommit 22d2b1cc27e78693318114620451770f36caf66d[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Wed Dec 4 23:17:34 2024 +0900
+
+    [수정]Update README.md
+
+[33mcommit cb7e06610967437ec0ad46aefe28b8e55954c83f[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Wed Dec 4 23:15:48 2024 +0900
+
+    [수정]Update README.md
+
+[33mcommit bc6ed7cd9b96149becbb12fa37e05da9ca9187f3[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Wed Dec 4 23:02:18 2024 +0900
+
+    [수정]Update README.md
+
+[33mcommit b626a0604d8068efc1f4580b5145b36c05e0855c[m[33m ([m[1;31morigin/register[m[33m, [m[1;31morigin/productorreservation[m[33m, [m[1;31morigin/detail[m[33m)[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Wed Dec 4 22:52:47 2024 +0900
+
+    [수정]readme파일
+
+[33mcommit 7e66b827e02451bdbf99ac30c7e0f3523dd821ad[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Wed Dec 4 22:36:54 2024 +0900
+
+    [수정]readme 추가 수정
+
+[33mcommit 518c3c167c3da1832c6807b6efc406aec76c56e9[m
+Author: Devkdy22 <devkdy99@gmail.com>
+Date:   Wed Dec 4 22:33:31 2024 +0900
+
+    [초안]초기 폴더 구조 세팅
+
+[33mcommit ed3488e45558728a17ee23d849310dd2cb87ce60[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Wed Dec 4 22:23:07 2024 +0900
+
+    [수정]Update README.md
+
+[33mcommit 850ddeb242b0e570996ef01cb5ca714fff81ade6[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Wed Dec 4 17:23:39 2024 +0900
+
+    [수정]Update README.md
+
+[33mcommit 54df95e4013e57d6d39fe07dd0e3100792571806[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Wed Dec 4 15:23:22 2024 +0900
+
+    [수정]Update README.md
+
+[33mcommit 4ac7e8cad461305c621a9d63ee5360aa0b35753f[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Wed Dec 4 08:48:49 2024 +0900
+
+    [수정]Update README.md
+
+[33mcommit eac505a0d7bf2e8fe1886e7c14173fd08600f622[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Tue Dec 3 22:04:45 2024 +0900
+
+    [초안]Update README.md
+    
+    radian readme 파일 초안 작성
+
+[33mcommit acd959d5af6fd3f12bb1970a701a823e7a9e52ea[m
+Author: Devkdy22 <120148744+Devkdy22@users.noreply.github.com>
+Date:   Mon Dec 2 17:50:34 2024 +0900
+
+    Initial commit

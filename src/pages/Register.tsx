@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
+
 import Agreement from '../components/Agreement';
-import SignInForm from '../components/SignInForm';
+import SignUpForm from '../components/SignUpForm';
 
 const Register = (): JSX.Element => {
   return (
@@ -8,7 +9,7 @@ const Register = (): JSX.Element => {
       <h2 className="register-title">회원 가입</h2>
       <Routes>
         <Route path="/" element={<Agreement />} />
-        <Route path="/form" element={<SignInForm />} />
+        <Route path="/form" element={<SignUpForm />} />
       </Routes>
     </>
   );
