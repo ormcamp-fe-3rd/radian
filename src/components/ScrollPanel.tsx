@@ -14,7 +14,6 @@ interface ScrollPanelProps {
 const ScrollPanel = ({ carData }: ScrollPanelProps) => {
     
   return (
-    <>
       <div className="panel">
         <div className="intro" id="intro">
           <img id="logo" src="/images/common/logo.svg" alt="logo-icon" />
@@ -49,7 +48,6 @@ const ScrollPanel = ({ carData }: ScrollPanelProps) => {
           </Link>
         </div>
       </div>
-    </>
   );
 };
 
