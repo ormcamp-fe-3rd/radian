@@ -1,100 +1,128 @@
 @font-face {
-    font-family: 'line-seed';
-    src: url('/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
-    font-weight: 100;
-  }  
+  font-family: 'line-seed';
+  src: url('/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
+  font-weight: 100;
+}
 @font-face {
-    font-family: 'line-seed';
-    src: url('/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
-    font-weight: 400;
-  }  
+  font-family: 'line-seed';
+  src: url('/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
+  font-weight: 400;
+}
 @font-face {
-    font-family: 'line-seed';
-    font-weight: 700;
-    src: url('/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
-  } 
+  font-family: 'line-seed';
+  font-weight: 700;
+  src: url('/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
+}
 
 @font-face {
-    font-family: 'Danfo';
-    src: url('../../public/fonts/Danfo/Danfo-Regular-VariableFont_ELSH.ttf')
-      format('woff2');
-    font-weight: 100;
-  }
+  font-family: 'Danfo';
+  src: url('../../public/fonts/Danfo/Danfo-Regular-VariableFont_ELSH.ttf')
+    format('woff2');
+  font-weight: 100;
+}
 
 body {
-    margin: 0 auto;
-    font-family: 'LINE Seed Sans KR', sans-serif;
-    color: #423522;
-    background-color: #FFFBF1;
-    box-sizing: border-box;
+  margin: 0 auto;
+  font-family: 'LINE Seed Sans KR', sans-serif;
+  color: #423522;
+  background-color: #fffbf1;
+  box-sizing: border-box;
 }
 
 /* 로그인폼 컴포넌트 */
 .login-form {
-    min-width: 1440px;
-    height: 953.5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  align-items: center;
 }
 
 .int-area {
-    width: 371px;
-    height: 72.97px;
-    position: relative;
-    margin: 3px;
-    cursor: text;
+  width: 600px;
+  margin: 0.5rem 0;
 }
 
-.int-area input:focus + label,
-.int-area input:valid + label {
-    opacity: 0;
-    transform: translateY(-150%);
-}
-
-.int-area input:hover + label {
-    opacity: 0;
-    transform: translateY(-150%);
-}
-
-#name-input, #password-input {
-    width: 100%;
-    height: 72.97px;
-    border: none;
-    border-bottom: 1px solid black;
-    color: #423522;
-    font-size: 20px;
-    background: none;
-    outline: none;
-}
-
-#id, #pw {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    font-size: 20px;
-    font-weight: 200;
+#name-input,
+#password-input {
+  background: transparent;
+  font-family: line-seed;
+  font-size: 1rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  height: 3.4rem;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--main-color);
+  outline: none;
 }
 
 #btn-login {
-    width: 375px;
-    height: 55.69px;
-    margin-top: 47px;
-    border: none;
-    font-size: 20px;
+  width: 100%;
+  margin-top: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1.1em;
+  font-family: 'line-seed', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: white;
 }
 
 .login-active {
-    background-color: #423522;
-  }
-  
-  .login-inactive {
-    background-color: #757575;
-    color: white;
-  }
+  background-color: #423522;
+}
 
-#register {
-    width: 375px;
-    margin-top: 5px;
+.login-active:hover {
+  background-color: #574634;
+}
+
+.login-inactive {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.register {
+  font-size: 0.75;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.register a {
+  color: var(--main-color);
+  text-decoration: none;
+  font-family: 'line-seed', sans-serif;
+  font-weight: 400;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 744px) {
+  .int-area {
+    width: 350px;
+  }
+}
+
+@media (max-width: 402px) {
+  .int-area {
+    width: 280px;
+  }
 }

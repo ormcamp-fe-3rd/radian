@@ -17,6 +17,7 @@ const LoginForm = () => {
   });
   const { id, password } = form;
   const navigate = useNavigate();
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
     // 두 필드 모두 채워졌을 때 로그인 버튼 활성화
@@ -41,6 +42,8 @@ const LoginForm = () => {
     },
     [id, password],
   );
+
+  const [nextStepAnimation, setNextStepAnimation] = useState('');
 
   //   const access = useCallback(() => {
   //     if (id === 'radian@gamil.com' && password === '12345') {
@@ -113,22 +116,21 @@ const LoginForm = () => {
 
   return (
     <>
-      <section className="login-form">
+      <section className={`login-form ${fadeOut ? 'fade-out' : ''}`}>
         <form className="input-container" onSubmit={handleSubmit}>
           <div className="int-area">
             <input
-              type="text"
+              type="email"
               name="id"
               value={id}
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
               id="name-input"
               autoComplete="email"
+              placeholder="e-mail"
               required
             />
-            <label id="id" htmlFor="name-input">
-              ID/E-MAIL
-            </label>
+            <label id="id" htmlFor="name-input" />
           </div>
 
           <div className="int-area">
@@ -140,11 +142,10 @@ const LoginForm = () => {
               onKeyDown={handleKeyDown}
               id="password-input"
               autoComplete="current-password"
+              placeholder="password"
               required
             />
-            <label id="pw" htmlFor="password-input">
-              PASSWORD
-            </label>
+            <label id="pw" htmlFor="password-input" />
           </div>
 
           <button
@@ -152,13 +153,23 @@ const LoginForm = () => {
             className={isActive ? 'login-active' : 'login-inactive'}
             type="submit"
           >
-            LOGIN
+            로그인하기
           </button>
+          <div className="register">
+            <Link
+              to="/register"
+              onClick={(e) => {
+                e.preventDefault();
+                setFadeOut(true);
+                setTimeout(() => {
+                  navigate('/register');
+                }, 300);
+              }}
+            >
+              아직 radian 회원이 아니신가요?
+            </Link>
+          </div>
         </form>
-
-        <div id="register">
-          <Link to="/register">REGISTER</Link>
-        </div>
       </section>
     </>
   );
