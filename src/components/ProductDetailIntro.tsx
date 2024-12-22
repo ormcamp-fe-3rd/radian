@@ -1,13 +1,17 @@
 import '../styles/ProductDetail.css';
+import { Car } from '../types/modelsTypes';
 
-const ProductDetailIntro = () => {
+interface ProductDetailIntroProps {
+  carData: Car;  // 타입을 Car로 지정
+}
+
+const ProductDetailIntro = ({ carData }: ProductDetailIntroProps) => {
     return (
-    
         <section className="detail-intro">
           <div className='detail-intro-img'>
-            <img src="/images/ProductDetail/range-rover-header.jfif" />
+          <img src={carData.introImage} alt={carData.name} />
           </div>
-          <h1 className='detail-intro-title'>Radian-Rover,<br />"The Utility" :Smart, Spacious,<br />and Ready for Anything</h1>
+          <h1 className='detail-intro-title'>{carData.name},<br />{carData.description}</h1>
         </section>
     );
 };

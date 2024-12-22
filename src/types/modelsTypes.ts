@@ -2,7 +2,8 @@ export interface Car {
   id: string;
   name: string;
   description: string;
-  image: string;
+  introImage: string;
+  modelImage: string;
   rotatorImages: string[];
   price: string;
   specs: string[];

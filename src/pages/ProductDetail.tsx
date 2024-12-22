@@ -60,7 +60,6 @@ const ProductDetail = () => {
     gsap.set('#radian-model', { x: '50%', y: '50%', transformOrigin: 'center center' });
     gsap.set('.specs', { x: -160, opacity: 0 });
     gsap.set('.chars', { x: 260 });
-    part2_tl.set('.models li', { opacity: 0 });
     part3_tl.set('.specs dt', { opacity: 0 });
     part3_tl.set('.specs dd', { opacity: 0 });
     part4_tl.set('.chars h2', { opacity: 0 });
@@ -143,18 +142,6 @@ const ProductDetail = () => {
         duration: 1.5,
         ease: 'sine.out',
       })
-      .from('.models li', {
-        scrollTrigger: {
-          start: 1500,
-          end: 1800,
-          scrub: 1.5,
-        },
-        opacity: 0,
-        x: -20,
-        duration: 1.5,
-        stagger: 0.3,
-        ease: 'sine.out',
-      })
       .to('#radian-model', {
           opacity: 0,
           duration: 0.5,
@@ -206,10 +193,10 @@ const ProductDetail = () => {
         ease: 'sine.out',
       })
       .fromTo(
-        '.models li',
-        { x: 0, opacity: 1 },
+        '.rotator',
+        { y: 0, opacity: 1 },
         {
-          x: -20,
+          y: -20,
           opacity: 0,
           duration: 1.5,
           stagger: 0.3,
@@ -523,7 +510,7 @@ const ProductDetail = () => {
     
     <>
       <main className='detail-box'>
-        <ProductDetailIntro />
+        <ProductDetailIntro carData={carData} />
 
         <div className="detail-container" id="detail-container">
           <div className="wrapper" id="wrapper">

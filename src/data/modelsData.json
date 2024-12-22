@@ -2,8 +2,9 @@
   {
     "id": "rd6",
     "name": "Radian RD6",
-    "description": "The perfect combination of power and efficiency.",
-    "image": "/images/ProductDetail/radian-rd6-side.webp",
+    "description": "'The Sports' :The perfect combination of power and efficiency",
+    "introImage": "/images/ProductDetail/rd6-header.jpg",
+    "modelImage": "/public/images/ProductDetail/radian-rd6-side.webp",
     "rotatorImages": [
       "/public/images/CarLIstImages/rd6_90o.png",
       "/public/images/CarLIstImages/rd6_135o.png",
@@ -30,8 +31,9 @@
   {
     "id": "rover",
     "name": "Radian Rover",
-    "description": "The ultimate SUV for your adventures.",
-    "image": "/images/ProductDetail/radian-rover-side.webp",
+    "description": "'The Utility' :Smart, Spacious, and Ready for Anything",
+    "introImage": "/images/ProductDetail/range-rover-header.jfif",
+    "modelImage": "/images/ProductDetail/radian-rover-side.webp",
     "rotatorImages": [
       "/public/images/CarLIstImages/rover_90.png",
       "/public/images/CarLIstImages/rover_135.png",
@@ -58,8 +60,9 @@
   {
     "id": "cooper",
     "name": "Radian Cooper",
-    "description": "Compact, efficient, and stylish.",
-    "image": "/images/ProductDetail/radian-cooper-side.webp",
+    "description": "'The Compact' :the efficient, and stylish experience you've ever had",
+    "introImage": "/images/ProductDetail/cooper-header.jpg",
+    "modelImage": "/images/ProductDetail/radian-cooper-side.webp",
     "rotatorImages": [
       "/public/images/CarLIstImages/cooper_90.png",
       "/public/images/CarLIstImages/cooper_135.png",

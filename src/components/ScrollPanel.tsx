@@ -21,7 +21,7 @@ const ScrollPanel = ({ carData }: ScrollPanelProps) => {
           <h3 id="intro-h3">Relax and enjoy the drive</h3>
         </div>
 
-        <img id="radian-model" src={carData.image} alt={carData.name} />
+        <img id="radian-model" src={carData.modelImage} alt={carData.name} />
 
         <ScrollRotator carData={carData} />
         
