@@ -40,13 +40,18 @@ const signUpFormat: SignUpFormat = [
   {
     id: 'password',
     category: 'password',
-    placeHolder: '비밀번호는 8자 이상 입력해주세요',
+    placeHolder: '비밀번호는 숫자와 특수문자를 포함하여 8자 이상 입력해주세요',
     validation: {
       required: '',
       pattern: {
         value: /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/,
         message: '비밀번호는 8자리 이상이며 숫자와 특수문자를 포함해야 합니다.',
       },
+      validate: (value, formValues) =>
+        formValues.passwordConfirm !== ''
+          ? value === formValues.passwordConfirm ||
+            '비밀번호 확인란과 일치하지 않습니다.'
+          : true,
     },
   },
   {
@@ -56,7 +61,7 @@ const signUpFormat: SignUpFormat = [
     validation: {
       required: '비밀번호 확인은 필수입니다.',
       validate: (value, formValues) =>
-        value === formValues.password || '비밀번호가 일치하지 않습니다.',
+        value === formValues.password || '상단의 비밀번호가 일치하지 않습니다.',
     },
   },
 ];
