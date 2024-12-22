@@ -1,18 +1,6 @@
-type SignUpFormat = {
-  id: string;
-  category: string;
-  placeHolder: string;
-  validation: {
-    required: string;
-    pattern?: {
-      value: RegExp;
-      message: string;
-    };
-    validate?: (value: string, formValues: any) => boolean | string;
-  };
-}[];
+import { SignUpInputFormat } from './signUpFormType';
 
-const signUpFormat: SignUpFormat = [
+const signUpFormat: SignUpInputFormat[] = [
   {
     id: 'name',
     category: 'name',
