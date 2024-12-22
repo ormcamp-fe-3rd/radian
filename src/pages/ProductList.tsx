@@ -7,6 +7,7 @@ import ProductDetail from '../components/CarListDetail';
 
 interface Product {
   id: string;
+  pathId: string;
   titleImg: string;
   productImg: string;
   name: string;
@@ -48,7 +49,7 @@ const ProductList: React.FC = () => {
           {products.map((product) => (
             <CarProduct
               key={product.id}
-              id={product.id} // 상품 ID 전달
+              pathId={product.pathId} // 상품 ID 전달
               titleImg={product.titleImg}
               productImg={product.productImg}
               name={product.name}

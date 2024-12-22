@@ -515,7 +515,7 @@ const ProductDetail = () => {
         <div className="detail-container" id="detail-container">
           <div className="wrapper" id="wrapper">
 
-            <ScrollHeader />
+            <ScrollHeader carData={carData} />
 
             <ScrollPanel carData={carData} />
 

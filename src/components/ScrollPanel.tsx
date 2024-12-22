@@ -1,5 +1,6 @@
 import '../styles/ProductDetail.css';
 import { Car } from '../types/modelsTypes';
+import { Link } from 'react-router-dom';
 
 /** 컴포넌트 */
 import ScrollPanelSpecs from './ScrollPanelSpecs';
@@ -43,7 +44,9 @@ const ScrollPanel = ({ carData }: ScrollPanelProps) => {
         <div className="outro">
           <h2>{carData.name}</h2>
           <p>{carData.price}</p>
-          <button className='outro-btn'>Build Now</button>
+          <Link to={`/product-reservation/${carData.id}`}>
+            <button className='outro-btn'>Build Now</button>
+          </Link>
         </div>
       </div>
     </>
