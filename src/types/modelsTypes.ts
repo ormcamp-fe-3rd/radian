@@ -3,6 +3,7 @@ export interface Car {
   name: string;
   description: string;
   image: string;
+  rotatorImages: string[];
   price: string;
   specs: string[];
   chars: string[];

@@ -42,8 +42,8 @@ const ProductDetail = () => {
     
     const intro_tl = gsap.timeline();
     const part1_tl = gsap.timeline();
-    const part2_tl = gsap.timeline();
     const rotator_tl = gsap.timeline();
+    const part2_tl = gsap.timeline();
     const part3_tl = gsap.timeline();
     const part4_tl = gsap.timeline();
     const part5_tl = gsap.timeline();
@@ -123,7 +123,7 @@ const ProductDetail = () => {
         {
           scale: 0.8,
           y: -200,
-          duration: 1.5,
+          duration: 0.5,
           ease: 'sine.out',
           scrollTrigger: {
             start: 1250,
@@ -155,10 +155,21 @@ const ProductDetail = () => {
         stagger: 0.3,
         ease: 'sine.out',
       })
+      .to('#radian-model', {
+          opacity: 0,
+          duration: 0.5,
+          ease: 'sine.out',
+          scrollTrigger: {
+            trigger: '#radian-model', // 트리거 요소 설정
+            start: 1500, // 다시 나타날 시점
+            end: 1550, // 이미지가 다시 나타날 시점
+            scrub: 1.5,
+          }
+        })
       .to('.rotator circle', {
         scrollTrigger: {
           start: 1500,
-          end: 1800,
+          end: 2500,
           scrub: 1.5,
         },
         y:20,
@@ -166,7 +177,20 @@ const ProductDetail = () => {
         stagger: 0.3,
         ease: 'sine.out',
       })
-      part2_tl.add(rotator_tl);
+      part1_tl.add(rotator_tl)
+      .fromTo('#radian-model',
+        {opacity: 0},
+        {
+          opacity: 1,
+          duration: 0.5,
+          ease: 'sine.out',
+        scrollTrigger: {
+          trigger: '#radian-model', // 트리거 요소 설정
+          start: 2500, // 다시 나타날 시점
+          end: 2550, // 이미지가 다시 나타날 시점
+          scrub: 1.5,
+        }
+      });
 
     // TIMELINE: Part 2
     part2_tl
@@ -498,27 +522,28 @@ const ProductDetail = () => {
   return (
     
     <>
-      
-      <ProductDetailIntro />
+      <main className='detail-box'>
+        <ProductDetailIntro />
 
-      <div className="detail-container" id="detail-container">
-        <div className="wrapper" id="wrapper">
-          
-          <ScrollHeader />
-          
-          <ScrollPanel carData={carData} />
+        <div className="detail-container" id="detail-container">
+          <div className="wrapper" id="wrapper">
 
-          <div className="bkg"></div>
+            <ScrollHeader />
+
+            <ScrollPanel carData={carData} />
+
+            <div className="bkg"></div>
+          </div>
+
+          <svg version="1.1" id="mask">
+            <defs>
+              <clipPath id="wrapMask">
+                <rect id="wrapWin" width="1300" height="1100" fill="black" />
+              </clipPath>
+            </defs>
+          </svg>
         </div>
-        
-        <svg version="1.1" id="mask">
-          <defs>
-            <clipPath id="wrapMask">
-              <rect id="wrapWin" width="1300" height="1100" fill="black" />
-            </clipPath>
-          </defs>
-        </svg>
-      </div>
+      </main>
     </>
   );
 };

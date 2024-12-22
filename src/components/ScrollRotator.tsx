@@ -1,41 +1,58 @@
 import '../styles/ProductDetail.css';
+import { Car } from '../types/modelsTypes';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+interface ScrollRotatorProps {
+  carData: Car;  // 타입을 Car로 지정
+}
+
 gsap.registerPlugin(ScrollTrigger);
 
-const ScrollRotator = () => {
+const ScrollRotator = ({ carData }: ScrollRotatorProps) => {
+  
   useGSAP(() => {
+    const rotator_tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.rotator-container',
+        start: 1500,
+        end: 2500,
+        scrub: 1.5,
+      }
+    });
 
-    const rotator_tl = gsap.timeline();
+    const images = document.querySelectorAll('.rotator-image');
 
-    rotator_tl
-        .to('.rotator-image', {
-          scrollTrigger: {
-            trigger: '.rotator-container',
-            start: 1500,
-            end: 1800,
-            scrub: 1.5,
-          },
-          rotation: 360, // 회전
-          stagger: 0.2,  // 각 이미지가 차례대로 등장하도록
-          opacity: 1, // 서서히 나타나도록
-          duration: 1.5,
-          ease: 'sine.out',
-        });
-     }, []);
+    images.forEach((image) => {
+      const delayTime = 2;
+    
+      // 각 이미지의 교체 애니메이션
+      rotator_tl.fromTo(image,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 1,
+          ease: 'power2.out',
+        })
+        .to(image, {
+          opacity: 0,
+          duration: 1,
+          ease: 'power2.in',
+        }, `+=${delayTime}`);
+    });
+  }, [carData.rotatorImages]);
 
   return (
     <div className="rotator-container">
-      <img className="rotator-image" src="/images/CarListImages/cooper_0.png" alt="Image 1" />
-      <img className="rotator-image" src="/images/CarListImages/cooper_45.png" alt="Image 2" />
-      <img className="rotator-image" src="/images/CarListImages/cooper_90.png" alt="Image 3" />
-      <img className="rotator-image" src="/images/CarListImages/cooper_135.png" alt="Image 4" />
-      <img className="rotator-image" src="/images/CarListImages/cooper_180.png" alt="Image 5" />
-      <img className="rotator-image" src="/images/CarListImages/cooper_225.png" alt="Image 6" />
-      <img className="rotator-image" src="/images/CarListImages/cooper_270.png" alt="Image 7" />
-      <img className="rotator-image" src="/images/CarListImages/cooper_315.png" alt="Image 8" />
+       {carData.rotatorImages.map((imageSrc, index) => (
+        <img
+          key={index}
+          className="rotator-image"
+          src={imageSrc}
+          alt={`Image ${index + 1}`}
+        />
+       ))}
     </div>
   );
 };

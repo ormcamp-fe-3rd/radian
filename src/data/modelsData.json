@@ -4,6 +4,16 @@
     "name": "Radian RD6",
     "description": "The perfect combination of power and efficiency.",
     "image": "/images/ProductDetail/radian-rd6-side.webp",
+    "rotatorImages": [
+      "/public/images/CarLIstImages/rd6_90o.png",
+      "/public/images/CarLIstImages/rd6_135o.png",
+      "/public/images/CarLIstImages/rd6_180o.png",
+      "/public/images/CarLIstImages/rd6_225o.png",
+      "/public/images/CarLIstImages/rd6_270o.png",
+      "/public/images/CarLIstImages/rd6_315o.png",
+      "/public/images/CarLIstImages/rd6_0o.png",
+      "/public/images/CarLIstImages/rd6_45o.png"
+    ],
     "price": "$2499.00",
     "specs": [
       "Powerful engine",
@@ -22,6 +32,16 @@
     "name": "Radian Rover",
     "description": "The ultimate SUV for your adventures.",
     "image": "/images/ProductDetail/radian-rover-side.webp",
+    "rotatorImages": [
+      "/public/images/CarLIstImages/rover_90.png",
+      "/public/images/CarLIstImages/rover_135.png",
+      "/public/images/CarLIstImages/rover_180.png",
+      "/public/images/CarLIstImages/rover_225.png",
+      "/public/images/CarLIstImages/rover_270.png",
+      "/public/images/CarLIstImages/rover_315.png",
+      "/public/images/CarLIstImages/rover_0.png",
+      "/public/images/CarLIstImages/rover_45.png"
+    ],
     "price": "$2999.00",
     "specs": [
       "All-terrain tires",
@@ -40,6 +60,16 @@
     "name": "Radian Cooper",
     "description": "Compact, efficient, and stylish.",
     "image": "/images/ProductDetail/radian-cooper-side.webp",
+    "rotatorImages": [
+      "/public/images/CarLIstImages/cooper_90.png",
+      "/public/images/CarLIstImages/cooper_135.png",
+      "/public/images/CarLIstImages/cooper_180.png",
+      "/public/images/CarLIstImages/cooper_225.png",
+      "/public/images/CarLIstImages/cooper_270.png",
+      "/public/images/CarLIstImages/cooper_315.png",
+      "/public/images/CarLIstImages/cooper_0.png",
+      "/public/images/CarLIstImages/cooper_45.png"
+    ],
     "price": "$1999.00",
     "specs": [
       "Fuel-efficient",

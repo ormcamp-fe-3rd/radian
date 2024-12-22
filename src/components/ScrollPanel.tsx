@@ -11,23 +11,6 @@ interface ScrollPanelProps {
 }
 
 const ScrollPanel = ({ carData }: ScrollPanelProps) => {
-
-  // 모델 목록
-  const models = ['Radian RD6', 'Radian Rover', 'Radian Cooper'];
-  
-  // 원하는 모델을 두 번째로 고정
-  const secondModel = 'Radian Rover';
-
-  // 배열을 재정렬하여 원하는 모델을 두 번째로 위치시킴
-  const sortedModels = models
-    .filter(model => model !== secondModel) // 'Radian Rover'를 제외한 나머지 모델
-    .reduce((acc, model, index) => {
-      if (index === 1) {
-        acc.push(secondModel); // 두 번째 인덱스에 'Radian Rover' 삽입
-      }
-      acc.push(model); // 나머지 모델들 추가
-      return acc;
-    }, [] as string[]);
     
   return (
     <>
@@ -40,15 +23,9 @@ const ScrollPanel = ({ carData }: ScrollPanelProps) => {
 
         <img id="radian-model" src={carData.image} alt={carData.name} />
 
-        <ScrollRotator />
+        <ScrollRotator carData={carData} />
         
         <h1 id="panel-h1">{carData.name}</h1>
-        
-        <ul className="models">
-          {sortedModels.map((model, index) => (
-            <li key={index}>{model}</li>
-          ))}
-        </ul>
 
         <div className="rotator">
           <p>0&deg;</p>

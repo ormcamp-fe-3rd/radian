@@ -21,8 +21,7 @@
   font-weight: 100;
 }
 
-html,
-body {
+.detail-box {
   min-height: 100vh;
   margin: 0 auto;
   font-family: 'line-seed';
@@ -30,6 +29,7 @@ body {
   color: #423522;
   background-color: #fffbf1;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .detail-intro {
@@ -293,6 +293,7 @@ body {
   display: flex;
   justify-content: center; /* 가로 중앙 정렬 */
   align-items: center; /* 세로 중앙 정렬 */
+  margin: 0;
   z-index: 13; /* 적절한 z-index 설정 */
 }
 
@@ -302,8 +303,7 @@ body {
   position: absolute;
   left: 50%; /* 이미지를 가운데로 배치 */
   bottom: -55em; /* 원하는 위치에 맞춰서 배치 */
-  transform: translateX(-50%); /* 수평 중앙 정렬 */
-  opacity: 1;
+  transform: translateX(-50%) translateY(-200px);
   z-index: 15;
 }
 
