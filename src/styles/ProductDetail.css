@@ -410,12 +410,14 @@
     margin-bottom: 90px;
   }
   .wrapper {
-    width: 100vw; /* 화면 너비가 1440px 이하일 경우 70% */
+    width: 100vw;
+    min-height: 100vh;
+    max-height: 650px;
     margin-top: 4em;
   }
 
   .panel img#radian-model {
-    left: 15%;
+    left: 40%;
   }
 
   .outro {
@@ -425,7 +427,9 @@
 
 @media (max-width: 1020px) {
   .wrapper {
-    width: 100vw; /* 화면 너비가 1020px 이하일 경우 80% */
+    width: 100vw;
+    min-height: 100vh; /* 높이를 100vh로 설정하여 화면에 맞게 조정 */
+    max-height: 550px;
   }
 
   .detail-header div {
@@ -442,7 +446,12 @@
 
   .panel img#radian-model {
     bottom: -40em;
-    left: -10%;
+    left: 20%;
+  }
+
+  .rotator-image {
+    bottom: -40em;
+    left: 45%;
   }
 
   .specs,
