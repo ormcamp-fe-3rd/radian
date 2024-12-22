@@ -2,28 +2,27 @@ import { useForm } from 'react-hook-form';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
-import signUpFormat from '../data/signUpFormat';
 
-interface UserLogInData {
-  name: string;
-  email: string;
-  password: string;
-  passwordConfirm: string;
-}
+import signUpFormat from '../data/signUpFormat';
+import {
+  UserSignUpFormValue,
+  UserSignUpFormValueKey,
+  SignUpInputFormat,
+} from '../data/signUpFormType';
 
 const SignUpForm = (): JSX.Element => {
   const {
     register,
     handleSubmit,
     formState: { isSubmitting, errors, isValid },
-  } = useForm<UserLogInData>({
+  } = useForm<UserSignUpFormValue>({
     mode: 'onChange',
   });
 
   const navigate = useNavigate();
 
   // 회원가입 처리 함수
-  const onSubmit = async (userEmailAndPassword: UserLogInData) => {
+  const onSubmit = async (userEmailAndPassword: UserSignUpFormValue) => {
     const { email, password } = userEmailAndPassword;
 
     try {
@@ -47,7 +46,7 @@ const SignUpForm = (): JSX.Element => {
   return (
     <div className="register-container slide-from-right">
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
-        {signUpFormat.map((userInformation) => (
+        {signUpFormat.map((userInformation: SignUpInputFormat) => (
           <div key={userInformation.id}>
             <input
               className="input-form"
@@ -55,14 +54,16 @@ const SignUpForm = (): JSX.Element => {
               id={userInformation.id}
               type={userInformation.category}
               {...register(
-                userInformation.id as keyof UserLogInData,
+                userInformation.id as UserSignUpFormValueKey,
                 userInformation.validation,
               )}
-              aria-invalid={!!errors[userInformation.id as keyof UserLogInData]}
+              aria-invalid={
+                !!errors[userInformation.id as UserSignUpFormValueKey]
+              }
             />
-            {errors[userInformation.id as keyof UserLogInData]?.message && (
+            {errors[userInformation.id as UserSignUpFormValueKey]?.message && (
               <small>
-                {errors[userInformation.id as keyof UserLogInData]?.message}
+                {errors[userInformation.id as UserSignUpFormValueKey]?.message}
               </small>
             )}
           </div>
