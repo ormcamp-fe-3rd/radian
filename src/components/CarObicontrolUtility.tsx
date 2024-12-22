@@ -67,7 +67,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
     // Load HDR environment map
     const rgbeLoader = new RGBELoader();
     rgbeLoader.load(
-      '/images/ProductReservation/utility-vr.hdr',
+      '/images/ProductReservation/utility-vr2.hdr',
       (texture: THREE.Texture) => {
         texture.mapping = THREE.EquirectangularReflectionMapping;
         scene.background = texture; // Set as the scene background
@@ -176,7 +176,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
     );
 
     // 구 GLTF 배경 추가
-    loader.load('./images/ProductReservation/utility-sphere.gltf', (gltf) => {
+    loader.load('/images/ProductReservation/utility-sphere.gltf', (gltf) => {
       const cubeModel = gltf.scene;
 
       cubeModel.scale.set(1.5, 1.5, 1.5); // 
