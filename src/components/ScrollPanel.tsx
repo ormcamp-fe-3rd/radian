@@ -52,4 +52,3 @@ const ScrollPanel = ({ carData }: ScrollPanelProps) => {
 };
 
 export default ScrollPanel;
-
