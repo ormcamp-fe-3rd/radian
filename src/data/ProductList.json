@@ -1,6 +1,7 @@
 [
   {
     "id": "RadianRD6",
+    "pathId": "rd6",
     "titleImg": "/public/images/CarLIstImages/SPORT.png",
     "productImg": "/public/images/CarCarouselImages/sport_3210x1780o.png",
     "name": "Radian RD6",
@@ -19,6 +20,7 @@
   },
   {
     "id": "RadianCooper",
+    "pathId": "cooper",
     "titleImg": "/public/images/CarLIstImages/Compact.png",
     "productImg": "/public/images/CarCarouselImages/compact_4020x1740o.png",
     "name": "Radian Cooper",
@@ -37,6 +39,7 @@
   },
   {
     "id": "RadianRover",
+    "pathId": "rover",
     "titleImg": "/public/images/CarLIstImages/Utilty.png",
     "productImg": "/public/images/CarCarouselImages/utility_4020x1930o.png",
     "name": "Radian Rover",

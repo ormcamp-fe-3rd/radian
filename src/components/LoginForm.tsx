@@ -43,7 +43,7 @@ const LoginForm = () => {
     [id, password],
   );
 
-  const [nextStepAnimation, setNextStepAnimation] = useState('');
+  // const [nextStepAnimation, setNextStepAnimation] = useState('');
 
   //   const access = useCallback(() => {
   //     if (id === 'radian@gamil.com' && password === '12345') {
@@ -91,11 +91,12 @@ const LoginForm = () => {
         console.log('로그인 성공', user);
         navigate('/home'); // 로그인 성공 후 홈으로 이동
       })
+      
       .catch((error) => {
         // 로그인 실패 시
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage); // 에러 코드와 메시지를 로그로 출력
+        console.log('로그인 오류:', errorCode, errorMessage); // 에러 코드와 메시지를 로그로 출력
 
         if (errorCode === 'auth/invalid-email') {
           alert('유효하지 않은 이메일 주소입니다.');

@@ -21,16 +21,15 @@
   font-weight: 100;
 }
 
-html,
-body {
+.detail-box {
   min-height: 100vh;
   margin: 0 auto;
   font-family: 'line-seed';
   font-weight: 400;
   color: #423522;
   background-color: #fffbf1;
-  /* overflow-x: hidden; */
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .detail-intro {
@@ -40,7 +39,7 @@ body {
   margin: 2em;
 }
 
-.detail-intro-title {
+.detail-intro h1 {
   width: 50%;
   position: absolute;
   margin-left: 40%;
@@ -51,7 +50,7 @@ body {
   overflow-wrap: break-word; /* 텍스트가 부모 영역을 넘지 않도록 강제로 줄바꿈 */
 }
 
-.detail-intro-img {
+.detail-intro div {
   width: 50%;
   height: 100%;
   top: 0;
@@ -59,7 +58,7 @@ body {
   margin: 0;
 }
 
-.detail-intro-img img {
+.detail-intro div img {
   width: 100%;
   opacity: 0.2;
 }
@@ -130,8 +129,8 @@ body {
   margin-bottom: 60px;
 }
 
-.detail-wrapper {
-  width: 90%;
+.wrapper {
+  width: 80%;
   max-width: 1300px;
   min-height: 100vh; /* 높이를 100vh로 설정하여 화면에 맞게 조정 */
   max-height: 750px; /* max-height는 필요에 따라 조정 */
@@ -173,7 +172,7 @@ body {
   fill: none;
 }
 
-.detail-header-options {
+.detail-go-options {
   display: grid;
   grid-template-columns: 1fr 7%;
   justify-content: right;
@@ -181,16 +180,32 @@ body {
   margin: 0;
 }
 
-.detail-header-options p {
+.detail-go-options p {
   color: #423522;
   font-size: 13px;
   font-weight: 700;
-
+  line-height: 0%;
   margin-right: 0.5em;
+  text-decoration: none !important;
 }
 
-.detail-header-options svg {
+.options-icon {
   text-align: right;
+}
+
+.detail-go-list:hover {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.2);
+}
+
+.detail-go-options p:hover {
+  text-decoration: underline !important;
+  text-decoration-color: #423522;
+}
+
+.options-icon:hover {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.2);
 }
 
 .panel {
@@ -201,30 +216,30 @@ body {
   position: relative;
 }
 
-#raidan-model {
+.panel img#radian-model {
   width: 70%;
   height: auto;
   position: absolute;
   left: 40%;
   bottom: -55em;
   transform: translateX(-50%);
-  opacity: 1;
-  z-index: 11 !important;
+  z-index: 10;
 }
 
-#panel-h1 {
+.panel h1#panel-h1 {
   width: 100%;
   position: absolute;
   text-align: center;
   top: 50%;
   left: 50%;
+  margin-top: 2em;
   transform: translateX(-50%);
   font-size: 8rem;
   opacity: 1;
   z-index: 9;
 }
 
-.panel-intro {
+.intro {
   position: absolute;
   top: 20%;
   left: 50%;
@@ -234,40 +249,19 @@ body {
   z-index: 6;
 }
 
-.panel-intro h1 {
-  font-size: 4rem;
+.intro h1 {
+  font-size: 3rem;
 }
 
-.panel-intro h3 {
+.intro h3 {
   margin-top: -16px;
-  font-size: 2.4rem;
+  font-size: 2rem;
 }
 
-.panel-intro img {
+.intro img {
   width: 50px;
   margin-top: 25px;
   opacity: 0.6;
-}
-
-.models {
-  position: absolute;
-  top: 50%;
-  z-index: 11;
-}
-
-.models li {
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #d0d0d0;
-  opacity: 1;
-}
-
-.models li:nth-child(2) {
-  color: #423522;
-  font-size: 1.5rem;
-  font-weight: 400;
-  list-style-type: square;
 }
 
 .rotator {
@@ -284,6 +278,28 @@ body {
   font-size: 0.8rem;
   color: #423522;
   text-transform: uppercase;
+}
+
+.rotator-container {
+  width: 100%;
+  height: 100%; /* 높이를 100%로 설정하여 전체 화면을 차지하게 합니다. */
+  position: absolute; /* 절대 위치로 설정하여 parent에 상대적인 위치로 배치 */
+  top: 50%; /* 부모 요소의 50% 위치 */
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  margin: 0;
+  z-index: 13; /* 적절한 z-index 설정 */
+}
+
+.rotator-image {
+  width: 70%;
+  height: auto;
+  position: absolute;
+  left: 50%; /* 이미지를 가운데로 배치 */
+  bottom: -55em; /* 원하는 위치에 맞춰서 배치 */
+  transform: translateX(-50%) translateY(-200px);
+  z-index: 15;
 }
 
 .specs,
@@ -357,15 +373,23 @@ body {
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.outro button {
+.outro-btn {
+  width: 140px;
+  height: 50px;
   margin: 10px 0;
   padding: 5px 10px;
   border: 1px solid rgb(155, 155, 155);
+  border-radius: 10px;
   background: #423522;
   outline: none;
   cursor: pointer;
   color: #e0e0e0;
   font-size: 1.5rem;
+}
+
+.outro-btn:hover {
+  transition: transform 0.3s ease-in-out !important;
+  transform: scale(1.2) !important;
 }
 
 #mask {
@@ -385,13 +409,15 @@ body {
   .detail-container {
     margin-bottom: 90px;
   }
-  .detail-wrapper {
-    width: 100vw; /* 화면 너비가 1440px 이하일 경우 70% */
+  .wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    max-height: 650px;
     margin-top: 4em;
   }
 
-  #radian-model {
-    left: 15%;
+  .panel img#radian-model {
+    left: 40%;
   }
 
   .outro {
@@ -400,8 +426,10 @@ body {
 }
 
 @media (max-width: 1020px) {
-  .detail-wrapper {
-    width: 100vw; /* 화면 너비가 1020px 이하일 경우 80% */
+  .wrapper {
+    width: 100vw;
+    min-height: 100vh; /* 높이를 100vh로 설정하여 화면에 맞게 조정 */
+    max-height: 550px;
   }
 
   .detail-header div {
@@ -412,13 +440,18 @@ body {
     margin-top: 2em;
   }
 
-  #panel-h1 {
+  .panel h1#panel-h1 {
     font-size: 4rem;
   }
 
-  #radian-model {
+  .panel img#radian-model {
     bottom: -40em;
-    left: -10%;
+    left: 20%;
+  }
+
+  .rotator-image {
+    bottom: -40em;
+    left: 45%;
   }
 
   .specs,
