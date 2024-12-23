@@ -18,6 +18,20 @@ declare module 'three' {
   }
 }
 
+declare module 'three' {
+  interface MeshStandardMaterialParameters {
+    clearcoat?: number;
+    clearcoatRoughness?: number;
+    refractionRatio?: number;
+  }
+
+  interface MeshStandardMaterial {
+    clearcoat?: number;
+    clearcoatRoughness?: number;
+    refractionRatio?: number;
+  }
+}
+
 interface CarObicontrolProps {
   color: string;
 }

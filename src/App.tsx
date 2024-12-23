@@ -1,8 +1,8 @@
 import './styles/reset.css';
 import './styles/App.css';
 import { Route, Routes } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'; // react-query 개발 툴 사용 시
+// import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools'; // react-query 개발 툴 사용 시
 
 /**페이지 컴포넌트 */
 import Home from './pages/Home';
@@ -18,11 +18,11 @@ import ProductReservationUtility from './pages/ProductReservationUtility';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const queryClient = new QueryClient(); //추가
+// const queryClient = new QueryClient(); //추가
 
 const App = (): JSX.Element => {
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <Header />
 
       <Routes>
@@ -30,18 +30,14 @@ const App = (): JSX.Element => {
         <Route path="/register/*" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/product-list" element={<ProductList />}></Route>
-        <Route path="/product-detail" element={<ProductDetail />}></Route>
+        <Route path="/product-detail/:carId" element={<ProductDetail />}></Route>
         <Route path="/product-reservation/sport" element={<ProductReservationSport />}></Route>
         <Route path="/product-reservation/compact" element={<ProductReservationCompact />}></Route>
         <Route path="/product-reservation/utility" element={<ProductReservationUtility />}></Route>
-
       </Routes>
 
       <Footer />
-
-      {/* react-query 개발 툴 사용 시 가장 하위에 위치하게 작성 */}
-      <ReactQueryDevtools initialIsOpen={true} />
-    </QueryClientProvider>
+    </>
   );
 };
 

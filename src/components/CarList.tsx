@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { formatCurrency } from '../utils/formatCurrency';
 
 interface CarProductProps {
-  id: string;
+  pathId: string;
   titleImg: string;
   productImg: string;
   name: string;
@@ -13,16 +13,16 @@ interface CarProductProps {
 }
 
 const CarProduct: React.FC<CarProductProps> = ({
-  id,
+  pathId,
   titleImg,
   productImg,
   name,
   price,
   onClickCarDetail,
-}) => {
+}: CarProductProps) => {
   return (
     <div className="car-product-container">
-      <Link to={`/Detail/${id}`} className="car-product-title-link">
+      <Link to={`/product-detail/${pathId}`} className="car-product-title-link">
         <div className="car-product-title">
           <img
             src={titleImg}
@@ -31,8 +31,8 @@ const CarProduct: React.FC<CarProductProps> = ({
           />
         </div>
       </Link>
-      <Link to={`/detail/${id}`} className="car-product-link">
-        {/*to={`/Detail/${id}`} 해당 부분 수진님 상품상세페이지로 변경예정*/}
+      <Link to={`/product-detail/${pathId}`} className="car-product-link">
+        {/*상품상세페이지로 변경*/}
         <div className="car-product-img">
           <img src={productImg} alt="car-product" className="carlist-img" />
         </div>
