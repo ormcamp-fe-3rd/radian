@@ -43,44 +43,11 @@ const LoginForm = () => {
     [id, password],
   );
 
-  // const [nextStepAnimation, setNextStepAnimation] = useState('');
-
-  //   const access = useCallback(() => {
-  //     if (id === 'radian@gamil.com' && password === '12345') {
-  //       navigate('/home'); // 홈으로 이동
-  //     } else if (id === '') {
-  //       alert('아이디를 입력해주세요.');
-  //     } else if (password === '') {
-  //       alert('비밀번호를 입력해주세요.');
-  //     } else {
-  //       alert('아이디 또는 비밀번호가 맞지 않습니다. 다시 입력해주세요.');
-  //     }
-  //   }, [id, password, navigate]);
-
   const access = useCallback(() => {
     if (id === '' || password === '') {
       alert('아이디와 비밀번호를 입력해주세요.');
       return;
     }
-
-    // Firebase Authentication을 이용하여 로그인
-    //     signInWithEmailAndPassword(auth, id, password)
-    //       .then(() => {
-    //         navigate('/home'); // 로그인 성공 시 홈으로 이동
-    //       })
-    //       .catch((error) => {
-    //         const errorCode = error.code;
-    //         const errorMessage = error.message;
-
-    //         if (errorCode === 'auth/invalid-email') {
-    //           alert('유효하지 않은 이메일 주소입니다.');
-    //         } else if (errorCode === 'auth/wrong-password') {
-    //           alert('비밀번호가 틀렸습니다.');
-    //         } else {
-    //           alert('로그인 실패: ' + errorMessage);
-    //         }
-    //       });
-    //   }, [id, password, navigate]);
 
     // Firebase Authentication을 이용하여 로그인
     signInWithEmailAndPassword(auth, id, password)
@@ -89,7 +56,7 @@ const LoginForm = () => {
 
         const user = userCredential.user;
         console.log('로그인 성공', user);
-        navigate('/home'); // 로그인 성공 후 홈으로 이동
+        navigate('/'); // 로그인 성공 후 홈으로 이동
       })
 
       .catch((error) => {
