@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import CarCarousel from '../components/CarCarousel';
+import CarCarousel from '../components/ProductList/CarCarousel';
 import '../styles/ProductList.css';
 
-import CarProduct from '../components/CarList';
-import ProductDetail from '../components/CarListDetail';
+import CarProduct from '../components/ProductList/CarList';
+import ProductDetail from '../components/ProductList/CarListDetail';
 
 interface Product {
   id: string;
+  pathId: string;
   titleImg: string;
   productImg: string;
   name: string;
@@ -48,7 +49,7 @@ const ProductList: React.FC = () => {
           {products.map((product) => (
             <CarProduct
               key={product.id}
-              id={product.id} // 상품 ID 전달
+              pathId={product.pathId} // 상품 ID 전달
               titleImg={product.titleImg}
               productImg={product.productImg}
               name={product.name}
