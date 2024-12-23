@@ -31,9 +31,9 @@ const App = (): JSX.Element => {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/product-list" element={<ProductList />}></Route>
         <Route path="/product-detail/:carId" element={<ProductDetail />}></Route>
-        <Route path="/product-reservation/sport" element={<ProductReservationSport />}></Route>
-        <Route path="/product-reservation/compact" element={<ProductReservationCompact />}></Route>
-        <Route path="/product-reservation/utility" element={<ProductReservationUtility />}></Route>
+        <Route path="/product-reservation/rd6" element={<ProductReservationSport />}></Route>
+        <Route path="/product-reservation/cooper" element={<ProductReservationCompact />}></Route>
+        <Route path="/product-reservation/rover" element={<ProductReservationUtility />}></Route>
       </Routes>
 
       <Footer />

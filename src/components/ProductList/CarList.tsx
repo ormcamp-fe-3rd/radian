@@ -39,7 +39,7 @@ const CarProduct: React.FC<CarProductProps> = ({
       </Link>
       <div className="car-product-button" onClick={onClickCarDetail}>
         <img
-          src="/public/images/CarLIstImages/pluse.png"
+          src="/public/images/CarList/pluse.png"
           alt="onClickCarDetail"
           className="plus-icon"
         />

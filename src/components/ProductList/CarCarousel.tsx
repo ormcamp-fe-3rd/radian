@@ -35,7 +35,7 @@ const CarCarousel: React.FC = () => {
         <div className="slider-img">
           <img
             className="car-img"
-            src="/public/images/CarCarouselImages/sport_3210x1780o.png"
+            src="../../../public/images/CarList/sport_3210x1780o.png"
             alt="Car 1"
             style={{ width: '100%', height: '100%' }}
           />
@@ -43,7 +43,7 @@ const CarCarousel: React.FC = () => {
         <div className="slider-img">
           <img
             className="car-img"
-            src="/public/images/CarCarouselImages/compact_4020x1740o.png"
+            src="../../../public/images/CarList/compact_4020x1740o.png"
             alt="Car 2"
             style={{ width: '100%', height: '100%' }}
           />
@@ -51,7 +51,7 @@ const CarCarousel: React.FC = () => {
         <div className="slider-img">
           <img
             className="car-img"
-            src="/public/images/CarCarouselImages/utility_4020x1930o.png"
+            src="../../../public/images/CarList/utility_4020x1930o.png"
             alt="Car 3"
             style={{ width: '100%', height: '100%' }}
           />
