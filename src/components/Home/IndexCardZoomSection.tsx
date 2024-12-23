@@ -17,7 +17,7 @@ const IndexCardZoomSection = () => {
       >
         <img
           className="home-main-image"
-          src="/images/main-images/Mini-Cooper-Classic-Electric-conversion-1.webp"
+          src="/images/Home/Mini-Cooper-Classic-Electric-conversion-1.webp"
           alt="Mini Cooper Classic Electric Conversion"
         />
       </div>

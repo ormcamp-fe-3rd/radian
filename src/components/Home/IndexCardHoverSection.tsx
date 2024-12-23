@@ -8,7 +8,7 @@ const IndexCardHoverSection = () => {
       <div className="image-container-half">
         <img
           className={`home-sub-image ${isHoveringLeft ? 'content-zoom-in' : ''}`}
-          src="/images/main-images/Mini-EV-Conversion.jpg"
+          src="/images/Home/Mini-EV-Conversion.jpg"
           alt="Mini Cooper Classic Electric Vehicle Conversion"
           onMouseOver={() => setIsHoveringLeft(true)}
           onMouseOut={() => setIsHoveringLeft(false)}
@@ -17,7 +17,7 @@ const IndexCardHoverSection = () => {
       <div className="image-container-half">
         <img
           className={`home-sub-image ${isHoveringRight ? 'content-zoom-in' : ''}`}
-          src="/images/main-images/Classic-Mini-Appeal.jpg"
+          src="/images/Home/Classic-Mini-Appeal.jpg"
           alt="Classic Mini Cooper Appeal"
           onMouseOver={() => setIsHoveringRight(true)}
           onMouseOut={() => setIsHoveringRight(false)}

@@ -32,7 +32,7 @@ const IndexCardFlipSection = () => {
                 }}
               ></div>
               <Link
-                to={`/product-list/${contentLink.productUrl}`}
+                to={`/product-detail/${contentLink.productUrl}`}
                 className="card-back"
                 style={{ backgroundImage: `url(${contentLink.backImage})` }}
               >

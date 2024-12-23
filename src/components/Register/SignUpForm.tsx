@@ -8,7 +8,7 @@ import {
   UserSignUpFormValue,
   UserSignUpFormValueKey,
   SignUpInputFormat,
-} from '../../data/signUpFormType';
+} from '../../types/signUpFormType';
 
 const SignUpForm = (): JSX.Element => {
   const {
