@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import CARD_DATA from '../../data/indexCarImagePath.json';
 import useFlipOnScroll from '../../hooks/useFlipOnScroll';
 
-const IndexCardFlipSection = () => {
+const CardFlipSection = () => {
   const flipContainer = useRef<HTMLDivElement>(null);
   const flipScollContainer = useRef<HTMLDivElement>(null);
 
@@ -51,4 +51,4 @@ const IndexCardFlipSection = () => {
   );
 };
 
-export default IndexCardFlipSection;
+export default CardFlipSection;

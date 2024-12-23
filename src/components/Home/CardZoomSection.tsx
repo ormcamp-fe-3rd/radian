@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import useZoomOnScroll from '../../hooks/useZoomOnScroll';
 
-const IndexCardZoomSection = () => {
+const CardZoomSection = () => {
   const imageContainerRef = useRef<HTMLDivElement | null>(null);
   const scrollingSectionRef = useRef<HTMLDivElement | null>(null);
   const divWidth = useZoomOnScroll({
@@ -25,4 +25,4 @@ const IndexCardZoomSection = () => {
   );
 };
 
-export default IndexCardZoomSection;
+export default CardZoomSection;
