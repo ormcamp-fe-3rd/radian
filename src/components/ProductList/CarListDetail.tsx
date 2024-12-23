@@ -7,11 +7,10 @@ import { CarProductTypes } from '../../types/CarProductTypes';
 // 자동차 데이터 타입 정의
 type CarProductPickProps = Pick<
   CarProductTypes,
-  'id' | 'detailimgs' | 'name' | 'dataildescription'
+  'detailimgs' | 'name' | 'dataildescription'
 >;
 
 const ProductDetail: React.FC<CarProductPickProps> = ({
-  id,
   detailimgs,
   name,
   dataildescription,
