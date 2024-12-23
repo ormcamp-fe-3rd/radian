@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import CarCarousel from '../components/CarCarousel';
+import CarCarousel from '../components/ProductList/CarCarousel';
 import '../styles/ProductList.css';
 
-import CarProduct from '../components/CarList';
-import ProductDetail from '../components/CarListDetail';
+import CarProduct from '../components/ProductList/CarList';
+import ProductDetail from '../components/ProductList/CarListDetail';
 
 interface Product {
   id: string;

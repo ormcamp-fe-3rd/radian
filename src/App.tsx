@@ -10,7 +10,9 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import ProductList from './pages/ProductList';
 import ProductDetail from './pages/ProductDetail';
-import ProductReservation from './pages/ProductReservation';
+import ProductReservationSport from './pages/ProductReservationSport';
+import ProductReservationCompact from './pages/ProductReservationCompact';
+import ProductReservationUtility from './pages/ProductReservationUtility';
 
 /**공용 컴포넌트 */
 import Header from './components/Header';
@@ -29,7 +31,9 @@ const App = (): JSX.Element => {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/product-list" element={<ProductList />}></Route>
         <Route path="/product-detail/:carId" element={<ProductDetail />}></Route>
-        <Route path="/product-reservation/*" element={<ProductReservation />}></Route>
+        <Route path="/product-reservation/sport" element={<ProductReservationSport />}></Route>
+        <Route path="/product-reservation/compact" element={<ProductReservationCompact />}></Route>
+        <Route path="/product-reservation/utility" element={<ProductReservationUtility />}></Route>
       </Routes>
 
       <Footer />

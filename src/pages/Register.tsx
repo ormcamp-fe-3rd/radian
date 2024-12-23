@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
-import Agreement from '../components/Agreement';
-import SignUpForm from '../components/SignUpForm';
+import Agreement from '../components/Register/Agreement';
+import SignUpForm from '../components/Register/SignUpForm';
 
 const Register = (): JSX.Element => {
   return (

@@ -30,6 +30,7 @@
   padding: 0;
   width: 100%;
   min-height: 100vh;
+  /*overflow-x: hidden;*/
 }
 
 body {
@@ -42,7 +43,7 @@ body {
   font-weight: 700;
   font-size: 1.5rem;
   text-align: center;
-  margin: 1rem 0 1rem 0;
+  margin: 2.5rem 0 0.5rem 0;
 }
 
 .productreservation-container {
@@ -57,11 +58,62 @@ body {
 }
 
 .carobicontrol-container {
+  display: flex;
   height: 100vh;
   overflow: hidden;
-  display: flex;
+  flex-direction: column; /* 기본적으로 상하 배치 */
   justify-content: space-between;
   padding: 30px;
+}
+
+/* 화면 폭이 745px 이상일 때 양옆 배치 */
+@media (min-width: 746px) {
+  .carobicontrol-container {
+    flex-direction: row; /* 좌우 배치 */
+    justify-content: space-between;
+  }
+}
+
+/* 화면 폭이 745px 이하일 때 상하 배치 */
+@media (max-width: 745px) {
+  .carobicontrol-container {
+    flex-direction: column; /* 상하 배치 */
+    justify-content: flex-start;
+    align-items: center; /* 가로 중앙 정렬 */
+    gap: 20px; /* 상하 간격 추가 */
+    padding: 20px;
+  }
+
+  /* "CarObicontrol" 영역 */
+  .canvas-container {
+    width: 100%;
+    height: 50vh; /* 화면 높이의 50%를 차지 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+  }
+
+  /* "CarOption" 영역 */
+  .productreservation-right-panel {
+    overflow-y: auto;
+    max-height: 100vh;
+    width: 90% !important;
+    border-radius: 15px;
+    background-color: #e6dbcf;
+    padding: 0 30px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 0px !important;
+  }
 }
 
 .canvas-container {
@@ -75,13 +127,16 @@ body {
 canvas {
   width: 70%;
   height: 100%;
+  border-radius: 15px;
 }
 
 /* 색상 버튼 스타일 */
 .color-buttons {
+  width: 100%;
   display: flex;
   gap: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 13px;
+  justify-content: flex-start; /* 왼쪽 정렬 */
 }
 
 .color-buttons button {
@@ -92,11 +147,19 @@ canvas {
   cursor: pointer;
 }
 
+
+.color-buttons.selected-color {
+  border: 3px solid #ffb74d; /* 선택된 버튼 강조 */
+  box-shadow: 0 0 10px rgba(255, 183, 77, 0.7); /* 선택 효과 */
+}
+
 .productreservation-right-panel {
+  overflow-y: auto; /* 세로 스크롤 활성화 */
+  max-height: 100vh; 
   width: 30%;
   border-radius: 15px;
-  background-color: #fff;
-  padding: 0 20px 20px 20px;
+  background-color: #e6dbcf;
+  padding: 0 30px 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -111,13 +174,41 @@ canvas {
   display: flex;
   flex-direction: column; /* 항목을 수직으로 배치 */
   gap: 10px; /* 항목 간 간격 */
+  padding: 0px 0px 0px 0px;
 }
 
 .option-item {
-  width: 100%;
   display: flex;
-  justify-content: space-between; /* 좌우로 정렬 */
   align-items: center; /* 수직 가운데 정렬 */
+  justify-content: space-between; /* 양 끝 정렬 */
+  width: 100%;
+  gap: 20px; /* 요소 사이 간격 설정 */
+  padding: 8px 5px 8px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.option-item button:last-child {
+  margin-left: auto; /* 가격 버튼을 오른쪽 끝으로 밀기 */
+}
+
+.audio-button {
+  all: unset; /* 버튼의 모든 기본 스타일 제거 */
+  display: flex;
+  align-items: left;
+  gap: 10px; /* 버튼과 이미지 간의 간격 */
+}
+
+.audio-button button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.price {
+  text-align: right; /* 가격을 우측 정렬 */
+  font-weight: bold;
 }
 
 .option-item2 {
@@ -125,8 +216,8 @@ canvas {
 }
 
 .submit-button {
-  background-color: #ff0000; /* 빨간색 배경 */
-  color: #000; /* 검은색 텍스트 */
+  background-color: #695435;
+  color: #ffffff;
   font-family: 'PaytoneOne', sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
@@ -142,4 +233,50 @@ canvas {
 
 .submit-button:hover {
   background-color: #d40000; /* 호버 시 더 어두운 빨간색 */
+}
+
+.option-item.selected-option {
+  background-color: #ffb74d; /* 선택된 항목 배경색 */
+  color: #000;
+  font-weight: bold;
+}
+
+.option-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* 텍스트와 버튼 간격 */
+}
+
+.option-text {
+  font-size: 1rem;
+  color: var(--main-color);
+}
+
+.option-price {
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+/* Audio 버튼 */
+.audio-button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.audio-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.total-price-container {
+  margin-top: 5px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--main-color);
+  margin: 1rem 0;
+  width: 100%;
 }

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import '../styles/ProductReservation.css';
 import '../styles/reset.css';
-import CarObicontrol from '../components/CarObicontrol';
-import CarOption from '../components/CarOption';
+import CarObicontrol from '../components/ProductReservation/CarObicontrol';
+import CarOption from '../components/ProductReservation/CarOption';
 
 const ProductReservation = (): JSX.Element => {
   const [color, setColor] = useState('#0000ff'); // 기본 색상
