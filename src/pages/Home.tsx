@@ -4,9 +4,11 @@ import '../styles/Home.css';
 
 import useHomeTitleVisible from '../hooks/useHomeTitleVisible';
 
-import IndexCardFlipSection from '../components/Home/IndexCardFlipSection';
-import IndexCardHoverSection from '../components/Home/IndexCardHoverSection';
-import IndexCardZoomSection from '../components/Home/IndexCardZoomSection';
+import CardFlipSection from '../components/Home/CardFlipSection';
+import CardHoverSection from '../components/Home/CardHoverSection';
+import CardZoomSection from '../components/Home/CardZoomSection';
+import VideoSection from '../components/Home/VideoSection';
+import TitleSection from '../components/Home/TitleSection';
 
 const Home = (): JSX.Element => {
   const companyMainTitleRef = useRef<HTMLHeadingElement | null>(null);
@@ -15,35 +17,26 @@ const Home = (): JSX.Element => {
   const isSubTitleVisible = useHomeTitleVisible(companySubTitleRef);
 
   return (
-    <>
-      <div className="home-container">
-        <div className="video-container">
-          <h1>Classic but Electronic</h1>
-          <video className="index-video" autoPlay muted loop>
-            <source src="/videos/sample-cars-loop-clip.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <h1
-          className={`company-vision ${isMainTitleVisible ? 'visible' : ''}`}
-          ref={companyMainTitleRef}
-        >
-          We have a bold vision for the future of travel, presenting ways for
+    <div className="home-container">
+      <VideoSection />
+      <TitleSection
+        text="We have a bold vision for the future of travel, presenting ways for
           you to better connect with nature and each other. Radian’s electric
           classic cars allow you to explore new corners of the world while
-          providing the joy of preserving the environment along the way.
-        </h1>
-        <IndexCardZoomSection />
-        <h1
-          className={`company-vision ${isSubTitleVisible ? 'visible' : ''}`}
-          ref={companySubTitleRef}
-        >
-          We breathe new life into the timeless beauty of classic car design
-          with modern electric vehicle technology.
-        </h1>
-        <IndexCardHoverSection />
-        <IndexCardFlipSection />
-      </div>
-    </>
+          providing the joy of preserving the environment along the way."
+        isVisible={isMainTitleVisible}
+        reference={companyMainTitleRef}
+      />
+      <CardZoomSection />
+      <TitleSection
+        text="We breathe new life into the timeless beauty of classic car design
+          with modern electric vehicle technology."
+        isVisible={isSubTitleVisible}
+        reference={companySubTitleRef}
+      />
+      <CardHoverSection />
+      <CardFlipSection />
+    </div>
   );
 };
 
