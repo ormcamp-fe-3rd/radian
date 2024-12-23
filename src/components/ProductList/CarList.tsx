@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/CarList.css';
+import '../../styles/CarList/CarList.css';
 import { Link } from 'react-router-dom';
 import { formatCurrency } from '../../utils/formatCurrency';
 
