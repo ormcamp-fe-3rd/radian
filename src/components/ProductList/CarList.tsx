@@ -2,24 +2,21 @@ import React from 'react';
 import '../../styles/CarList/CarList.css';
 import { Link } from 'react-router-dom';
 import { formatCurrency } from '../../utils/formatCurrency';
+import { CarProductTypes } from '../../types/CarProductTypes';
 
-interface CarProductProps {
-  pathId: string;
-  titleImg: string;
-  productImg: string;
-  name: string;
-  price: number;
-  onClickCarDetail: (event: React.MouseEvent) => void;
-}
+type CarProductPickProps = Pick<
+  CarProductTypes,
+  'pathId' | 'titleImg' | 'productImg' | 'name' | 'price' | 'onClickCarDetail'
+>;
 
-const CarProduct: React.FC<CarProductProps> = ({
+const CarProduct: React.FC<CarProductPickProps> = ({
   pathId,
   titleImg,
   productImg,
   name,
   price,
   onClickCarDetail,
-}: CarProductProps) => {
+}) => {
   return (
     <div className="car-product-container">
       <Link to={`/product-detail/${pathId}`} className="car-product-title-link">
