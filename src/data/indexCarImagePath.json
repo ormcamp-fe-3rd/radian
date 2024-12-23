@@ -1,23 +1,23 @@
 [
   {
-    "frontImage": "/images/main-images/old-TR6.png",
-    "backImage": "/images/main-images/new-TR6.jpeg",
+    "frontImage": "/images/Home/old-TR6.png",
+    "backImage": "/images/Home/new-TR6.jpeg",
     "logoTitle": "SPORT",
     "titleFont": "Fatserone",
-    "productUrl": "RadianRD6"
+    "productUrl": "rd6"
   },
   {
-    "frontImage": "/images/main-images/cooper-old.png",
-    "backImage": "/images/main-images/mini-new.jpg",
+    "frontImage": "/images/Home/cooper-old.png",
+    "backImage": "/images/Home/mini-new.jpg",
     "logoTitle": "Compact",
     "titleFont": "Alkalami",
-    "productUrl": "RadianCooper"
+    "productUrl": "cooper"
   },
   {
-    "frontImage": "/images/main-images/old-rover.jpg",
-    "backImage": "/images/main-images/range-rover-new.jpg",
+    "frontImage": "/images/Home/old-rover.jpg",
+    "backImage": "/images/Home/range-rover-new.jpg",
     "logoTitle": "Utilty",
     "titleFont": "Diplomata",
-    "productUrl": "RadianRover"
+    "productUrl": "rover"
   }
 ]

@@ -1,0 +1,168 @@
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Th.woff2') format('woff2');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Rg.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'line-seed';
+  src: url('../../public/fonts/LINESeedKR/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'JosefinSlab';
+  src: url('../../public/fonts/JosefinSlab/JosefinSlab-VariableFont_wght.ttf')
+    format('woff2');
+  font-weight: 700;
+}
+
+.car-product-container {
+  flex: 1 1 calc(33.33% - 50px); /* 기본적으로 3등분 */
+  max-width: 400px;
+  min-width: 200px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1.875rem;
+}
+
+.car-product-title {
+  /* height: 3.125rem; */
+  height: auto;
+  text-align: center;
+}
+
+.car-product-title-img {
+  height: 55px;
+  width: auto;
+  max-width: 100%;
+}
+
+.carlist-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.car-product-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 200px;
+  overflow: hidden; /* 비율을 넘는 이미지는 잘라내기 */
+  position: relative;
+}
+
+.car-product-img :hover {
+  transform: scale(1.2);
+}
+
+.car-product-button {
+  width: 100%;
+  text-align: right;
+  margin: 0 20px 0 0;
+}
+
+.plus-icon {
+  z-index: 10;
+  transition: transform 0.3s ease-in-out; /* 부드러운 애니메이션 */
+}
+.plus-icon:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+
+.car-product-textcontent {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: black solid 1px;
+  padding: 5px;
+  gap: 5px;
+}
+
+.car-product-name {
+  font-family: 'JosefinSlab';
+  color: black;
+  font-size: 1.5rem;
+  margin: 0;
+  width: auto;
+  min-width: 147px;
+  text-align: center;
+}
+
+.car-product-price {
+  font-family: 'LINESeedKR-Rg';
+  color: black;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+  width: auto;
+  min-width: 121px;
+}
+
+@media (min-width: 403px) and (max-width: 744px) {
+  .car-product-container {
+    max-width: 100%;
+    width: 100%;
+    flex: 1 1 100%;
+  }
+  .car-product-img {
+    height: auto;
+    aspect-ratio: 4 / 2;
+  }
+  .car-product-title {
+    padding: 10px;
+    margin: 0px;
+  }
+  .car-product-title-img {
+    width: 100%;
+  }
+  .car-product-textcontent {
+    gap: 10px;
+  }
+  .car-product-name {
+    font-size: 20px;
+  }
+
+  .car-product-price {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 403px) {
+  .car-product-container {
+    max-width: none;
+    width: 100%;
+    flex: 1 1 100%;
+  }
+  .car-product-img {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+  .car-product-title {
+    padding: 10px;
+    margin: 0px;
+  }
+  .car-product-title-img {
+    width: 90%;
+  }
+  .car-product-textcontent {
+    gap: 10px;
+  }
+  .car-product-name {
+    font-size: 18px;
+  }
+
+  .car-product-price {
+    font-size: 16px;
+  }
+}
