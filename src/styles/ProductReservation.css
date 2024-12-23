@@ -58,11 +58,62 @@ body {
 }
 
 .carobicontrol-container {
+  display: flex;
   height: 100vh;
   overflow: hidden;
-  display: flex;
+  flex-direction: column; /* 기본적으로 상하 배치 */
   justify-content: space-between;
   padding: 30px;
+}
+
+/* 화면 폭이 745px 이상일 때 양옆 배치 */
+@media (min-width: 746px) {
+  .carobicontrol-container {
+    flex-direction: row; /* 좌우 배치 */
+    justify-content: space-between;
+  }
+}
+
+/* 화면 폭이 745px 이하일 때 상하 배치 */
+@media (max-width: 745px) {
+  .carobicontrol-container {
+    flex-direction: column; /* 상하 배치 */
+    justify-content: flex-start;
+    align-items: center; /* 가로 중앙 정렬 */
+    gap: 20px; /* 상하 간격 추가 */
+    padding: 20px;
+  }
+
+  /* "CarObicontrol" 영역 */
+  .canvas-container {
+    width: 100%;
+    height: 50vh; /* 화면 높이의 50%를 차지 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+  }
+
+  /* "CarOption" 영역 */
+  .productreservation-right-panel {
+    overflow-y: auto;
+    max-height: 100vh;
+    width: 90% !important;
+    border-radius: 15px;
+    background-color: #e6dbcf;
+    padding: 0 30px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 0px !important;
+  }
 }
 
 .canvas-container {
@@ -104,7 +155,7 @@ canvas {
 
 .productreservation-right-panel {
   overflow-y: auto; /* 세로 스크롤 활성화 */
-  max-height: 100vh; /* 최대 높이를 화면 높이의 80%로 설정 */
+  max-height: 100vh; 
   width: 30%;
   border-radius: 15px;
   background-color: #e6dbcf;
