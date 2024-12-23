@@ -154,7 +154,7 @@
 .flip-card-scroll {
   margin-top: 2rem;
   width: 100%;
-  height: 400vh;
+  height: 300vh;
 }
 
 .flip-card-scroll h1 {
@@ -241,6 +241,20 @@
     width: 85%;
   }
 
+  .image-container {
+    width: 100% !important;
+    height: 50vh;
+  }
+
+  .scrolling-section {
+    width: 100%;
+    height: 100%;
+  }
+
+  .company-vision {
+    width: 100%;
+  }
+
   .video-container {
     height: 70vh;
   }
@@ -319,6 +333,18 @@
     font-size: 3rem;
   }
 
+  .image-container {
+    width: 100% !important;
+    height: 30vh;
+  }
+
+  .scrolling-section {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: var(--sub-color);
+  }
+
   .company-vision {
     font-family: line-seed;
     font-weight: 300;
@@ -342,7 +368,7 @@
 
   .card-frame {
     width: 100%;
-    height: 100vh;
+    height: 70vh;
   }
 
   .flip-card-scroll {
