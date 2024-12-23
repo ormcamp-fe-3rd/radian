@@ -18,9 +18,9 @@ const IndexCardFlipSection = () => {
             <div
               key={cardId}
               className={`card-frame ${
-                (cardId === 0 && getFlipScroll > 20) ||
-                (cardId === 1 && getFlipScroll > 100) ||
-                (cardId === 2 && getFlipScroll > 200)
+                (cardId === 0 && getFlipScroll > 10) ||
+                (cardId === 1 && getFlipScroll > 80) ||
+                (cardId === 2 && getFlipScroll > 150)
                   ? 'card-flip'
                   : ''
               }`}
