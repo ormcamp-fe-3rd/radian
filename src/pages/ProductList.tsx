@@ -4,21 +4,12 @@ import '../styles/ProductList.css';
 
 import CarProduct from '../components/ProductList/CarList';
 import ProductDetail from '../components/ProductList/CarListDetail';
-
-interface Product {
-  id: string;
-  pathId: string;
-  titleImg: string;
-  productImg: string;
-  name: string;
-  price: number;
-  detailimgs: string[];
-  dataildescription: string;
-}
+import { CarProductTypes } from '../types/CarProductTypes';
 
 const ProductList: React.FC = () => {
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [products, setProducts] = useState<Product[]>([]);
+  const [selectedProduct, setSelectedProduct] =
+    useState<CarProductTypes | null>(null);
+  const [products, setProducts] = useState<CarProductTypes[]>([]);
 
   useEffect(() => {
     fetch('/src/data/ProductList.json')
@@ -27,8 +18,9 @@ const ProductList: React.FC = () => {
   }, []);
 
   // 디테일 버튼 클릭 시 모달을 열기
-  const handleDetailedClick = (product: Product) => {
-    setSelectedProduct(product);
+  const handleDetailedClick = (id: string) => {
+    const product = products.find((product) => product.id === id); // id로 해당 제품 찾기
+    setSelectedProduct(product || null); // 찾은 제품을 상태에 저장
   };
 
   // 모달 닫기
@@ -56,7 +48,7 @@ const ProductList: React.FC = () => {
               price={product.price}
               onClickCarDetail={(event) => {
                 event.stopPropagation(); // 부모의 클릭 이벤트를 막기 위해 사용
-                handleDetailedClick(product);
+                handleDetailedClick(product.id);
               }}
             />
           ))}
@@ -69,7 +61,7 @@ const ProductList: React.FC = () => {
             <button className="close-modal-btn" onClick={closeModal}>
               X
             </button>
-            <ProductDetail product={selectedProduct} />
+            <ProductDetail {...selectedProduct} />
           </div>
         </div>
       )}
