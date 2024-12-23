@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import CARD_DATA from '../../data/indexCarImagePath.json';
+import CARD_DATA from '../../data/Home/indexCarImagePath.json';
 import useFlipOnScroll from '../../hooks/useFlipOnScroll';
 
 const CardFlipSection = () => {

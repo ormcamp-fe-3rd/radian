@@ -5,7 +5,7 @@ import '../styles/Home.css';
 import useHomeTitleVisible from '../hooks/useHomeTitleVisible';
 
 import VideoSection from '../components/Home/VideoSection';
-import COMPANY_VISION from '../data/companyVision';
+import COMPANY_VISION from '../data/Home/companyVision';
 import TitleSection from '../components/Home/TitleSection';
 import CardZoomSection from '../components/Home/CardZoomSection';
 import CardHoverSection from '../components/Home/CardHoverSection';
