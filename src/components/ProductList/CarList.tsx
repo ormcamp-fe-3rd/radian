@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/CarList.css';
+import '../../styles/CarList.css';
 import { Link } from 'react-router-dom';
-import { formatCurrency } from '../utils/formatCurrency';
+import { formatCurrency } from '../../utils/formatCurrency';
 
 interface CarProductProps {
   pathId: string;

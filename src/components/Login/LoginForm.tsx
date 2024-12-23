@@ -1,6 +1,6 @@
-import { auth } from '../firebase';
+import { auth } from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import '../styles/Login.css';
+import '../../styles/Login.css';
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -91,7 +91,7 @@ const LoginForm = () => {
         console.log('로그인 성공', user);
         navigate('/home'); // 로그인 성공 후 홈으로 이동
       })
-      
+
       .catch((error) => {
         // 로그인 실패 시
         const errorCode = error.code;

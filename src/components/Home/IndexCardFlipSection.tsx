@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import CARD_DATA from '../data/indexCarImagePath.json';
-import useFlipOnScroll from '../hooks/useFlipOnScroll';
+import CARD_DATA from '../../data/indexCarImagePath.json';
+import useFlipOnScroll from '../../hooks/useFlipOnScroll';
 
 const IndexCardFlipSection = () => {
   const flipContainer = useRef<HTMLDivElement>(null);

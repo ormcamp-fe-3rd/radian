@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import useZoomOnScroll from '../hooks/useZoomOnScroll';
+import useZoomOnScroll from '../../hooks/useZoomOnScroll';
 
 const IndexCardZoomSection = () => {
   const imageContainerRef = useRef<HTMLDivElement | null>(null);

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import '../styles/ProductReservation.css';
+import '../../styles/ProductReservation.css';
 
 interface CarOptionProps {
   onColorChange: (color: string) => void;
@@ -15,10 +15,10 @@ const CarOption: React.FC<CarOptionProps> = ({ onColorChange }) => {
 
   const totalPrice =
     (selectedBattery === 'Standard'
-      ? 27750000
+      ? 42000000
       : selectedBattery === 'Long Range'
-      ? 30350000
-      : 0) +
+        ? 44680000
+        : 0) +
     (selectedDrive === '2WD' ? 0 : selectedDrive === 'AWD' ? 2500000 : 0) +
     (selectedSound === 'Analog1' || selectedSound === 'Analog2' ? 500000 : 0);
 
@@ -51,16 +51,16 @@ const CarOption: React.FC<CarOptionProps> = ({ onColorChange }) => {
     <div className="productreservation-right-panel">
       <h2 className="productreservation-midtitle">Color</h2>
       <div className="color-buttons">
-        {["#18520c", "#d9b718", "#b82729", "#1149a6"].map((col, index) => (
+        {['#18520c', '#d9b718', '#b82729', '#1149a6'].map((col, index) => (
           <button
             key={index}
             onClick={() => onColorChange(col)}
             style={{
               backgroundColor: col,
-              borderRadius: "50%",
-              width: "30px",
-              height: "30px",
-              border: "none",
+              borderRadius: '50%',
+              width: '30px',
+              height: '30px',
+              border: 'none',
             }}
           />
         ))}
@@ -69,33 +69,33 @@ const CarOption: React.FC<CarOptionProps> = ({ onColorChange }) => {
       <h2 className="productreservation-midtitle">Battery Type</h2>
       <div className="option-grid">
         <div
-          className={`option-item ${selectedBattery === "Standard" ? "selected-option" : ""}`}
-          onClick={() => setSelectedBattery("Standard")}
+          className={`option-item ${selectedBattery === 'Standard' ? 'selected-option' : ''}`}
+          onClick={() => setSelectedBattery('Standard')}
         >
           <span className="option-text">Standard (356 km)</span>
-          <span className="option-price">+27,750,000원</span>
+          <span className="option-price">+42,000,000원</span>
         </div>
         <div
-          className={`option-item ${selectedBattery === "Long Range" ? "selected-option" : ""}`}
-          onClick={() => setSelectedBattery("Long Range")}
+          className={`option-item ${selectedBattery === 'Long Range' ? 'selected-option' : ''}`}
+          onClick={() => setSelectedBattery('Long Range')}
         >
           <span className="option-text">Long Range (468 km)</span>
-          <span className="option-price">+30,350,000원</span>
+          <span className="option-price">+44,680,000원</span>
         </div>
       </div>
 
       <h2 className="productreservation-midtitle">Drive Type</h2>
       <div className="option-grid">
         <div
-          className={`option-item ${selectedDrive === "2WD" ? "selected-option" : ""}`}
-          onClick={() => setSelectedDrive("2WD")}
+          className={`option-item ${selectedDrive === '2WD' ? 'selected-option' : ''}`}
+          onClick={() => setSelectedDrive('2WD')}
         >
           <span className="option-text">Two-Wheel Drive (2WD)</span>
           <span className="option-price">+0원</span>
         </div>
         <div
-          className={`option-item ${selectedDrive === "AWD" ? "selected-option" : ""}`}
-          onClick={() => setSelectedDrive("AWD")}
+          className={`option-item ${selectedDrive === 'AWD' ? 'selected-option' : ''}`}
+          onClick={() => setSelectedDrive('AWD')}
         >
           <span className="option-text">All-Wheel Drive (AWD)</span>
           <span className="option-price">+2,500,000원</span>
@@ -107,27 +107,27 @@ const CarOption: React.FC<CarOptionProps> = ({ onColorChange }) => {
       <div className="option-grid">
         {[
           {
-            id: "Analog1",
-            label: "Analog type 1",
-            price: "+500,000원",
-            sound: "/videos/ford-mustang-engine-1985-78386.mp3",
+            id: 'Analog1',
+            label: 'Analog type 1',
+            price: '+500,000원',
+            sound: '/videos/ford-mustang-engine-1985-78386.mp3',
           },
           {
-            id: "Analog2",
-            label: "Analog type 2",
-            price: "+500,000원",
-            sound: "/videos/lambo-start-up-sound-26364.mp3",
+            id: 'Analog2',
+            label: 'Analog type 2',
+            price: '+500,000원',
+            sound: '/videos/lambo-start-up-sound-26364.mp3',
           },
           {
-            id: "Default",
-            label: "Default EV Sound",
-            price: "+0원",
-            sound: "/videos/electric-vehicle-car-general-m.m4a",
+            id: 'Default',
+            label: 'Default EV Sound',
+            price: '+0원',
+            sound: '/videos/electric-vehicle-car-general-m.m4a',
           },
         ].map(({ id, label, price, sound }) => (
           <div
             key={id}
-            className={`option-item ${selectedSound === id ? "selected-option" : ""}`}
+            className={`option-item ${selectedSound === id ? 'selected-option' : ''}`}
             onClick={() => setSelectedSound(id)}
           >
             <span className="option-text">{label}</span>
@@ -141,10 +141,10 @@ const CarOption: React.FC<CarOptionProps> = ({ onColorChange }) => {
               <img
                 src={
                   currentPlayingId === id
-                    ? "/images/ProductReservation/pause.svg"
-                    : "/images/ProductReservation/play.svg"
+                    ? '/images/ProductReservation/pause.svg'
+                    : '/images/ProductReservation/play.svg'
                 }
-                alt={currentPlayingId === id ? "Pause" : "Play"}
+                alt={currentPlayingId === id ? 'Pause' : 'Play'}
               />
             </button>
             <span className="option-price">{price}</span>
@@ -154,7 +154,10 @@ const CarOption: React.FC<CarOptionProps> = ({ onColorChange }) => {
       <hr className="divider" />
 
       <div className="total-price-container">
-        <h2 className="productreservation-midtitle">Total&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span className="total-price">{totalPrice.toLocaleString()}원</span></h2>
+        <h2 className="productreservation-midtitle">
+          Total&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{' '}
+          <span className="total-price">{totalPrice.toLocaleString()}원</span>
+        </h2>
       </div>
 
       <button className="submit-button" onClick={handleSubmit}>

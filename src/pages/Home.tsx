@@ -4,9 +4,9 @@ import '../styles/Home.css';
 
 import useHomeTitleVisible from '../hooks/useHomeTitleVisible';
 
-import IndexCardFlipSection from '../components/IndexCardFlipSection';
-import IndexCardHoverSection from '../components/IndexCardHoverSection';
-import IndexCardZoomSection from '../components/IndexCardZoomSection';
+import IndexCardFlipSection from '../components/Home/IndexCardFlipSection';
+import IndexCardHoverSection from '../components/Home/IndexCardHoverSection';
+import IndexCardZoomSection from '../components/Home/IndexCardZoomSection';
 
 const Home = (): JSX.Element => {
   const companyMainTitleRef = useRef<HTMLHeadingElement | null>(null);

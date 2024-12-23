@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import '../styles/CarCarousel.css';
+import '../../styles/CarCarousel.css';
 
 const CarCarousel: React.FC = () => {
   const [_slickIndex, setSlickIndex] = useState(0);
