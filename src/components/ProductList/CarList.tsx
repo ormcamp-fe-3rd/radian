@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/CarList/CarList.css';
+import '../../styles/ProductorList/CarList.css';
 import { Link } from 'react-router-dom';
 import { formatCurrency } from '../../utils/formatCurrency';
 import { CarProductTypes } from '../../types/CarProductTypes';
@@ -29,7 +29,6 @@ const CarProduct: React.FC<CarProductPickProps> = ({
         </div>
       </Link>
       <Link to={`/product-detail/${pathId}`} className="car-product-link">
-        {/*상품상세페이지로 변경*/}
         <div className="car-product-img">
           <img src={productImg} alt="car-product" className="carlist-img" />
         </div>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CarCarousel from '../components/ProductList/CarCarousel';
-import '../styles/ProductList.css';
-
+import '../styles/ProductorList/ProductList.css';
 import CarProduct from '../components/ProductList/CarList';
 import ProductDetail from '../components/ProductList/CarListDetail';
 import { CarProductTypes } from '../types/CarProductTypes';
