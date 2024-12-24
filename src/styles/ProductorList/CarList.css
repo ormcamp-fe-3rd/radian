@@ -21,7 +21,7 @@
 }
 
 .car-product-container {
-  flex: 1 1 calc(33.33% - 50px); 
+  flex: 1 1 calc(33.33% - 50px);
   max-width: 400px;
   min-width: 200px;
   display: flex;
@@ -72,6 +72,7 @@
 .plus-icon {
   z-index: 10;
   transition: transform 0.3s ease-in-out;
+}
 
 .plus-icon:hover {
   transform: scale(1.1) rotate(90deg);
