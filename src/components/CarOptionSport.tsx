@@ -1,5 +1,17 @@
+//피드백 2차 2번//
+//피드백 2차 3번//
+
 import React, { useState, useRef } from 'react';
 import '../styles/ProductReservation.css';
+import {
+  Battery,
+  Drive,
+  Sound,
+  BATTERY_PRICE_MAP,
+  DRIVE_PRICE_MAP,
+  SOUND_PRICE_MAP,
+  SOUND_LINKS,
+} from '../types/carOptionTypes';
 
 interface CarOptionProps {
   onColorChange: (color: string) => void;
@@ -7,23 +19,18 @@ interface CarOptionProps {
 
 const CarOption: React.FC<CarOptionProps> = ({ onColorChange }) => {
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
-  const [selectedBattery, setSelectedBattery] = useState<string | null>(null);
-  const [selectedDrive, setSelectedDrive] = useState<string | null>(null);
-  const [selectedSound, setSelectedSound] = useState<string | null>(null);
-  const [currentPlayingId, setCurrentPlayingId] = useState<string | null>(null); // 현재 재생 중인 사운드 ID
-  const audioRef = useRef<HTMLAudioElement | null>(null); // 현재 재생 중인 오디오를 관리
+  const [selectedBattery, setSelectedBattery] = useState<Battery | null>(null);
+  const [selectedDrive, setSelectedDrive] = useState<Drive | null>(null);
+  const [selectedSound, setSelectedSound] = useState<Sound | null>(null);
+  const [currentPlayingId, setCurrentPlayingId] = useState<string | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const totalPrice =
-    (selectedBattery === 'Standard'
-      ? 42000000
-      : selectedBattery === 'Long Range'
-      ? 44680000
-      : 0) +
-    (selectedDrive === '2WD' ? 0 : selectedDrive === 'AWD' ? 2500000 : 0) +
-    (selectedSound === 'Analog1' || selectedSound === 'Analog2' ? 500000 : 0);
+    (selectedBattery ? BATTERY_PRICE_MAP['sport'][selectedBattery] : 0) +
+    (selectedDrive ? DRIVE_PRICE_MAP['sport'][selectedDrive] : 0) +
+    (selectedSound ? SOUND_PRICE_MAP[selectedSound] : 0);
 
-  const handleAudioPlayPause = (id: string, sound: string) => {
-    // 동일한 버튼을 누르면 재생 중단
+  const handleAudioPlayPause = (id: Sound, sound: string) => {
     if (currentPlayingId === id && audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
@@ -31,7 +38,6 @@ const CarOption: React.FC<CarOptionProps> = ({ onColorChange }) => {
       return;
     }
 
-    // 새로운 버튼을 누르면 기존 오디오 정지 후 새로운 오디오 재생
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
@@ -40,27 +46,31 @@ const CarOption: React.FC<CarOptionProps> = ({ onColorChange }) => {
     const newAudio = new Audio(sound);
     audioRef.current = newAudio;
     newAudio.play();
-    setCurrentPlayingId(id); // 현재 재생 중인 ID 업데이트
+    setCurrentPlayingId(id);
   };
 
   const handleSubmit = () => {
-    alert('예약되었습니다.');
+    if (!selectedBattery || !selectedDrive || !selectedSound) {
+      alert('모든 옵션을 선택해주세요.');
+    } else {
+      alert('예약되었습니다.');
+    }
   };
 
   return (
     <div className="productreservation-right-panel">
       <h2 className="productreservation-midtitle">Color</h2>
       <div className="color-buttons">
-        {["#18520c", "#d9b718", "#b82729", "#1149a6"].map((col, index) => (
+        {['#18520c', '#d9b718', '#b82729', '#1149a6'].map((col, index) => (
           <button
             key={index}
             onClick={() => onColorChange(col)}
             style={{
               backgroundColor: col,
-              borderRadius: "50%",
-              width: "30px",
-              height: "30px",
-              border: "none",
+              borderRadius: '50%',
+              width: '30px',
+              height: '30px',
+              border: 'none',
             }}
           />
         ))}
@@ -68,93 +78,81 @@ const CarOption: React.FC<CarOptionProps> = ({ onColorChange }) => {
 
       <h2 className="productreservation-midtitle">Battery Type</h2>
       <div className="option-grid">
-        <div
-          className={`option-item ${selectedBattery === "Standard" ? "selected-option" : ""}`}
-          onClick={() => setSelectedBattery("Standard")}
-        >
-          <span className="option-text">Standard (356 km)</span>
-          <span className="option-price">+42,000,000원</span>
-        </div>
-        <div
-          className={`option-item ${selectedBattery === "Long Range" ? "selected-option" : ""}`}
-          onClick={() => setSelectedBattery("Long Range")}
-        >
-          <span className="option-text">Long Range (468 km)</span>
-          <span className="option-price">+44,680,000원</span>
-        </div>
+        {Object.values(Battery).map((battery) => (
+          <div
+            key={battery}
+            className={`option-item ${
+              selectedBattery === battery ? 'selected-option' : ''
+            }`}
+            onClick={() => setSelectedBattery(battery)}
+          >
+            <span className="option-text">{battery}</span>
+            <span className="option-price">
+              +{BATTERY_PRICE_MAP['sport'][battery]?.toLocaleString() || '0'}원
+            </span>
+          </div>
+        ))}
       </div>
 
       <h2 className="productreservation-midtitle">Drive Type</h2>
       <div className="option-grid">
-        <div
-          className={`option-item ${selectedDrive === "2WD" ? "selected-option" : ""}`}
-          onClick={() => setSelectedDrive("2WD")}
-        >
-          <span className="option-text">Two-Wheel Drive (2WD)</span>
-          <span className="option-price">+0원</span>
-        </div>
-        <div
-          className={`option-item ${selectedDrive === "AWD" ? "selected-option" : ""}`}
-          onClick={() => setSelectedDrive("AWD")}
-        >
-          <span className="option-text">All-Wheel Drive (AWD)</span>
-          <span className="option-price">+2,500,000원</span>
-        </div>
+        {Object.values(Drive).map((drive) => (
+          <div
+            key={drive}
+            className={`option-item ${
+              selectedDrive === drive ? 'selected-option' : ''
+            }`}
+            onClick={() => setSelectedDrive(drive)}
+          >
+            <span className="option-text">{drive}</span>
+            <span className="option-price">
+              +{DRIVE_PRICE_MAP['sport'][drive]?.toLocaleString() || '0'}원
+            </span>
+          </div>
+        ))}
       </div>
 
-      {/* Virtual Engine Sound */}
       <h2 className="productreservation-midtitle">Virtual Engine Sound</h2>
       <div className="option-grid">
-        {[
-          {
-            id: "Analog1",
-            label: "Analog type 1",
-            price: "+500,000원",
-            sound: "/videos/ford-mustang-engine-1985-78386.mp3",
-          },
-          {
-            id: "Analog2",
-            label: "Analog type 2",
-            price: "+500,000원",
-            sound: "/videos/lambo-start-up-sound-26364.mp3",
-          },
-          {
-            id: "Default",
-            label: "Default EV Sound",
-            price: "+0원",
-            sound: "/videos/electric-vehicle-car-general-m.m4a",
-          },
-        ].map(({ id, label, price, sound }) => (
+        {Object.values(Sound).map((sound) => (
           <div
-            key={id}
-            className={`option-item ${selectedSound === id ? "selected-option" : ""}`}
-            onClick={() => setSelectedSound(id)}
+            key={sound}
+            className={`option-item ${
+              selectedSound === sound ? 'selected-option' : ''
+            }`}
+            onClick={() => setSelectedSound(sound)}
           >
-            <span className="option-text">{label}</span>
+            <span className="option-text">{sound}</span>
             <button
               className="audio-button"
               onClick={(e) => {
                 e.stopPropagation();
-                handleAudioPlayPause(id, sound); // 재생 또는 일시 정지
+                handleAudioPlayPause(sound, SOUND_LINKS[sound]);
               }}
             >
               <img
                 src={
-                  currentPlayingId === id
-                    ? "/images/ProductReservation/pause.svg"
-                    : "/images/ProductReservation/play.svg"
+                  currentPlayingId === sound
+                    ? '/images/ProductReservation/pause.svg'
+                    : '/images/ProductReservation/play.svg'
                 }
-                alt={currentPlayingId === id ? "Pause" : "Play"}
+                alt={currentPlayingId === sound ? 'Pause' : 'Play'}
               />
             </button>
-            <span className="option-price">{price}</span>
+            <span className="option-price">
+              +{SOUND_PRICE_MAP[sound].toLocaleString()}원
+            </span>
           </div>
         ))}
       </div>
+
       <hr className="divider" />
 
       <div className="total-price-container">
-        <h2 className="productreservation-midtitle">Total&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span className="total-price">{totalPrice.toLocaleString()}원</span></h2>
+        <h2 className="productreservation-midtitle">
+          Total&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span className="total-price">{totalPrice.toLocaleString()}원</span>
+        </h2>
       </div>
 
       <button className="submit-button" onClick={handleSubmit}>
