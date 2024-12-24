@@ -3,7 +3,7 @@ import '../../styles/ProductDetail.css';
 const ScrollPanelSpecs = () => {
   return (
     <div className="specs">
-      <h2>Engine</h2>
+      <h2>Motor</h2>
       <dl>
         <dt>Bore x Stroke</dt>
         <dd>58mm x 58.6mm</dd>
@@ -17,11 +17,11 @@ const ScrollPanelSpecs = () => {
         <dd>65 g/Km</dd>
         <dt>Distribution</dt>
         <dd>Single overhead camshaft, 3 valves (2 input, 1 output)</dd>
-        <dt>Engine</dt>
+        <dt>Motor</dt>
         <dd>Single cylinder 4-stroke -i-get</dd>
       </dl>
       <dl>
-        <dt>Engine Capacity</dt>
+        <dt>Motor Capacity</dt>
         <dd>155c</dd>
         <dt>Fuel system</dt>
         <dd>Electronic injection</dd>
