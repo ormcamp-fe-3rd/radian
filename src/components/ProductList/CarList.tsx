@@ -29,7 +29,6 @@ const CarProduct: React.FC<CarProductPickProps> = ({
         </div>
       </Link>
       <Link to={`/product-detail/${pathId}`} className="car-product-link">
-        {/*상품상세페이지로 변경*/}
         <div className="car-product-img">
           <img src={productImg} alt="car-product" className="carlist-img" />
         </div>

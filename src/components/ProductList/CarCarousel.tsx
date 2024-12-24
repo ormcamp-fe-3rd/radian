@@ -21,10 +21,8 @@ const CarCarousel: React.FC = () => {
     autoplaySpeed: 5000,
     beforeChange: (current: number, next: number) => {
       console.log('Current slide index:', current, 'Next slide index:', next);
-      // 슬라이드 전환 시 index 값 업데이트
       setSlickIndex(next);
     },
-    // 슬라이드 전환 방향 고정
     swipeToSlide: true,
     rtl: false,
   };
