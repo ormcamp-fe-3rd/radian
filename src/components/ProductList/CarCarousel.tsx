@@ -24,7 +24,6 @@ const CarCarousel: React.FC = () => {
       setSlickIndex(next);
     },
     swipeToSlide: true,
-    touchMove: true,
     rtl: false,
   };
 
