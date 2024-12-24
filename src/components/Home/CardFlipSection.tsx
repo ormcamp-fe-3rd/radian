@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import CARD_DATA from '../../data/indexCarImagePath.json';
+import CARD_DATA from '../../data/Home/indexCarImagePath.json';
 import useFlipOnScroll from '../../hooks/useFlipOnScroll';
 
-const IndexCardFlipSection = () => {
+const CardFlipSection = () => {
   const flipContainer = useRef<HTMLDivElement>(null);
   const flipScollContainer = useRef<HTMLDivElement>(null);
 
@@ -18,9 +18,9 @@ const IndexCardFlipSection = () => {
             <div
               key={cardId}
               className={`card-frame ${
-                (cardId === 0 && getFlipScroll > 20) ||
-                (cardId === 1 && getFlipScroll > 100) ||
-                (cardId === 2 && getFlipScroll > 200)
+                (cardId === 0 && getFlipScroll > 10) ||
+                (cardId === 1 && getFlipScroll > 80) ||
+                (cardId === 2 && getFlipScroll > 150)
                   ? 'card-flip'
                   : ''
               }`}
@@ -51,4 +51,4 @@ const IndexCardFlipSection = () => {
   );
 };
 
-export default IndexCardFlipSection;
+export default CardFlipSection;

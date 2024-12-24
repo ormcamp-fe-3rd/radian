@@ -1,4 +1,4 @@
-import { SignUpInputFormat } from '../types/signUpFormType';
+import { SignUpInputFormat } from '../../types/signUpFormType';
 
 const signUpFormat: SignUpInputFormat[] = [
   {

@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 
-import signUpFormat from '../../data/signUpFormat';
+import signUpFormat from '../../data/Register/signUpFormat';
 import {
   UserSignUpFormValue,
   UserSignUpFormValueKey,
