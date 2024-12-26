@@ -23,13 +23,13 @@ const Home = (): JSX.Element => {
       <TitleSection
         text={COMPANY_VISION.mainTitle}
         isVisible={isMainTitleVisible}
-        reference={companyMainTitleRef}
+        ref={companyMainTitleRef}
       />
       <CardZoomSection />
       <TitleSection
         text={COMPANY_VISION.subTitle}
         isVisible={isSubTitleVisible}
-        reference={companySubTitleRef}
+        ref={companySubTitleRef}
       />
       <CardHoverSection />
       <CardFlipSection />
