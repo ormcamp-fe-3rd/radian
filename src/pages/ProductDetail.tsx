@@ -9,6 +9,7 @@ import useProductDetailScroll from '../hooks/useProductDetailScroll'; // 스크�
 import ProductDetailIntro from '../components/ProductDetail/ProductDetailIntro';
 import ScrollHeader from '../components/ProductDetail/ScrollHeader';
 import ScrollPanel from '../components/ProductDetail/ScrollPanel';
+import WrapMaskImg from '../components/ProductDetail/WrapMaskImg';
 
 const ProductDetail = () => {
   const { carId } = useParams<{ carId: string }>(); // URL에서 carId를 받아옴
@@ -49,13 +50,7 @@ const ProductDetail = () => {
           <div className="bkg"></div>
         </div>
 
-        <svg version="1.1" id="mask">
-          <defs>
-            <clipPath id="wrapMask">
-              <rect id="wrapWin" width="1300" height="1100" fill="black" />
-            </clipPath>
-          </defs>
-        </svg>
+        <WrapMaskImg />
       </div>
     </main>
   );

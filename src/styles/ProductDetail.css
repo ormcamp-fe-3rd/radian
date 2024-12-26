@@ -60,34 +60,34 @@
 
 .detail-intro div img {
   width: 100%;
-  opacity: 0.2;
+  opacity: 0.6;
 }
 
 /* 태블릿 화면 크기에서 적용할 스타일 */
 @media (max-width: 1024px) {
   .detail-intro {
-    width: calc(100% - 3em); /* 마진을 조금 줄여줌 */
+    width: calc(100% - 3em);
   }
 
   .detail-intro h1 {
-    width: 60%; /* h1 너비를 좀 더 크게 설정 */
+    width: 60%;
     margin-left: 30%;
-    font-size: 3vw; /* 반응형 글자 크기 조정 */
+    font-size: 3vw;
   }
 }
 
 /* 모바일 화면 크기에서 적용할 스타일 */
 @media (max-width: 768px) {
   .detail-intro {
-    width: 100%; /* 부모 요소의 너비를 100%로 설정 */
-    margin: 0; /* 모바일에서는 마진을 없앰 */
-    min-height: 100vh; /* 화면을 꽉 채우도록 설정 */
+    width: 100%;
+    margin: 0;
+    min-height: 100vh;
   }
 
   .detail-intro h1 {
-    width: 100%; /* h1 너비를 100%로 설정하여 텍스트가 화면에 맞게 조정 */
+    width: 100%;
     margin-left: 0;
-    font-size: 6.5vw; /* 글자 크기 더 키움 */
+    font-size: 6.5vw;
   }
 
   .detail-intro div {
@@ -96,10 +96,7 @@
     padding-top: 56%;
     background-image: url('../assets/Detail/range-rover-header.jfif');
     background-repeat: no-repeat;
-    opacity: 0.2;
-  }
-  .detail-intro img {
-    opacity: 0;
+    opacity: 0.6;
   }
 }
 
@@ -264,44 +261,6 @@
   opacity: 0.6;
 }
 
-.rotator {
-  position: absolute;
-  top: 50%;
-  right: 2em;
-  margin-top: 15em;
-  z-index: 12;
-}
-
-.rotator p {
-  text-align: center;
-  padding: 5px 0;
-  font-size: 0.8rem;
-  color: #423522;
-  text-transform: uppercase;
-}
-
-.rotator-container {
-  width: 100%;
-  height: 100%; /* 높이를 100%로 설정하여 전체 화면을 차지하게 합니다. */
-  position: absolute; /* 절대 위치로 설정하여 parent에 상대적인 위치로 배치 */
-  top: 50%; /* 부모 요소의 50% 위치 */
-  display: flex;
-  justify-content: center; /* 가로 중앙 정렬 */
-  align-items: center; /* 세로 중앙 정렬 */
-  margin: 0;
-  z-index: 13; /* 적절한 z-index 설정 */
-}
-
-.rotator-image {
-  width: 70%;
-  height: auto;
-  position: absolute;
-  left: 50%; /* 이미지를 가운데로 배치 */
-  bottom: -55em; /* 원하는 위치에 맞춰서 배치 */
-  transform: translateX(-50%) translateY(-200px);
-  z-index: 15;
-}
-
 .specs,
 .chars {
   width: 50%;
@@ -397,13 +356,6 @@
   position: absolute;
   z-index: 40;
 }
-
-/* @-moz-document url-prefix() {
-  .rotator svg {
-    width: 100%;
-    height: 60px;
-  }
-} */
 
 @media (max-width: 1440px) {
   .detail-container {
