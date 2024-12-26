@@ -22,10 +22,27 @@ const Footer = (): JSX.Element => {
           </div>
 
           <div className="icon-sns">
-            <img src="/images/common/Instagram-icon.svg" />
-            <img src="/images/common/Facebook-icon.svg" />
-            <img src="/images/common/Twitter-icon.svg" />
-            <img src="/images/common/Github-icon.svg" />
+            <a href="https://www.instagram.com/" target="_blank">
+              <img
+                src="/images/common/Instagram-icon.svg"
+                alt="Instagram website"
+              />
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+              <img
+                src="/images/common/Facebook-icon.svg"
+                alt="Facebook website"
+              />
+            </a>
+            <a href="https://x.com/" target="_blank">
+              <img
+                src="/images/common/Twitter-icon.svg"
+                alt="Twitter website"
+              />
+            </a>
+            <a href="https://github.com/ormcamp-fe-3rd/radian" target="_blank">
+              <img src="/images/common/Github-icon.svg" alt="Github website" />
+            </a>
           </div>
         </div>
       </footer>
