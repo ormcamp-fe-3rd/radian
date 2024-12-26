@@ -28,29 +28,19 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-start; */
 }
 div {
   margin: 0 auto;
 }
 
-.header {
-  position: relative; /* 또는 fixed */
-  top: 0; /* 필요에 따라 조정 */
-  left: 0;
-  width: 100%; /* 또는 필요한 너비 */
-  background-color: #fffbf1; /* 배경색 설정 */
-  z-index: 10; /* 다른 요소 위에 표시될 수 있도록 설정 */
-}
-
 .main-content {
   width: 100%;
-  flex: 1; /* 남은 공간을 모두 차지하도록 설정 */
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-content: center;
   height: auto;
-  justify-content: flex-start; /* 위에서부터 콘텐츠 배치 */
+  justify-content: flex-start;
   padding: 60px 0px 0px 0px;
 }
 
@@ -79,7 +69,7 @@ div {
 }
 
 .product-list-title {
-  margin: 70px auto 0; /* 위 여백, 좌우 자동 중앙 정렬 */
+  margin: 70px auto 0;
   width: 100%;
   height: 60px;
   text-align: center;
@@ -125,17 +115,6 @@ div {
   cursor: pointer;
   color: black;
   padding: 32px;
-}
-
-.footer {
-  width: 100%;
-  height: 80px;
-  position: relative;
-  /* transform: translateY(-100%); */
-  bottom: 0;
-  left: 0;
-  background-color: #fffbf1;
-  z-index: 10;
 }
 
 @media (min-width: 403px) and (max-width: 744px) {
