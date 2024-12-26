@@ -16,13 +16,11 @@ const ProductList: React.FC = () => {
       .then((data) => setProducts(data));
   }, []);
 
-  // 디테일 버튼 클릭 시 모달을 열기
   const handleDetailedClick = (id: string) => {
-    const product = products.find((product) => product.id === id); // id로 해당 제품 찾기
-    setSelectedProduct(product || null); // 찾은 제품을 상태에 저장
+    const product = products.find((product) => product.id === id);
+    setSelectedProduct(product || null);
   };
 
-  // 모달 닫기
   const closeModal = () => {
     setSelectedProduct(null);
   };
@@ -40,7 +38,7 @@ const ProductList: React.FC = () => {
           {products.map((product) => (
             <CarProduct
               key={product.id}
-              pathId={product.pathId} // 상품 ID 전달
+              id={product.id}
               titleImg={product.titleImg}
               productImg={product.productImg}
               name={product.name}
