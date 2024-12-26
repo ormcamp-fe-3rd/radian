@@ -1,8 +1,10 @@
 [
   {
     "id": "rd6",
-    "name": "Radian RD6",
-    "description": "'The Sports' :The perfect combination of power and efficiency",
+    "name": "RADIAN RD6",
+    "title": ":THE SPORTS",
+    "description": "The perfect combination of power and efficiency",
+    "text": "Experience the perfect blend of performance and style with the electric sports model. Offering exceptional acceleration and handling, this vehicle delivers an unparalleled driving experience, all while reducing carbon emissions with innovative technology. Embark on a journey to redefine the future of driving with a new standard of sports on the road.",
     "introImage": "/images/ProductDetail/rd6-header.jpg",
     "modelImage": "/public/images/ProductDetail/radian-rd6-side.webp",
     "rotatorImages": [
@@ -30,8 +32,10 @@
 
   {
     "id": "rover",
-    "name": "Radian Rover",
-    "description": "'The Utility' :Smart, Spacious, and Ready for Anything",
+    "name": "RADIAN ROVER",
+    "title": ":THE UTILITY",
+    "description": "Smart, Spacious, and Ready for Anything",
+    "text": "Utility meets luxury in every drive. With cutting-edge technology, exceptional efficiency, and unparalleled comfort, this car is designed to elevate your driving experience. Whether you're navigating city streets or exploring the open road, our vehicle combines practicality with style, ensuring you travel in both comfort and confidence. Discover the perfect balance of utility and sophistication, where every journey is as effortless as it is enjoyable.",
     "introImage": "/images/ProductDetail/range-rover-header.jfif",
     "modelImage": "/images/ProductDetail/radian-rover-side.webp",
     "rotatorImages": [
@@ -59,8 +63,10 @@
 
   {
     "id": "cooper",
-    "name": "Radian Cooper",
-    "description": "'The Compact' :the efficient, and stylish experience you've ever had",
+    "name": "RADIAN COOPER",
+    "title": ":THE COMPACT",
+    "description": "the efficient, and stylish experience you've ever had",
+    "text": "Optimized for urban living, the electric compact model offers a smarter, more efficient way to get around. With a compact design and ample practicality, it excels in tight streets and parking spaces. Embrace the future with this model's unique performance and eco-friendly features, making the transition to a greener tomorrow easier than ever.",
     "introImage": "/images/ProductDetail/cooper-header.jpg",
     "modelImage": "/images/ProductDetail/radian-cooper-side.webp",
     "rotatorImages": [
