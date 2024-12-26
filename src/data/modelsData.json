@@ -15,7 +15,7 @@
       "/public/images/CarLIstImages/rd6_0o.png",
       "/public/images/CarLIstImages/rd6_45o.png"
     ],
-    "price": "$2499.00",
+    "price": "₩42,080,000",
     "specs": [
       "Powerful engine",
       "Sporty design",
@@ -44,7 +44,7 @@
       "/public/images/CarLIstImages/rover_0.png",
       "/public/images/CarLIstImages/rover_45.png"
     ],
-    "price": "$2999.00",
+    "price": "₩51,140,000",
     "specs": [
       "All-terrain tires",
       "Spacious interior",
@@ -73,7 +73,7 @@
       "/public/images/CarLIstImages/cooper_0.png",
       "/public/images/CarLIstImages/cooper_45.png"
     ],
-    "price": "$1999.00",
+    "price": "₩27,750,000",
     "specs": [
       "Fuel-efficient",
       "Compact design",

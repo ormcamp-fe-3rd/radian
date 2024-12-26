@@ -15,7 +15,6 @@ const useProductDetailScroll = (carData: Car | null) => {
         
         const intro_tl = gsap.timeline();
         const part1_tl = gsap.timeline();
-        const rotator_tl = gsap.timeline();
         const part2_tl = gsap.timeline();
         const part3_tl = gsap.timeline();
         const part4_tl = gsap.timeline();
@@ -122,43 +121,6 @@ const useProductDetailScroll = (carData: Car | null) => {
             opacity: 0,
             duration: 1.5,
             ease: 'sine.out',
-        })
-        .to('#radian-model', {
-            scrollTrigger: {
-                trigger: '#radian-model',
-                start: 1500,
-                end: 1550,
-                scrub: 1.5,
-            },
-            opacity: 0,
-            duration: 0.5,
-            ease: 'sine.out',
-        })
-        .to('.rotator circle', {
-            scrollTrigger: {
-                start: 1500,
-                end: 2500,
-                scrub: 1.5,
-            },
-            y:20,
-            duration: 1.5,
-            stagger: 0.3,
-            ease: 'sine.out',
-        })
-        part1_tl.add(rotator_tl) // ScrollRotator 컴포넌트
-        .fromTo('#radian-model', {
-            opacity: 0
-        },
-        {
-            scrollTrigger: {
-                trigger: '#radian-model',
-                start: 2500,
-                end: 2550,
-                scrub: 1.5,
-            },
-            opacity: 1,
-            duration: 0.5,
-            ease: 'sine.out',  
         });
 
         // TIMELINE: Part 2
@@ -172,22 +134,6 @@ const useProductDetailScroll = (carData: Car | null) => {
             opacity: 1,
             scale: 1,
             duration: 1.5,
-            ease: 'sine.out',
-        })
-        .fromTo('.rotator',{
-            y: 0,
-            opacity: 1
-        },
-        {
-            scrollTrigger: {
-                start: 2650,
-                end: 2950,
-                scrub: 1.5,
-            },
-            y: -20,
-            opacity: 0,
-            duration: 1.5,
-            stagger: 0.3,
             ease: 'sine.out',
         });
 
