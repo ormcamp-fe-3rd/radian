@@ -7,20 +7,28 @@ import useFlipOnScroll from '../../hooks/useFlipOnScroll';
 const CardFlipSection = () => {
   const flipContainer = useRef<HTMLDivElement>(null);
   const flipScollContainer = useRef<HTMLDivElement>(null);
+  const flipTriggerPoint = {
+    sportCard: 10,
+    compactCard: 80,
+    utilityCard: 150,
+  };
 
   const getFlipScroll = useFlipOnScroll({ flipContainer, flipScollContainer });
   return (
     <div className="flip-card-scroll" ref={flipScollContainer}>
       <div className="flip-card-section" ref={flipContainer}>
         <h1 className="company-message">Discover Our Timeless Collection</h1>
-        {CARD_DATA.map((contentLink, cardId) => {
+        {CARD_DATA.map((contentLink) => {
           return (
             <div
-              key={cardId}
+              key={contentLink.productUrl}
               className={`card-frame ${
-                (cardId === 0 && getFlipScroll > 10) ||
-                (cardId === 1 && getFlipScroll > 80) ||
-                (cardId === 2 && getFlipScroll > 150)
+                (contentLink.carType === 'sport' &&
+                  getFlipScroll > flipTriggerPoint.sportCard) ||
+                (contentLink.carType === 'compact' &&
+                  getFlipScroll > flipTriggerPoint.compactCard) ||
+                (contentLink.carType === 'utility' &&
+                  getFlipScroll > flipTriggerPoint.utilityCard)
                   ? 'card-flip'
                   : ''
               }`}
