@@ -16,6 +16,16 @@ declare module 'three' {
     clearcoatRoughness?: number;
     refractionRatio?: number;
   }
+
+  interface MeshBasicMaterialParameters {
+    emissive?: string | THREE.Color;
+    emissiveIntensity?: number;
+  }
+
+  interface MeshBasicMaterial {
+    emissive?: string | THREE.Color;
+    emissiveIntensity?: number;
+  }
 }
 
 interface CarObicontrolProps {
@@ -85,7 +95,6 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
 
     const loader = new GLTFLoader();
 
-
     loader.load(
       '/images/ProductReservation/compact-paint3.gltf',
       (gltf) => {
@@ -148,30 +157,42 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
       },
     );
 
-
     // 구 GLTF 배경 추가
     loader.load('/images/ProductReservation/compact-sphere13.gltf', (gltf) => {
       const cubeModel = gltf.scene;
 
-      cubeModel.scale.set(0.5, 0.5, 0.5); // 
+      cubeModel.scale.set(0.5, 0.5, 0.5); //
       cubeModel.position.set(0, 0, 0); //
 
       // 안쪽 면을 항상 밝게 설정
       cubeModel.traverse((child) => {
         if ((child as THREE.Mesh).isMesh) {
           const mesh = child as THREE.Mesh;
-          mesh.material = new THREE.MeshBasicMaterial({
-            map: mesh.material.map, // 기존 텍스처 유지
-            emissive: new THREE.Color(0xffffff), // 발광 색상 (흰색)
-            emissiveIntensity: 20.0, // 발광 강도 조절
-            side: THREE.BackSide, // 안쪽 면만 보이도록 설정
-          });
+          if (Array.isArray(mesh.material)) {
+            mesh.material.forEach((mat) => {
+              if (
+                mat instanceof THREE.MeshStandardMaterial ||
+                mat instanceof THREE.MeshBasicMaterial
+              ) {
+                mat.map = mat.map; // 기존 텍스처 유지
+              }
+            });
+          } else if (
+            mesh.material instanceof THREE.MeshStandardMaterial ||
+            mesh.material instanceof THREE.MeshBasicMaterial
+          ) {
+            mesh.material = new THREE.MeshBasicMaterial({
+              map: mesh.material.map, // 기존 텍스처 유지
+              emissive: new THREE.Color(0xffffff), // 발광 색상
+              emissiveIntensity: 20.0, // 발광 강도
+              side: THREE.BackSide, // 안쪽 면만 보이도록 설정
+            });
+          }
         }
       });
 
       scene.add(cubeModel);
     });
-
 
     // Load extraModel1.gltf
     loader.load(
@@ -199,7 +220,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
         });
 
         model.scale.set(1, 1, 1);
-        model.position.set(0, 0, 0); 
+        model.position.set(0, 0, 0);
         scene.add(model);
         console.log('compact-glass1 loaded');
       },

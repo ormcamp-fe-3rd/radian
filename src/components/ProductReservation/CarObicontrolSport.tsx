@@ -21,19 +21,16 @@ declare module 'three' {
     emissive?: string | THREE.Color;
     emissiveIntensity?: number;
   }
-  
+
   interface MeshBasicMaterial {
     emissive?: string | THREE.Color;
     emissiveIntensity?: number;
   }
 }
 
-
-
 interface CarObicontrolProps {
   color: string;
 }
-
 
 const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -98,12 +95,11 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
 
     const loader = new GLTFLoader();
 
-
     loader.load(
       '/images/ProductReservation/sport-paint.gltf',
       (gltf) => {
         const model = gltf.scene;
-    
+
         model.traverse((child) => {
           if ((child as THREE.Mesh).isMesh) {
             const mesh = child as THREE.Mesh;
@@ -116,13 +112,13 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
               clearcoatRoughness: 0.7, // 코팅층 표면의 매끄러움
             });
             mesh.material = material;
-    
+
             // 그림자 설정
             mesh.castShadow = true; // 그림자 생성
             mesh.receiveShadow = false; // 그림자를 받지 않음
           }
         });
-    
+
         model.scale.set(1, 1, 1);
         scene.add(model);
         radianModelRef.current = model;
@@ -161,22 +157,20 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
       },
     );
 
-
-
     loader.load('/images/ProductReservation/sport-sphere30.gltf', (gltf) => {
       const sphereModel = gltf.scene;
-    
+
       sphereModel.scale.set(0.45, 0.45, 0.45); // 크기 조정
       sphereModel.position.set(0, 0, 0); // 위치 조정
-    
+
       sphereModel.traverse((child) => {
         if ((child as THREE.Mesh).isMesh) {
           const mesh = child as THREE.Mesh;
-    
+
           // 그림자 설정
           mesh.castShadow = true; // 그림자를 생성
           mesh.receiveShadow = true; // 그림자를 받음
-    
+
           // 재질 설정 (안쪽 면만 렌더링)
           if (Array.isArray(mesh.material)) {
             mesh.material.forEach((mat) => {
@@ -191,12 +185,8 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
           }
         }
       });
-    
       scene.add(sphereModel);
     });
-    
-
-
 
     // Load extraModel1.gltf
     loader.load(
@@ -224,7 +214,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
         });
 
         model.scale.set(1, 1, 1);
-        model.position.set(0, 0, 0); 
+        model.position.set(0, 0, 0);
         scene.add(model);
         console.log('utility-glass1 loaded');
       },
@@ -367,4 +357,3 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
 };
 
 export default CarObicontrol;
-
