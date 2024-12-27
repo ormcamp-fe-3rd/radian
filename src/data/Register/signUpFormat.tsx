@@ -20,13 +20,14 @@ const signUpFormat: SignUpInputFormat[] = [
     validation: {
       required: '이메일은 필수 입력값입니다.',
       validate: (value) => {
-        const emailFormat = /^[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
-        const checkEmailFormat = /^[A-Za-z0-9@.]+$/;
+        const emailFormat =
+          /^[A-Za-z0-9!@#$%^&*._-]+@[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
+        const checkEmailFormat = /^[A-Za-z0-9!@#$%^&*._@-]+$/;
 
         if (checkEmailFormat.test(value)) {
           return emailFormat.test(value) || '올바른 이메일 형식이 아닙니다.';
         }
-        return '이메일은 영문과 숫자만 입력 가능합니다.';
+        return '이메일은 영문, 숫자, 특수문자만 입력 가능합니다.';
       },
     },
   },
