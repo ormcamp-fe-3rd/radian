@@ -28,9 +28,12 @@ declare module 'three' {
   }
 }
 
+
+
 interface CarObicontrolProps {
   color: string;
 }
+
 
 const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -157,20 +160,21 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
       },
     );
 
-    loader.load('/images/ProductReservation/sport-sphere29.gltf', (gltf) => {
-      const sphereModel = gltf.scene;
 
+    loader.load('/images/ProductReservation/sport-sphere30.gltf', (gltf) => {
+      const sphereModel = gltf.scene;
+    
       sphereModel.scale.set(0.45, 0.45, 0.45); // 크기 조정
       sphereModel.position.set(0, 0, 0); // 위치 조정
-
+    
       sphereModel.traverse((child) => {
         if ((child as THREE.Mesh).isMesh) {
           const mesh = child as THREE.Mesh;
-
+    
           // 그림자 설정
           mesh.castShadow = true; // 그림자를 생성
           mesh.receiveShadow = true; // 그림자를 받음
-
+    
           // 재질 설정 (안쪽 면만 렌더링)
           if (Array.isArray(mesh.material)) {
             mesh.material.forEach((mat) => {
@@ -188,6 +192,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
 
       scene.add(sphereModel);
     });
+    
 
     // Load extraModel1.gltf
     loader.load(
@@ -358,3 +363,4 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
 };
 
 export default CarObicontrol;
+
