@@ -16,7 +16,7 @@ const ProductDetailIntro = () => {
       <footer className="newspaper-menu">
         <ul className="newspaper-menu-index box-wrapper">
           <li><a href="#menu1" title="Introduce">INTRODUCE <span>1</span></a></li>
-          <li><a href="#detail-container" title="Hilight">HILIGHT <span>2</span></a></li>
+          <li><a href="#detail-container" title="Hilight">HIGHLIGHT <span>2</span></a></li>
           <li><a href="#menu3" title="Safety">SAFETY <span>3</span></a></li>
         </ul>
       </footer>
