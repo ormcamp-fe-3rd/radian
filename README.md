@@ -43,6 +43,7 @@
 <br>
 
 ## ✅ **실행 방법**
+
 ### 프로젝트 clone 이후 패키지 설치
 ```
 npm install
@@ -58,6 +59,7 @@ npm run dev
 npm run lint (확인하는 방법)
 npm run lint:fix (오류 사항 자동 수정하는 방법)
 ```
+
 > prettier 사용 시
 ```
 npm run format

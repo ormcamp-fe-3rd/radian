@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import '../../styles/CarList/CarCarousel.css';
+import '../../styles/ProductorList/CarCarousel.css';
 
 const CarCarousel: React.FC = () => {
   const [_slickIndex, setSlickIndex] = useState(0);
@@ -21,10 +21,8 @@ const CarCarousel: React.FC = () => {
     autoplaySpeed: 5000,
     beforeChange: (current: number, next: number) => {
       console.log('Current slide index:', current, 'Next slide index:', next);
-      // 슬라이드 전환 시 index 값 업데이트
       setSlickIndex(next);
     },
-    // 슬라이드 전환 방향 고정
     swipeToSlide: true,
     rtl: false,
   };

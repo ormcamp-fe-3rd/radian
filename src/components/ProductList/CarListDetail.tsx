@@ -1,17 +1,16 @@
 import React from 'react';
 import Slider from 'react-slick';
-import '../../styles/CarList/CarListDetail.css'; // 스타일
+import '../../styles/ProductorList/CarListDetail.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { CarProductTypes } from '../../types/CarProductTypes';
-// 자동차 데이터 타입 정의
+
 type CarProductPickProps = Pick<
   CarProductTypes,
-  'id' | 'detailimgs' | 'name' | 'dataildescription'
+  'detailimgs' | 'name' | 'dataildescription'
 >;
 
 const ProductDetail: React.FC<CarProductPickProps> = ({
-  id,
   detailimgs,
   name,
   dataildescription,

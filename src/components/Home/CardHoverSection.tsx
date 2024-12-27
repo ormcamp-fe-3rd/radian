@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const IndexCardHoverSection = () => {
+const CardHoverSection = () => {
   const [isHoveringLeft, setIsHoveringLeft] = useState(false);
   const [isHoveringRight, setIsHoveringRight] = useState(false);
   return (
@@ -27,4 +27,4 @@ const IndexCardHoverSection = () => {
   );
 };
 
-export default IndexCardHoverSection;
+export default CardHoverSection;
