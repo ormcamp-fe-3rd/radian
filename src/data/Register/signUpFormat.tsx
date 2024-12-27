@@ -19,9 +19,14 @@ const signUpFormat: SignUpInputFormat[] = [
     placeHolder: '이메일 형식으로 아이디를 입력해주세요',
     validation: {
       required: '이메일은 필수 입력값입니다.',
-      pattern: {
-        value: /^[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]+$/,
-        message: '이메일은 영문과 숫자만 입력 가능합니다.',
+      validate: (value) => {
+        const emailFormat = /^[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
+        const checkEmailFormat = /^[A-Za-z0-9@.]+$/;
+
+        if (checkEmailFormat.test(value)) {
+          return emailFormat.test(value) || '올바른 이메일 형식이 아닙니다.';
+        }
+        return '이메일은 영문과 숫자만 입력 가능합니다.';
       },
     },
   },
@@ -49,7 +54,7 @@ const signUpFormat: SignUpInputFormat[] = [
     validation: {
       required: '비밀번호 확인은 필수입니다.',
       validate: (value, formValues) =>
-        value === formValues.password || '상단의 비밀번호가 일치하지 않습니다.',
+        value === formValues.password || '상단의 비밀번호와 일치하지 않습니다.',
     },
   },
 ];
