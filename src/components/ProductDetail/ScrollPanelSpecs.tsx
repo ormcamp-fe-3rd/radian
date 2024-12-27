@@ -23,7 +23,7 @@ const ScrollPanelSpecs = () => {
       <dl>
         <dt>Motor Capacity</dt>
         <dd>155c</dd>
-        <dt>Fuel system</dt>
+        <dt>Electronic system</dt>
         <dd>Electronic injection</dd>
         <dt>Lubrication</dt>
         <dd>Oil with wet sump</dd>
