@@ -639,12 +639,12 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: left;
-  transform: rotate(-90deg) translate3d(0,-100vh,0);
+  justify-content: flex-start;
+  transform: rotate(-90deg) translate3d(0,-125vh,0);
   transform-origin: right top;
   overflow-y: auto;
-  overflow-x: auto;
-  padding: 0;
+  overflow-x: hidden;
+  margin-left: -50px;
   padding-bottom: 11rem;
   perspective: 1px;
 	transform-style: preserve-3d;
@@ -670,4 +670,16 @@ hr {
   height: auto;
   transition: .5s;
   vertical-align: top;
+}
+
+.safety-build-btn {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(155, 155, 155);
+  border-radius: 10px;
+  background: #423522;
+  outline: none;
+  cursor: pointer;
+  color: #e0e0e0;
+  font-size: 1.5rem;
 }
