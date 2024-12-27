@@ -27,7 +27,7 @@ const Articles = ({ carData }: ArticlesProps) => {
                     <img className='introduce-img' alt="model img" src={carData.introImage} width="508" height="188" />
                 </figure>
                 <hr className="hr-double-top"/>
-                <h2><span>HILIGHT</span> ENJOY OUR {carData.name}</h2>
+                <h2><span>HIGHLIGHT</span> ENJOY OUR {carData.name}</h2>
                 <hr className="hr-double-bottom"/>
                 <div className="detail-container" id="detail-container">
                   <div className="wrapper" id="wrapper">
