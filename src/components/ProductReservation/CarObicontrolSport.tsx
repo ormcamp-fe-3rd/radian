@@ -16,11 +16,24 @@ declare module 'three' {
     clearcoatRoughness?: number;
     refractionRatio?: number;
   }
+
+  interface MeshBasicMaterialParameters {
+    emissive?: string | THREE.Color;
+    emissiveIntensity?: number;
+  }
+  
+  interface MeshBasicMaterial {
+    emissive?: string | THREE.Color;
+    emissiveIntensity?: number;
+  }
 }
+
+
 
 interface CarObicontrolProps {
   color: string;
 }
+
 
 const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -150,30 +163,38 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
 
 
 
-    // 구 GLTF 배경 추가
-    loader.load('/images/ProductReservation/sport-sphere29.gltf', (gltf) => {
-      const cubeModel = gltf.scene;
-
-      cubeModel.scale.set(0.45, 0.45, 0.45); // 
-      cubeModel.position.set(0, 0, 0); //
-
-      // 안쪽 면을 항상 밝게 설정
-      cubeModel.traverse((child) => {
+    loader.load('/images/ProductReservation/sport-sphere30.gltf', (gltf) => {
+      const sphereModel = gltf.scene;
+    
+      sphereModel.scale.set(0.45, 0.45, 0.45); // 크기 조정
+      sphereModel.position.set(0, 0, 0); // 위치 조정
+    
+      sphereModel.traverse((child) => {
         if ((child as THREE.Mesh).isMesh) {
           const mesh = child as THREE.Mesh;
-          mesh.castShadow = false; // 그림자 생성 안 함
-        mesh.receiveShadow = true; // 그림자를 수신
-        mesh.material = new THREE.MeshStandardMaterial({
-            map: mesh.material.map, // 기존 텍스처 유지
-            emissive: new THREE.Color(0xffffff), // 발광 색상 (흰색)
-            emissiveIntensity: 0.0, // 발광 강도 조절
-            side: THREE.BackSide, // 안쪽 면만 보이도록 설정
-          });
+    
+          // 그림자 설정
+          mesh.castShadow = true; // 그림자를 생성
+          mesh.receiveShadow = true; // 그림자를 받음
+    
+          // 재질 설정 (안쪽 면만 렌더링)
+          if (Array.isArray(mesh.material)) {
+            mesh.material.forEach((mat) => {
+              if (mat instanceof THREE.MeshStandardMaterial) {
+                mat.side = THREE.BackSide; // 안쪽 면만 렌더링
+                mat.needsUpdate = true; // 재질 업데이트
+              }
+            });
+          } else if (mesh.material instanceof THREE.MeshStandardMaterial) {
+            mesh.material.side = THREE.BackSide; // 안쪽 면만 렌더링
+            mesh.material.needsUpdate = true; // 재질 업데이트
+          }
         }
       });
-
-      scene.add(cubeModel);
+    
+      scene.add(sphereModel);
     });
+    
 
 
 
@@ -346,3 +367,4 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
 };
 
 export default CarObicontrol;
+
