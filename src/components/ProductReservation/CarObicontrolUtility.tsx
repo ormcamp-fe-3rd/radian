@@ -16,6 +16,16 @@ declare module 'three' {
     clearcoatRoughness?: number;
     refractionRatio?: number;
   }
+
+  interface MeshBasicMaterialParameters {
+    emissive?: string | THREE.Color;
+    emissiveIntensity?: number;
+  }
+
+  interface MeshBasicMaterial {
+    emissive?: string | THREE.Color;
+    emissiveIntensity?: number;
+  }
 }
 
 interface CarObicontrolProps {
@@ -84,7 +94,6 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
     scene.add(directionalLight);
 
     const loader = new GLTFLoader();
-
 
     loader.load(
       '/images/ProductReservation/utility-paint.gltf',
@@ -179,19 +188,33 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
     loader.load('/images/ProductReservation/utility-sphere.gltf', (gltf) => {
       const cubeModel = gltf.scene;
 
-      cubeModel.scale.set(1.5, 1.5, 1.5); // 
+      cubeModel.scale.set(1.5, 1.5, 1.5); //
       cubeModel.position.set(0, 0.9, 0); //
 
       // 안쪽 면을 항상 밝게 설정
       cubeModel.traverse((child) => {
         if ((child as THREE.Mesh).isMesh) {
           const mesh = child as THREE.Mesh;
-          mesh.material = new THREE.MeshBasicMaterial({
-            map: mesh.material.map, // 기존 텍스처 유지
-            emissive: new THREE.Color(0xffffff), // 발광 색상 (흰색)
-            emissiveIntensity: 20.0, // 발광 강도 조절
-            side: THREE.BackSide, // 안쪽 면만 보이도록 설정
-          });
+          if (Array.isArray(mesh.material)) {
+            mesh.material.forEach((mat) => {
+              if (
+                mat instanceof THREE.MeshStandardMaterial ||
+                mat instanceof THREE.MeshBasicMaterial
+              ) {
+                mat.map = mat.map; // 기존 텍스처 유지
+              }
+            });
+          } else if (
+            mesh.material instanceof THREE.MeshStandardMaterial ||
+            mesh.material instanceof THREE.MeshBasicMaterial
+          ) {
+            mesh.material = new THREE.MeshBasicMaterial({
+              map: mesh.material.map, // 기존 텍스처 유지
+              emissive: new THREE.Color(0xffffff), // 발광 색상
+              emissiveIntensity: 20.0, // 발광 강도
+              side: THREE.BackSide, // 안쪽 면만 보이도록 설정
+            });
+          }
         }
       });
 
@@ -199,28 +222,28 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
     });
 
     // Load GLTF model with 100% ambient light reflection
-// loader.load('./images/ProductReservation/utility-plate2.gltf', (gltf) => {
-//   const cubeModel = gltf.scene;
+    // loader.load('./images/ProductReservation/utility-plate2.gltf', (gltf) => {
+    //   const cubeModel = gltf.scene;
 
-//   cubeModel.scale.set(1.5, 1.5, 1.5);
-//   cubeModel.position.set(0, 0.9, 0);
+    //   cubeModel.scale.set(1.5, 1.5, 1.5);
+    //   cubeModel.position.set(0, 0.9, 0);
 
-//   // Apply a highly reflective material without emissive effects
-//   cubeModel.traverse((child) => {
-//     if ((child as THREE.Mesh).isMesh) {
-//       const mesh = child as THREE.Mesh;
-//       mesh.material = new THREE.MeshStandardMaterial({
-//         color: new THREE.Color(0xffffff), // White base color
-//         metalness: 1.0, // Maximum metallic effect
-//         roughness: 0.0, // Minimum roughness for high reflectivity
-//         envMapIntensity: 1.0, // Reflect environment map lighting
-//         side: THREE.DoubleSide, // Ensure both sides are reflective
-//       });
-//     }
-//   });
+    //   // Apply a highly reflective material without emissive effects
+    //   cubeModel.traverse((child) => {
+    //     if ((child as THREE.Mesh).isMesh) {
+    //       const mesh = child as THREE.Mesh;
+    //       mesh.material = new THREE.MeshStandardMaterial({
+    //         color: new THREE.Color(0xffffff), // White base color
+    //         metalness: 1.0, // Maximum metallic effect
+    //         roughness: 0.0, // Minimum roughness for high reflectivity
+    //         envMapIntensity: 1.0, // Reflect environment map lighting
+    //         side: THREE.DoubleSide, // Ensure both sides are reflective
+    //       });
+    //     }
+    //   });
 
-//   scene.add(cubeModel);
-// });
+    //   scene.add(cubeModel);
+    // });
 
     // Load extraModel1.gltf
     loader.load(
@@ -248,7 +271,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
         });
 
         model.scale.set(1, 1, 1);
-        model.position.set(0, 0, 0); 
+        model.position.set(0, 0, 0);
         scene.add(model);
         console.log('utility-glass1 loaded');
       },
