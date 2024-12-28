@@ -53,7 +53,10 @@ npm install
 ```
 npm run dev 
 ```
-
+> 배포 (npm run deploy 작성 시 build 와 deploy 자동 작동)
+```
+npm run deploy  
+```
 > eslint 사용 시
 ```
 npm run lint (확인하는 방법)
