@@ -6,27 +6,19 @@
     "description": "The perfect combination of power and efficiency",
     "text": "Experience the perfect blend of performance and style with the electric sports model. Offering exceptional acceleration and handling, this vehicle delivers an unparalleled driving experience, all while reducing carbon emissions with innovative technology. Embark on a journey to redefine the future of driving with a new standard of sports on the road.",
     "introImage": "/images/ProductDetail/rd6-header.jpg",
-    "modelImage": "/public/images/ProductDetail/radian-rd6-side.webp",
-    "safetyImages1": "/public/images/ProductDetail/safety1.webp",
-    "safetyImages2": "/public/images/ProductDetail/safety2.webp",
-    "safetyImages3": "/public/images/ProductDetail/safety3.webp",
-    "safetyImages4": "/public/images/ProductDetail/safety4.webp",
-    "safetyImages5": "/public/images/ProductDetail/safety5.webp",
-    "safetyImages6": "/public/images/ProductDetail/safety6.webp",
-    "safetyImages7": "/public/images/ProductDetail/safety7.webp",
-    "safetyImages8": "/public/images/ProductDetail/safety8.webp",
-    "safetyImages9": "/public/images/ProductDetail/safety9.webp",
+    "modelImage": "/images/ProductDetail/radian-rd6-side.webp",
+    "safetyImages1": "/images/ProductDetail/safety1.webp",
+    "safetyImages2": "/images/ProductDetail/safety2.webp",
+    "safetyImages3": "/images/ProductDetail/safety3.webp",
+    "safetyImages4": "/images/ProductDetail/safety4.webp",
+    "safetyImages5": "/images/ProductDetail/safety5.webp",
+    "safetyImages6": "/images/ProductDetail/safety6.webp",
+    "safetyImages7": "/images/ProductDetail/safety7.webp",
+    "safetyImages8": "/images/ProductDetail/safety8.webp",
+    "safetyImages9": "/images/ProductDetail/safety9.webp",
     "price": "₩42,080,000",
-    "specs": [
-      "Powerful engine",
-      "Sporty design",
-      "Great fuel efficiency"
-    ],
-    "chars": [
-      "Speed: 180 km/h",
-      "Weight: 1500 kg",
-      "Seats: 4"
-    ]
+    "specs": ["Powerful engine", "Sporty design", "Great fuel efficiency"],
+    "chars": ["Speed: 180 km/h", "Weight: 1500 kg", "Seats: 4"]
   },
 
   {
@@ -37,26 +29,22 @@
     "text": "Utility meets luxury in every drive. With cutting-edge technology, exceptional efficiency, and unparalleled comfort, this car is designed to elevate your driving experience. Whether you're navigating city streets or exploring the open road, our vehicle combines practicality with style, ensuring you travel in both comfort and confidence. Discover the perfect balance of utility and sophistication, where every journey is as effortless as it is enjoyable.",
     "introImage": "/images/ProductDetail/range-rover-header.jfif",
     "modelImage": "/images/ProductDetail/radian-rover-side.webp",
-    "safetyImages1": "/public/images/ProductDetail/rover-safety1.webp",
-    "safetyImages2": "/public/images/ProductDetail/rover-safety2.webp",
-    "safetyImages3": "/public/images/ProductDetail/rover-safety3.webp",
-    "safetyImages4": "/public/images/ProductDetail/rover-safety4.webp",
-    "safetyImages5": "/public/images/ProductDetail/rover-safety5.webp",
-    "safetyImages6": "/public/images/ProductDetail/rover-safety6.webp",
-    "safetyImages7": "/public/images/ProductDetail/rover-safety7.webp",
-    "safetyImages8": "/public/images/ProductDetail/rover-safety8.webp",
-    "safetyImages9": "/public/images/ProductDetail/rover-safety9.webp",
+    "safetyImages1": "/images/ProductDetail/rover-safety1.webp",
+    "safetyImages2": "/images/ProductDetail/rover-safety2.webp",
+    "safetyImages3": "/images/ProductDetail/rover-safety3.webp",
+    "safetyImages4": "/images/ProductDetail/rover-safety4.webp",
+    "safetyImages5": "/images/ProductDetail/rover-safety5.webp",
+    "safetyImages6": "/images/ProductDetail/rover-safety6.webp",
+    "safetyImages7": "/images/ProductDetail/rover-safety7.webp",
+    "safetyImages8": "/images/ProductDetail/rover-safety8.webp",
+    "safetyImages9": "/images/ProductDetail/rover-safety9.webp",
     "price": "₩51,140,000",
     "specs": [
       "All-terrain tires",
       "Spacious interior",
       "Advanced navigation system"
     ],
-    "chars": [
-      "Speed: 160 km/h",
-      "Weight: 1800 kg",
-      "Seats: 7"
-    ]
+    "chars": ["Speed: 160 km/h", "Weight: 1800 kg", "Seats: 7"]
   },
 
   {
@@ -67,25 +55,17 @@
     "text": "Optimized for urban living, the electric compact model offers a smarter, more efficient way to get around. With a compact design and ample practicality, it excels in tight streets and parking spaces. Embrace the future with this model's unique performance and eco-friendly features, making the transition to a greener tomorrow easier than ever.",
     "introImage": "/images/ProductDetail/cooper-header.jpg",
     "modelImage": "/images/ProductDetail/radian-cooper-side.webp",
-    "safetyImages1": "/public/images/ProductDetail/cooper-safety1.webp",
-    "safetyImages2": "/public/images/ProductDetail/cooper-safety2.webp",
-    "safetyImages3": "/public/images/ProductDetail/cooper-safety3.webp",
-    "safetyImages4": "/public/images/ProductDetail/cooper-safety4.webp",
-    "safetyImages5": "/public/images/ProductDetail/cooper-safety5.webp",
-    "safetyImages6": "/public/images/ProductDetail/cooper-safety6.webp",
-    "safetyImages7": "/public/images/ProductDetail/cooper-safety7.webp",
-    "safetyImages8": "/public/images/ProductDetail/cooper-safety8.webp",
-    "safetyImages9": "/public/images/ProductDetail/cooper-safety9.webp",
+    "safetyImages1": "/images/ProductDetail/cooper-safety1.webp",
+    "safetyImages2": "/images/ProductDetail/cooper-safety2.webp",
+    "safetyImages3": "/images/ProductDetail/cooper-safety3.webp",
+    "safetyImages4": "/images/ProductDetail/cooper-safety4.webp",
+    "safetyImages5": "/images/ProductDetail/cooper-safety5.webp",
+    "safetyImages6": "/images/ProductDetail/cooper-safety6.webp",
+    "safetyImages7": "/images/ProductDetail/cooper-safety7.webp",
+    "safetyImages8": "/images/ProductDetail/cooper-safety8.webp",
+    "safetyImages9": "/images/ProductDetail/cooper-safety9.webp",
     "price": "₩27,750,000",
-    "specs": [
-      "Fuel-efficient",
-      "Compact design",
-      "Affordable price"
-    ],
-    "chars": [
-      "Speed: 140 km/h",
-      "Weight: 1200 kg",
-      "Seats: 5"
-    ]
+    "specs": ["Fuel-efficient", "Compact design", "Affordable price"],
+    "chars": ["Speed: 140 km/h", "Weight: 1200 kg", "Seats: 5"]
   }
 ]

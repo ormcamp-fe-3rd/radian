@@ -4,6 +4,7 @@ import '../styles/ProductorList/ProductList.css';
 import CarProduct from '../components/ProductList/CarList';
 import ProductDetail from '../components/ProductList/CarListDetail';
 import { CarProductTypes } from '../types/CarProductTypes';
+import ProductListData from '../data/ProductList.json';
 
 const ProductList: React.FC = () => {
   const [selectedProduct, setSelectedProduct] =
@@ -11,9 +12,11 @@ const ProductList: React.FC = () => {
   const [products, setProducts] = useState<CarProductTypes[]>([]);
 
   useEffect(() => {
-    fetch('/src/data/ProductList.json')
-      .then((response) => response.json())
-      .then((data) => setProducts(data));
+    // fetch('/src/data/ProductList.json')
+    //   .then((response) => response.json())
+    //   .then((data) => setProducts(data))
+    //   .catch((error) => console.error('Error fetching products:', error));
+    setProducts(ProductListData);
   }, []);
 
   const handleDetailedClick = (id: string) => {
@@ -28,9 +31,13 @@ const ProductList: React.FC = () => {
   return (
     <>
       <div className="main-content">
-        <div className="product-img-container">
-          <CarCarousel />
-        </div>
+        {products.length > 0 && (
+          <div className="product-img-container">
+            <CarCarousel
+              productImgs={products.map((product) => product.productImg)}
+            />
+          </div>
+        )}
         <div className="product-list-title">
           <h3>What's your lifestyle?</h3>
         </div>

@@ -42,7 +42,7 @@ const CarProduct: React.FC<CarProductPickProps> = ({
         }}
       >
         <img
-          src="/public/images/CarList/pluse.png"
+          src="/images/CarList/pluse.png"
           alt="onClickCarDetail"
           className="plus-icon"
         />
