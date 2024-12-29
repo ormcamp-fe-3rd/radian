@@ -3,20 +3,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three-stdlib';
 import { GLTFLoader } from 'three-stdlib';
 import { RGBELoader } from 'three-stdlib';
-
-declare module 'three' {
-  interface MeshStandardMaterialParameters {
-    clearcoat?: number;
-    clearcoatRoughness?: number;
-    refractionRatio?: number;
-  }
-
-  interface MeshStandardMaterial {
-    clearcoat?: number;
-    clearcoatRoughness?: number;
-    refractionRatio?: number;
-  }
-}
+import { MeshStandardMaterial } from '../types/three.d' //2차피드백 1번//
 
 interface CarObicontrolProps {
   color: string;
