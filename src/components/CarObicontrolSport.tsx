@@ -3,7 +3,21 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three-stdlib';
 import { GLTFLoader } from 'three-stdlib';
 import { RGBELoader } from 'three-stdlib';
-import { MeshStandardMaterial } from '../types/three.d' //2차피드백 1번//
+import { MeshStandardMaterial } from '../types/three.d';
+
+declare module 'three' {
+  interface MeshStandardMaterialParameters {
+    clearcoat?: number;
+    clearcoatRoughness?: number;
+    refractionRatio?: number;
+  }
+
+  interface MeshStandardMaterial {
+    clearcoat?: number;
+    clearcoatRoughness?: number;
+    refractionRatio?: number;
+  }
+}
 
 interface CarObicontrolProps {
   color: string;
@@ -72,12 +86,11 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
 
     const loader = new GLTFLoader();
 
-
     loader.load(
       '/images/ProductReservation/sport-paint.gltf',
       (gltf) => {
         const model = gltf.scene;
-    
+
         model.traverse((child) => {
           if ((child as THREE.Mesh).isMesh) {
             const mesh = child as THREE.Mesh;
@@ -90,13 +103,13 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
               clearcoatRoughness: 0.7, // 코팅층 표면의 매끄러움
             });
             mesh.material = material;
-    
+
             // 그림자 설정
             mesh.castShadow = true; // 그림자 생성
             mesh.receiveShadow = false; // 그림자를 받지 않음
           }
         });
-    
+
         model.scale.set(1, 1, 1);
         scene.add(model);
         radianModelRef.current = model;
@@ -135,13 +148,11 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
       },
     );
 
-
-
     // 구 GLTF 배경 추가
     loader.load('/images/ProductReservation/sport-sphere29.gltf', (gltf) => {
       const cubeModel = gltf.scene;
 
-      cubeModel.scale.set(0.45, 0.45, 0.45); // 
+      cubeModel.scale.set(0.45, 0.45, 0.45); //
       cubeModel.position.set(0, 0, 0); //
 
       // 안쪽 면을 항상 밝게 설정
@@ -149,8 +160,8 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
         if ((child as THREE.Mesh).isMesh) {
           const mesh = child as THREE.Mesh;
           mesh.castShadow = false; // 그림자 생성 안 함
-        mesh.receiveShadow = true; // 그림자를 수신
-        mesh.material = new THREE.MeshStandardMaterial({
+          mesh.receiveShadow = true; // 그림자를 수신
+          mesh.material = new THREE.MeshStandardMaterial({
             map: mesh.material.map, // 기존 텍스처 유지
             emissive: new THREE.Color(0xffffff), // 발광 색상 (흰색)
             emissiveIntensity: 0.0, // 발광 강도 조절
@@ -161,8 +172,6 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
 
       scene.add(cubeModel);
     });
-
-
 
     // Load extraModel1.gltf
     loader.load(
@@ -190,7 +199,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
         });
 
         model.scale.set(1, 1, 1);
-        model.position.set(0, 0, 0); 
+        model.position.set(0, 0, 0);
         scene.add(model);
         console.log('utility-glass1 loaded');
       },
