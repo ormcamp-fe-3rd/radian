@@ -574,6 +574,7 @@ hr {
   display: inline-block;
   position: absolute;
   left: 0;
+  top: 0;
   color: #fffbf1;
   background-color: #423522;
   font-size: 16px;
@@ -639,8 +640,9 @@ hr {
   justify-items: center;
 }
 
-.img-wrapper {
+.img-wrapper img{
   width: 100%;
+  object-fit: cover;
   text-align: center;
 }
 
