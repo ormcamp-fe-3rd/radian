@@ -16,6 +16,16 @@ declare module 'three' {
     clearcoatRoughness?: number;
     refractionRatio?: number;
   }
+
+  interface MeshBasicMaterialParameters {
+    emissive?: string | THREE.Color;
+    emissiveIntensity?: number;
+  }
+
+  interface MeshBasicMaterial {
+    emissive?: string | THREE.Color;
+    emissiveIntensity?: number; 
+  }
 }
 
 interface CarObicontrolProps {
