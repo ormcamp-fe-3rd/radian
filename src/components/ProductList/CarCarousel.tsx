@@ -3,9 +3,13 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import '../../styles/CarCarousel.css';
+import '../../styles/ProductorList/CarCarousel.css';
 
-const CarCarousel: React.FC = () => {
+interface CarCarouselProps {
+  productImgs: string[]; // 이미지 URL 배열
+}
+
+const CarCarousel: React.FC<CarCarouselProps> = ({ productImgs }) => {
   const [_slickIndex, setSlickIndex] = useState(0);
 
   const settings = {
@@ -21,41 +25,30 @@ const CarCarousel: React.FC = () => {
     autoplaySpeed: 5000,
     beforeChange: (current: number, next: number) => {
       console.log('Current slide index:', current, 'Next slide index:', next);
-      // 슬라이드 전환 시 index 값 업데이트
       setSlickIndex(next);
     },
-    // 슬라이드 전환 방향 고정
     swipeToSlide: true,
     rtl: false,
   };
 
+  if (!productImgs || productImgs.length === 0) {
+    console.error('productImgs must be a non-empty array.');
+    return <div>No images available</div>;
+  }
+
   return (
     <div className="slider-container">
       <Slider {...settings}>
-        <div className="slider-img">
-          <img
-            className="car-img"
-            src="../../../public/images/CarList/sport_3210x1780o.png"
-            alt="Car 1"
-            style={{ width: '100%', height: '100%' }}
-          />
-        </div>
-        <div className="slider-img">
-          <img
-            className="car-img"
-            src="../../../public/images/CarList/compact_4020x1740o.png"
-            alt="Car 2"
-            style={{ width: '100%', height: '100%' }}
-          />
-        </div>
-        <div className="slider-img">
-          <img
-            className="car-img"
-            src="../../../public/images/CarList/utility_4020x1930o.png"
-            alt="Car 3"
-            style={{ width: '100%', height: '100%' }}
-          />
-        </div>
+        {productImgs.map((img, index) => (
+          <div className="slider-img" key={index}>
+            <img
+              className="car-img"
+              src={img}
+              alt={`Car ${index + 1}`}
+              style={{ width: '100%', height: '100%' }}
+            />
+          </div>
+        ))}
       </Slider>
     </div>
   );

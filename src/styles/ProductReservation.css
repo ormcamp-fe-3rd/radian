@@ -82,6 +82,7 @@ body {
     align-items: center; /* 가로 중앙 정렬 */
     gap: 20px; /* 상하 간격 추가 */
     padding: 20px;
+    height: auto;
   }
 
   /* "CarObicontrol" 영역 */

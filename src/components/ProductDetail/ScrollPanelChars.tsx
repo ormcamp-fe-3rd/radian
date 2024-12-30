@@ -21,7 +21,7 @@ const ScrollPanelChars = () => {
         <dd>Front wheel standard ABS</dd>
       </dl>
       <dl>
-        <dt>Fuel Tank Capacity</dt>
+        <dt>Motor Capacity</dt>
         <dd>1.58 gal (6 liters)</dd>
         <dt>Rear suspension</dt>
         <dd>

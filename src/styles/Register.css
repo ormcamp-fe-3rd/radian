@@ -101,6 +101,20 @@ strong {
   padding: 1.5rem;
   overflow-y: scroll;
   line-height: 1.75rem;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+    background-clip: padding-box;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 .next-step-button {
