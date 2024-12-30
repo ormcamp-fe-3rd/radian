@@ -4,6 +4,7 @@
 
 <a href= "https://www.figma.com/design/tk3h0utOTodFirQLPuez9C/Figma-basics?node-id=612-2&t=I6zmSxuFTkDX9SjG-1"> 🎨 굴렁쇠 Figma </a>
 
+<a href= "https://radian-e6681.web.app/">배포 된 라디안 링크 🚘</a>
 <br>
 <br>
 
