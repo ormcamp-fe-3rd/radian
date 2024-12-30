@@ -5,4 +5,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [react()],
   base: '/',
+  build: {
+    outDir: 'build', // 빌드 결과물이 생성될 폴더
+  },
 });
