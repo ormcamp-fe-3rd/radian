@@ -3,7 +3,21 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three-stdlib';
 import { GLTFLoader } from 'three-stdlib';
 import { RGBELoader } from 'three-stdlib';
-import { MeshStandardMaterial } from '../types/three.d' //2차피드백 1번//
+import { MeshStandardMaterial } from '../types/three.d';
+
+declare module 'three' {
+  interface MeshStandardMaterialParameters {
+    clearcoat?: number;
+    clearcoatRoughness?: number;
+    refractionRatio?: number;
+  }
+
+  interface MeshStandardMaterial {
+    clearcoat?: number;
+    clearcoatRoughness?: number;
+    refractionRatio?: number;
+  }
+}
 
 interface CarObicontrolProps {
   color: string;
@@ -71,7 +85,6 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
     scene.add(directionalLight);
 
     const loader = new GLTFLoader();
-
 
     loader.load(
       '/images/ProductReservation/utility-paint.gltf',
@@ -166,7 +179,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
     loader.load('/images/ProductReservation/utility-sphere.gltf', (gltf) => {
       const cubeModel = gltf.scene;
 
-      cubeModel.scale.set(1.5, 1.5, 1.5); // 
+      cubeModel.scale.set(1.5, 1.5, 1.5); //
       cubeModel.position.set(0, 0.9, 0); //
 
       // 안쪽 면을 항상 밝게 설정
@@ -186,28 +199,28 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
     });
 
     // Load GLTF model with 100% ambient light reflection
-// loader.load('./images/ProductReservation/utility-plate2.gltf', (gltf) => {
-//   const cubeModel = gltf.scene;
+    // loader.load('./images/ProductReservation/utility-plate2.gltf', (gltf) => {
+    //   const cubeModel = gltf.scene;
 
-//   cubeModel.scale.set(1.5, 1.5, 1.5);
-//   cubeModel.position.set(0, 0.9, 0);
+    //   cubeModel.scale.set(1.5, 1.5, 1.5);
+    //   cubeModel.position.set(0, 0.9, 0);
 
-//   // Apply a highly reflective material without emissive effects
-//   cubeModel.traverse((child) => {
-//     if ((child as THREE.Mesh).isMesh) {
-//       const mesh = child as THREE.Mesh;
-//       mesh.material = new THREE.MeshStandardMaterial({
-//         color: new THREE.Color(0xffffff), // White base color
-//         metalness: 1.0, // Maximum metallic effect
-//         roughness: 0.0, // Minimum roughness for high reflectivity
-//         envMapIntensity: 1.0, // Reflect environment map lighting
-//         side: THREE.DoubleSide, // Ensure both sides are reflective
-//       });
-//     }
-//   });
+    //   // Apply a highly reflective material without emissive effects
+    //   cubeModel.traverse((child) => {
+    //     if ((child as THREE.Mesh).isMesh) {
+    //       const mesh = child as THREE.Mesh;
+    //       mesh.material = new THREE.MeshStandardMaterial({
+    //         color: new THREE.Color(0xffffff), // White base color
+    //         metalness: 1.0, // Maximum metallic effect
+    //         roughness: 0.0, // Minimum roughness for high reflectivity
+    //         envMapIntensity: 1.0, // Reflect environment map lighting
+    //         side: THREE.DoubleSide, // Ensure both sides are reflective
+    //       });
+    //     }
+    //   });
 
-//   scene.add(cubeModel);
-// });
+    //   scene.add(cubeModel);
+    // });
 
     // Load extraModel1.gltf
     loader.load(
@@ -235,7 +248,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
         });
 
         model.scale.set(1, 1, 1);
-        model.position.set(0, 0, 0); 
+        model.position.set(0, 0, 0);
         scene.add(model);
         console.log('utility-glass1 loaded');
       },
