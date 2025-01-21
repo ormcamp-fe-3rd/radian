@@ -1,28 +1,26 @@
 import React from 'react';
-import '../../styles/CarList.css';
+import '../../styles/ProductorList/CarList.css';
 import { Link } from 'react-router-dom';
 import { formatCurrency } from '../../utils/formatCurrency';
+import { CarProductTypes } from '../../types/CarProductTypes';
 
-interface CarProductProps {
-  pathId: string;
-  titleImg: string;
-  productImg: string;
-  name: string;
-  price: number;
+type CarProductPickProps = Pick<
+  CarProductTypes,
+  'id' | 'titleImg' | 'productImg' | 'name' | 'price'
+> & {
   onClickCarDetail: (event: React.MouseEvent) => void;
-}
-
-const CarProduct: React.FC<CarProductProps> = ({
-  pathId,
+};
+const CarProduct: React.FC<CarProductPickProps> = ({
+  id,
   titleImg,
   productImg,
   name,
   price,
   onClickCarDetail,
-}: CarProductProps) => {
+}) => {
   return (
     <div className="car-product-container">
-      <Link to={`/product-detail/${pathId}`} className="car-product-title-link">
+      <Link to={`/product-detail/${id}`} className="car-product-title-link">
         <div className="car-product-title">
           <img
             src={titleImg}
@@ -31,15 +29,20 @@ const CarProduct: React.FC<CarProductProps> = ({
           />
         </div>
       </Link>
-      <Link to={`/product-detail/${pathId}`} className="car-product-link">
-        {/*상품상세페이지로 변경*/}
+      <Link to={`/product-detail/${id}`} className="car-product-link">
         <div className="car-product-img">
           <img src={productImg} alt="car-product" className="carlist-img" />
         </div>
       </Link>
-      <div className="car-product-button" onClick={onClickCarDetail}>
+      <div
+        className="car-product-button"
+        onClick={(event) => {
+          event.stopPropagation();
+          onClickCarDetail(event);
+        }}
+      >
         <img
-          src="/public/images/CarList/pluse.png"
+          src="/images/CarList/pluse.png"
           alt="onClickCarDetail"
           className="plus-icon"
         />

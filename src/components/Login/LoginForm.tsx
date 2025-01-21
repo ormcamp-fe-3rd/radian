@@ -64,13 +64,8 @@ const LoginForm = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log('로그인 오류:', errorCode, errorMessage); // 에러 코드와 메시지를 로그로 출력
-
-        if (errorCode === 'auth/invalid-email') {
-          alert('유효하지 않은 이메일 주소입니다.');
-        } else if (errorCode === 'auth/wrong-password') {
-          alert('비밀번호가 틀렸습니다.');
-        } else if (errorCode === 'auth/user-not-found') {
-          alert('해당 이메일로 등록된 사용자가 없습니다.');
+        if (errorCode === 'auth/invalid-credential') {
+          alert('로그인에 실패했습니다. 이메일과 비밀번호를 확인해주세요.');
         } else {
           alert('로그인 실패: ' + errorMessage);
         }

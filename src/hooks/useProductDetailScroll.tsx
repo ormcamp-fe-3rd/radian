@@ -15,7 +15,6 @@ const useProductDetailScroll = (carData: Car | null) => {
         
         const intro_tl = gsap.timeline();
         const part1_tl = gsap.timeline();
-        const rotator_tl = gsap.timeline();
         const part2_tl = gsap.timeline();
         const part3_tl = gsap.timeline();
         const part4_tl = gsap.timeline();
@@ -26,7 +25,7 @@ const useProductDetailScroll = (carData: Car | null) => {
         trigger: '#detail-container',
         pin: true,
         start: 'top -5%',
-        end: '+=8150',
+        end: '+=8050',
         });
 
         // 초반 세팅
@@ -38,9 +37,9 @@ const useProductDetailScroll = (carData: Car | null) => {
         part4_tl.set('.chars h2', { opacity: 0 });
         part4_tl.set('.chars dt', { opacity: 0 });
         part4_tl.set('.chars dd', { opacity: 0 });
-        outro_tl.set('.outro h2', { opacity: 0 });
-        outro_tl.set('.outro p', { opacity: 0 });
-        outro_tl.set('.outro button', { opacity: 0 });
+        outro_tl.set('.panel-outro-h2', { opacity: 0 });
+        outro_tl.set('.panel-outro-p', { opacity: 0 });
+        outro_tl.set('.panel-outro-btn', { opacity: 0 });
     
         
         // TIMELINE: Intro
@@ -63,10 +62,10 @@ const useProductDetailScroll = (carData: Car | null) => {
             y: 100,
             duration: 0.1
         })
-        .to('#logo', {
+        .to('#panel-logo', {
             scrollTrigger: {
-                start: 800,
-                end: 1100,
+                start: 1400,
+                end: 1600,
                 scrub: 0.75,
             },
             y: -190,
@@ -74,20 +73,20 @@ const useProductDetailScroll = (carData: Car | null) => {
             duration: 0.9,
             ease: 'expo.out',
         })
-        .to('#intro-h1', {
+        .to('#panel-intro-h1', {
             scrollTrigger: {
-                start: 1000,
-                end: 1300,
+                start: 1600,
+                end: 1800,
                 scrub: 0.75,
             },
             scale: 0,
             duration: 0.9,
             ease: 'expo.out',
         })
-        .to('#intro-h3', {
+        .to('#panel-intro-h3', {
             scrollTrigger: {
-                start: 1050,
-                end: 1350,
+                start: 1650,
+                end: 1850,
                 scrub: 0.75,
             },
             scale: 0,
@@ -103,8 +102,8 @@ const useProductDetailScroll = (carData: Car | null) => {
         },
         {
             scrollTrigger: {
-                start: 1250,
-                end: 1550,
+                start: 1850,
+                end: 2050,
                 scrub: 0.75,
             },
             scale: 0.8,
@@ -114,80 +113,27 @@ const useProductDetailScroll = (carData: Car | null) => {
         })
         .from('#panel-h1', {
             scrollTrigger: {
-                start: 1550,
-                end: 1850,
+                start: 2150,
+                end: 2350,
                 scrub: 0.75,
             },
             scale: 0,
             opacity: 0,
             duration: 1.5,
             ease: 'sine.out',
-        })
-        .to('#radian-model', {
-            scrollTrigger: {
-                trigger: '#radian-model',
-                start: 1500,
-                end: 1550,
-                scrub: 1.5,
-            },
-            opacity: 0,
-            duration: 0.5,
-            ease: 'sine.out',
-        })
-        .to('.rotator circle', {
-            scrollTrigger: {
-                start: 1500,
-                end: 2500,
-                scrub: 1.5,
-            },
-            y:20,
-            duration: 1.5,
-            stagger: 0.3,
-            ease: 'sine.out',
-        })
-        part1_tl.add(rotator_tl) // ScrollRotator 컴포넌트
-        .fromTo('#radian-model', {
-            opacity: 0
-        },
-        {
-            scrollTrigger: {
-                trigger: '#radian-model',
-                start: 2500,
-                end: 2550,
-                scrub: 1.5,
-            },
-            opacity: 1,
-            duration: 0.5,
-            ease: 'sine.out',  
         });
 
         // TIMELINE: Part 2
         part2_tl
         .from('#panel-h1', {
             scrollTrigger: {
-                start: 2650,
-                end: 2950,
+                start: 3150,
+                end: 3350,
                 scrub: 1.5,
             },
             opacity: 1,
             scale: 1,
             duration: 1.5,
-            ease: 'sine.out',
-        })
-        .fromTo('.rotator',{
-            y: 0,
-            opacity: 1
-        },
-        {
-            scrollTrigger: {
-                start: 2650,
-                end: 2950,
-                scrub: 1.5,
-            },
-            y: -20,
-            opacity: 0,
-            duration: 1.5,
-            stagger: 0.3,
             ease: 'sine.out',
         });
 
@@ -198,8 +144,8 @@ const useProductDetailScroll = (carData: Car | null) => {
         },
         {
             scrollTrigger: {
-                start: 3400,
-                end: 3700,
+                start: 3600,
+                end: 3800,
                 scrub: 1.5,
             },
             height: 80,
@@ -208,8 +154,8 @@ const useProductDetailScroll = (carData: Car | null) => {
         })
         .to('#radian-model', {
             scrollTrigger: {
-                start: 3550,
-                end: 3850,
+                start: 3750,
+                end: 3950,
                 scrub: 1.5,
             },
             x: 600,
@@ -218,8 +164,8 @@ const useProductDetailScroll = (carData: Car | null) => {
         })
         .to('.specs', {
             scrollTrigger: {
-                start: 3550,
-                end: 3850,
+                start: 3750,
+                end: 3950,
                 scrub: 1.5,
             },
             opacity: 1,
@@ -228,8 +174,8 @@ const useProductDetailScroll = (carData: Car | null) => {
         })
         .from('.specs h2', {
             scrollTrigger: {
-                start: 3550,
-                end: 3850,
+                start: 3750,
+                end: 3950,
                 scrub: 1.5,
             },
             duration: 1.5,
@@ -238,8 +184,8 @@ const useProductDetailScroll = (carData: Car | null) => {
         })
         .from('.specs dt', {
             scrollTrigger: {
-                start: 3550,
-                end: 3850,
+                start: 3750,
+                end: 3950,
                 scrub: 3,
             },
             duration: 1.5,
@@ -249,8 +195,8 @@ const useProductDetailScroll = (carData: Car | null) => {
         })
         .from('.specs dd', {
             scrollTrigger: {
-                start: 3550,
-                end: 3850,
+                start: 3750,
+                end: 3950,
                 scrub: 3,
             },
             duration: 1.5,
@@ -260,8 +206,8 @@ const useProductDetailScroll = (carData: Car | null) => {
         }, '-=.5')
         .from('.specs dd', {
             scrollTrigger: {
-                start: 4450,
-                end: 4750,
+                start: 4650,
+                end: 4850,
                 scrub: 1.5,
             },
             duration: 1.5,
@@ -271,8 +217,8 @@ const useProductDetailScroll = (carData: Car | null) => {
         }, '-=.5')
         .from('.specs dt', {
             scrollTrigger: {
-                start: 4450,
-                end: 4750,
+                start: 4650,
+                end: 4850,
                 scrub: 1.5,
             },
             duration: 1.5,
@@ -282,8 +228,8 @@ const useProductDetailScroll = (carData: Car | null) => {
         })
         .from('.specs h2', {
             scrollTrigger: {
-                start: 4450,
-                end: 4750,
+                start: 4650,
+                end: 4850,
                 scrub: 1.5,
             },
             duration: 1.5,
@@ -295,8 +241,8 @@ const useProductDetailScroll = (carData: Car | null) => {
         },
         {
             scrollTrigger: {
-                start: 4900,
-                end: 5200,
+                start: 5100,
+                end: 5300,
                 scrub: 1.5,
             },
             x: -360,
@@ -309,7 +255,7 @@ const useProductDetailScroll = (carData: Car | null) => {
         .from('.chars h2', {
             scrollTrigger: {
                 start: 5200,
-                end: 5500,
+                end: 5400,
                 scrub: 1.5,
             },
             duration: 1.5,
@@ -319,7 +265,7 @@ const useProductDetailScroll = (carData: Car | null) => {
         .from('.chars dt', {
             scrollTrigger: {
                 start: 5200,
-                end: 5500,
+                end: 5400,
                 scrub: 3,
             },
             duration: 1.5,
@@ -330,7 +276,7 @@ const useProductDetailScroll = (carData: Car | null) => {
         .from('.chars dd', {
             scrollTrigger: {
                 start: 5200,
-                end: 5500,
+                end: 5400,
                 scrub: 3,
             },
             duration: 1.5,
@@ -348,7 +294,7 @@ const useProductDetailScroll = (carData: Car | null) => {
         {
             scrollTrigger: {
                 start: 5800,
-                end: 6100,
+                end: 6000,
                 scrub: 1.5,
             },
             duration: 1.5,
@@ -362,7 +308,7 @@ const useProductDetailScroll = (carData: Car | null) => {
         {
             scrollTrigger: {
                 start: 5800,
-                end: 6100,
+                end: 6000,
                 scrub: 3,
             },
             duration: 1.5,
@@ -377,7 +323,7 @@ const useProductDetailScroll = (carData: Car | null) => {
         {
             scrollTrigger: {
                 start: 5800,
-                end: 6100,
+                end: 6000,
                 scrub: 3,
             },
             duration: 1.5,
@@ -391,7 +337,7 @@ const useProductDetailScroll = (carData: Car | null) => {
         {
             scrollTrigger: {
                 start: 6100,
-                end: 6400,
+                end: 6300,
                 scrub: 1.5,
             },
             x: 0,
@@ -407,7 +353,7 @@ const useProductDetailScroll = (carData: Car | null) => {
         {
             scrollTrigger: {
                 start: 7000,
-                end: 7300,
+                end: 7200,
                 scrub: 1.5,
             },
             height: 800,
@@ -421,7 +367,7 @@ const useProductDetailScroll = (carData: Car | null) => {
         {
             scrollTrigger: {
                 start: 7300,
-                end: 7600,
+                end: 7500,
                 scrub: 1.5,
             },
             x: 30,
@@ -430,7 +376,7 @@ const useProductDetailScroll = (carData: Car | null) => {
             duration: 4.5,
             ease: "sine.out",
         })
-        .from(".outro h2", {
+        .from(".panel-outro-h2", {
             scrollTrigger: {
                 start: 7450,
                 end: 7750,
@@ -441,10 +387,10 @@ const useProductDetailScroll = (carData: Car | null) => {
             opacity: 0,
             ease: "none",
         })
-        .from(".outro p", {
+        .from(".panel-outro-p", {
             scrollTrigger: {
                 start: 7600,
-                end: 7900,
+                end: 7800,
                 scrub: 1.5,
             },
             duration: 1.5,
@@ -452,10 +398,10 @@ const useProductDetailScroll = (carData: Car | null) => {
             opacity: 0,
             ease: "none",
         })
-        .from(".outro button", {
+        .from(".panel-outro-btn", {
             scrollTrigger: {
                 start: 7750,
-                end: 8050,
+                end: 7950,
                 scrub: 1.5,
             },
             duration: 1.5,

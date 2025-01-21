@@ -6,7 +6,7 @@ interface CarOptionProps {
 }
 
 const CarOption: React.FC<CarOptionProps> = ({ onColorChange }) => {
-  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [_selectedColor, _setSelectedColor] = useState<string | null>(null);
   const [selectedBattery, setSelectedBattery] = useState<string | null>(null);
   const [selectedDrive, setSelectedDrive] = useState<string | null>(null);
   const [selectedSound, setSelectedSound] = useState<string | null>(null);

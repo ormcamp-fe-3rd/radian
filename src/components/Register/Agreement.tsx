@@ -2,7 +2,7 @@ import '../../styles/Register.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import term from '../../data/terms.json';
+import term from '../../data/Register/terms.json';
 
 const Agreement = (): JSX.Element => {
   const navigate = useNavigate();

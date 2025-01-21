@@ -1,12 +1,10 @@
-/* index.css 또는 CarCarousel.css */
 .slider-container {
   margin: 0;
   width: 100%;
   max-width: 1360px;
   align-content: center;
   justify-items: center;
-  position: relative; /* 버튼이 슬라이더 안에 위치할 수 있도록 */
-  height: 638px;
+  position: relative;
 }
 
 .slick-slide {
@@ -29,9 +27,9 @@
 .slick-next {
   background-size: contain;
   background-repeat: no-repeat;
-  width: 40px; /* 버튼 크기 조정 */
-  height: 40px; /* 버튼 크기 조정 */
-  z-index: 10; /* 버튼을 위로 띄우기 */
+  width: 40px;
+  height: 40px;
+  z-index: 10;
   cursor: pointer;
   position: absolute;
   transform: translateY(-50%);
@@ -53,6 +51,6 @@
 
 .slick-next:hover,
 .slick-prev:hover {
-  transform: translateY(-50%) scale(1.2); /* 크기 증가 */
+  transform: translateY(-50%) scale(1.2);
   color: black;
 }

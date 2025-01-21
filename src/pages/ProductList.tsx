@@ -1,37 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import CarCarousel from '../components/ProductList/CarCarousel';
-import '../styles/ProductList.css';
-
+import '../styles/ProductorList/ProductList.css';
 import CarProduct from '../components/ProductList/CarList';
 import ProductDetail from '../components/ProductList/CarListDetail';
-
-interface Product {
-  id: string;
-  pathId: string;
-  titleImg: string;
-  productImg: string;
-  name: string;
-  price: number;
-  detailimgs: string[];
-  dataildescription: string;
-}
+import { CarProductTypes } from '../types/CarProductTypes';
+import ProductListData from '../data/ProductList.json';
 
 const ProductList: React.FC = () => {
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [products, setProducts] = useState<Product[]>([]);
+  const [selectedProduct, setSelectedProduct] =
+    useState<CarProductTypes | null>(null);
+  const [products, setProducts] = useState<CarProductTypes[]>([]);
 
   useEffect(() => {
-    fetch('/src/data/ProductList.json')
-      .then((response) => response.json())
-      .then((data) => setProducts(data));
+    // fetch('/src/data/ProductList.json')
+    //   .then((response) => response.json())
+    //   .then((data) => setProducts(data))
+    //   .catch((error) => console.error('Error fetching products:', error));
+    setProducts(ProductListData);
   }, []);
 
-  // 디테일 버튼 클릭 시 모달을 열기
-  const handleDetailedClick = (product: Product) => {
-    setSelectedProduct(product);
+  const handleDetailedClick = (id: string) => {
+    const product = products.find((product) => product.id === id);
+    setSelectedProduct(product || null);
   };
 
-  // 모달 닫기
   const closeModal = () => {
     setSelectedProduct(null);
   };
@@ -39,9 +31,13 @@ const ProductList: React.FC = () => {
   return (
     <>
       <div className="main-content">
-        <div className="product-img-container">
-          <CarCarousel />
-        </div>
+        {products.length > 0 && (
+          <div className="product-img-container">
+            <CarCarousel
+              productImgs={products.map((product) => product.productImg)}
+            />
+          </div>
+        )}
         <div className="product-list-title">
           <h3>What's your lifestyle?</h3>
         </div>
@@ -49,14 +45,14 @@ const ProductList: React.FC = () => {
           {products.map((product) => (
             <CarProduct
               key={product.id}
-              pathId={product.pathId} // 상품 ID 전달
+              id={product.id}
               titleImg={product.titleImg}
               productImg={product.productImg}
               name={product.name}
               price={product.price}
               onClickCarDetail={(event) => {
                 event.stopPropagation(); // 부모의 클릭 이벤트를 막기 위해 사용
-                handleDetailedClick(product);
+                handleDetailedClick(product.id);
               }}
             />
           ))}
@@ -69,7 +65,7 @@ const ProductList: React.FC = () => {
             <button className="close-modal-btn" onClick={closeModal}>
               X
             </button>
-            <ProductDetail product={selectedProduct} />
+            <ProductDetail {...selectedProduct} />
           </div>
         </div>
       )}

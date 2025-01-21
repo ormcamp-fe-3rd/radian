@@ -21,7 +21,7 @@
 }
 
 .car-product-container {
-  flex: 1 1 calc(33.33% - 50px); /* 기본적으로 3등분 */
+  flex: 1 1 calc(33.33% - 50px);
   max-width: 400px;
   min-width: 200px;
   display: flex;
@@ -33,7 +33,6 @@
 }
 
 .car-product-title {
-  /* height: 3.125rem; */
   height: auto;
   text-align: center;
 }
@@ -56,7 +55,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   max-height: 200px;
-  overflow: hidden; /* 비율을 넘는 이미지는 잘라내기 */
+  overflow: hidden;
   position: relative;
 }
 
@@ -72,8 +71,9 @@
 
 .plus-icon {
   z-index: 10;
-  transition: transform 0.3s ease-in-out; /* 부드러운 애니메이션 */
+  transition: transform 0.3s ease-in-out;
 }
+
 .plus-icon:hover {
   transform: scale(1.1) rotate(90deg);
 }
@@ -132,7 +132,6 @@
   .car-product-name {
     font-size: 20px;
   }
-
   .car-product-price {
     font-size: 18px;
   }
@@ -161,7 +160,6 @@
   .car-product-name {
     font-size: 18px;
   }
-
   .car-product-price {
     font-size: 16px;
   }

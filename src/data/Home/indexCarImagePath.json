@@ -1,5 +1,6 @@
 [
   {
+    "carType": "sport",
     "frontImage": "/images/Home/old-TR6.png",
     "backImage": "/images/Home/new-TR6.jpeg",
     "logoTitle": "SPORT",
@@ -7,6 +8,7 @@
     "productUrl": "rd6"
   },
   {
+    "carType": "compact",
     "frontImage": "/images/Home/cooper-old.png",
     "backImage": "/images/Home/mini-new.jpg",
     "logoTitle": "Compact",
@@ -14,6 +16,7 @@
     "productUrl": "cooper"
   },
   {
+    "carType": "utility",
     "frontImage": "/images/Home/old-rover.jpg",
     "backImage": "/images/Home/range-rover-new.jpg",
     "logoTitle": "Utilty",
