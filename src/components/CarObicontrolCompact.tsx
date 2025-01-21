@@ -3,7 +3,21 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three-stdlib';
 import { GLTFLoader } from 'three-stdlib';
 import { RGBELoader } from 'three-stdlib';
-import { MeshStandardMaterial } from '../types/three.d' //2차피드백 1번//
+import { MeshStandardMaterial } from '../types/three.d';
+
+declare module 'three' {
+  interface MeshStandardMaterialParameters {
+    clearcoat?: number;
+    clearcoatRoughness?: number;
+    refractionRatio?: number;
+  }
+
+  interface MeshStandardMaterial {
+    clearcoat?: number;
+    clearcoatRoughness?: number;
+    refractionRatio?: number;
+  }
+}
 
 interface CarObicontrolProps {
   color: string;
@@ -72,7 +86,6 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
 
     const loader = new GLTFLoader();
 
-
     loader.load(
       '/images/ProductReservation/compact-paint3.gltf',
       (gltf) => {
@@ -135,12 +148,11 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
       },
     );
 
-
     // 구 GLTF 배경 추가
     loader.load('/images/ProductReservation/compact-sphere13.gltf', (gltf) => {
       const cubeModel = gltf.scene;
 
-      cubeModel.scale.set(0.5, 0.5, 0.5); // 
+      cubeModel.scale.set(0.5, 0.5, 0.5); //
       cubeModel.position.set(0, 0, 0); //
 
       // 안쪽 면을 항상 밝게 설정
@@ -158,7 +170,6 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
 
       scene.add(cubeModel);
     });
-
 
     // Load extraModel1.gltf
     loader.load(
@@ -186,7 +197,7 @@ const CarObicontrol: React.FC<CarObicontrolProps> = ({ color }) => {
         });
 
         model.scale.set(1, 1, 1);
-        model.position.set(0, 0, 0); 
+        model.position.set(0, 0, 0);
         scene.add(model);
         console.log('compact-glass1 loaded');
       },

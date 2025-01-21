@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../styles/ProductReservation.css';
 import '../styles/reset.css';
 import CarObicontrol from '../components/CarObicontrolUtility';
-import CarOption from '../components/CarOptionUtility';
+import CarOption from '../components/CarOptionAll'; 
 
 const ProductReservation = (): JSX.Element => {
   const [color, setColor] = useState('#0000ff'); // 기본 색상
@@ -10,7 +10,7 @@ const ProductReservation = (): JSX.Element => {
   return (
     <div className="carobicontrol-container">
       <CarObicontrol color={color} />
-      <CarOption onColorChange={(selectedColor) => setColor(selectedColor)} />
+      <CarOption carType="utility" onColorChange={(selectedColor) => setColor(selectedColor)} />{/*3차피드백 2번*/}
     </div>
   );
 };

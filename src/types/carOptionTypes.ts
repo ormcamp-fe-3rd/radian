@@ -1,23 +1,37 @@
-//피드백 2차 3번//
-
-// 타입 선언
+//3차피드백 3번//
 export type CarType = 'sport' | 'utility' | 'compact';
 
 export enum Battery {
-  Standard = 'Standard (356 km)',
-  LongRange = 'Long Range (468 km)',
+  Standard = 'Standard',
+  LongRange = 'LongRange',
 }
 
 export enum Drive {
-  TwoWD = 'Two-Wheel Drive (2WD)',
-  AllWD = 'All-Wheel Drive (AWD)',
+  TwoWD = 'TwoWD',
+  AllWD = 'AllWD',
 }
 
 export enum Sound {
-  Analog1 = 'Analog type 1',
-  Analog2 = 'Analog type 2',
-  Default = 'Default EV Sound',
+  Analog1 = 'Analog1',
+  Analog2 = 'Analog2',
+  Default = 'Default',
 }
+
+export const BATTERY_LABEL_MAP: Record<Battery, string> = {
+  [Battery.Standard]: 'Standard (356 km)',
+  [Battery.LongRange]: 'Long Range (468 km)',
+};
+
+export const DRIVE_LABEL_MAP: Record<Drive, string> = {
+  [Drive.TwoWD]: 'Two-Wheel Drive (2WD)',
+  [Drive.AllWD]: 'All-Wheel Drive (AWD)',
+};
+
+export const SOUND_LABEL_MAP: Record<Sound, string> = {
+  [Sound.Analog1]: 'Analog type 1',
+  [Sound.Analog2]: 'Analog type 2',
+  [Sound.Default]: 'Default EV Sound',
+};
 
 // 차량 타입별 배터리 가격 맵
 export const BATTERY_PRICE_MAP: Record<CarType, Record<Battery, number>> = {
